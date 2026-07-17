@@ -1,30 +1,32 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: main # Sesuaikan menjadi 'master' jika branch utama Abang bernama master
 
-media_folder: "images/uploads"
-public_folder: "images/uploads"
+media_folder: "images" # Folder tempat gambar akan disimpan di repository
+public_folder: "/images" # Path URL gambar saat ditampilkan di website
 
 collections:
+  # 1. Koleksi Berita
   - name: "halaman_berita"
     label: "Berita"
-    files:
-      - label: "Daftar Berita"
-        name: "berita"
-        file: "data/berita.json" # Semua berita akan disatukan di file ini
+    file: "data/berita.json"
+    extension: "json"
+    format: "json"
+    fields:
+      - name: "items"
+        label: "Daftar Berita"
+        widget: "list"
         fields:
-          - label: "Kumpulan Berita"
-            name: "items"
-            widget: "list"
-            fields:
-              - {label: "Judul Berita", name: "title", widget: "string"}
-              - {label: "Tanggal", name: "date", widget: "datetime"}
-              - {label: "Gambar Thumbnail", name: "thumbnail", widget: "image"}
-              - {label: "Deskripsi Singkat", name: "description", widget: "text"}
-              - {label: "Isi Berita Lengkap", name: "body", widget: "markdown"}
-              - name: "fasilitas"
+          - {label: "Judul Berita", name: "title", widget: "string"}
+          - {label: "Tanggal", name: "date", widget: "datetime"}
+          - {label: "Deskripsi Singkat", name: "description", widget: "text"}
+          - {label: "Thumbnail / Gambar Utama", name: "thumbnail", widget: "image"}
+          - {label: "Isi Berita", name: "body", widget: "markdown"}
+
+  # 2. Koleksi Fasilitas (Lab)
+  - name: "fasilitas"
     label: "Data Fasilitas (Lab)"
-    file: "data/fasilitas.json" # File ini yang akan menyimpan datanya
+    file: "data/fasilitas.json"
     extension: "json"
     format: "json"
     fields:
@@ -35,9 +37,10 @@ collections:
           - {label: "Nama Fasilitas/Lab", name: "nama", widget: "string"}
           - {label: "Foto Fasilitas", name: "gambar", widget: "image"}
 
+  # 3. Koleksi Dosen
   - name: "dosen"
     label: "Data Dosen"
-    file: "data/dosen.json" # File ini yang akan menyimpan datanya
+    file: "data/dosen.json"
     extension: "json"
     format: "json"
     fields:
