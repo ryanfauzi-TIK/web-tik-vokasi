@@ -4,13 +4,13 @@ backend:
   branch: main
   base_url: https://auth.decapcms.org
 
-media_folder: "images"
-public_folder: "images"
+media_folder: "public/images"
+public_folder: "/images"
 
 collections:
   - name: "berita"
     label: "Berita"
-    folder: "data/posts"
+    folder: "public/data/posts"
     create: true
     fields:
       - { label: "Judul", name: "title", widget: "string" }
@@ -20,7 +20,7 @@ collections:
 
   - name: "dosen"
     label: "Dosen"
-    folder: "data/dosen"
+    folder: "public/data/dosen"
     create: true
     fields:
       - { label: "Nama", name: "nama", widget: "string" }
@@ -29,7 +29,7 @@ collections:
 
   - name: "fasilitas"
     label: "Fasilitas"
-    folder: "data/fasilitas"
+    folder: "public/data/fasilitas"
     create: true
     fields:
       - { label: "Nama", name: "nama", widget: "string" }
