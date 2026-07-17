@@ -2,52 +2,61 @@ backend:
   name: git-gateway
   branch: main # Sesuaikan menjadi 'master' jika branch utama Abang bernama master
 
-media_folder: "images" # Folder tempat gambar akan disimpan di repository
-public_folder: "/images" # Path URL gambar saat ditampilkan di website
+media_folder: "images"
+public_folder: "/images"
 
 collections:
   # 1. Koleksi Berita
-  - name: "halaman_berita"
+  - name: "koleksi_berita"
     label: "Berita"
-    file: "data/berita.json"
-    extension: "json"
-    format: "json"
-    fields:
-      - name: "items"
-        label: "Daftar Berita"
-        widget: "list"
+    files:
+      - name: "data_berita"
+        label: "Edit Data Berita"
+        file: "data/berita.json"
+        extension: "json"
+        format: "json"
         fields:
-          - {label: "Judul Berita", name: "title", widget: "string"}
-          - {label: "Tanggal", name: "date", widget: "datetime"}
-          - {label: "Deskripsi Singkat", name: "description", widget: "text"}
-          - {label: "Thumbnail / Gambar Utama", name: "thumbnail", widget: "image"}
-          - {label: "Isi Berita", name: "body", widget: "markdown"}
+          - name: "items"
+            label: "Daftar Berita"
+            widget: "list"
+            fields:
+              - {label: "Judul Berita", name: "title", widget: "string"}
+              - {label: "Tanggal", name: "date", widget: "datetime"}
+              - {label: "Deskripsi Singkat", name: "description", widget: "text"}
+              - {label: "Thumbnail / Gambar Utama", name: "thumbnail", widget: "image"}
+              - {label: "Isi Berita", name: "body", widget: "markdown"}
 
   # 2. Koleksi Fasilitas (Lab)
-  - name: "fasilitas"
-    label: "Data Fasilitas (Lab)"
-    file: "data/fasilitas.json"
-    extension: "json"
-    format: "json"
-    fields:
-      - name: "items"
-        label: "Daftar Fasilitas"
-        widget: "list"
+  - name: "koleksi_fasilitas"
+    label: "Fasilitas (Lab)"
+    files:
+      - name: "data_fasilitas"
+        label: "Edit Data Fasilitas"
+        file: "data/fasilitas.json"
+        extension: "json"
+        format: "json"
         fields:
-          - {label: "Nama Fasilitas/Lab", name: "nama", widget: "string"}
-          - {label: "Foto Fasilitas", name: "gambar", widget: "image"}
+          - name: "items"
+            label: "Daftar Fasilitas"
+            widget: "list"
+            fields:
+              - {label: "Nama Fasilitas/Lab", name: "nama", widget: "string"}
+              - {label: "Foto Fasilitas", name: "gambar", widget: "image"}
 
   # 3. Koleksi Dosen
-  - name: "dosen"
-    label: "Data Dosen"
-    file: "data/dosen.json"
-    extension: "json"
-    format: "json"
-    fields:
-      - name: "items"
-        label: "Daftar Dosen"
-        widget: "list"
+  - name: "koleksi_dosen"
+    label: "Dosen"
+    files:
+      - name: "data_dosen"
+        label: "Edit Data Dosen"
+        file: "data/dosen.json"
+        extension: "json"
+        format: "json"
         fields:
-          - {label: "Nama Beserta Gelar", name: "nama", widget: "string"}
-          - {label: "Jabatan", name: "jabatan", widget: "string"}
-          - {label: "Foto Dosen", name: "foto", widget: "image"}
+          - name: "items"
+            label: "Daftar Dosen"
+            widget: "list"
+            fields:
+              - {label: "Nama Beserta Gelar", name: "nama", widget: "string"}
+              - {label: "Jabatan", name: "jabatan", widget: "string"}
+              - {label: "Foto Dosen", name: "foto", widget: "image"}
