@@ -6,7 +6,7 @@
     <title>D-IV Teknologi Industri Kimia | Universitas Padjadjaran</title>
     
     <!-- ========================================== -->
-    <!-- OPTIMASI 1: SEO & META TAGS (BARU)        -->
+    <!-- OPTIMASI 1: SEO & META TAGS                -->
     <!-- ========================================== -->
     <meta name="description" content="Program Studi D-IV Teknologi Industri Kimia Fakultas Vokasi Universitas Padjadjaran. Membangun lulusan kompeten, inovatif, dan siap industri.">
     <meta name="keywords" content="TIK Unpad, Teknologi Industri Kimia, Vokasi Unpad, D4 Kimia Unpad, SMUP Unpad">
@@ -16,14 +16,14 @@
     <meta property="og:description" content="Membangun kompetensi dalam operasi proses industri kimia, pengawasan, dan technopreneurship di Unpad.">
     <meta property="og:image" content="logo-tik-kecil.png">
 
-    <!-- Favicon untuk Taskbar (Sejajar dengan index.html) -->
+    <!-- Favicon -->
     <link class="rounded-full" rel="icon" type="image/png" href="logo-tik-kecil.png">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter & Playfair Display untuk Kombinasi Font Premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -32,24 +32,57 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <style>
-        body { font-family: 'Poppins', sans-serif; }
+        body { font-family: 'Inter', sans-serif; }
+        .font-serif-premium { font-family: 'Playfair Display', serif; }
+        
+        /* Hero Background dengan Gradien Studio Kedalaman Tinggi */
         .bg-hero {
-            background: linear-gradient(rgba(15, 36, 68, 0.85), rgba(15, 36, 68, 0.95)), 
+            background: linear-gradient(to bottom, rgba(10, 25, 47, 0.88), rgba(15, 32, 67, 0.96)), 
                         url('https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070&auto=format&fit=crop') center/cover fixed;
         }
+
+        /* Custom Premium Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Check-list Premium dengan Desain SVG Pseudo */
         .check-list li {
             position: relative;
-            padding-left: 2rem;
-            margin-bottom: 0.75rem;
+            padding-left: 2.25rem;
+            margin-bottom: 1rem;
+            transition: all 0.2s ease;
         }
         .check-list li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: #eab308;
-            font-weight: bold;
-            font-size: 1.2rem;
+            top: 2px;
+            width: 20px;
+            height: 20px;
+            background: rgba(217, 119, 6, 0.1);
+            color: #d97706;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.75rem;
         }
+        .check-list li:hover {
+            transform: translateX(4px);
+        }
+
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
 
@@ -68,61 +101,60 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden">
+<body class="bg-[#f8fafc] text-slate-800 antialiased overflow-x-hidden tracking-normal">
 
-    <!-- Navigasi Sticky Glassmorphism -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100/80 shadow-sm transition-all duration-350">
-        <div class="max-w-7xl mx-auto px-5 sm:px-8 py-4 flex justify-between items-center">
+    <!-- Navigasi Sticky Glassmorphism Premium -->
+    <nav class="fixed w-full z-50 bg-white/70 backdrop-blur-xl border-b border-slate-200/50 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 py-4 flex justify-between items-center">
             
-            <!-- Branding Typografi Premium (Tanpa File Logo) -->
+            <!-- Branding Typografi Premium -->
             <a href="#beranda" class="flex flex-col select-none group">
-                <span class="text-sm sm:text-base font-extrabold tracking-widest text-blue-900 uppercase transition-colors duration-300 group-hover:text-yellow-600 leading-tight">
+                <span class="text-base font-black tracking-wider text-[#0f172a] uppercase transition-colors duration-300 group-hover:text-amber-600 leading-tight">
                     TIK Vokasi
                 </span>
-                <span class="text-[8px] sm:text-[9px] font-semibold tracking-[0.18em] text-gray-400 uppercase transition-colors duration-300 group-hover:text-gray-600 mt-0.5">
+                <span class="text-[9px] font-bold tracking-[0.22em] text-slate-400 uppercase transition-colors duration-300 group-hover:text-slate-600 mt-0.5">
                     Universitas Padjadjaran
                 </span>
             </a>
 
-            <!-- Hamburger Button (Interaktif, Cocok untuk Smartphone/Tablet) -->
-            <button id="menu-btn" class="xl:hidden flex flex-col justify-between w-6 h-4 text-blue-900 focus:outline-none" aria-label="Toggle Menu">
-                <span class="w-full h-0.5 bg-blue-900 rounded-full hamburger-line line-1"></span>
-                <span class="w-full h-0.5 bg-blue-900/80 rounded-full hamburger-line line-2"></span>
-                <span class="w-full h-0.5 bg-blue-900 rounded-full hamburger-line line-3"></span>
+            <!-- Hamburger Button (Mobile) -->
+            <button id="menu-btn" class="xl:hidden flex flex-col justify-between w-6 h-3.5 text-slate-900 focus:outline-none" aria-label="Toggle Menu">
+                <span class="w-full h-[2px] bg-slate-900 rounded-full hamburger-line line-1"></span>
+                <span class="w-full h-[2px] bg-slate-900/80 rounded-full hamburger-line line-2"></span>
+                <span class="w-full h-[2px] bg-slate-900 rounded-full hamburger-line line-3"></span>
             </button>
 
-            <!-- Menu Desktop & Mobile Dropdown Container (Sleek Transition) -->
-            <ul id="menu-items" class="absolute xl:relative top-full left-0 w-full xl:w-auto bg-white/95 xl:bg-transparent shadow-xl xl:shadow-none p-6 xl:p-0 flex flex-col xl:flex-row items-start xl:items-center space-y-4 xl:space-y-0 space-x-0 xl:space-x-8 font-semibold text-gray-500 text-sm border-t border-gray-100 xl:border-none transition-all duration-300 origin-top transform scale-y-0 opacity-0 pointer-events-none xl:scale-y-100 xl:opacity-100 xl:pointer-events-auto">
+            <!-- Menu Desktop & Mobile Dropdown Container -->
+            <ul id="menu-items" class="absolute xl:relative top-full left-0 w-full xl:w-auto bg-white/95 xl:bg-transparent shadow-2xl xl:shadow-none p-6 xl:p-0 flex flex-col xl:flex-row items-start xl:items-center space-y-4 xl:space-y-0 space-x-0 xl:space-x-7 font-medium text-slate-600 text-[13px] border-t border-slate-100 xl:border-none transition-all duration-300 origin-top transform scale-y-0 opacity-0 pointer-events-none xl:scale-y-100 xl:opacity-100 xl:pointer-events-auto">
                 <li class="w-full xl:w-auto">
-                    <a href="#beranda" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">Beranda</a>
+                    <a href="#beranda" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Beranda</a>
                 </li>
                 <li class="w-full xl:w-auto">
-                    <a href="#profil" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">Profil</a>
+                    <a href="#profil" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Profil</a>
                 </li>
                 <li class="w-full xl:w-auto">
-                    <a href="#peminatan" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">Peminatan</a>
+                    <a href="#peminatan" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Peminatan</a>
                 </li>
                 <li class="w-full xl:w-auto">
-                    <a href="#pendaftaran" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">PMB</a>
+                    <a href="#pendaftaran" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">PMB</a>
                 </li>
                 <li class="w-full xl:w-auto">
-                    <a href="#lulusan" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">Lulusan</a>
+                    <a href="#lulusan" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Lulusan</a>
                 </li>
                 <li class="w-full xl:w-auto">
-                    <a href="#fasilitas" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">Fasilitas</a>
+                    <a href="#fasilitas" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Fasilitas</a>
                 </li>
                 <li class="w-full xl:w-auto">
-                    <a href="#dosen" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">Dosen</a>
+                    <a href="#dosen" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Dosen</a>
                 </li>
                 <li class="w-full xl:w-auto">
-                    <a href="#berita" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">Berita</a>
+                    <a href="#berita" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Berita</a>
                 </li>
                 <li class="w-full xl:w-auto">
-                    <a href="#faq" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">FAQ</a>
+                    <a href="#faq" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">FAQ</a>
                 </li>
                 <li class="w-full xl:w-auto pt-2 xl:pt-0">
-                    <!-- OPTIMASI 2: Penambahan rel="noopener noreferrer" -->
-                    <a href="https://smup.unpad.ac.id/" target="_blank" rel="noopener noreferrer" class="block text-center bg-blue-900 hover:bg-yellow-500 hover:text-blue-950 text-white font-bold px-6 py-2.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                    <a href="https://smup.unpad.ac.id/" target="_blank" rel="noopener noreferrer" class="block text-center bg-[#0f172a] hover:bg-amber-500 hover:text-slate-950 text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg transform hover:-translate-y-0.5">
                         Daftar Sekarang
                     </a>
                 </li>
@@ -131,21 +163,21 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="beranda" class="bg-hero min-h-screen flex items-center justify-center pt-24 pb-12">
-        <div class="text-center px-4 sm:px-6 w-full max-w-4xl" data-aos="zoom-in" data-aos-duration="1500">
-            <h2 class="text-yellow-400 font-semibold tracking-widest uppercase mb-3 text-sm sm:text-base">Universitas Padjadjaran</h2>
-            <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                Sarjana Terapan (D-IV)<br>Teknologi Industri Kimia
+    <section id="beranda" class="bg-hero min-h-screen flex items-center justify-center pt-28 pb-16 relative">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(15,23,42,0.4))] pointer-events-none"></div>
+        <div class="text-center px-6 w-full max-w-5xl relative z-10" data-aos="fade-up" data-aos-duration="1200">
+            <h2 class="text-amber-400 font-bold tracking-[0.25em] uppercase mb-4 text-xs sm:text-sm">Universitas Padjadjaran</h2>
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-6 leading-[1.15] tracking-tight">
+                Sarjana Terapan (D-IV)<br><span class="font-serif-premium text-amber-100 italic font-normal">Teknologi Industri Kimia</span>
             </h1>
-            <p class="text-gray-300 max-w-3xl mx-auto mb-10 text-sm sm:text-base md:text-lg">
-                Membangun kompetensi dalam operasi proses industri kimia, pengawasan, keterampilan manajerial, berwawasan lingkungan, dan technopreneurship.
+            <p class="text-slate-300 max-w-3xl mx-auto mb-12 text-sm sm:text-base md:text-lg leading-relaxed font-light">
+                Membangun kompetensi tinggi dalam operasi proses industri kimia, pengawasan mutakhir, kepemimpinan manajerial, berwawasan lingkungan global, serta akselerasi technopreneurship masa depan.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#profil" class="w-full sm:w-auto text-center bg-yellow-500 hover:bg-yellow-400 text-blue-900 font-bold py-3 px-8 rounded-full transition transform hover:scale-105 shadow-lg">
+                <a href="#profil" class="w-full sm:w-auto text-center bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3.5 px-8 rounded-xl transition-all duration-300 shadow-xl hover:shadow-amber-500/20 transform hover:-translate-y-0.5">
                     Mulai Eksplorasi
                 </a>
-                <!-- OPTIMASI 2: Penambahan rel="noopener noreferrer" -->
-                <a href="https://smup.unpad.ac.id/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto text-center bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-900 font-bold py-3 px-8 rounded-full transition transform hover:scale-105 shadow-lg">
+                <a href="https://smup.unpad.ac.id/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto text-center bg-white/10 border border-white/20 text-white backdrop-blur-md hover:bg-white hover:text-slate-950 font-semibold py-3.5 px-8 rounded-xl transition-all duration-300 shadow-lg transform hover:-translate-y-0.5">
                     Info Pendaftaran (PMB)
                 </a>
             </div>
@@ -153,43 +185,56 @@
     </section>
 
     <!-- Profil Singkat & Kurikulum -->
-    <section id="profil" class="py-16 md:py-24 bg-white scroll-mt-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 md:gap-16 items-start">
-            <div data-aos="fade-right" data-aos-duration="1000">
-                <h3 class="text-yellow-500 font-bold mb-2 tracking-wide uppercase text-sm sm:text-base">Profil Singkat</h3>
-                <h2 class="text-2xl sm:text-3xl font-bold text-blue-900 mb-6">Membangun Profesionalisme Industri Kimia</h2>
-                <p class="text-gray-600 mb-4 leading-relaxed text-justify text-sm sm:text-base">
-                    Program Studi D-IV Teknologi Industri Kimia adalah program sarjana terapan yang dirancang khusus untuk lulusan dengan kualifikasi Diploma IV dalam teknik kimia. Program ini dibuat untuk membangun kompetensi dalam operasi proses industri kimia, pengawasan, keterampilan manajerial, berwawasan lingkungan, berwawasan technopreneur, serta mempunyai kesiapan untuk berkembang lebih lanjut.
+    <section id="profil" class="py-20 md:py-28 bg-white scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 grid lg:grid-cols-12 gap-12 md:gap-16 items-center">
+            
+            <div class="lg:col-span-7" data-aos="fade-right" data-aos-duration="1000">
+                <div class="flex items-center gap-2 mb-3">
+                    <span class="w-8 h-[2px] bg-amber-500"></span>
+                    <h3 class="text-amber-600 font-bold tracking-wider uppercase text-xs sm:text-sm">Profil Akademik</h3>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
+                    Membentuk Profesionalisme Unggul di Sektor Industri Kimia global
+                </h2>
+                <p class="text-slate-600 mb-5 leading-relaxed text-justify text-sm sm:text-base font-light">
+                    Program Studi D-IV Teknologi Industri Kimia merupakan pilar sarjana terapan yang dirancang presisi untuk menghasilkan talenta berkualifikasi tinggi dalam teknik kimia. Kurikulum kami diformulasikan secara taktis untuk membangun kompetensi esensial dalam operasional pabrik proses, sistem pengawasan mutu, manajemen industri modern, keberlanjutan lingkungan, serta kesiapan adaptif masa depan.
                 </p>
-                <p class="text-gray-600 leading-relaxed text-justify text-sm sm:text-base">
-                    Lulusan dapat bekerja di berbagai sektor industri, seperti pupuk, polimer, minyak, gas, industri pengolahan makanan dan minuman, industri farmasi, and lain sebagainya.
+                <p class="text-slate-600 leading-relaxed text-justify text-sm sm:text-base font-light">
+                    Ekosistem pembelajaran kami membuka gerbang karir luas di berbagai sektor strategis multi-nasional, seperti industri petrokimia, manufaktur polimer, eksplorasi minyak & gas, hilirisasi pangan, farmasi medis, hingga energi terbarukan.
                 </p>
             </div>
             
-            <div data-aos="fade-left" data-aos-duration="1000" class="bg-blue-50 p-6 sm:p-8 rounded-2xl border-l-4 border-blue-900">
-                <h3 class="text-blue-900 font-bold text-xl sm:text-2xl mb-4">Deskripsi Kurikulum</h3>
-                <p class="text-gray-700 mb-4 leading-relaxed text-sm sm:text-base">
-                    Menyelenggarakan pendidikan dengan <strong>kurikulum modular berbasis kompetensi</strong> yang diperlukan di Industri kimia, penelitian kimia terapan dalam pengembangan produk yang dapat diaplikasikan dan memberikan manfaat bagi masyarakat, untuk menghasilkan lulusan yang kompeten, inovatif, kreatif dan berdaya saing global.
-                </p>
-                <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
-                    Sistem pembelajaran mengaplikasikan pendidikan profesional secara bertanggung jawab, didukung oleh <strong>dosen profesional yang memiliki sertifikasi dan gelar magister</strong>, mengintegrasikan ilmu dan teknologi secara harmonis.
-                </p>
+            <div class="lg:col-span-5" data-aos="fade-left" data-aos-duration="1000">
+                <div class="bg-gradient-to-br from-slate-900 to-slate-950 p-8 sm:p-10 rounded-2xl border-t-4 border-amber-500 shadow-2xl shadow-slate-900/10 text-white">
+                    <h3 class="font-serif-premium italic text-2xl text-amber-100 mb-4">Arsitektur Kurikulum</h3>
+                    <p class="text-slate-300 mb-5 leading-relaxed text-sm sm:text-base font-light">
+                        Kami menyelenggarakan pendidikan melalui **kurikulum modular berbasis kompetensi riil** yang disinkronisasikan langsung dengan dinamika industri kimia internasional. Penelitian terapan difokuskan pada hilirisasi produk inovatif bermanfaat luas bagi masyarakat global.
+                    </p>
+                    <div class="border-t border-slate-800 pt-5">
+                        <p class="text-slate-400 text-xs sm:text-sm font-light">
+                            Metode instruksional dipandu oleh **staf pengajar ahli bersertifikasi industri profesional** dengan gelar akademik magister hingga doktoral, mengintegrasikan sains fundamental dan rekayasa praktis secara harmonis.
+                        </p>
+                    </div>
+                </div>
             </div>
+            
         </div>
     </section>
 
     <!-- Peminatan Akademik -->
-    <section id="peminatan" class="py-16 md:py-24 bg-white border-t border-gray-200 scroll-mt-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="peminatan" class="py-20 md:py-28 bg-[#f8fafc] border-t border-slate-200/60 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="text-center mb-16">
-                <h3 class="text-yellow-500 font-bold mb-2 tracking-wide uppercase text-sm sm:text-base" data-aos="fade-down">Rumah Keahlian</h3>
-                <h2 class="text-2xl sm:text-3xl font-bold text-blue-900 mb-4" data-aos="fade-up">Tiga Peminatan, Satu Ekosistem Industri (TEFA)</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base mb-6" data-aos="fade-up" data-aos-delay="100">
-                    Mahasiswa dapat menentukan arah keahlian spesifik mulai semester 5-6 yang saling terhubung dalam ekosistem Teaching Factory (TEFA).
+                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" data-aos="fade-down">
+                    Rumah Keahlian
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" data-aos="fade-up">Tiga Peminatan, Satu Ekosistem Industri (TEFA)</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base mb-8 font-light" data-aos="fade-up" data-aos-delay="100">
+                    Mahasiswa diarahkan memilih spesialisasi strategis pada semester 5-6 yang terintegrasi penuh ke dalam ekosistem Teaching Factory korporat.
                 </p>
                 <div data-aos="zoom-in" data-aos-delay="200" class="inline-block">
-                    <a href="Booklet Peminatan TIKIM.pdf" download="Booklet Peminatan TIKIM.pdf" class="inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-800 text-white hover:text-yellow-400 font-semibold py-2.5 px-6 rounded-full transition transform hover:scale-105 shadow-md border border-blue-800/20 text-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-500 group-hover:text-yellow-400 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <a href="Booklet Peminatan TIKIM.pdf" download="Booklet Peminatan TIKIM.pdf" class="inline-flex items-center gap-3 bg-white hover:bg-slate-900 text-slate-900 hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-sm border border-slate-200 hover:border-slate-900 text-sm group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-500 transition-colors group-hover:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                         </svg>
                         Unduh Booklet Peminatan Lengkap (PDF)
@@ -199,112 +244,124 @@
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Peminatan 1 -->
-                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition" data-aos="fade-up">
-                    <div class="text-3xl mb-3">🩺</div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-2">Industri Kimia Kesehatan</h3>
-                    <p class="text-sm text-gray-600 mb-4">Solusi teknologi industri kimia untuk produk kesehatan, diagnostik, and bioproduksi.</p>
-                    <h4 class="text-xs font-bold text-yellow-600 tracking-wider uppercase mb-2">Sub-Jalur Utama:</h4>
-                    <ul class="text-xs space-y-1 text-gray-700 list-disc list-inside font-medium">
-                        <li>Diagnostik & Reagen (Rapid test, biosensor, VTM)</li>
-                        <li>Produk Kesehatan & Sediaan (Antiseptik, disinfektan, non-steril)</li>
-                        <li>Bioproduksi & Bahan Hayati (Protein rekombinan, antibodi)</li>
-                    </ul>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group" data-aos="fade-up">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-2xl mb-5 group-hover:bg-blue-900 transition-colors duration-300">🩺</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Industri Kimia Kesehatan</h3>
+                    <p class="text-sm text-slate-500 mb-6 font-light leading-relaxed">Aplikasi teknologi proses kimia terapan untuk produk biomedis, diagnosis klinis mutakhir, dan rekayasa bioproduksi.</p>
+                    <div class="border-t border-slate-100 pt-4">
+                        <h4 class="text-[11px] font-bold text-amber-600 tracking-wider uppercase mb-3">Sub-Jalur Utama:</h4>
+                        <ul class="text-xs space-y-2 text-slate-600 font-medium">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>Diagnostik & Reagen Skala Industri</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>Sediaan Kesehatan Korporat</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>Bioproduksi & Isolasi Bahan Hayati</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Peminatan 2 -->
-                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-3xl mb-3">🍞</div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-2">Industri Kimia Pangan</h3>
-                    <p class="text-sm text-gray-600 mb-4">Sains & teknologi proses untuk produk pangan bermutu, aman, bergizi, dan komersial.</p>
-                    <h4 class="text-xs font-bold text-yellow-600 tracking-wider uppercase mb-2">Sub-Jalur Utama:</h4>
-                    <ul class="text-xs space-y-1 text-gray-700 list-disc list-inside font-medium">
-                        <li>Formulasi & Inovasi Pangan (Minuman sehat, pangan fermentasi)</li>
-                        <li>Keamanan, Mutu & Proses Pangan (GMP, HACCP, Uji fisikokimia)</li>
-                        <li>Pangan Fungsional & Hilirisasi (Nutrasetikal, produk siap pasar)</li>
-                    </ul>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-2xl mb-5 group-hover:bg-amber-500 transition-colors duration-300">🍞</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Industri Kimia Pangan</h3>
+                    <p class="text-sm text-slate-500 mb-6 font-light leading-relaxed">Sains proses canggih untuk memformulasikan produk pangan bernilai organoleptik tinggi, aman, bernutrisi, dan komersial.</p>
+                    <div class="border-t border-slate-100 pt-4">
+                        <h4 class="text-[11px] font-bold text-amber-600 tracking-wider uppercase mb-3">Sub-Jalur Utama:</h4>
+                        <ul class="text-xs space-y-2 text-slate-600 font-medium">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>Formulasi & Rekayasa Pangan</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>Manajemen Mutu, GMP, & HACCP</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>Hilirisasi Komponen Pangan Fungsional</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Peminatan 3 -->
-                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-3xl mb-3">♻️</div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-2">Green Technology & Waste Management</h3>
-                    <p class="text-sm text-gray-600 mb-4">Solusi teknologi proses kimia untuk ekonomi sirkular, transisi energi, dan material hijau.</p>
-                    <h4 class="text-xs font-bold text-yellow-600 tracking-wider uppercase mb-2">Sub-Jalur Utama:</h4>
-                    <ul class="text-xs space-y-1 text-gray-700 list-disc list-inside font-medium">
-                        <li>Waste & Resource Management (Water treatment, recycle)</li>
-                        <li>Energi Baru & Berkelanjutan (Biodiesel, bioetanol, biogas)</li>
-                        <li>Material Berkelanjutan (Geopolimer, biokomposit, litium/nikel)</li>
-                    </ul>
+                <div class="bg-white p-8 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-2xl mb-5 group-hover:bg-emerald-600 transition-colors duration-300">♻️</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Green Tech & Waste Management</h3>
+                    <p class="text-sm text-slate-500 mb-6 font-light leading-relaxed">Rekayasa sirkular proses kimia berkelanjutan untuk pengelolaan limbah modern, transisi energi, dan material hijau.</p>
+                    <div class="border-t border-slate-100 pt-4">
+                        <h4 class="text-[11px] font-bold text-amber-600 tracking-wider uppercase mb-3">Sub-Jalur Utama:</h4>
+                        <ul class="text-xs space-y-2 text-slate-600 font-medium">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>Waste Treatment & Resource Recycling</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>Bioenergi & Energi Terbarukan</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>Pengembangan Material Berkelanjutan</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pendaftaran Mahasiswa Baru (PMB) -->
-    <section id="pendaftaran" class="py-16 md:py-24 bg-blue-900 text-white relative overflow-hidden scroll-mt-24">
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-800 opacity-50 blur-3xl z-0"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center">
-            <h3 class="text-yellow-400 font-bold mb-2 tracking-wide uppercase text-sm sm:text-base" data-aos="fade-down">Bergabung Bersama Kami</h3>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8" data-aos="fade-up">Penerimaan Mahasiswa Baru (PMB)</h2>
-            <p class="text-blue-100 max-w-2xl mx-auto mb-12 text-sm sm:text-base" data-aos="fade-up" data-aos-delay="100">
-                Program Studi D-IV Teknologi Industri Kimia membuka peluang bagi putra-putri terbaik bangsa melalui beberapa jalur seleksi masuk Universitas Padjadjaran.
+    <!-- Penerimaan Mahasiswa Baru (PMB) -->
+    <section id="pendaftaran" class="py-20 md:py-28 bg-[#0a192f] text-white relative overflow-hidden scroll-mt-20">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-900/40 opacity-50 blur-3xl z-0"></div>
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 mb-3 bg-white/10 text-amber-400 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" data-aos="fade-down">
+                Penerimaan Mahasiswa Baru
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 tracking-tight" data-aos="fade-up">Bangun Masa Depan Gemilang Bersama Kami</h2>
+            <p class="text-slate-300 max-w-2xl mx-auto mb-14 text-sm sm:text-base font-light leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                Pendaftaran Program Studi D-IV Teknologi Industri Kimia Universitas Padjadjaran resmi dibuka melalui jalur seleksi nasional dan mandiri.
             </p>
 
-            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12" data-aos="fade-up" data-aos-delay="200">
-                <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm border border-white/20">
-                    <h4 class="text-xl font-bold text-yellow-400 mb-2">SNBP</h4>
-                    <p class="text-sm text-gray-300">Seleksi Nasional Berdasarkan Prestasi (Tanpa Tes Tulis).</p>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mb-14 text-left" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-white/5 p-8 rounded-2xl backdrop-blur-md border border-white/10 hover:border-amber-500/40 transition duration-300 group">
+                    <div class="text-xs font-bold text-amber-400 uppercase tracking-widest mb-2">Jalur Prestasi</div>
+                    <h4 class="text-xl font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">SNBP</h4>
+                    <p class="text-sm text-slate-400 font-light">Apresiasi akademik tanpa tes tulis berdasarkan rekam jejak rapor terbaik sekolah menengah.</p>
                 </div>
-                <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm border border-white/20">
-                    <h4 class="text-xl font-bold text-yellow-400 mb-2">SNBT</h4>
-                    <p class="text-sm text-gray-300">Seleksi Nasional Berdasarkan Tes (UTBK).</p>
+                <div class="bg-white/5 p-8 rounded-2xl backdrop-blur-md border border-white/10 hover:border-amber-500/40 transition duration-300 group">
+                    <div class="text-xs font-bold text-amber-400 uppercase tracking-widest mb-2">Jalur Tes Nasional</div>
+                    <h4 class="text-xl font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">SNBT</h4>
+                    <p class="text-sm text-slate-400 font-light">Seleksi terpusat berbasis Ujian Tulis Berbasis Komputer (UTBK) skala nasional.</p>
                 </div>
-                <div class="bg-white/10 p-6 rounded-xl backdrop-blur-sm border border-white/20 sm:col-span-2 md:col-span-1">
-                    <h4 class="text-xl font-bold text-yellow-400 mb-2">SMUP Vokasi</h4>
-                    <p class="text-sm text-gray-300">Seleksi Masuk Universitas Padjadjaran Jalur Mandiri Sarjana Terapan.</p>
+                <div class="bg-white/5 p-8 rounded-2xl backdrop-blur-md border border-white/10 hover:border-amber-500/40 transition duration-300 group sm:col-span-2 md:col-span-1">
+                    <div class="text-xs font-bold text-amber-400 uppercase tracking-widest mb-2">Jalur Mandiri Unpad</div>
+                    <h4 class="text-xl font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">SMUP Vokasi</h4>
+                    <p class="text-sm text-slate-400 font-light">Seleksi khusus mandiri untuk Program Sarjana Terapan Universitas Padjadjaran.</p>
                 </div>
             </div>
 
-            <!-- OPTIMASI 2: Penambahan rel="noopener noreferrer" -->
-            <a href="https://smup.unpad.ac.id/" target="_blank" rel="noopener noreferrer" data-aos="zoom-in" data-aos-delay="300" class="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-blue-900 font-bold py-4 px-8 sm:px-10 rounded-full transition transform hover:scale-105 shadow-xl text-base sm:text-lg">
+            <a href="https://smup.unpad.ac.id/" target="_blank" rel="noopener noreferrer" data-aos="zoom-in" data-aos-delay="300" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-4 px-10 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-amber-500/20 text-sm transform hover:-translate-y-0.5">
                 Menuju Portal Resmi SMUP Unpad
             </a>
         </div>
     </section>
 
     <!-- Profil Lulusan -->
-    <section id="lulusan" class="py-16 md:py-24 bg-gray-50 scroll-mt-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="lulusan" class="py-20 md:py-28 bg-[#f8fafc] scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="text-center mb-16">
-                <h3 class="text-yellow-500 font-bold mb-2 tracking-wide uppercase text-sm sm:text-base" data-aos="fade-down">Peluang Karir</h3>
-                <h2 class="text-2xl sm:text-3xl font-bold text-blue-900 mb-4" data-aos="fade-up">Profil Lulusan</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base" data-aos="fade-up" data-aos-delay="100">
-                    Lulusan diharapkan menjadi individu yang siap bersaing dan berinovasi di sektor industri kimia, farmasi, hingga pengolahan makanan dan minuman.
+                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" data-aos="fade-down">
+                    Prospektus Karir
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" data-aos="fade-up">Profil Kompetensi Lulusan</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base font-light" data-aos="fade-up" data-aos-delay="100">
+                    Mempersiapkan profesional tangguh, siap adaptasi, dan memiliki akselerasi karir tinggi di lanskap manufaktur kimia.
                 </p>
             </div>
 
             <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border-t-4 border-blue-900" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-4xl mb-4">👨‍🔧</div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-3">Professional Industri Kimia</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed text-justify">
-                        Mengoperasikan and mengawasi produksi kimia, pengolahan limbah, and proses kesehatan dan keselamatan kerja dengan efektif. Dilengkapi dengan keahlian manajerial, semangat teknopreneurial, komitmen pada kualitas, dan etika profesional.
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-[#0a192f]" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl mb-5">👨‍🔧</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Professional Industri Kimia</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed text-justify font-light">
+                        Mampu mengoperasikan dan mensupervisi unit operasi proses, manajemen limbah, serta keselamatan & kesehatan kerja (K3) dengan standar kepatuhan tinggi. Dibekali kapasitas manajerial dan etika profesi yang kuat.
                     </p>
                 </div>
                 
-                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border-t-4 border-yellow-400" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-4xl mb-4">🔬</div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-3">Peneliti Terapan</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed text-justify">
-                        Menggunakan teknologi modern dalam melaksanakan pekerjaan di bidang teknologi industri kimia, seperti pupuk, polimer, minyak, gas, industri pengolahan makanan & minuman, serta industri farmasi.
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-amber-500" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-4xl mb-5">🔬</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Peneliti Terapan</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed text-justify font-light">
+                        Terampil mengaplikasikan metodologi saintifik dan teknologi modern untuk riset pengembangan produk bernilai ekonomis tinggi di sektor polimer, pupuk, agrokimia, makanan, minuman, dan kefarmasian.
                     </p>
                 </div>
                 
-                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border-t-4 border-blue-900 sm:col-span-2 md:col-span-1" data-aos="fade-up" data-aos-delay="600">
-                    <div class="text-4xl mb-4">🏢</div>
-                    <h3 class="text-xl font-bold text-blue-900 mb-3">Technoentrepreneur</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed text-justify">
-                        Membangun dan memajukan usaha mandiri di bidang industri kimia, seperti produksi polimer, pengolahan pangan, minuman, pupuk, maupun sektor farmasi.
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border-t-4 border-[#0a192f] sm:col-span-2 md:col-span-1" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-4xl mb-5">🏢</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Technoentrepreneur</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed text-justify font-light">
+                        Memiliki jiwa kepemimpinan bisnis untuk menginkubasi dan mengembangkan bisnis rintisan mandiri berbasis teknologi komparatif di bidang industri kimia hilir, pengolahan pangan fungsional, dan kosmetik.
                     </p>
                 </div>
             </div>
@@ -312,42 +369,45 @@
     </section>
 
     <!-- Sertifikasi Kompetensi -->
-    <section id="sertifikasi" class="py-16 md:py-24 bg-white border-t border-gray-100 scroll-mt-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="grid lg:grid-cols-5 gap-12 items-center">
-                <div class="lg:col-span-2" data-aos="fade-right">
-                    <h3 class="text-yellow-500 font-bold mb-2 tracking-wide uppercase text-sm sm:text-base">Nilai Tambah</h3>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-blue-900 mb-6">Sertifikasi Kompetensi</h2>
-                    <p class="text-gray-600 mb-6 leading-relaxed text-sm sm:text-base">
-                        Kami menawarkan sertifikat kompetensi bagi lulusan yang telah mengikuti pelatihan dan pengujian yang disesuaikan dengan standar kebutuhan industri saat ini.
+    <section id="sertifikasi" class="py-20 md:py-28 bg-white border-t border-slate-200/50 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5" data-aos="fade-right">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="w-8 h-[2px] bg-amber-500"></span>
+                        <h3 class="text-amber-600 font-bold tracking-wider uppercase text-xs sm:text-sm">Portofolio Keahlian</h3>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6 tracking-tight">Sertifikasi Kompetensi Keahlian</h2>
+                    <p class="text-slate-600 mb-6 leading-relaxed text-sm sm:text-base font-light">
+                        Setiap lulusan dibekali sertifikat kualifikasi eksternal BNSP dan korporat terafiliasi demi menjamin pengakuan atas keahlian taktis sesuai kebutuhan dunia industri saat ini.
                     </p>
-                    <div class="p-6 bg-yellow-50 rounded-xl border border-yellow-200">
-                        <p class="text-sm font-semibold text-yellow-800">
-                            "Membekali lulusan dengan bukti keahlian yang diakui secara profesional."
+                    <div class="p-6 bg-amber-50/70 rounded-xl border border-amber-200/60 shadow-sm">
+                        <p class="text-sm font-medium text-amber-800 italic">
+                            "Membekali lulusan dengan akreditasi bukti keahlian yang diakui formal oleh industri nasional maupun regional."
                         </p>
                     </div>
                 </div>
                 
-                <div class="lg:col-span-3" data-aos="fade-left">
-                    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-2">
-                        <ul class="check-list text-gray-700 text-sm font-medium">
+                <div class="lg:col-span-7" data-aos="fade-left">
+                    <div class="grid sm:grid-cols-2 gap-x-6">
+                        <ul class="check-list text-slate-700 text-[13px] font-medium">
                             <li>Analisis Kimia Pendukung Manajemen Halal</li>
                             <li>Pelaksanaan Analisis Terkait Keamanan Pangan</li>
                             <li>Perencanaan Usaha & Pascapanen Biji Kakao</li>
-                            <li>Pelaksanaan Analisis Mikrobiologi</li>
-                            <li>Isolasi dan Pemurnian Protein</li>
+                            <li>Pelaksanaan Analisis Mikrobiologi Industri</li>
+                            <li>Isolasi dan Pemurnian Protein Kompleks</li>
                             <li>Pemeriksaan Laboratorium Biologi Molekuler</li>
-                            <li>Pembuatan Pangan Fermentasi</li>
-                            <li>Pengolahan Air Susu</li>
+                            <li>Rekayasa Pembuatan Pangan Fermentasi</li>
+                            <li>Sistem Teknologi Pengolahan Air Susu</li>
                         </ul>
-                        <ul class="check-list text-gray-700 text-sm font-medium">
-                            <li>Kewirausahaan Industri</li>
-                            <li>Barista Kopi</li>
-                            <li>Pengambil Contoh Uji Air</li>
-                            <li>Analisis Volumetri</li>
-                            <li>Analisis Spektromotometri Serapan Atomik</li>
-                            <li>Analisis Spektrofotometri UV-Vis</li>
-                            <li>Analisis Kromatografi Gas</li>
+                        <ul class="check-list text-slate-700 text-[13px] font-medium">
+                            <li>Kewirausahaan Industri & Finansial</li>
+                            <li>Standardisasi Kompetensi Barista Kopi</li>
+                            <li>Teknik Pengambil Contoh Uji Air Valid</li>
+                            <li>Analisis Kuantitatif Volumetri</li>
+                            <li>Analisis Spektrofotometri Serapan Atomik</li>
+                            <li>Analisis Spektrofotometri UV-Vis Instrumentatif</li>
+                            <li>Analisis Komparatif Kromatografi Gas</li>
                         </ul>
                     </div>
                 </div>
@@ -356,95 +416,106 @@
     </section>
 
     <!-- Fasilitas -->
-    <section id="fasilitas" class="py-16 md:py-24 bg-gray-50 border-t border-gray-200 scroll-mt-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="fasilitas" class="py-20 md:py-28 bg-[#f8fafc] border-t border-slate-200/60 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="text-center mb-16">
-                <h3 class="text-yellow-500 font-bold mb-2 tracking-wide uppercase text-sm sm:text-base" data-aos="fade-down">Infrastruktur</h3>
-                <h2 class="text-2xl sm:text-3xl font-bold text-blue-900 mb-4" data-aos="fade-up">Fasilitas Praktikum & Penunjang</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base" data-aos="fade-up" data-aos-delay="100">
-                    Menunjang kegiatan belajar mengajar berbasis vokasional dengan laboratorium berstandar industri.
+                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" data-aos="fade-down">
+                    Infrastruktur Modern
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" data-aos="fade-up">Fasilitas Laboratorium & TEFA</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base font-light" data-aos="fade-up" data-aos-delay="100">
+                    Menghadirkan lingkungan praktikum canggih dengan peralatan mutakhir berstandar industri manufaktur.
                 </p>
             </div>
+            <!-- Wadah data dinamis -->
             <div id="tempat-fasilitas" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
         </div>
     </section>
 
     <!-- Dosen -->
-    <section id="dosen" class="py-16 md:py-24 bg-white border-t border-gray-200 scroll-mt-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="dosen" class="py-20 md:py-28 bg-white border-t border-slate-200/60 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="text-center mb-16">
-                <h3 class="text-yellow-500 font-bold mb-2 tracking-wide uppercase text-sm sm:text-base" data-aos="fade-down">Staf Pengajar</h3>
-                <h2 class="text-2xl sm:text-3xl font-bold text-blue-900 mb-4" data-aos="fade-up">Dosen Program Studi</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base" data-aos="fade-up" data-aos-delay="100">
-                    Didukung oleh tenaga pendidik profesional yang memiliki sertifikasi, gelar magister hingga doktoral, dan keahlian mendalam.
+                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" data-aos="fade-down">
+                    Staf Pengajar
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" data-aos="fade-up">Dewan Dosen & Tenaga Ahli</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base font-light" data-aos="fade-up" data-aos-delay="100">
+                    Dipandu oleh akademisi bersertifikasi profesi dan praktisi industri kawakan berkomitmen tinggi.
                 </p>
             </div>
+            <!-- Wadah data dinamis -->
             <div id="tempat-dosen" class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"></div>
         </div>
     </section>
 
     <!-- Mitra Industri -->
-    <section id="mitra" class="py-16 md:py-24 bg-gray-50 border-t border-gray-200 scroll-mt-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-2xl sm:text-3xl font-bold text-blue-900 mb-4" data-aos="zoom-in">Mitra Industri Kami</h2>
+    <section id="mitra" class="py-16 bg-[#f8fafc] border-t border-slate-200/60 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-xl font-bold text-slate-400 tracking-widest uppercase" data-aos="zoom-in">Aliansi Mitra Industri Strategis</h2>
             </div>
-            <div id="tempat-mitra" class="flex flex-wrap justify-center gap-4 sm:gap-6" data-aos="fade-up" data-aos-delay="200"></div>
+            <!-- Wadah data dinamis -->
+            <div id="tempat-mitra" class="flex flex-wrap justify-center gap-5" data-aos="fade-up" data-aos-delay="200"></div>
         </div>
     </section>
 
     <!-- Berita -->
-    <section id="berita" class="py-16 md:py-24 bg-white border-t border-gray-200 scroll-mt-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="flex justify-between items-end mb-12">
+    <section id="berita" class="py-20 md:py-28 bg-white border-t border-slate-200/60 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-12 gap-4">
                 <div>
-                    <h3 class="text-yellow-500 font-bold mb-2 tracking-wide uppercase text-sm sm:text-base" data-aos="fade-down">Berita & Informasi</h3>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-blue-900" data-aos="fade-up">Kabar Terbaru</h2>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="w-6 h-[2px] bg-amber-500"></span>
+                        <h3 class="text-amber-600 font-bold tracking-wider uppercase text-xs">Informasi Aktual</h3>
+                    </div>
+                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight" data-aos="fade-up">Kabar & Rilis Terbaru</h2>
                 </div>
             </div>
+            <!-- Wadah data dinamis -->
             <div id="tempat-berita" class="grid sm:grid-cols-2 md:grid-cols-3 gap-8"></div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-16 md:py-24 bg-blue-50 border-t border-gray-200 scroll-mt-24">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-2xl sm:text-3xl font-bold text-blue-900" data-aos="fade-up">Tanya Jawab (FAQ)</h2>
-                <p class="text-gray-600 mt-3 text-sm sm:text-base" data-aos="fade-up" data-aos-delay="100">Informasi yang sering ditanyakan oleh calon mahasiswa.</p>
+    <section id="faq" class="py-20 md:py-28 bg-slate-50 border-t border-slate-200/60 scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-6 sm:px-8">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight" data-aos="fade-up">Tanya Jawab Alur Akademik (FAQ)</h2>
+                <p class="text-slate-500 mt-3 text-sm sm:text-base font-light" data-aos="fade-up" data-aos-delay="100">Menyediakan jawaban cepat atas pertanyaan mendasar calon mahasiswa baru.</p>
             </div>
             <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
-                <details class="group bg-white rounded-xl shadow-sm border border-gray-200 open:bg-blue-900 open:text-white transition-all duration-300">
-                    <summary class="flex justify-between items-center font-semibold cursor-pointer list-none p-6 text-gray-800 group-open:text-white text-sm sm:text-base">
-                        <span>Apa perbedaan D-IV (Sarjana Terapan) dengan S1 Teknik Kimia?</span>
-                        <span class="transition group-open:rotate-180">
-                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 open:border-slate-900 transition-all duration-300">
+                    <summary class="flex justify-between items-center font-semibold cursor-pointer list-none p-6 text-slate-800 text-sm sm:text-base">
+                        <span>Apa perbedaan mendasar D-IV (Sarjana Terapan) dengan S1 Reguler Teknik Kimia?</span>
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-amber-600">
+                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="20"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </span>
                     </summary>
-                    <div class="p-6 pt-0 text-blue-100 text-sm leading-relaxed border-t border-blue-800 mt-2">
-                        D-IV atau Sarjana Terapan memiliki fokus bobot perkuliahan praktikum/terapan yang jauh lebih besar (sekitar 60-70% praktik dan 30-40% teori) dibandingkan S1 yang lebih condong ke arah teori dan riset murni.
+                    <div class="p-6 pt-0 text-slate-600 text-sm leading-relaxed border-t border-slate-100 mt-3 font-light">
+                        Kurikulum D-IV (Sarjana Terapan) menitikberatkan bobot pengajaran aplikasi praktikum lapangan yang dominan (berkisar 60-70% beban praktik) guna adaptasi instan di industri, sementara S1 Reguler memiliki porsi teori riset fundamental murni yang lebih besar.
                     </div>
                 </details>
-                <details class="group bg-white rounded-xl shadow-sm border border-gray-200 open:bg-blue-900 open:text-white transition-all duration-300">
-                    <summary class="flex justify-between items-center font-semibold cursor-pointer list-none p-6 text-gray-800 group-open:text-white text-sm sm:text-base">
-                        <span>Apakah lulusan SMA IPA/IPS atau SMK bisa mendaftar?</span>
-                        <span class="transition group-open:rotate-180">
-                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 open:border-slate-900 transition-all duration-300">
+                    <summary class="flex justify-between items-center font-semibold cursor-pointer list-none p-6 text-slate-800 text-sm sm:text-base">
+                        <span>Apakah lulusan Sekolah Menengah lintas jurusan (SMK/SMA IPS) diizinkan mendaftar?</span>
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-amber-600">
+                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="20"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </span>
                     </summary>
-                    <div class="p-6 pt-0 text-blue-100 text-sm leading-relaxed border-t border-blue-800 mt-2">
-                        Bisa. Lulusan SMA (terutama jurusan IPA) and SMK sangat disarankan. Informasi syarat spesifik linieritas dapat dilihat langsung pada portal pendaftaran SMUP Unpad.
+                    <div class="p-6 pt-0 text-slate-600 text-sm leading-relaxed border-t border-slate-100 mt-3 font-light">
+                        Sangat diizinkan. Lulusan SMA (terutama peminatan eksakta) serta SMK rumpun teknik/kimia memiliki linieritas tinggi. Ketentuan detail konversi atau syarat khusus dapat dipantau dinamis pada portal admisi SMUP Unpad.
                     </div>
                 </details>
-                <details class="group bg-white rounded-xl shadow-sm border border-gray-200 open:bg-blue-900 open:text-white transition-all duration-300">
-                    <summary class="flex justify-between items-center font-semibold cursor-pointer list-none p-6 text-gray-800 group-open:text-white text-sm sm:text-base">
-                        <span>Apakah ada program magang di industri?</span>
-                        <span class="transition group-open:rotate-180">
-                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200 open:border-slate-900 transition-all duration-300">
+                    <summary class="flex justify-between items-center font-semibold cursor-pointer list-none p-6 text-slate-800 text-sm sm:text-base">
+                        <span>Bagaimana realisasi pelaksanaan program magang industri mahasiswa?</span>
+                        <span class="transition-transform duration-300 group-open:rotate-180 text-amber-600">
+                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="20"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </span>
                     </summary>
-                    <div class="p-6 pt-0 text-blue-100 text-sm leading-relaxed border-t border-blue-800 mt-2">
-                        Tentu saja. Sesuai kurikulum vokasi dan program Merdeka Belajar Kampus Merdeka (MBKM), mahasiswa diwajibkan mengikuti program magang selama 1-2 semester di perusahaan mitra.
+                    <div class="p-6 pt-0 text-slate-600 text-sm leading-relaxed border-t border-slate-100 mt-3 font-light">
+                        Sesuai standar baku vokasi nasional serta implementasi kebijakan Merdeka Belajar Kampus Merdeka (MBKM), mahasiswa wajib menyelesaikan penempatan magang intensif selama 1 hingga 2 semester penuh di korporasi manufaktur mitra strategis.
                     </div>
                 </details>
             </div>
@@ -452,49 +523,53 @@
     </section>
 
     <!-- Kontak & Peta Lokasi -->
-    <section id="kontak" class="py-16 md:py-24 bg-white border-t border-gray-200 scroll-mt-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="kontak" class="py-20 md:py-28 bg-white border-t border-slate-200/60 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="text-center mb-16">
-                <h3 class="text-yellow-500 font-bold mb-2 tracking-wide uppercase text-sm sm:text-base" data-aos="fade-down">Hubungi Kami</h3>
-                <h2 class="text-2xl sm:text-3xl font-bold text-blue-900 mb-4" data-aos="fade-up">Kontak & Lokasi</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base" data-aos="fade-up" data-aos-delay="100">
-                    Jangan ragu untuk menghubungi kami jika Anda memiliki pertanyaan seputar Program Studi Teknologi Industri Kimia.
+                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" data-aos="fade-down">
+                    Sekretariat
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" data-aos="fade-up">Hubungi Kami & Denah Lokasi</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base font-light" data-aos="fade-up" data-aos-delay="100">
+                    Tim administrasi kami siap melayani koordinasi kerjasama formal maupun konfirmasi detail akademik perkuliahan.
                 </p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12 items-start">
-                <div class="bg-gray-50 p-6 sm:p-8 rounded-2xl shadow-sm border-t-4 border-yellow-400" data-aos="fade-right">
-                    <h3 class="text-xl sm:text-2xl font-bold text-blue-900 mb-8">Informasi Kampus</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-blue-100 text-blue-900 rounded-full flex items-center justify-center text-xl shrink-0">📍</div>
-                            <div>
-                                <h4 class="font-bold text-gray-800 text-base sm:text-lg">Alamat</h4>
-                                <p class="text-gray-600 leading-relaxed mt-1 text-sm sm:text-base">
-                                    Gedung Vokasi Universitas Padjadjaran<br>
-                                    Jl. Raya Bandung Sumedang KM. 21, Hegarmanah, Jatinangor, Kabupaten Sumedang, Jawa Barat 45363
-                                </p>
+            <div class="grid lg:grid-cols-12 gap-12 items-stretch">
+                <div class="lg:col-span-5 bg-slate-50 p-8 sm:p-10 rounded-2xl border border-slate-200/60 flex flex-col justify-between" data-aos="fade-right">
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-8 tracking-tight">Informasi Kampus</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-white shadow-sm border border-slate-200 rounded-xl flex items-center justify-center text-lg shrink-0">📍</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm sm:text-base">Alamat Utama</h4>
+                                    <p class="text-slate-500 leading-relaxed mt-1 text-xs sm:text-sm font-light">
+                                        Gedung Vokasi Universitas Padjadjaran<br>
+                                        Jl. Raya Bandung Sumedang KM. 21, Hegarmanah, Jatinangor, Kabupaten Sumedang, Jawa Barat 45363
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-blue-100 text-blue-900 rounded-full flex items-center justify-center text-xl shrink-0">✉</div>
-                            <div>
-                                <h4 class="font-bold text-gray-800 text-base sm:text-lg">Email</h4>
-                                <p class="text-gray-600 mt-1 text-sm sm:text-base">vokasi@unpad.ac.id</p>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-white shadow-sm border border-slate-200 rounded-xl flex items-center justify-center text-lg shrink-0">✉</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm sm:text-base">Korespondensi Email</h4>
+                                    <p class="text-slate-500 mt-1 text-xs sm:text-sm font-light">vokasi@unpad.ac.id</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-blue-100 text-blue-900 rounded-full flex items-center justify-center text-xl shrink-0">📞</div>
-                            <div>
-                                <h4 class="font-bold text-gray-800 text-base sm:text-lg">Telepon</h4>
-                                <p class="text-gray-600 mt-1 text-sm sm:text-base">(022) 84288888</p>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-white shadow-sm border border-slate-200 rounded-xl flex items-center justify-center text-lg shrink-0">📞</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm sm:text-base">Hotline Telepon</h4>
+                                    <p class="text-slate-500 mt-1 text-xs sm:text-sm font-light">(022) 84288888</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 p-4 rounded-2xl shadow-sm border-t-4 border-blue-900 flex flex-col h-full" data-aos="fade-left">
-                    <div class="w-full h-64 sm:h-80 rounded-xl overflow-hidden mb-6 bg-gray-200">
+                <div class="lg:col-span-7 bg-slate-50 p-4 rounded-2xl border border-slate-200/60 flex flex-col justify-between h-full" data-aos="fade-left">
+                    <div class="w-full h-72 sm:h-80 rounded-xl overflow-hidden bg-slate-200 shadow-inner">
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.655959580434!2d107.7753645!3d-6.9304926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68c500346f835b%3A0xda982140dcfefe2f!2sGedung%20Vokasi%20Unpad!5e0!3m2!1sid!2sid!4v1721055000000!5m2!1sid!2sid" 
                             width="100%" 
@@ -505,10 +580,9 @@
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
-                    <div class="text-center pb-2">
-                        <!-- OPTIMASI 2: Penambahan rel="noopener noreferrer" -->
-                        <a href="https://www.google.com/maps/place/Gedung+Vokasi+Unpad/@-6.9304926,107.7753645,17z" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105 shadow-md w-full sm:w-auto">
-                            Buka di Google Maps
+                    <div class="text-center pt-4">
+                        <a href="https://www.google.com/maps/place/Gedung+Vokasi+Unpad/@-6.9304926,107.7753645,17z" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#0f172a] hover:bg-amber-500 hover:text-slate-950 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 shadow-md w-full sm:w-auto text-sm transform hover:-translate-y-0.5">
+                            Buka Terpisah di Google Maps
                         </a>
                     </div>
                 </div>
@@ -517,65 +591,64 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-12">
+    <footer class="bg-[#0f172a] text-slate-400 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-12">
             <div class="sm:col-span-2">
-                <h4 class="text-white font-bold text-2xl mb-4">TIK Vokasi Unpad</h4>
-                <p class="text-sm text-gray-400 mb-6 leading-relaxed max-w-md">
-                    Program Studi D-IV Teknologi Industri Kimia Fakultas Vokasi Universitas Padjadjaran. Membangun profesional industri kimia yang andal, inovatif, dan berdaya saing global.
+                <h4 class="text-white font-extrabold text-xl mb-4 tracking-tight">TIK Vokasi Unpad</h4>
+                <p class="text-xs sm:text-sm text-slate-400 mb-6 leading-relaxed max-w-sm font-light">
+                    Program Studi D-IV Teknologi Industri Kimia Fakultas Vokasi Universitas Padjadjaran. Membentuk sarjana terapan yang andal, inovatif, kompeten, dan berdaya saing global.
                 </p>
-                <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-yellow-500 hover:text-blue-900 rounded-full flex items-center justify-center transition-colors">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                <div class="flex gap-3">
+                    <a href="#" class="w-9 h-9 bg-slate-800/60 border border-slate-700/50 hover:bg-amber-500 hover:text-slate-950 rounded-lg flex items-center justify-center transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
                     </a>
-                    <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-yellow-500 hover:text-blue-900 rounded-full flex items-center justify-center transition-colors">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153 1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                    <a href="#" class="w-9 h-9 bg-slate-800/60 border border-slate-700/50 hover:bg-amber-500 hover:text-slate-950 rounded-lg flex items-center justify-center transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153 1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
                     </a>
                 </div>
             </div>
             <div>
-                <h4 class="text-white font-bold text-lg mb-4">Tautan Cepat</h4>
-                <ul class="space-y-2 text-sm text-gray-400">
-                    <!-- OPTIMASI 2: Penambahan rel="noopener noreferrer" -->
-                    <li><a href="https://www.unpad.ac.id" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-400 transition">Universitas Padjadjaran</a></li>
-                    <li><a href="https://vokasi.unpad.ac.id" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-400 transition">Fakultas Vokasi</a></li>
-                    <li><a href="https://smup.unpad.ac.id" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-400 transition text-yellow-500 font-medium">Pendaftaran (SMUP)</a></li>
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Tautan Lembaga</h4>
+                <ul class="space-y-2.5 text-xs sm:text-sm font-light text-slate-400">
+                    <li><a href="https://www.unpad.ac.id" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition">Universitas Padjadjaran</a></li>
+                    <li><a href="https://vokasi.unpad.ac.id" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition">Fakultas Vokasi</a></li>
+                    <li><a href="https://smup.unpad.ac.id" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition text-amber-500 font-medium">Portal Admisi SMUP</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-white font-bold text-lg mb-4">Bantuan & Info</h4>
-                <ul class="space-y-2 text-sm text-gray-400">
-                    <li><a href="#faq" class="hover:text-yellow-400 transition">FAQ</a></li>
-                    <li><a href="#kontak" class="hover:text-yellow-400 transition">Hubungi Kami</a></li>
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Bantuan Layanan</h4>
+                <ul class="space-y-2.5 text-xs sm:text-sm font-light text-slate-400">
+                    <li><a href="#faq" class="hover:text-yellow-400 transition">FAQ Informasi</a></li>
+                    <li><a href="#kontak" class="hover:text-yellow-400 transition">Hubungi Sekretariat</a></li>
                 </ul>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 text-center md:text-left">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 text-center md:text-left font-light">
             <p>&copy; 2026 Program Studi D-IV Teknologi Industri Kimia Unpad. All rights reserved.</p>
-            <p class="mt-2 md:mt-0">Situs pengembangan sistem informasi.</p>
+            <p class="mt-2 md:mt-0">Situs pengembangan sistem informasi korporat.</p>
         </div>
     </footer>
 
     <!-- ========================================== -->
-    <!-- OPTIMASI 4 & 5: FLOATING WIDGETS (BARU)    -->
+    <!-- OPTIMASI 4 & 5: FLOATING WIDGETS           -->
     <!-- ========================================== -->
-    <!-- Tombol WhatsApp Chat -->
-    <a href="https://wa.me/6281234567890?text=Halo%20Humas%20TIK%20Vokasi%20Unpad..." target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-6 bg-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-emerald-400 transition-all transform hover:-translate-y-1 z-50 text-2xl group" title="Tanya Humas via WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+    <!-- WhatsApp Floating Hub -->
+    <a href="https://wa.me/6281234567890?text=Halo%20Humas%20TIK%20Vokasi%20Unpad..." target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-6 bg-emerald-500 text-white w-14 h-14 rounded-xl flex items-center justify-center shadow-2xl hover:bg-emerald-400 transition-all transform hover:-translate-y-1 z-50 text-2xl group" title="Tanya Humas via WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
             <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.98c-.202-.101-1.194-.588-1.378-.653-.185-.069-.32-.102-.455.101-.135.202-.523.653-.64.789-.117.135-.235.151-.437.05-1.823-.907-2.906-2.203-3.414-3.08-.135-.233-.01-.359.108-.476.105-.105.235-.274.354-.412.119-.138.159-.233.238-.396.079-.163.039-.307-.02-.412-.06-.105-.455-1.096-.624-1.503-.165-.398-.332-.344-.455-.35-.116-.005-.25-.006-.384-.006-.135 0-.355.05-.541.252-.186.202-.711.696-.711 1.7a3.442 3.442 0 0 0 .717 1.831c.074.1.135.197.234.332 1.348 1.833 3.03 2.531 4.542 2.996.335.103.655.152.923.112.298-.044.912-.372 1.04-.731.129-.359.129-.667.091-.731-.039-.065-.152-.104-.354-.205z"/>
         </svg>
     </a>
 
-    <!-- Tombol Back to Top -->
-    <button id="btn-back-to-top" onclick="keAtas()" class="fixed bottom-6 left-6 bg-blue-900 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-2xl opacity-0 translate-y-10 transition-all duration-300 hover:bg-yellow-500 hover:text-blue-950 z-50 cursor-pointer pointer-events-none" title="Kembali ke Atas">
+    <!-- Scroll Back To Top Premium -->
+    <button id="btn-back-to-top" onclick="keAtas()" class="fixed bottom-6 left-6 bg-[#0f172a] text-white w-12 h-12 rounded-xl flex items-center justify-center shadow-2xl opacity-0 translate-y-10 transition-all duration-300 hover:bg-amber-500 hover:text-slate-950 z-50 cursor-pointer pointer-events-none" title="Kembali ke Atas">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7" />
         </svg>
     </button>
 
-    <!-- Floating Admin Button Glassmorphism (Sangat Mewah & Interaktif) -->
-    <a href="admin/" class="fixed bottom-6 right-6 bg-[#0c2340]/80 hover:bg-yellow-500 text-yellow-400 hover:text-blue-950 px-4 py-3 rounded-full shadow-2xl backdrop-blur-md border border-white/10 hover:border-yellow-400/30 flex items-center gap-2 transition-all duration-500 hover:scale-105 hover:shadow-yellow-500/20 z-50 group" title="Akses Admin CMS">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <!-- Admin Panel Floating Widget Glassmorphism -->
+    <a href="admin/" class="fixed bottom-6 right-6 bg-slate-950/80 hover:bg-amber-500 text-amber-400 hover:text-slate-950 px-4 py-3 rounded-xl shadow-2xl backdrop-blur-md border border-white/10 hover:border-amber-400/30 flex items-center gap-2 transition-all duration-500 hover:scale-105 z-50 group" title="Akses Admin CMS">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-300 group-hover:rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
         </svg>
         <span class="text-xs font-bold tracking-wider uppercase max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap">
@@ -584,10 +657,10 @@
     </a>
 
     <!-- Wadah Pop-up Modal -->
-    <div id="modal-berita" class="fixed inset-0 bg-black bg-opacity-60 z-[60] hidden flex justify-center items-center p-4">
-      <div class="bg-white rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] overflow-y-auto relative">
-        <button onclick="tutupModal()" class="absolute top-4 right-5 text-gray-400 hover:text-red-600 text-4xl font-bold">&times;</button>
-        <div id="isi-modal" class="p-6 sm:p-8"></div>
+    <div id="modal-berita" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-[60] hidden flex justify-center items-center p-4">
+      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[85vh] overflow-y-auto relative border border-slate-100">
+        <button onclick="tutupModal()" class="absolute top-4 right-5 text-slate-400 hover:text-red-600 text-3xl font-light transition-colors">&times;</button>
+        <div id="isi-modal" class="p-6 sm:p-10"></div>
       </div>
     </div>
 
@@ -596,13 +669,13 @@
     <script>
         AOS.init({ 
             once: true, 
-            offset: 50, 
-            duration: 800,
+            offset: 40, 
+            duration: 700,
             startEvent: 'DOMContentLoaded'
         });
     </script>
 
-    <!-- JavaScript Fungsional Navbar Mobile (Sleek Transition & Dynamic Toggles) -->
+    <!-- JavaScript Fungsional Navbar Mobile & Scroll Toggle -->
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const menuItems = document.getElementById('menu-items');
@@ -610,11 +683,9 @@
         menuBtn.addEventListener('click', () => {
             const isOpen = menuBtn.classList.toggle('menu-open');
             if (isOpen) {
-                // Tampilkan Menu Mobile dengan transisi slide & fade
                 menuItems.classList.remove('scale-y-0', 'opacity-0', 'pointer-events-none');
                 menuItems.classList.add('scale-y-100', 'opacity-100', 'pointer-events-auto');
             } else {
-                // Sembunyikan Menu Mobile
                 menuItems.classList.remove('scale-y-100', 'opacity-100', 'pointer-events-auto');
                 menuItems.classList.add('scale-y-0', 'opacity-0', 'pointer-events-none');
             }
@@ -622,7 +693,7 @@
 
         document.querySelectorAll('#menu-items a').forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth < 1280) { // breakpoint xl di tailwind
+                if (window.innerWidth < 1280) {
                     menuBtn.classList.remove('menu-open');
                     menuItems.classList.remove('scale-y-100', 'opacity-100', 'pointer-events-auto');
                     menuItems.classList.add('scale-y-0', 'opacity-0', 'pointer-events-none');
@@ -630,7 +701,6 @@
             });
         });
 
-        // OPTIMASI 4: Logika Deteksi Scroll untuk Tombol Back to Top
         const btnBackToTop = document.getElementById('btn-back-to-top');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 400) {
@@ -645,11 +715,11 @@
         }
     </script>
 
-    <!-- Script Fetch Data -->
+    <!-- Script Fetch Data JSON (Template UI Disesuaikan agar Lebih Mewah & Profesional) -->
     <script>
       let semuaBerita = []; 
 
-      // 1. Fetch Data Berita (Ditambahkan OPTIMASI 3: Image Fallback Onerror)
+      // 1. Fetch Data Berita
       fetch('data/berita.json')
         .then(response => response.json())
         .then(data => {
@@ -661,24 +731,30 @@
               let berita = data.items[i];
               let tanggal = new Date(berita.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
               html += `
-                <article class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition">
-                  <img src="${berita.thumbnail}" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Berita+TIK';" alt="Thumbnail" class="w-full h-48 object-cover">
-                  <div class="p-6">
-                    <span class="text-xs font-semibold text-yellow-600 bg-yellow-100 px-3 py-1 rounded-full">${tanggal}</span>
-                    <h3 class="font-bold text-lg text-blue-900 mt-4 mb-2 leading-snug">${berita.title}</h3>
-                    <p class="text-sm text-gray-500 mb-4">${berita.description}</p>
-                    <button onclick="bukaModal(${i})" class="text-blue-600 text-sm font-semibold hover:underline focus:outline-none">Baca selengkapnya &rarr;</button>
+                <article class="bg-white rounded-2xl shadow-sm border border-slate-200/60 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                  <div>
+                    <div class="overflow-hidden h-48 bg-slate-100 relative">
+                      <img src="${berita.thumbnail}" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Berita+TIK';" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                      <span class="text-[11px] font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md uppercase tracking-wider">${tanggal}</span>
+                      <h3 class="font-bold text-lg text-slate-900 mt-4 mb-2 leading-snug group-hover:text-amber-600 transition-colors">${berita.title}</h3>
+                      <p class="text-sm text-slate-500 font-light line-clamp-3 mb-4">${berita.description}</p>
+                    </div>
+                  </div>
+                  <div class="px-6 pb-6 pt-0">
+                    <button onclick="bukaModal(${i})" class="text-sm font-semibold text-slate-900 hover:text-amber-600 transition-colors focus:outline-none inline-flex items-center gap-1.5">Baca Selengkapnya <span class="transform group-hover:translate-x-1 transition-transform">&rarr;</span></button>
                   </div>
                 </article>
               `;
             }
             wadahBerita.innerHTML = html;
           } else {
-            wadahBerita.innerHTML = '<p class="text-center text-gray-500 col-span-full">Belum ada berita dari CMS.</p>';
+            wadahBerita.innerHTML = '<p class="text-center text-slate-400 col-span-full font-light py-8">Belum ada publikasi berita saat ini.</p>';
           }
         }).catch(err => console.log(err));
 
-      // 2. Fetch Data Fasilitas / Lab (Ditambahkan OPTIMASI 3: Image Fallback Onerror)
+      // 2. Fetch Data Fasilitas
       fetch('data/fasilitas.json')
         .then(response => response.json())
         .then(data => {
@@ -687,21 +763,21 @@
           if(data.items && data.items.length > 0) {
             data.items.forEach(fasilitas => {
               html += `
-                <div class="group relative rounded-2xl overflow-hidden shadow-md">
-                    <img src="${fasilitas.gambar}" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Fasilitas+TIK';" alt="${fasilitas.nama}" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent flex items-end p-6">
-                        <h4 class="text-white font-bold text-xl">${fasilitas.nama}</h4>
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm border border-slate-200/50 h-64 bg-slate-900">
+                    <img src="${fasilitas.gambar}" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Fasilitas+TIK';" alt="${fasilitas.nama}" class="w-full h-full object-cover opacity-85 transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex items-end p-6">
+                        <h4 class="text-white font-bold text-lg tracking-tight">${fasilitas.nama}</h4>
                     </div>
                 </div>
               `;
             });
             wadahFasilitas.innerHTML = html;
           } else {
-            wadahFasilitas.innerHTML = '<p class="text-center text-gray-500 col-span-full">Data fasilitas belum ditambahkan di CMS.</p>';
+            wadahFasilitas.innerHTML = '<p class="text-center text-slate-400 col-span-full font-light py-8">Data infrastruktur belum ditambahkan.</p>';
           }
         }).catch(err => console.log(err));
 
-      // 3. Fetch Data Dosen (Ditambahkan OPTIMASI 3: Image Fallback Onerror)
+      // 3. Fetch Data Dosen
       fetch('data/dosen.json')
         .then(response => response.json())
         .then(data => {
@@ -710,22 +786,24 @@
           if(data.items && data.items.length > 0) {
             data.items.forEach(dosen => {
               html += `
-                <div class="bg-blue-50 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-                    <img src="${dosen.foto}" onerror="this.onerror=null; this.src='https://placehold.co/300x400?text=Dosen+TIK';" alt="${dosen.nama}" class="w-full aspect-[3/4] object-cover object-center bg-gray-300">
-                    <div class="p-6 text-center border-t-4 border-yellow-400">
-                        <h4 class="font-bold text-lg text-blue-900 mb-1">${dosen.nama}</h4>
-                        <p class="text-sm text-gray-500 font-medium mt-1">${dosen.jabatan}</p>
+                <div class="bg-white border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="bg-slate-100 overflow-hidden aspect-[3/4]">
+                        <img src="${dosen.foto}" onerror="this.onerror=null; this.src='https://placehold.co/300x400?text=Dosen+TIK';" alt="${dosen.nama}" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-102">
+                    </div>
+                    <div class="p-5 text-center border-t-2 border-amber-500/30">
+                        <h4 class="font-bold text-base text-slate-900 leading-snug line-clamp-2">${dosen.nama}</h4>
+                        <p class="text-xs text-amber-700 font-semibold uppercase tracking-wider mt-2">${dosen.jabatan}</p>
                     </div>
                 </div>
               `;
             });
             wadahDosen.innerHTML = html;
           } else {
-            wadahDosen.innerHTML = '<p class="text-center text-gray-500 col-span-full">Data dosen belum ditambahkan di CMS.</p>';
+            wadahDosen.innerHTML = '<p class="text-center text-slate-400 col-span-full font-light py-8">Staf dosen belum diperbarui.</p>';
           }
         }).catch(err => console.log(err));
 
-      // 4. Fetch Data Kemitraan (Ditambahkan OPTIMASI 3: Image Fallback Onerror)
+      // 4. Fetch Data Kemitraan
       fetch('data/kemitraan.json')
         .then(response => response.json())
         .then(data => {
@@ -734,14 +812,14 @@
           if(data.items && data.items.length > 0) {
             data.items.forEach(mitra => {
               html += `
-                <div class="bg-white p-4 w-40 h-20 sm:w-48 sm:h-24 rounded-xl shadow-sm border border-gray-100 flex items-center justify-center hover:shadow-md transition group">
-                    <img src="${mitra.logo}" onerror="this.onerror=null; this.src='https://placehold.co/150x50?text=Mitra+Industri';" alt="${mitra.nama}" title="${mitra.nama}" class="max-h-10 sm:max-h-12 max-w-[85%] object-contain filter grayscale group-hover:grayscale-0 transition duration-300">
+                <div class="bg-white px-6 py-4 w-40 h-20 sm:w-44 sm:h-24 rounded-xl shadow-sm border border-slate-200/50 flex items-center justify-center hover:border-slate-300 transition-all duration-300 group">
+                    <img src="${mitra.logo}" onerror="this.onerror=null; this.src='https://placehold.co/150x50?text=Mitra+Industri';" alt="${mitra.nama}" title="${mitra.nama}" class="max-h-10 sm:max-h-12 max-w-full object-contain filter grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100 transition duration-300">
                 </div>
               `;
             });
             wadahMitra.innerHTML = html;
           } else {
-            wadahMitra.innerHTML = '<p class="text-center text-gray-500">Data mitra industri belum ditambahkan di CMS.</p>';
+            wadahMitra.innerHTML = '<p class="text-center text-slate-400 font-light py-4">Data kemitraan industri belum tersedia.</p>';
           }
         }).catch(err => console.log(err));
 
@@ -750,51 +828,51 @@
         const tanggal = new Date(berita.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
         const bodyRapi = marked.parse(berita.body); 
         
-        // Membangun URL halaman saat ini dan teks judul berita untuk dibagikan
         const urlBerita = window.location.href;
-        const teksBerita = encodeURIComponent(`Baca berita terbaru: "${berita.title}" - TIK Vokasi Unpad`);
+        const teksBerita = encodeURIComponent(`Baca rilis berita: "${berita.title}" - TIK Vokasi Unpad`);
 
         document.getElementById('isi-modal').innerHTML = `
-          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">${berita.title}</h2>
-          <p class="text-sm text-yellow-600 font-semibold mb-4">${tanggal}</p>
+          <span class="text-xs font-bold text-amber-700 uppercase tracking-widest block mb-2">${tanggal}</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 leading-tight tracking-tight">${berita.title}</h2>
           
-          <!-- Fitur Share Jejaring Sosial -->
-          <div class="flex flex-wrap gap-2 items-center mb-6 pb-4 border-b border-gray-100">
-            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider mr-1">Bagikan:</span>
-            <a href="https://api.whatsapp.com/send?text=${teksBerita}%20${encodeURIComponent(urlBerita)}" target="_blank" rel="noopener noreferrer" class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm transition">
+          <!-- Sosial Media Share Hub -->
+          <div class="flex flex-wrap gap-2 items-center mb-6 pb-4 border-b border-slate-100">
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mr-2">Bagikan Rilis:</span>
+            <a href="https://api.whatsapp.com/send?text=${teksBerita}%20${encodeURIComponent(urlBerita)}" target="_blank" rel="noopener noreferrer" class="bg-emerald-500 hover:bg-emerald-600 text-white text-[11px] font-semibold px-3 py-1.5 rounded-lg shadow-sm transition">
               WhatsApp
             </a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlBerita)}" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm transition">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlBerita)}" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-semibold px-3 py-1.5 rounded-lg shadow-sm transition">
               Facebook
             </a>
-            <a href="https://twitter.com/intent/tweet?text=${teksBerita}&url=${encodeURIComponent(urlBerita)}" target="_blank" rel="noopener noreferrer" class="bg-black hover:bg-gray-900 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm transition">
+            <a href="https://twitter.com/intent/tweet?text=${teksBerita}&url=${encodeURIComponent(urlBerita)}" target="_blank" rel="noopener noreferrer" class="bg-slate-900 hover:bg-slate-950 text-white text-[11px] font-semibold px-3 py-1.5 rounded-lg shadow-sm transition">
               X
             </a>
-            <button onclick="salinTautanBerita('${urlBerita}')" id="btn-salin-tautan" class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm transition">
-              Salin Tautan
+            <button onclick="salinTautanBerita('${urlBerita}')" id="btn-salin-tautan" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-semibold px-3 py-1.5 rounded-lg shadow-sm transition">
+              Salin Link
             </button>
           </div>
 
-          <img src="${berita.thumbnail}" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Berita+TIK';" class="w-full h-auto max-h-80 object-cover rounded-lg mb-6 shadow">
-          <div class="text-gray-700 leading-relaxed space-y-4 font-normal text-sm sm:text-base">${bodyRapi}</div>
+          <div class="rounded-xl overflow-hidden max-h-80 mb-6 bg-slate-50 border border-slate-100 shadow-sm">
+            <img src="${berita.thumbnail}" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Berita+TIK';" class="w-full h-full object-cover">
+          </div>
+          <div class="text-slate-600 leading-relaxed space-y-4 font-light text-sm sm:text-base text-justify">${bodyRapi}</div>
         `;
         document.getElementById('modal-berita').classList.remove('hidden');
         document.body.classList.add('overflow-hidden');
       }
 
-      // Fungsi Pembantu untuk menyalin link berita saat tombol diklik
       function salinTautanBerita(url) {
         navigator.clipboard.writeText(url).then(() => {
           const btn = document.getElementById('btn-salin-tautan');
           btn.innerText = '✓ Tersalin!';
-          btn.classList.replace('bg-gray-200', 'bg-green-100');
-          btn.classList.replace('text-gray-700', 'text-green-700');
+          btn.classList.replace('bg-slate-100', 'bg-green-50');
+          btn.classList.replace('text-slate-700', 'text-green-700');
           setTimeout(() => {
-            btn.innerText = 'Salin Tautan';
-            btn.classList.replace('bg-green-100', 'bg-gray-200');
-            btn.classList.replace('text-green-700', 'text-gray-700');
+            btn.innerText = 'Salin Link';
+            btn.classList.replace('bg-green-50', 'bg-slate-100');
+            btn.classList.replace('text-green-700', 'text-slate-700');
           }, 2000);
-        }).catch(err => console.error('Gagal menyalin tautan:', err));
+        }).catch(err => console.error('Gagal menyalin:', err));
       }
 
       function tutupModal() {
