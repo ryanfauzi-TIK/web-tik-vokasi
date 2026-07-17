@@ -2,7 +2,8 @@ backend:
   name: github
   repo: ryanfauzi-TIK/web-tik-vokasi
   branch: main
-  base_url: https://oauth.decapcms.org
+  base_url: https://web-tik-vokasi.pages.dev
+  auth_endpoint: auth
 
 media_folder: "public/images"
 public_folder: "/images"
