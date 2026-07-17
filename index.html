@@ -498,7 +498,7 @@
               let tanggal = new Date(berita.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
               html += `
                 <article class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition">
-                  <img src="/${berita.thumbnail}" alt="Thumbnail" class="w-full h-48 object-cover">
+                  <img src="${berita.thumbnail}" alt="Thumbnail" class="w-full h-48 object-cover">
                   <div class="p-6">
                     <span class="text-xs font-semibold text-yellow-600 bg-yellow-100 px-3 py-1 rounded-full">${tanggal}</span>
                     <h3 class="font-bold text-lg text-blue-900 mt-4 mb-2 leading-snug">${berita.title}</h3>
@@ -524,7 +524,7 @@
             data.items.forEach(fasilitas => {
               html += `
                 <div class="group relative rounded-2xl overflow-hidden shadow-md">
-                    <img src="/${fasilitas.gambar}" alt="${fasilitas.nama}" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img src="${fasilitas.gambar}" alt="${fasilitas.nama}" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-transparent flex items-end p-6">
                         <h4 class="text-white font-bold text-xl">${fasilitas.nama}</h4>
                     </div>
@@ -547,7 +547,7 @@
             data.items.forEach(dosen => {
               html += `
                 <div class="bg-blue-50 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-                    <img src="/${dosen.foto}" alt="${dosen.nama}" class="w-full aspect-[3/4] object-cover object-center bg-gray-300">
+                    <img src="${dosen.foto}" alt="${dosen.nama}" class="w-full aspect-[3/4] object-cover object-center bg-gray-300">
                     <div class="p-6 text-center border-t-4 border-yellow-400">
                         <h4 class="font-bold text-lg text-blue-900 mb-1">${dosen.nama}</h4>
                         <p class="text-sm text-gray-500 font-medium mt-1">${dosen.jabatan}</p>
@@ -569,7 +569,7 @@
         document.getElementById('isi-modal').innerHTML = `
           <h2 class="text-3xl font-bold text-gray-900 mb-2">${berita.title}</h2>
           <p class="text-sm text-yellow-600 font-semibold mb-6">${tanggal}</p>
-          <img src="/${berita.thumbnail}" class="w-full h-auto max-h-80 object-cover rounded-lg mb-6 shadow">
+          <img src="${berita.thumbnail}" class="w-full h-auto max-h-80 object-cover rounded-lg mb-6 shadow">
           <div class="text-gray-700 leading-relaxed space-y-4 font-normal">${bodyRapi}</div>
         `;
         document.getElementById('modal-berita').classList.remove('hidden');
