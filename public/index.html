@@ -6,7 +6,7 @@
     <title>D-IV Teknologi Industri Kimia | Universitas Padjadjaran</title>
     
     <!-- Favicon untuk Taskbar (Sejajar dengan index.html) -->
-    <link rel="icon" type="image/png" href="logo-tik-kecil.png">
+    <link class="rounded-full" rel="icon" type="image/png" href="logo-tik-kecil.png">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -41,54 +41,76 @@
         }
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
+
+        /* Animasi Transisi Halus Hamburger ke Tanda Silang (X) */
+        .hamburger-line {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .menu-open .line-1 {
+            transform: translateY(6px) rotate(45deg);
+        }
+        .menu-open .line-2 {
+            opacity: 0;
+        }
+        .menu-open .line-3 {
+            transform: translateY(-6px) rotate(-45deg);
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden">
 
-    <!-- Navigasi Sticky -->
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
-            <!-- Logo Area -->
-            <div class="flex items-center bg-[#003d8c] text-white px-4 py-2 rounded-xl shadow-sm gap-3">
-                <!-- Logo Unpad Putih -->
-                <img src="images/logo-unpad.png" alt="Logo Unpad" class="w-9 h-9 object-contain brightness-0 invert" onerror="this.src='https://upload.wikimedia.org/wikipedia/id/thumb/1/1a/Logo_Universitas_Padjadjaran.svg/1200px-Logo_Universitas_Padjadjaran.svg.png'">
-                
-                <!-- Logo TIK (Sejajar dengan index.html) -->
-                <img src="logo-tik-kecil.png" alt="Logo TIK" class="w-9 h-9 object-contain">
+    <!-- Navigasi Sticky Glassmorphism -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100/80 shadow-sm transition-all duration-350">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 py-4 flex justify-between items-center">
+            
+            <!-- Branding Typografi Premium (Tanpa File Logo) -->
+            <a href="#beranda" class="flex flex-col select-none group">
+                <span class="text-sm sm:text-base font-extrabold tracking-widest text-blue-900 uppercase transition-colors duration-300 group-hover:text-yellow-600 leading-tight">
+                    TIK Vokasi
+                </span>
+                <span class="text-[8px] sm:text-[9px] font-semibold tracking-[0.18em] text-gray-400 uppercase transition-colors duration-300 group-hover:text-gray-600 mt-0.5">
+                    Universitas Padjadjaran
+                </span>
+            </a>
 
-                <!-- Singkatan Jurusan -->
-                <span class="text-xl font-bold tracking-tight">TIKIM</span>
-                
-                <!-- Garis Pembatas Vertikal -->
-                <div class="h-6 w-[1.5px] bg-white/60"></div>
-                
-                <!-- Nama Panjang Jurusan -->
-                <div class="flex flex-col text-[10px] sm:text-xs font-medium leading-tight tracking-wide">
-                    <span>Teknologi</span>
-                    <span>Industri Kimia</span>
-                </div>
-            </div>
-
-            <!-- Hamburger Button (Tampil di Smartphone/Tablet) -->
-            <button id="menu-btn" class="xl:hidden block text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-900 rounded p-1" aria-label="Toggle Menu">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+            <!-- Hamburger Button (Interaktif, Cocok untuk Smartphone/Tablet) -->
+            <button id="menu-btn" class="xl:hidden flex flex-col justify-between w-6 h-4 text-blue-900 focus:outline-none" aria-label="Toggle Menu">
+                <span class="w-full h-0.5 bg-blue-900 rounded-full hamburger-line line-1"></span>
+                <span class="w-full h-0.5 bg-blue-900/80 rounded-full hamburger-line line-2"></span>
+                <span class="w-full h-0.5 bg-blue-900 rounded-full hamburger-line line-3"></span>
             </button>
 
-            <!-- Menu Desktop & Mobile Dropdown Container -->
-            <ul id="menu-items" class="hidden xl:flex flex-col xl:flex-row absolute xl:relative top-full left-0 w-full xl:w-auto bg-white xl:bg-transparent shadow-md xl:shadow-none p-6 xl:p-0 items-start xl:items-center space-y-4 xl:space-y-0 space-x-0 xl:space-x-6 font-semibold text-gray-600 text-sm transition-all duration-300">
-                <li class="w-full xl:w-auto"><a href="#beranda" class="block py-2 xl:py-0 hover:text-yellow-500 transition duration-300">Beranda</a></li>
-                <li class="w-full xl:w-auto"><a href="#profil" class="block py-2 xl:py-0 hover:text-yellow-500 transition duration-300">Profil</a></li>
-                <li class="w-full xl:w-auto"><a href="#peminatan" class="block py-2 xl:py-0 hover:text-yellow-500 transition duration-300">Peminatan</a></li>
-                <li class="w-full xl:w-auto"><a href="#pendaftaran" class="block py-2 xl:py-0 hover:text-yellow-500 transition duration-300">PMB</a></li>
-                <li class="w-full xl:w-auto"><a href="#lulusan" class="block py-2 xl:py-0 hover:text-yellow-500 transition duration-300">Lulusan</a></li>
-                <li class="w-full xl:w-auto"><a href="#fasilitas" class="block py-2 xl:py-0 hover:text-yellow-500 transition duration-300">Fasilitas</a></li>
-                <li class="w-full xl:w-auto"><a href="#dosen" class="block py-2 xl:py-0 hover:text-yellow-500 transition duration-300">Dosen</a></li>
-                <li class="w-full xl:w-auto"><a href="#berita" class="block py-2 xl:py-0 hover:text-yellow-500 transition duration-300">Berita</a></li>
-                <li class="w-full xl:w-auto"><a href="#faq" class="block py-2 xl:py-0 hover:text-yellow-500 transition duration-300">FAQ</a></li>
+            <!-- Menu Desktop & Mobile Dropdown Container (Sleek Transition) -->
+            <ul id="menu-items" class="absolute xl:relative top-full left-0 w-full xl:w-auto bg-white/95 xl:bg-transparent shadow-xl xl:shadow-none p-6 xl:p-0 flex flex-col xl:flex-row items-start xl:items-center space-y-4 xl:space-y-0 space-x-0 xl:space-x-8 font-semibold text-gray-500 text-sm border-t border-gray-100 xl:border-none transition-all duration-300 origin-top transform scale-y-0 opacity-0 pointer-events-none xl:scale-y-100 xl:opacity-100 xl:pointer-events-auto">
+                <li class="w-full xl:w-auto">
+                    <a href="#beranda" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">Beranda</a>
+                </li>
+                <li class="w-full xl:w-auto">
+                    <a href="#profil" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">Profil</a>
+                </li>
+                <li class="w-full xl:w-auto">
+                    <a href="#peminatan" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">Peminatan</a>
+                </li>
+                <li class="w-full xl:w-auto">
+                    <a href="#pendaftaran" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">PMB</a>
+                </li>
+                <li class="w-full xl:w-auto">
+                    <a href="#lulusan" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">Lulusan</a>
+                </li>
+                <li class="w-full xl:w-auto">
+                    <a href="#fasilitas" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">Fasilitas</a>
+                </li>
+                <li class="w-full xl:w-auto">
+                    <a href="#dosen" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">Dosen</a>
+                </li>
+                <li class="w-full xl:w-auto">
+                    <a href="#berita" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">Berita</a>
+                </li>
+                <li class="w-full xl:w-auto">
+                    <a href="#faq" class="relative block py-2 xl:py-0 text-gray-600 hover:text-blue-900 transition-colors duration-300 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-yellow-500 xl:after:transition-all xl:after:duration-300">FAQ</a>
+                </li>
                 <li class="w-full xl:w-auto pt-2 xl:pt-0">
-                    <a href="https://smup.unpad.ac.id/" target="_blank" class="block text-center bg-blue-900 hover:bg-blue-800 text-white px-5 py-2 rounded-full transition shadow-md">
+                    <a href="https://smup.unpad.ac.id/" target="_blank" class="block text-center bg-blue-900 hover:bg-yellow-500 hover:text-blue-950 text-white font-bold px-6 py-2.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
                         Daftar Sekarang
                     </a>
                 </li>
@@ -518,11 +540,14 @@
         </div>
     </footer>
 
-    <!-- Floating Admin Button -->
-    <a href="admin/" class="fixed bottom-6 right-6 bg-yellow-500 hover:bg-yellow-600 text-blue-900 p-4 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 z-50 group border-2 border-white" title="Akses Admin CMS">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <!-- Floating Admin Button Glassmorphism (Sangat Mewah & Interaktif) -->
+    <a href="admin/" class="fixed bottom-6 right-6 bg-[#0c2340]/80 hover:bg-yellow-500 text-yellow-400 hover:text-blue-950 px-4 py-3 rounded-full shadow-2xl backdrop-blur-md border border-white/10 hover:border-yellow-400/30 flex items-center gap-2 transition-all duration-500 hover:scale-105 hover:shadow-yellow-500/20 z-50 group" title="Akses Admin CMS">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
         </svg>
+        <span class="text-xs font-bold tracking-wider uppercase max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap">
+            Admin Portal
+        </span>
     </a>
 
     <!-- Wadah Pop-up Modal -->
@@ -544,25 +569,36 @@
         });
     </script>
 
-    <!-- JavaScript Fungsional Navbar Mobile -->
+    <!-- JavaScript Fungsional Navbar Mobile (Sleek Transition & Dynamic Toggles) -->
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const menuItems = document.getElementById('menu-items');
 
         menuBtn.addEventListener('click', () => {
-            menuItems.classList.toggle('hidden');
+            const isOpen = menuBtn.classList.toggle('menu-open');
+            if (isOpen) {
+                // Tampilkan Menu Mobile dengan transisi slide & fade
+                menuItems.classList.remove('scale-y-0', 'opacity-0', 'pointer-events-none');
+                menuItems.classList.add('scale-y-100', 'opacity-100', 'pointer-events-auto');
+            } else {
+                // Sembunyikan Menu Mobile
+                menuItems.classList.remove('scale-y-100', 'opacity-100', 'pointer-events-auto');
+                menuItems.classList.add('scale-y-0', 'opacity-0', 'pointer-events-none');
+            }
         });
 
         document.querySelectorAll('#menu-items a').forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth < 1280) {
-                    menuItems.classList.add('hidden');
+                if (window.innerWidth < 1280) { // breakpoint xl di tailwind
+                    menuBtn.classList.remove('menu-open');
+                    menuItems.classList.remove('scale-y-100', 'opacity-100', 'pointer-events-auto');
+                    menuItems.classList.add('scale-y-0', 'opacity-0', 'pointer-events-none');
                 }
             });
         });
     </script>
 
-    <!-- Script Fetch Data -->
+    <!-- Script Fetch Data (Tetap Berfungsi Sempurna tanpa Perubahan) -->
     <script>
       let semuaBerita = []; 
 
