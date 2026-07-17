@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baca Berita - TIK Vokasi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Library untuk mengubah teks Markdown dari CMS menjadi rapi -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  
+  <style>
+    /* Styling agar teks beritanya rapi */
+    #isi-lengkap-berita h1, #isi-lengkap-berita h2 { font-weight: bold; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    #isi-lengkap-berita h1 { font-size: 2rem; }
+    #isi-lengkap-berita h2 { font-size: 1.5rem; }
+    #isi-lengkap-berita p { margin-bottom: 1rem; line-height: 1.6; }
+    #isi-lengkap-berita ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <!-- Tombol kembali -->
+    <a href="/" class="text-blue-600 font-medium hover:underline mb-6 inline-block">&larr; Kembali ke Halaman Utama</a>
+    
+    <!-- Wadah penampung isi berita -->
+    <div id="konten-berita" class="bg-white p-8 rounded-lg shadow-md">
+      <p class="text-center text-gray-500">Memuat berita...</p>
+    </div>
+  </div>
+
+  <script>
+    // 1. Ambil ID dari alamat URL (misal: baca-berita.html?id=0)
+    const urlParams = new URLSearchParams(window.location.search);
+    const idBerita = urlParams.get('id');
+
+    // 2. Jika ID ditemukan, tarik datanya
+    if (idBerita !== null) {
+      fetch('/data/berita.json')
+        .then(response => response.json())
+        .then(data => {
+          const berita = data.items[idBerita];
+          
+          if (berita) {
+            // Ubah format tanggal
+            const tanggal = new Date(berita.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
+            
+            // Ubah isi berita (Markdown) ke HTML yang rapi
+            const bodyRapi = marked.parse(berita.body);
+
+            // Suntikkan ke layar
+            document.getElementById('konten-berita').innerHTML = `
+              <h1 class="text-4xl font-bold text-gray-900 mb-2">${berita.title}</h1>
+              <p class="text-gray-500 mb-6 font-medium">${tanggal} | ${berita.category || 'Berita'}</p>
+              <img src="/${berita.thumbnail}" class="w-full h-auto rounded-lg mb-8" alt="Gambar Berita">
+              <div id="isi-lengkap-berita" class="text-gray-700">
+                ${bodyRapi}
+              </div>
+            `;
+          } else {
+            document.getElementById('konten-berita').innerHTML = '<p class="text-red-500">Berita tidak ditemukan.</p>';
+          }
+        });
+    }
+  </script>
+</body>
+</html>
