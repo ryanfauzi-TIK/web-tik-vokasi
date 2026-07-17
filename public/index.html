@@ -288,7 +288,7 @@
                     <div class="text-4xl mb-4">👨‍🔧</div>
                     <h3 class="text-xl font-bold text-blue-900 mb-3">Professional Industri Kimia</h3>
                     <p class="text-gray-600 text-sm leading-relaxed text-justify">
-                        Mengoperasikan dan mengawasi produksi kimia, pengolahan limbah, and proses kesehatan dan keselamatan kerja dengan efektif. Dilengkapi dengan keahlian manajerial, semangat teknopreneurial, komitmen pada kualitas, dan etika profesional.
+                        Mengoperasikan and mengawasi produksi kimia, pengolahan limbah, and proses kesehatan dan keselamatan kerja dengan efektif. Dilengkapi dengan keahlian manajerial, semangat teknopreneurial, komitmen pada kualitas, dan etika profesional.
                     </p>
                 </div>
                 
@@ -645,7 +645,7 @@
         }
     </script>
 
-    <!-- Script Fetch Data (Tetap Berfungsi Sempurna tanpa Perubahan) -->
+    <!-- Script Fetch Data -->
     <script>
       let semuaBerita = []; 
 
@@ -749,14 +749,52 @@
         const berita = semuaBerita[index];
         const tanggal = new Date(berita.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
         const bodyRapi = marked.parse(berita.body); 
+        
+        // Membangun URL halaman saat ini dan teks judul berita untuk dibagikan
+        const urlBerita = window.location.href;
+        const teksBerita = encodeURIComponent(`Baca berita terbaru: "${berita.title}" - TIK Vokasi Unpad`);
+
         document.getElementById('isi-modal').innerHTML = `
           <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">${berita.title}</h2>
-          <p class="text-sm text-yellow-600 font-semibold mb-6">${tanggal}</p>
+          <p class="text-sm text-yellow-600 font-semibold mb-4">${tanggal}</p>
+          
+          <!-- Fitur Share Jejaring Sosial -->
+          <div class="flex flex-wrap gap-2 items-center mb-6 pb-4 border-b border-gray-100">
+            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider mr-1">Bagikan:</span>
+            <a href="https://api.whatsapp.com/send?text=${teksBerita}%20${encodeURIComponent(urlBerita)}" target="_blank" rel="noopener noreferrer" class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm transition">
+              WhatsApp
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlBerita)}" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm transition">
+              Facebook
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=${teksBerita}&url=${encodeURIComponent(urlBerita)}" target="_blank" rel="noopener noreferrer" class="bg-black hover:bg-gray-900 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm transition">
+              X
+            </a>
+            <button onclick="salinTautanBerita('${urlBerita}')" id="btn-salin-tautan" class="bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm transition">
+              Salin Tautan
+            </button>
+          </div>
+
           <img src="${berita.thumbnail}" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Berita+TIK';" class="w-full h-auto max-h-80 object-cover rounded-lg mb-6 shadow">
           <div class="text-gray-700 leading-relaxed space-y-4 font-normal text-sm sm:text-base">${bodyRapi}</div>
         `;
         document.getElementById('modal-berita').classList.remove('hidden');
         document.body.classList.add('overflow-hidden');
+      }
+
+      // Fungsi Pembantu untuk menyalin link berita saat tombol diklik
+      function salinTautanBerita(url) {
+        navigator.clipboard.writeText(url).then(() => {
+          const btn = document.getElementById('btn-salin-tautan');
+          btn.innerText = '✓ Tersalin!';
+          btn.classList.replace('bg-gray-200', 'bg-green-100');
+          btn.classList.replace('text-gray-700', 'text-green-700');
+          setTimeout(() => {
+            btn.innerText = 'Salin Tautan';
+            btn.classList.replace('bg-green-100', 'bg-gray-200');
+            btn.classList.replace('text-green-700', 'text-gray-700');
+          }, 2000);
+        }).catch(err => console.error('Gagal menyalin tautan:', err));
       }
 
       function tutupModal() {
