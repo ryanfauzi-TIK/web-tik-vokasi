@@ -37,7 +37,7 @@
         
         /* Hero Background dengan Gradien Studio Kedalaman Tinggi */
         .bg-hero {
-            background: linear-gradient(to bottom, rgba(10, 25, 47, 0.88), rgba(15, 32, 67, 0.96)), 
+            background: linear-gradient(to bottom, rgba(10, 25, 47, 0.90), rgba(15, 32, 67, 0.97)), 
                         url('https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070&auto=format&fit=crop') center/cover fixed;
         }
 
@@ -159,15 +159,16 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section: Tipografi Diperbarui Menjadi Profesional & Minimalis -->
     <section id="beranda" class="bg-hero min-h-screen flex items-center justify-center pt-28 pb-16 relative">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(15,23,42,0.4))] pointer-events-none"></div>
         <div class="text-center px-6 w-full max-w-5xl relative z-10" data-aos="fade-up" data-aos-duration="1200">
-            <h2 class="text-amber-400 font-bold tracking-[0.25em] uppercase mb-4 text-xs sm:text-sm">Universitas Padjadjaran</h2>
-            <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-6 leading-[1.15] tracking-tight">
-                Sarjana Terapan (D-IV)<br><span class="font-serif-premium text-amber-100 italic font-normal">Teknologi Industri Kimia</span>
+            <h2 class="text-amber-400 font-bold tracking-[0.3em] uppercase mb-5 text-xs sm:text-sm">Universitas Padjadjaran</h2>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-light text-white mb-6 leading-[1.2] tracking-tight">
+                Sarjana Terapan (D-IV) <br>
+                <span class="font-extrabold text-white tracking-normal text-3xl sm:text-4xl md:text-5xl block mt-3 uppercase">Teknologi Industri Kimia</span>
             </h1>
-            <p class="text-slate-300 max-w-3xl mx-auto mb-12 text-sm sm:text-base md:text-lg leading-relaxed font-light">
+            <p class="text-slate-300 max-w-2xl mx-auto mb-12 text-sm sm:text-base md:text-lg leading-relaxed font-light">
                 Membangun kompetensi tinggi dalam operasi proses industri kimia, pengawasan mutakhir, kepemimpinan manajerial, berwawasan lingkungan global, serta akselerasi technopreneurship masa depan.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -388,8 +389,12 @@
                     Menghadirkan lingkungan praktikum canggih dengan peralatan mutakhir berstandar industri manufaktur.
                 </p>
             </div>
-            <!-- Wadah data dinamis -->
-            <div id="tempat-fasilitas" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+            <!-- Wadah Data Dinamis + Skeleton Loader Efek Profesional -->
+            <div id="tempat-fasilitas" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="animate-pulse bg-slate-200 h-64 rounded-2xl"></div>
+                <div class="animate-pulse bg-slate-200 h-64 rounded-2xl"></div>
+                <div class="animate-pulse bg-slate-200 h-64 rounded-2xl"></div>
+            </div>
         </div>
     </section>
 
@@ -405,8 +410,29 @@
                     Dipandu oleh akademisi bersertifikasi profesi dan praktisi industri kawakan berkomitmen tinggi.
                 </p>
             </div>
-            <!-- Wadah data dinamis -->
-            <div id="tempat-dosen" class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"></div>
+            <!-- Wadah Data Dinamis + Skeleton Loader Efek Profesional -->
+            <div id="tempat-dosen" class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <div class="animate-pulse bg-white border border-slate-100 rounded-2xl p-4 space-y-4">
+                    <div class="bg-slate-200 aspect-[3/4] rounded-xl"></div>
+                    <div class="h-4 bg-slate-200 rounded w-3/4 mx-auto"></div>
+                    <div class="h-3 bg-slate-200 rounded w-1/2 mx-auto"></div>
+                </div>
+                <div class="animate-pulse bg-white border border-slate-100 rounded-2xl p-4 space-y-4">
+                    <div class="bg-slate-200 aspect-[3/4] rounded-xl"></div>
+                    <div class="h-4 bg-slate-200 rounded w-3/4 mx-auto"></div>
+                    <div class="h-3 bg-slate-200 rounded w-1/2 mx-auto"></div>
+                </div>
+                <div class="animate-pulse bg-white border border-slate-100 rounded-2xl p-4 space-y-4">
+                    <div class="bg-slate-200 aspect-[3/4] rounded-xl"></div>
+                    <div class="h-4 bg-slate-200 rounded w-3/4 mx-auto"></div>
+                    <div class="h-3 bg-slate-200 rounded w-1/2 mx-auto"></div>
+                </div>
+                <div class="animate-pulse bg-white border border-slate-100 rounded-2xl p-4 space-y-4">
+                    <div class="bg-slate-200 aspect-[3/4] rounded-xl"></div>
+                    <div class="h-4 bg-slate-200 rounded w-3/4 mx-auto"></div>
+                    <div class="h-3 bg-slate-200 rounded w-1/2 mx-auto"></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -416,8 +442,12 @@
             <div class="text-center mb-10">
                 <h2 class="text-xl font-bold text-slate-400 tracking-widest uppercase" data-aos="zoom-in">Aliansi Mitra Industri Strategis</h2>
             </div>
-            <!-- Wadah data dinamis -->
-            <div id="tempat-mitra" class="flex flex-wrap justify-center gap-5" data-aos="fade-up" data-aos-delay="200"></div>
+            <!-- Wadah Data Dinamis + Skeleton Loader Efek Profesional -->
+            <div id="tempat-mitra" class="flex flex-wrap justify-center gap-5" data-aos="fade-up" data-aos-delay="200">
+                <div class="animate-pulse bg-slate-200 w-40 h-20 sm:w-44 sm:h-24 rounded-xl"></div>
+                <div class="animate-pulse bg-slate-200 w-40 h-20 sm:w-44 sm:h-24 rounded-xl"></div>
+                <div class="animate-pulse bg-slate-200 w-40 h-20 sm:w-44 sm:h-24 rounded-xl"></div>
+            </div>
         </div>
     </section>
 
@@ -445,8 +475,27 @@
                     </div>
                 </div>
             </div>
-            <!-- Wadah data dinamis -->
-            <div id="tempat-berita" class="grid sm:grid-cols-2 md:grid-cols-3 gap-8"></div>
+            <!-- Wadah Data Dinamis + Skeleton Loader Efek Profesional -->
+            <div id="tempat-berita" class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="animate-pulse bg-white border border-slate-200 rounded-2xl p-5 space-y-4">
+                    <div class="bg-slate-200 h-48 rounded-xl"></div>
+                    <div class="h-4 bg-slate-200 rounded w-1/3"></div>
+                    <div class="h-5 bg-slate-200 rounded w-5/6"></div>
+                    <div class="h-3 bg-slate-200 rounded w-full"></div>
+                </div>
+                <div class="animate-pulse bg-white border border-slate-200 rounded-2xl p-5 space-y-4">
+                    <div class="bg-slate-200 h-48 rounded-xl"></div>
+                    <div class="h-4 bg-slate-200 rounded w-1/3"></div>
+                    <div class="h-5 bg-slate-200 rounded w-5/6"></div>
+                    <div class="h-3 bg-slate-200 rounded w-full"></div>
+                </div>
+                <div class="animate-pulse bg-white border border-slate-200 rounded-2xl p-5 space-y-4">
+                    <div class="bg-slate-200 h-48 rounded-xl"></div>
+                    <div class="h-4 bg-slate-200 rounded w-1/3"></div>
+                    <div class="h-5 bg-slate-200 rounded w-5/6"></div>
+                    <div class="h-3 bg-slate-200 rounded w-full"></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -685,11 +734,11 @@
         }
     </script>
 
-    <!-- Script Fetch Data JSON -->
+    <!-- Script Fetch Data JSON & Deep-Linking Engine -->
     <script>
       let semuaBerita = []; 
 
-      // 1. Fetch Data Berita & Render Manajemen
+      // 1. Fetch Data Berita & Render Manajemen + Deep-Linking Parser
       fetch('data/berita.json')
         .then(response => response.json())
         .then(data => {
@@ -697,6 +746,13 @@
             // Memberikan pemetaan index asli agar pencarian/filter tidak merusak trigger modal berita
             semuaBerita = data.items.map((item, index) => ({ ...item, originalIndex: index }));
             tampilkanDataBerita(semuaBerita);
+
+            // ENGINE DEEP-LINKING: Cek URL Parameter saat berhasil load data berita
+            const urlParams = new URLSearchParams(window.location.search);
+            const paramBerita = urlParams.get('berita');
+            if (paramBerita !== null && !isNaN(paramBerita)) {
+                bukaModal(parseInt(paramBerita));
+            }
           } else {
             document.getElementById('tempat-berita').innerHTML = '<p class="text-center text-slate-400 col-span-full font-light py-8">Belum ada publikasi berita saat ini.</p>';
           }
@@ -815,23 +871,28 @@
           }
         }).catch(err => console.log(err));
 
-      // Modal Berita Controller
+      // Modal Berita Controller + Optimasi Deep Linking Tautan Sosial Media
       function bukaModal(index) {
-        // Mengambil entitas data berita berdasarkan originalIndex yang akurat
         const berita = semuaBerita.find(b => b.originalIndex === index);
         if(!berita) return;
 
         const tanggal = new Date(berita.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
         const bodyRapi = marked.parse(berita.body); 
         
-        const urlBerita = window.location.href;
+        // OPTIMASI SOSIAL MEDIA: Membuat link spesifik berita menggunakan parameter ?berita=ID
+        const baseUrl = window.location.origin + window.location.pathname;
+        const urlBerita = `${baseUrl}?berita=${index}`;
+        
+        // Perbarui URL address bar secara dinamis tanpa refresh halaman agar sinkron
+        window.history.pushState({ beritaId: index }, '', urlBerita);
+        
         const teksBerita = encodeURIComponent(`Baca rilis berita: "${berita.title}" - TIK Vokasi Unpad`);
 
         document.getElementById('isi-modal').innerHTML = `
           <span class="text-xs font-bold text-amber-700 uppercase tracking-widest block mb-2">${tanggal}</span>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 leading-tight tracking-tight">${berita.title}</h2>
           
-          <!-- Sosial Media Share Hub -->
+          <!-- Sosial Media Share Hub: Menggunakan urlBerita spesifik -->
           <div class="flex flex-wrap gap-2 items-center mb-6 pb-4 border-b border-slate-100">
             <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mr-2">Bagikan Rilis:</span>
             <a href="https://api.whatsapp.com/send?text=${teksBerita}%20${encodeURIComponent(urlBerita)}" target="_blank" rel="noopener noreferrer" class="bg-emerald-500 hover:bg-emerald-600 text-white text-[11px] font-semibold px-3 py-1.5 rounded-lg shadow-sm transition">
@@ -874,6 +935,10 @@
       function tutupModal() {
         document.getElementById('modal-berita').classList.add('hidden');
         document.body.classList.remove('overflow-hidden');
+        
+        // Kembalikan URL ke kondisi normal tanpa parameter saat modal ditutup
+        const baseUrl = window.location.origin + window.location.pathname;
+        window.history.pushState({}, '', baseUrl);
       }
     </script>
 </body>
