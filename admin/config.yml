@@ -1,22 +1,24 @@
 backend:
   name: git-gateway
-  branch: main # Ganti 'master' jika branch utama GitHub Anda bernama master
+  branch: main
 
 media_folder: "images/uploads"
 public_folder: "images/uploads"
 
 collections:
-  - name: "berita"
+  - name: "halaman_berita"
     label: "Berita"
-    folder: "data/berita"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    extension: "json"
-    format: "json"
-    fields:
-      - {label: "Judul Berita", name: "title", widget: "string"}
-      - {label: "Tanggal", name: "date", widget: "datetime"}
-      - {label: "Kategori", name: "category", widget: "string"}
-      - {label: "Gambar Thumbnail", name: "thumbnail", widget: "image"}
-      - {label: "Deskripsi Singkat", name: "description", widget: "text"}
-      - {label: "Isi Berita Lengkap", name: "body", widget: "markdown"}
+    files:
+      - label: "Daftar Berita"
+        name: "berita"
+        file: "data/berita.json" # Semua berita akan disatukan di file ini
+        fields:
+          - label: "Kumpulan Berita"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: "Judul Berita", name: "title", widget: "string"}
+              - {label: "Tanggal", name: "date", widget: "datetime"}
+              - {label: "Gambar Thumbnail", name: "thumbnail", widget: "image"}
+              - {label: "Deskripsi Singkat", name: "description", widget: "text"}
+              - {label: "Isi Berita Lengkap", name: "body", widget: "markdown"}
