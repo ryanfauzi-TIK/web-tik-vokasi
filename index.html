@@ -341,8 +341,14 @@
             </div>
         </div>
     </section>
-  <!-- Data BERITA -->
-    <script>
+<section class="container mx-auto px-4 py-12">
+  <h2 class="text-3xl font-bold text-center mb-8">Berita Terbaru</h2>
+  <!-- Wadah ini akan diisi otomatis oleh Javascript -->
+  <div id="tempat-berita" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <p class="text-center text-gray-500 col-span-3">Memuat berita...</p>
+  </div>
+</section>
+<script>
   fetch('/data/berita.json')
     .then(response => response.json())
     .then(data => {
