@@ -2,7 +2,7 @@ backend:
   name: github
   repo: ryanfauzi-TIK/web-tik-vokasi
   branch: main
-  base_url: https://web-tik-vokasi.netlify.app
+  base_url: https://oauth.decapcms.org
 
 media_folder: "public/images"
 public_folder: "/images"
