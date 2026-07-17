@@ -54,3 +54,17 @@ collections:
             fields:
               - { label: "Nama Fasilitas", name: "nama", widget: "string" }
               - { label: "Gambar Fasilitas", name: "gambar", widget: "image" }
+
+  - name: "kemitraan"
+    label: "Kemitraan"
+    files:
+      - file: "public/data/kemitraan.json"
+        label: "Daftar Mitra Industri"
+        name: "daftar-kemitraan"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Nama Perusahaan/Mitra", name: "nama", widget: "string" }
+              - { label: "Logo Perusahaan", name: "logo", widget: "image" }
