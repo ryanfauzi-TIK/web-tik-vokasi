@@ -112,6 +112,9 @@
 </head>
 <body class="bg-[#f8fafc] text-slate-800 antialiased overflow-x-hidden tracking-normal">
 
+    <!-- FUNGSI BARU: Reading Progress Bar -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-amber-500 z-[60] transition-all duration-100 w-0"></div>
+
     <!-- Navigasi Sticky Glassmorphism Premium -->
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/40 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 py-4 flex justify-between items-center">
@@ -139,7 +142,7 @@
                     <a href="#beranda" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Beranda</a>
                 </li>
                 <li class="w-full xl:w-auto">
-                    <a href="#profil" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Profil & Kurikulum</a>
+                    <a href="#profil" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Profil Akademik</a>
                 </li>
                 <li class="w-full xl:w-auto">
                     <a href="#peminatan" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Peminatan</a>
@@ -191,181 +194,68 @@
         </div>
     </section>
 
-    <!-- Profil Singkat & Pengembangan Arsitektur Kurikulum Minimalis -->
+    <!-- FUNGSI BARU & GAYA PROFIL AKADEMIK: Modern, Minimalis & Interaktif Dashboard -->
     <section id="profil" class="py-20 md:py-28 bg-white scroll-mt-20">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="grid lg:grid-cols-12 gap-12 md:gap-16 items-center mb-20">
-                <div class="lg:col-span-7" data-aos="fade-right" data-aos-duration="1000">
+            <div class="grid lg:grid-cols-12 gap-12 md:gap-16 items-start">
+                
+                <!-- Sisi Kiri: Navigasi Tab Profil Minimalis Dinamis -->
+                <div class="lg:col-span-4 sticky top-28" data-aos="fade-right" data-aos-duration="1000">
                     <div class="flex items-center gap-2 mb-3">
                         <span class="w-8 h-[2px] bg-amber-500"></span>
-                        <h3 class="text-amber-600 font-bold tracking-wider uppercase text-xs sm:text-sm">Profil Akademik</h3>
+                        <h3 class="text-amber-600 font-bold tracking-wider uppercase text-xs">Profil Akademik</h3>
                     </div>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
-                        Membentuk Profesionalisme Unggul di Sektor Industri Kimia Global
+                    <h2 class="text-3xl font-extrabold text-slate-900 mb-8 leading-tight tracking-tight">
+                        Eksplorasi Vokasi Kimia Masa Depan
                     </h2>
-                    <p class="text-slate-600 mb-5 leading-relaxed text-justify text-sm sm:text-base font-light">
-                        Program Studi D-IV Teknologi Industri Kimia merupakan pilar sarjana terapan yang dirancang presisi untuk menghasilkan talenta berkualifikasi tinggi dalam teknik kimia. Kurikulum kami diformulasikan secara taktis untuk membangun kompetensi esensial dalam operasional pabrik proses, sistem pengawasan mutu, manajemen industri modern, keberlanjutan lingkungan, serta kesiapan adaptif masa depan.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed text-justify text-sm sm:text-base font-light">
-                        Ekosistem pembelajaran kami membuka gerbang karir luas di berbagai sektor strategis multi-nasional, seperti industri petrokimia, manufaktur polimer, eksplorasi minyak & gas, hilirisasi pangan, farmasi medis, hingga energi terbarukan.
-                    </p>
+                    
+                    <!-- Tab Kontroler Navigasi Internal -->
+                    <div class="space-y-2.5">
+                        <button onclick="switchProfileTab('ikhtisar')" id="p-tab-ikhtisar" class="profile-tab-btn w-full text-left px-5 py-4 rounded-xl border transition-all duration-300 flex items-center justify-between group bg-slate-900 border-slate-900 text-white shadow-sm">
+                            <span class="text-xs font-bold uppercase tracking-wider">Ikhtisar Program</span>
+                            <span class="text-xs transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+                        </button>
+                        <button onclick="switchProfileTab('arsitektur')" id="p-tab-arsitektur" class="profile-tab-btn w-full text-left px-5 py-4 rounded-xl border border-slate-200/60 bg-white text-slate-600 hover:text-slate-900 hover:border-slate-300 transition-all duration-300 flex items-center justify-between group">
+                            <span class="text-xs font-bold uppercase tracking-wider">Arsitektur Modular</span>
+                            <span class="text-xs transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+                        </button>
+                        <button onclick="switchProfileTab('ekosistem')" id="p-tab-ekosistem" class="profile-tab-btn w-full text-left px-5 py-4 rounded-xl border border-slate-200/60 bg-white text-slate-600 hover:text-slate-900 hover:border-slate-300 transition-all duration-300 flex items-center justify-between group">
+                            <span class="text-xs font-bold uppercase tracking-wider">Ekosistem Karir</span>
+                            <span class="text-xs transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+                        </button>
+                    </div>
                 </div>
                 
-                <div class="lg:col-span-5" data-aos="fade-left" data-aos-duration="1000">
-                    <div class="bg-gradient-to-br from-slate-900 to-slate-950 p-8 sm:p-10 rounded-2xl border-t-4 border-amber-500 shadow-xl text-white">
-                        <h3 class="font-serif-premium italic text-2xl text-amber-100 mb-4">Arsitektur Kurikulum</h3>
-                        <p class="text-slate-300 mb-5 leading-relaxed text-sm sm:text-base font-light">
+                <!-- Sisi Kanan: Panel Isi Konten Kontemporer Interaktif -->
+                <div class="lg:col-span-8 bg-slate-50 border border-slate-200/40 p-8 sm:p-10 rounded-2xl min-h-[340px] flex flex-col justify-center relative overflow-hidden" data-aos="fade-left" data-aos-duration="1000">
+                    
+                    <!-- Panel 1: Ikhtisar -->
+                    <div id="p-panel-ikhtisar" class="profile-panel-content block animate-fade-in space-y-5">
+                        <h3 class="text-xl font-bold text-slate-900 tracking-tight">Membentuk Profesionalisme Unggul di Sektor Industri Kimia Global</h3>
+                        <p class="text-slate-600 leading-relaxed text-justify text-sm sm:text-base font-light">
+                            Program Studi D-IV Teknologi Industri Kimia merupakan pilar sarjana terapan yang dirancang presisi untuk menghasilkan talenta berkualifikasi tinggi dalam teknik kimia. Kurikulum kami diformulasikan secara taktis untuk membangun kompetensi esensial dalam operasional pabrik proses, sistem pengawasan mutu, manajemen industri modern, keberlanjutan lingkungan, serta kesiapan adaptif masa depan.
+                        </p>
+                    </div>
+
+                    <!-- Panel 2: Arsitektur Modular -->
+                    <div id="p-panel-arsitektur" class="profile-panel-content hidden animate-fade-in space-y-5">
+                        <h3 class="text-xl font-bold text-slate-900 tracking-tight">Arsitektur Kurikulum Berbasis Kompetensi Riil</h3>
+                        <p class="text-slate-600 leading-relaxed text-justify text-sm sm:text-base font-light">
                             Kami menyelenggarakan pendidikan melalui **kurikulum modular berbasis kompetensi riil** yang disinkronisasikan langsung dengan dinamika industri kimia internasional. Penelitian terapan difokuskan pada hilirisasi produk inovatif bermanfaat luas bagi masyarakat global.
                         </p>
-                        <div class="border-t border-slate-800 pt-5">
-                            <p class="text-slate-400 text-xs sm:text-sm font-light">
-                                Metode instruksional dipandu oleh **staf pengajar ahli bersertifikasi industri profesional** dengan gelar akademik magister hingga doktoral, mengintegrasikan sains fundamental dan rekayasa praktis secara harmonis.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FUNGSI BARU & STRUKTUR MINIMALIS UTAMA: Interactive Curriculum Architecture Dashboard -->
-            <div class="border-t border-slate-100 pt-16" data-aos="fade-up">
-                <div class="text-center mb-10">
-                    <span class="text-xs font-bold uppercase tracking-[0.25em] text-amber-600 block mb-2">Peta Jalan Perkuliahan</span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Struktur Kurikulum Kontemporer</h2>
-                    <p class="text-slate-500 max-w-xl mx-auto text-xs sm:text-sm mt-2 font-light">Eksplorasi modul pembelajaran bertahap yang disesuaikan dengan kebutuhan kompetensi industri modern.</p>
-                </div>
-
-                <!-- Tab Controller Minimalis -->
-                <div class="flex flex-wrap justify-center gap-1.5 mb-8 bg-slate-100 p-1.5 rounded-xl max-w-2xl mx-auto">
-                    <button onclick="pindahTabKurikulum('tahun-1')" id="btn-tahun-1" class="tab-kurikulum-btn w-full sm:w-auto flex-1 text-center px-4 py-2.5 text-xs font-semibold rounded-lg transition-all duration-300 bg-white text-slate-900 shadow-sm">Tahun 1: Fondasi</button>
-                    <button onclick="pindahTabKurikulum('tahun-2')" id="btn-tahun-2" class="tab-kurikulum-btn w-full sm:w-auto flex-1 text-center px-4 py-2.5 text-xs font-semibold rounded-lg transition-all duration-300 text-slate-600 hover:text-slate-900">Tahun 2: Inti</button>
-                    <button onclick="pindahTabKurikulum('tahun-3')" id="btn-tahun-3" class="tab-kurikulum-btn w-full sm:w-auto flex-1 text-center px-4 py-2.5 text-xs font-semibold rounded-lg transition-all duration-300 text-slate-600 hover:text-slate-900">Tahun 3: Aplikasi</button>
-                    <button onclick="pindahTabKurikulum('tahun-4')" id="btn-tahun-4" class="tab-kurikulum-btn w-full sm:w-auto flex-1 text-center px-4 py-2.5 text-xs font-semibold rounded-lg transition-all duration-300 text-slate-600 hover:text-slate-900">Tahun 4: Industri</button>
-                </div>
-
-                <!-- Tab Content Wrapper -->
-                <div class="bg-[#f8fafc] border border-slate-200/60 rounded-2xl p-6 sm:p-8 max-w-4xl mx-auto shadow-sm">
-                    <!-- Tahun 1 Content -->
-                    <div id="panel-tahun-1" class="panel-kurikulum-konten block animate-fade-in">
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <div class="flex justify-between items-center border-b border-slate-200/60 pb-2 mb-4">
-                                    <h4 class="font-bold text-slate-900 text-sm">Semester I (Dasar Sains)</h4>
-                                    <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md uppercase">20 Total SKS</span>
-                                </div>
-                                <ul class="space-y-3 text-xs text-slate-600 font-light">
-                                    <li class="flex justify-between items-center"><span>Kimia Dasar Terapan & Praktikum</span> <span class="text-slate-400 font-medium">4 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Kalkulus & Matematika Industri</span> <span class="text-slate-400 font-medium">3 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Keselamatan & Kesehatan Kerja (K3)</span> <span class="text-slate-400 font-medium">2 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Fisika Terapan Sistem Proses</span> <span class="text-slate-400 font-medium">3 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Pendidikan Karakter & Agama</span> <span class="text-slate-400 font-medium">2 SKS</span></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <div class="flex justify-between items-center border-b border-slate-200/60 pb-2 mb-4">
-                                    <h4 class="font-bold text-slate-900 text-sm">Semester II (Penguatan Rekayasa)</h4>
-                                    <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md uppercase">19 Total SKS</span>
-                                </div>
-                                <ul class="space-y-3 text-xs text-slate-600 font-light">
-                                    <li class="flex justify-between items-center"><span>Kimia Organik Industri</span> <span class="text-slate-400 font-medium">4 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Asas Teknik Kimia Terapan</span> <span class="text-slate-400 font-medium">3 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Mikrobiologi Industri Proses</span> <span class="text-slate-400 font-medium">3 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Bahasa Inggris & Komunikasi Teknik</span> <span class="text-slate-400 font-medium">2 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Pancasila & Kewarganegaraan</span> <span class="text-slate-400 font-medium">3 SKS</span></li>
-                                </ul>
-                            </div>
+                        <div class="border-t border-slate-200 pt-4 text-slate-500 text-xs sm:text-sm font-light">
+                            Metode instruksional dipandu oleh **staf pengajar ahli bersertifikasi industri profesional** dengan gelar akademik magister hingga doktoral, mengintegrasikan sains fundamental dan rekayasa praktis secara harmonis.
                         </div>
                     </div>
 
-                    <!-- Tahun 2 Content -->
-                    <div id="panel-tahun-2" class="panel-kurikulum-konten hidden animate-fade-in">
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <div class="flex justify-between items-center border-b border-slate-200/60 pb-2 mb-4">
-                                    <h4 class="font-bold text-slate-900 text-sm">Semester III (Operasi Teknik)</h4>
-                                    <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md uppercase">21 Total SKS</span>
-                                </div>
-                                <ul class="space-y-3 text-xs text-slate-600 font-light">
-                                    <li class="flex justify-between items-center"><span>Satuan Operasi Alat Industri I</span> <span class="text-slate-400 font-medium">4 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Termodinamika Kimia Terapan</span> <span class="text-slate-400 font-medium">3 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Kimia Analitik Instrumentasi</span> <span class="text-slate-400 font-medium">4 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Mekanika Fluida & Perpindahan Massa</span> <span class="text-slate-400 font-medium">3 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Kinetika Reaksi & Desain Reaktor</span> <span class="text-slate-400 font-medium">3 SKS</span></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <div class="flex justify-between items-center border-b border-slate-200/60 pb-2 mb-4">
-                                    <h4 class="font-bold text-slate-900 text-sm">Semester IV (Sistem Instrumentasi)</h4>
-                                    <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md uppercase">20 Total SKS</span>
-                                </div>
-                                <ul class="space-y-3 text-xs text-slate-600 font-light">
-                                    <li class="flex justify-between items-center"><span>Satuan Operasi Alat Industri II</span> <span class="text-slate-400 font-medium">4 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Sistem Instrumentasi & Kontrol Proses</span> <span class="text-slate-400 font-medium">3 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Teknologi Utilitas & Manajemen Air</span> <span class="text-slate-400 font-medium">3 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Komputasi Proses & Pemodelan</span> <span class="text-slate-400 font-medium">3 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Metode Pemisahan Pemurnian</span> <span class="text-slate-400 font-medium">3 SKS</span></li>
-                                </ul>
-                            </div>
-                        </div>
+                    <!-- Panel 3: Ekosistem Karir -->
+                    <div id="p-panel-ekosistem" class="profile-panel-content hidden animate-fade-in space-y-5">
+                        <h3 class="text-xl font-bold text-slate-900 tracking-tight">Membuka Gerbang Karir Strategis Multi-Nasional</h3>
+                        <p class="text-slate-600 leading-relaxed text-justify text-sm sm:text-base font-light">
+                            Ekosistem pembelajaran kami membuka peluang karir yang luas di berbagai sektor strategis multi-nasional, seperti industri petrokimia, manufaktur polimer, eksplorasi minyak & gas, hilirisasi pangan, farmasi medis, hingga energi terbarukan. Melalui integrasi laboratorium modern, mahasiswa dibekali kesiapan transisi instan dari akademi ke dunia korporasi internasional.
+                        </p>
                     </div>
 
-                    <!-- Tahun 3 Content -->
-                    <div id="panel-tahun-3" class="panel-kurikulum-konten hidden animate-fade-in">
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <div class="flex justify-between items-center border-b border-slate-200/60 pb-2 mb-4">
-                                    <h4 class="font-bold text-slate-900 text-sm">Semester V (Teknologi Spesialisasi)</h4>
-                                    <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md uppercase">18 Total SKS</span>
-                                </div>
-                                <ul class="space-y-3 text-xs text-slate-600 font-light">
-                                    <li class="flex justify-between items-center"><span>Metodologi Penelitian Terapan</span> <span class="text-slate-400 font-medium">2 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Sistem Penjaminan Mutu & Standardisasi</span> <span class="text-slate-400 font-medium">3 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Mata Kuliah Klaster Peminatan I</span> <span class="text-slate-400 font-medium">4 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Mata Kuliah Klaster Peminatan II</span> <span class="text-slate-400 font-medium">4 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Ekonomi Teknik & Analisis Biaya</span> <span class="text-slate-400 font-medium">3 SKS</span></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <div class="flex justify-between items-center border-b border-slate-200/60 pb-2 mb-4">
-                                    <h4 class="font-bold text-slate-900 text-sm">Semester VI (Integrasi TEFA)</h4>
-                                    <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md uppercase">18 Total SKS</span>
-                                </div>
-                                <ul class="space-y-3 text-xs text-slate-600 font-light">
-                                    <li class="flex justify-between items-center"><span>Proyek Teaching Factory Mandiri</span> <span class="text-slate-400 font-medium">4 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Manajemen Industri & Supply Chain</span> <span class="text-slate-400 font-medium">3 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Mata Kuliah Klaster Peminatan III</span> <span class="text-slate-400 font-medium">4 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Mata Kuliah Klaster Peminatan IV</span> <span class="text-slate-400 font-medium">4 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Technopreneurship & Inkubasi Bisnis</span> <span class="text-slate-400 font-medium">3 SKS</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tahun 4 Content -->
-                    <div id="panel-tahun-4" class="panel-kurikulum-konten hidden animate-fade-in">
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <div class="flex justify-between items-center border-b border-slate-200/60 pb-2 mb-4">
-                                    <h4 class="font-bold text-slate-900 text-sm">Semester VII (Hilirisasi Industri)</h4>
-                                    <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md uppercase">12 Total SKS</span>
-                                </div>
-                                <ul class="space-y-3 text-xs text-slate-600 font-light">
-                                    <li class="flex justify-between items-center"><span>Magang Praktik Industri Kerja I</span> <span class="text-slate-400 font-medium">6 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Seminar Kemajuan Hasil Riset Terapan</span> <span class="text-slate-400 font-medium">2 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Perancangan Pabrik Kimia Terpadu</span> <span class="text-slate-400 font-medium">4 SKS</span></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <div class="flex justify-between items-center border-b border-slate-200/60 pb-2 mb-4">
-                                    <h4 class="font-bold text-slate-900 text-sm">Semester VIII (Konsolidasi Akhir)</h4>
-                                    <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md uppercase">8 Total SKS</span>
-                                </div>
-                                <ul class="space-y-3 text-xs text-slate-600 font-light">
-                                    <li class="flex justify-between items-center"><span>Magang Praktik Industri Kerja II</span> <span class="text-slate-400 font-medium">4 SKS</span></li>
-                                    <li class="flex justify-between items-center"><span>Naskah Tugas Akhir Sarjana Terapan</span> <span class="text-slate-400 font-medium">4 SKS</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -615,15 +505,16 @@
                     <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight" data-aos="fade-up">Kabar & Rilis Terbaru</h2>
                 </div>
                 
-                <!-- PENGEMBANGAN FUNGSI BARU: Sistem Pencarian Berita Cerdas Real-time -->
+                <!-- FUNGSI BARU: Kolom Pencarian dengan Tombol Clear Instan -->
                 <div class="w-full md:w-80" data-aos="fade-left">
                     <div class="relative">
-                        <input type="text" id="cari-berita" placeholder="Cari rilis berita..." class="w-full text-xs font-medium pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all duration-300" onkeyup="cariInformasiBerita()">
+                        <input type="text" id="cari-berita" placeholder="Cari rilis berita..." class="w-full text-xs font-medium pl-10 pr-9 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all duration-300" onkeyup="cariInformasiBerita()">
                         <div class="absolute left-3.5 top-3.5 text-slate-400">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                             </svg>
                         </div>
+                        <button id="clear-search-btn" onclick="resetSearchBerita()" class="absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 text-lg hidden focus:outline-none transition-colors" title="Hapus Pencarian">&times;</button>
                     </div>
                 </div>
             </div>
@@ -885,27 +776,43 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // FUNGSI BARU: Kurikulum Tab Engine
-        function pindahTabKurikulum(targetTahunId) {
-            // Ambil semua panel konten kurikulum lalu sembunyikan
-            const semuaPanel = document.querySelectorAll('.panel-kurikulum-konten');
+        // FUNGSI BARU: Scroll Progress Bar Engine
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scroll-progress').style.width = scrolled + '%';
+        });
+
+        // FUNGSI BARU: Interactive Profil Tab Switcher Engine
+        function switchProfileTab(targetId) {
+            const semuaPanel = document.querySelectorAll('.profile-panel-content');
             semuaPanel.forEach(panel => panel.classList.add('hidden'));
+            document.getElementById(`p-panel-${targetId}`).classList.remove('hidden');
 
-            // Tampilkan panel yang dipilih
-            document.getElementById(`panel-${targetTahunId}`).classList.remove('hidden');
-
-            // Reset style semua tombol tab kontroler
-            const semuaTombol = document.querySelectorAll('.tab-kurikulum-btn');
+            const semuaTombol = document.querySelectorAll('.profile-tab-btn');
             semuaTombol.forEach(tombol => {
-                tombol.classList.remove('bg-white', 'text-slate-900', 'shadow-sm');
-                tombol.classList.add('text-slate-600', 'hover:text-slate-900');
+                tombol.classList.remove('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
+                tombol.classList.add('border-slate-200/60', 'bg-white', 'text-slate-600', 'hover:text-slate-900', 'hover:border-slate-300');
             });
 
-            // Aktifkan style tombol yang diklik
-            const tombolAktif = document.getElementById(`btn-${targetTahunId}`);
-            tombolAktif.classList.remove('text-slate-600', 'hover:text-slate-900');
-            tombolAktif.classList.add('bg-white', 'text-slate-900', 'shadow-sm');
+            const tombolAktif = document.getElementById(`p-tab-${targetId}`);
+            tombolAktif.classList.remove('border-slate-200/60', 'bg-white', 'text-slate-600', 'hover:text-slate-900', 'hover:border-slate-300');
+            tombolAktif.classList.add('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
         }
+
+        // FUNGSI BARU: Exclusive Accordion Collapse for FAQ
+        document.querySelectorAll('#faq details').forEach((faqItem) => {
+            faqItem.addEventListener('click', () => {
+                if (!faqItem.open) {
+                    document.querySelectorAll('#faq details').forEach((otherItem) => {
+                        if (otherItem !== faqItem) {
+                            otherItem.removeAttribute('open');
+                        }
+                    });
+                }
+            });
+        });
     </script>
 
     <!-- Script Fetch Data JSON & Deep-Linking Engine -->
@@ -917,11 +824,9 @@
         .then(response => response.json())
         .then(data => {
           if(data.items && data.items.length > 0) {
-            // Memberikan pemetaan index asli agar pencarian/filter tidak merusak trigger modal berita
             semuaBerita = data.items.map((item, index) => ({ ...item, originalIndex: index }));
             tampilkanDataBerita(semuaBerita);
 
-            // ENGINE DEEP-LINKING: Cek URL Parameter saat berhasil load data berita
             const urlParams = new URLSearchParams(window.location.search);
             const paramBerita = urlParams.get('berita');
             if (paramBerita !== null && !isNaN(paramBerita)) {
@@ -932,13 +837,11 @@
           }
         }).catch(err => console.log(err));
 
-      // Fungsi Render Blok Arsitektur Kartu Berita
       function tampilkanDataBerita(itemsBerita) {
         const wadahBerita = document.getElementById('tempat-berita');
         let html = '';
         
         if(itemsBerita.length > 0) {
-          // Loop mundur agar berita terbaru selalu muncul di atas
           for (let i = itemsBerita.length - 1; i >= 0; i--) {
             let berita = itemsBerita[i];
             let tanggal = new Date(berita.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -966,14 +869,32 @@
         }
       }
 
-      // FUNGSI BARU: Filter Real-Time Input Informasi Berita
+      // FUNGSI BARU: Filter Real-Time dengan Kontrol Visibilitas Tombol Reset
       function cariInformasiBerita() {
-        const queryText = document.getElementById('cari-berita').value.toLowerCase();
+        const inputCari = document.getElementById('cari-berita');
+        const clearBtn = document.getElementById('clear-search-btn');
+        const queryText = inputCari.value.toLowerCase();
+        
+        if (queryText.length > 0) {
+            clearBtn.classList.remove('hidden');
+        } else {
+            clearBtn.classList.add('hidden');
+        }
+
         const hasilFilter = semuaBerita.filter(berita => 
           berita.title.toLowerCase().includes(queryText) || 
           berita.description.toLowerCase().includes(queryText)
         );
         tampilkanDataBerita(hasilFilter);
+      }
+
+      // FUNGSI BARU: Reset Aksi Pencarian Berita
+      function resetSearchBerita() {
+        const inputCari = document.getElementById('cari-berita');
+        inputCari.value = '';
+        document.getElementById('clear-search-btn').classList.add('hidden');
+        tampilkanDataBerita(semuaBerita);
+        inputCari.focus();
       }
 
       // 2. Fetch Data Fasilitas
@@ -1053,11 +974,9 @@
         const tanggal = new Date(berita.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
         const bodyRapi = marked.parse(berita.body); 
         
-        // OPTIMASI SOSIAL MEDIA: Membuat link spesifik berita menggunakan parameter ?berita=ID
         const baseUrl = window.location.origin + window.location.pathname;
         const urlBerita = `${baseUrl}?berita=${index}`;
         
-        // Perbarui URL address bar secara dinamis tanpa refresh halaman agar sinkron
         window.history.pushState({ beritaId: index }, '', urlBerita);
         
         const teksBerita = encodeURIComponent(`Baca rilis berita: "${berita.title}" - TIK Vokasi Unpad`);
@@ -1066,7 +985,6 @@
           <span class="text-[11px] font-bold text-amber-700 uppercase tracking-widest block mb-2">${tanggal}</span>
           <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-4 leading-tight tracking-tight">${berita.title}</h2>
           
-          <!-- Sosial Media Share Hub: Menggunakan urlBerita spesifik -->
           <div class="flex flex-wrap gap-2 items-center mb-6 pb-4 border-b border-slate-100">
             <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mr-2">Bagikan Rilis:</span>
             <a href="https://api.whatsapp.com/send?text=${teksBerita}%20${encodeURIComponent(urlBerita)}" target="_blank" rel="noopener noreferrer" class="bg-emerald-500 hover:bg-emerald-600 text-white text-[10px] font-semibold px-2.5 py-1.5 rounded-lg shadow-sm transition">
@@ -1110,7 +1028,6 @@
         document.getElementById('modal-berita').classList.add('hidden');
         document.body.classList.remove('overflow-hidden');
         
-        // Kembalikan URL ke kondisi normal tanpa parameter saat modal ditutup
         const baseUrl = window.location.origin + window.location.pathname;
         window.history.pushState({}, '', baseUrl);
       }
