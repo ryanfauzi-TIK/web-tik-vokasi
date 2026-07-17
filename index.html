@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -348,40 +349,7 @@
     <p class="text-center text-gray-500 col-span-3">Memuat berita...</p>
   </div>
 </section>
-<script>
-  fetch('/data/berita.json')
-    .then(response => response.json())
-    .then(data => {
-      const wadahBerita = document.getElementById('tempat-berita');
-      let html = '';
-      
-      if(data.items && data.items.length > 0) {
-        // Menggunakan loop mundur agar berita terbaru di atas, dan index tetap akurat
-        for (let i = data.items.length - 1; i >= 0; i--) {
-          let berita = data.items[i];
-          let tanggal = new Date(berita.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
 
-          html += `
-            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-              <img src="/${berita.thumbnail}" alt="Thumbnail" class="w-full h-48 object-cover">
-              <div class="p-6">
-                <p class="text-sm text-yellow-600 font-semibold mb-1">${tanggal}</p>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">${berita.title}</h3>
-                <p class="text-gray-600 text-sm mb-4">${berita.description}</p>
-                <!-- Perhatikan baris di bawah ini yang diubah menjadi link (<a>) -->
-                <a href="/baca-berita.html?id=${i}" class="text-blue-600 font-medium hover:underline">Baca Selengkapnya &rarr;</a>
-              </div>
-            </div>
-          `;
-        }
-        wadahBerita.innerHTML = html;
-      } else {
-        wadahBerita.innerHTML = '<p class="text-center text-gray-500 col-span-3">Belum ada berita.</p>';
-      }
-    })
-    .catch(error => console.log(error));
-</script>
-  
     <!-- FAQ Section -->
     <section id="faq" class="py-24 bg-blue-50 border-t border-gray-200">
         <div class="max-w-4xl mx-auto px-6">
@@ -613,5 +581,18 @@
       document.getElementById('tempat-berita').innerHTML = '<p class="text-center text-red-500 col-span-3">Gagal memuat berita.</p>';
     });
 </script>
+<!-- Wadah Pop-up (Modal) -->
+<div id="modal-berita" class="fixed inset-0 bg-black bg-opacity-60 z-50 hidden flex justify-center items-center p-4">
+  <div class="bg-white rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] overflow-y-auto relative">
+    <!-- Tombol Tutup (X) -->
+    <button onclick="tutupModal()" class="absolute top-4 right-5 text-gray-500 hover:text-red-600 text-3xl font-bold">&times;</button>
+    
+    <!-- Isi Berita di dalam Modal -->
+    <div id="isi-modal" class="p-8">
+      <!-- Konten berita akan disuntikkan ke sini -->
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
