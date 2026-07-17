@@ -2,8 +2,7 @@ backend:
   name: github
   repo: ryanfauzi-TIK/web-tik-vokasi
   branch: main
-  base_url: https://hidden-water-1bcc.ryan-fauzi.workers.dev
-  auth_endpoint: auth
+  base_url: https://github-oauth-login.vercel.app
 
 media_folder: "public/images"
 public_folder: "/images"
