@@ -1,65 +1,44 @@
+# Konfigurasi Backend (Murni GitHub)
 backend:
   name: github
   repo: ryanfauzi-TIK/web-tik-vokasi
-  branch: main # Sesuaikan menjadi 'master' jika branch utama bernama master
-  auth_type: pkce
-  app_id: Ov23lia6efmSINRSUbrb
+  branch: main
+  base_url: https://auth.decapcms.org # Menggunakan gateway komunitas gratis khusus GitHub Pages
 
-media_folder: "images"
-public_folder: "images"
+# Pengaturan Media & Upload Gambar
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
 
+# Struktur Konten Website (Silakan sesuaikan dengan kebutuhan web Abang)
 collections:
-  # 1. Koleksi Berita
-  - name: "koleksi_berita"
-    label: "Berita"
-    files:
-      - name: "data_berita"
-        label: "Edit Data Berita"
-        file: "data/berita.json"
-        extension: "json"
-        format: "json"
-        fields:
-          - name: "items"
-            label: "Daftar Berita"
-            widget: "list"
-            fields:
-              - {label: "Judul Berita", name: "title", widget: "string"}
-              - {label: "Tanggal", name: "date", widget: "datetime"}
-              - {label: "Deskripsi Singkat", name: "description", widget: "text"}
-              - {label: "Thumbnail / Gambar Utama", name: "thumbnail", widget: "image"}
-              - {label: "Isi Berita", name: "body", widget: "markdown"}
+  - name: "berita"
+    label: "Berita & Pengumuman"
+    folder: "_posts/berita"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Judul Berita", name: "title", widget: "string" }
+      - { label: "Tanggal Publish", name: "date", widget: "datetime" }
+      - { label: "Gambar Utama", name: "image", widget: "image", required: false }
+      - { label: "Isi Berita", name: "body", widget: "markdown" }
 
-  # 2. Koleksi Fasilitas (Lab)
-  - name: "koleksi_fasilitas"
-    label: "Fasilitas (Lab)"
-    files:
-      - name: "data_fasilitas"
-        label: "Edit Data Fasilitas"
-        file: "data/fasilitas.json"
-        extension: "json"
-        format: "json"
-        fields:
-          - name: "items"
-            label: "Daftar Fasilitas"
-            widget: "list"
-            fields:
-              - {label: "Nama Fasilitas/Lab", name: "nama", widget: "string"}
-              - {label: "Foto Fasilitas", name: "gambar", widget: "image"}
+  - name: "dosen"
+    label: "Daftar Dosen"
+    folder: "_data/dosen"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nama Lengkap", name: "name", widget: "string" }
+      - { label: "NIDN / NIP", name: "nidn", widget: "string" }
+      - { label: "Jabatan", name: "position", widget: "string" }
+      - { label: "Foto", name: "image", widget: "image", required: false }
 
-  # 3. Koleksi Dosen
-  - name: "koleksi_dosen"
-    label: "Dosen"
-    files:
-      - name: "data_dosen"
-        label: "Edit Data Dosen"
-        file: "data/dosen.json"
-        extension: "json"
-        format: "json"
-        fields:
-          - name: "items"
-            label: "Daftar Dosen"
-            widget: "list"
-            fields:
-              - {label: "Nama Beserta Gelar", name: "nama", widget: "string"}
-              - {label: "Jabatan", name: "jabatan", widget: "string"}
-              - {label: "Foto Dosen", name: "foto", widget: "image"}
+  - name: "fasilitas"
+    label: "Fasilitas Kampus"
+    folder: "_data/fasilitas"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nama Fasilitas", name: "title", widget: "string" }
+      - { label: "Deskripsi", name: "description", widget: "text" }
+      - { label: "Foto Fasilitas", name: "image", widget: "image", required: false }
