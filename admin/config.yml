@@ -1,15 +1,12 @@
-# Konfigurasi Backend (Murni GitHub)
 backend:
   name: github
   repo: ryanfauzi-TIK/web-tik-vokasi
   branch: main
-  base_url: https://auth.decapcms.org # Menggunakan gateway komunitas gratis khusus GitHub Pages
+  base_url: https://auth.decapcms.org
 
-# Pengaturan Media & Upload Gambar
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
-# Struktur Konten Website (Silakan sesuaikan dengan kebutuhan web Abang)
 collections:
   - name: "berita"
     label: "Berita & Pengumuman"
