@@ -47,11 +47,23 @@
 
     <!-- Navigasi Sticky -->
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-            <!-- Logo Area -->
-            <div class="flex items-center gap-3">
-                <img src="images/logo-unpad.png" alt="Logo Unpad" class="w-10 h-10 object-contain" onerror="this.src='https://upload.wikimedia.org/wikipedia/id/thumb/1/1a/Logo_Universitas_Padjadjaran.svg/1200px-Logo_Universitas_Padjadjaran.svg.png'">
-                <h1 class="text-lg sm:text-xl font-bold text-blue-900 tracking-wider">TIK Vokasi</h1>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+            <!-- Logo Area Sesuai Gambar -->
+            <div class="flex items-center bg-[#003d8c] text-white px-4 py-2 rounded-xl shadow-sm gap-3">
+                <!-- Logo Unpad Putih -->
+                <img src="images/logo-unpad.png" alt="Logo Unpad" class="w-9 h-9 object-contain brightness-0 invert" onerror="this.src='https://upload.wikimedia.org/wikipedia/id/thumb/1/1a/Logo_Universitas_Padjadjaran.svg/1200px-Logo_Universitas_Padjadjaran.svg.png'">
+                
+                <!-- Singkatan Jurusan -->
+                <span class="text-xl font-bold tracking-tight">TIKIM</span>
+                
+                <!-- Garis Pembatas Vertikal -->
+                <div class="h-6 w-[1.5px] bg-white/60"></div>
+                
+                <!-- Nama Panjang Jurusan -->
+                <div class="flex flex-col text-[10px] sm:text-xs font-medium leading-tight tracking-wide">
+                    <span>Teknologi</span>
+                    <span>Industri Kimia</span>
+                </div>
             </div>
 
             <!-- Hamburger Button (Tampil di Smartphone/Tablet) -->
@@ -523,10 +535,15 @@
       </div>
     </div>
 
-    <!-- AOS Animation Script -->
+    <!-- AOS Animation Script (Diperbaiki agar website tidak stuck loading) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ once: true, offset: 50, duration: 800 });
+        AOS.init({ 
+            once: true, 
+            offset: 50, 
+            duration: 800,
+            startEvent: 'DOMContentLoaded'
+        });
     </script>
 
     <!-- JavaScript Fungsional Navbar Mobile -->
