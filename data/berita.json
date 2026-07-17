@@ -1,0 +1,11 @@
+{
+  "items": [
+    {
+      "title": "BERITA HARI INI",
+      "date": "2026-07-17T10:22:00.000+07:00",
+      "thumbnail": "images/uploads/chatgpt-image-jul-14-2026-12_11_16-pm.png",
+      "description": "INI deskripsi singkat",
+      "body": "ini isi berita lengkap"
+    }
+  ]
+}
