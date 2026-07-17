@@ -4,9 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Panel - TIK Vokasi</title>
+  <!-- Menyediakan container manual untuk Decap CMS -->
+  <style>
+    /* Mencegah layar putih karena masalah CSS bawaan */
+    body, #nc-root {
+      margin: 0;
+      padding: 0;
+      background-color: #f1f5f9;
+    }
+  </style>
 </head>
 <body>
-  <!-- Taruh script di dalam body paling bawah agar elemen HTML termuat lebih dulu -->
+  <!-- Element khusus tempat Decap CMS akan disuntikkan -->
+  <div id="nc-root"></div>
+
+  <!-- Memuat script Decap CMS di paling bawah -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
