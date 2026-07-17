@@ -1,9 +1,12 @@
 backend:
-  name: git-gateway
-  branch: main # Sesuaikan menjadi 'master' jika branch utama Abang bernama master
+  name: github
+  repo: ryanfauzi-TIK/web-tik-vokasi
+  branch: main # Sesuaikan menjadi 'master' jika branch utama bernama master
+  auth_type: pkce
+  app_id: Ov23lia6efmSINRSUbrb
 
 media_folder: "images"
-public_folder: "/images"
+public_folder: "images"
 
 collections:
   # 1. Koleksi Berita
