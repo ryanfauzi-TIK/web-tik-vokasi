@@ -4,33 +4,56 @@ backend:
   branch: main
   base_url: https://auth.decapcms.org
 
+# Media folder di dalam folder public agar mudah diakses
 media_folder: "public/images"
 public_folder: "/images"
 
 collections:
   - name: "berita"
     label: "Berita"
-    folder: "public/data/posts"
-    create: true
-    fields:
-      - { label: "Judul", name: "title", widget: "string" }
-      - { label: "Tanggal", name: "date", widget: "datetime" }
-      - { label: "Gambar", name: "thumbnail", widget: "image" }
-      - { label: "Isi", name: "body", widget: "markdown" }
+    # Menyimpan semua berita ke dalam satu file JSON tunggal
+    files:
+      - file: "public/data/berita.json"
+        label: "Daftar Berita"
+        name: "daftar-berita"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Judul", name: "title", widget: "string" }
+              - { label: "Deskripsi Singkat", name: "description", widget: "string" }
+              - { label: "Tanggal", name: "date", widget: "datetime" }
+              - { label: "Gambar Mini", name: "thumbnail", widget: "image" }
+              - { label: "Isi Berita Lengkap", name: "body", widget: "markdown" }
 
   - name: "dosen"
     label: "Dosen"
-    folder: "public/data/dosen"
-    create: true
-    fields:
-      - { label: "Nama", name: "nama", widget: "string" }
-      - { label: "Jabatan", name: "jabatan", widget: "string" }
-      - { label: "Foto", name: "foto", widget: "image" }
+    # Menyimpan data dosen ke dalam file dosen.json
+    files:
+      - file: "public/data/dosen.json"
+        label: "Daftar Dosen"
+        name: "daftar-dosen"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Nama Lengkap", name: "nama", widget: "string" }
+              - { label: "Jabatan", name: "jabatan", widget: "string" }
+              - { label: "Foto", name: "foto", widget: "image" }
 
   - name: "fasilitas"
     label: "Fasilitas"
-    folder: "public/data/fasilitas"
-    create: true
-    fields:
-      - { label: "Nama", name: "nama", widget: "string" }
-      - { label: "Gambar", name: "gambar", widget: "image" }
+    # Menyimpan data fasilitas ke dalam file fasilitas.json
+    files:
+      - file: "public/data/fasilitas.json"
+        label: "Daftar Fasilitas"
+        name: "daftar-fasilitas"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Nama Fasilitas", name: "nama", widget: "string" }
+              - { label: "Gambar Fasilitas", name: "gambar", widget: "image" }
