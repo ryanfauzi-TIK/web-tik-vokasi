@@ -2,16 +2,15 @@ backend:
   name: github
   repo: ryanfauzi-TIK/web-tik-vokasi
   branch: main
-  base_url: https://auth.decapcms.org
+  auth_type: implicit
+  client_id: Ov23li3zUEdiFuNE3h47
 
-# Media folder di dalam folder public agar mudah diakses
 media_folder: "public/images"
 public_folder: "/images"
 
 collections:
   - name: "berita"
     label: "Berita"
-    # Menyimpan semua berita ke dalam satu file JSON tunggal
     files:
       - file: "public/data/berita.json"
         label: "Daftar Berita"
@@ -29,7 +28,6 @@ collections:
 
   - name: "dosen"
     label: "Dosen"
-    # Menyimpan data dosen ke dalam file dosen.json
     files:
       - file: "public/data/dosen.json"
         label: "Daftar Dosen"
@@ -45,7 +43,6 @@ collections:
 
   - name: "fasilitas"
     label: "Fasilitas"
-    # Menyimpan data fasilitas ke dalam file fasilitas.json
     files:
       - file: "public/data/fasilitas.json"
         label: "Daftar Fasilitas"
