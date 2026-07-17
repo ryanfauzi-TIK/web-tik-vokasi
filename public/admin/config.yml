@@ -2,7 +2,7 @@ backend:
   name: github
   repo: ryanfauzi-TIK/web-tik-vokasi
   branch: main
-  base_url: https://github-oauth-login.vercel.app
+  base_url: https://decap-oauth.vercel.app
 
 media_folder: "public/images"
 public_folder: "/images"
