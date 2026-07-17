@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D-IV Teknologi Industri Kimia | Universitas Padjadjaran</title>
     
-    <!-- Favicon untuk Taskbar Chrome -->
-    <link rel="icon" type="image/png" href="images/logo-tik-kecil.png" onerror="this.href='https://upload.wikimedia.org/wikipedia/id/thumb/1/1a/Logo_Universitas_Padjadjaran.svg/1200px-Logo_Universitas_Padjadjaran.svg.png'">
+    <!-- Favicon untuk Taskbar (Sejajar dengan index.html) -->
+    <link rel="icon" type="image/png" href="logo-tik-kecil.png">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -48,11 +48,14 @@
     <!-- Navigasi Sticky -->
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
-            <!-- Logo Area Sesuai Gambar -->
+            <!-- Logo Area -->
             <div class="flex items-center bg-[#003d8c] text-white px-4 py-2 rounded-xl shadow-sm gap-3">
                 <!-- Logo Unpad Putih -->
                 <img src="images/logo-unpad.png" alt="Logo Unpad" class="w-9 h-9 object-contain brightness-0 invert" onerror="this.src='https://upload.wikimedia.org/wikipedia/id/thumb/1/1a/Logo_Universitas_Padjadjaran.svg/1200px-Logo_Universitas_Padjadjaran.svg.png'">
                 
+                <!-- Logo TIK (Sejajar dengan index.html) -->
+                <img src="logo-tik-kecil.png" alt="Logo TIK" class="w-9 h-9 object-contain">
+
                 <!-- Singkatan Jurusan -->
                 <span class="text-xl font-bold tracking-tight">TIKIM</span>
                 
@@ -140,7 +143,7 @@
         </div>
     </section>
 
-    <!-- Peminatan Akademik (Terintegrasi dari Dokumen Tambahan) -->
+    <!-- Peminatan Akademik -->
     <section id="peminatan" class="py-16 md:py-24 bg-white border-t border-gray-200 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-16">
@@ -149,7 +152,6 @@
                 <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base mb-6" data-aos="fade-up" data-aos-delay="100">
                     Mahasiswa dapat menentukan arah keahlian spesifik mulai semester 5-6 yang saling terhubung dalam ekosistem Teaching Factory (TEFA).
                 </p>
-                <!-- Tombol Unduh Dokumen Lengkap Peminatan -->
                 <div data-aos="zoom-in" data-aos-delay="200" class="inline-block">
                     <a href="Booklet Peminatan TIKIM.pdf" download="Booklet Peminatan TIKIM.pdf" class="inline-flex items-center gap-2 bg-blue-900 hover:bg-blue-800 text-white hover:text-yellow-400 font-semibold py-2.5 px-6 rounded-full transition transform hover:scale-105 shadow-md border border-blue-800/20 text-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-yellow-500 group-hover:text-yellow-400 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -250,7 +252,7 @@
                     <div class="text-4xl mb-4">👨‍🔧</div>
                     <h3 class="text-xl font-bold text-blue-900 mb-3">Professional Industri Kimia</h3>
                     <p class="text-gray-600 text-sm leading-relaxed text-justify">
-                        Mengoperasikan dan mengawasi produksi kimia, pengolahan limbah, dan proses kesehatan dan keselamatan kerja dengan efektif. Dilengkapi dengan keahlian manajerial, semangat teknopreneurial, komitmen pada kualitas, dan etika profesional.
+                        Mengoperasikan dan mengawasi produksi kimia, pengolahan limbah, and proses kesehatan dan keselamatan kerja dengan efektif. Dilengkapi dengan keahlian manajerial, semangat teknopreneurial, komitmen pada kualitas, dan etika profesional.
                     </p>
                 </div>
                 
@@ -317,7 +319,7 @@
         </div>
     </section>
 
-    <!-- Fasilitas (Terkoneksi CMS) -->
+    <!-- Fasilitas -->
     <section id="fasilitas" class="py-16 md:py-24 bg-gray-50 border-t border-gray-200 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-16">
@@ -327,12 +329,11 @@
                     Menunjang kegiatan belajar mengajar berbasis vokasional dengan laboratorium berstandar industri.
                 </p>
             </div>
-            <!-- Data fasilitas disuntikkan ke div ini -->
             <div id="tempat-fasilitas" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
         </div>
     </section>
 
-    <!-- Dosen (Terkoneksi CMS) -->
+    <!-- Dosen -->
     <section id="dosen" class="py-16 md:py-24 bg-white border-t border-gray-200 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-16">
@@ -342,23 +343,21 @@
                     Didukung oleh tenaga pendidik profesional yang memiliki sertifikasi, gelar magister hingga doktoral, dan keahlian mendalam.
                 </p>
             </div>
-            <!-- Data dosen disuntikkan ke div ini -->
             <div id="tempat-dosen" class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"></div>
         </div>
     </section>
 
-    <!-- Mitra Industri (Terkoneksi CMS) -->
+    <!-- Mitra Industri -->
     <section id="mitra" class="py-16 md:py-24 bg-gray-50 border-t border-gray-200 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-12">
                 <h2 class="text-2xl sm:text-3xl font-bold text-blue-900 mb-4" data-aos="zoom-in">Mitra Industri Kami</h2>
             </div>
-            <!-- Data kemitraan dari CMS disuntikkan ke div ini -->
             <div id="tempat-mitra" class="flex flex-wrap justify-center gap-4 sm:gap-6" data-aos="fade-up" data-aos-delay="200"></div>
         </div>
     </section>
 
-    <!-- Berita (Terkoneksi CMS) -->
+    <!-- Berita -->
     <section id="berita" class="py-16 md:py-24 bg-white border-t border-gray-200 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-end mb-12">
@@ -367,7 +366,6 @@
                     <h2 class="text-2xl sm:text-3xl font-bold text-blue-900" data-aos="fade-up">Kabar Terbaru</h2>
                 </div>
             </div>
-            <!-- Data berita disuntikkan ke div ini -->
             <div id="tempat-berita" class="grid sm:grid-cols-2 md:grid-cols-3 gap-8"></div>
         </div>
     </section>
@@ -535,7 +533,7 @@
       </div>
     </div>
 
-    <!-- AOS Animation Script (Diperbaiki agar website tidak stuck loading) -->
+    <!-- AOS Animation Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ 
@@ -555,17 +553,16 @@
             menuItems.classList.toggle('hidden');
         });
 
-        // Menutup menu otomatis jika link diklik pada layar mobile
         document.querySelectorAll('#menu-items a').forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth < 1280) { // xl breakpoint Tailwind adalah 1280px
+                if (window.innerWidth < 1280) {
                     menuItems.classList.add('hidden');
                 }
             });
         });
     </script>
 
-    <!-- Script Fetch Data Tanpa Slash -->
+    <!-- Script Fetch Data -->
     <script>
       let semuaBerita = []; 
 
