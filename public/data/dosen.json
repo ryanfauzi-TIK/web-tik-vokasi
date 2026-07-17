@@ -9,6 +9,36 @@
       "nama": "Contoh dosen 2",
       "jabatan": "contoh jabatannya dosen 2",
       "foto": "/images/feedimage_2024_4_25_1714010572635-fbj44j.jpeg"
+    },
+    {
+      "nama": "Contoh dosen 3",
+      "jabatan": "contoh jabatan dosen 3",
+      "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBboQ8Y7Z_jszFx1KLzFC2Zgxp6hVjbdZEDW0CDbAB0A&s=10"
+    },
+    {
+      "nama": "conoth nama dosen 4",
+      "jabatan": "contoh jabatan dosen 4",
+      "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVZM-xidOif3oZZ-6sQghF2-YXh5Hl5AKv-EG0bxc2gw&s=10"
+    },
+    {
+      "nama": "contoh nama dosen lengkap 5",
+      "jabatan": "contoh jabatan dosen 5",
+      "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQLUklfjcg02PvSyPPMBs-c8Ta2VInxjMmC8IlnpBsAA&s=10"
+    },
+    {
+      "nama": "contoh nama dosen 6",
+      "jabatan": "contoh jabtan dosen 6",
+      "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAI9JPfediQ8TFh0cDmvuPnjJud2p_h81zdPvpiQ_4Vg&s=10"
+    },
+    {
+      "nama": "contoh dosen 7",
+      "jabatan": "jabtan dosen 7",
+      "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWVVvaqGUKnaVgMCWXDy7S3ebertCreVqGiQqnkHJ5jw&s=10"
+    },
+    {
+      "nama": "contoh dosen 8 ",
+      "jabatan": "contoh jabtan dosen 8",
+      "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMPkmboTq1uTvZEyVOjkpoqJe4oLv534whV-tYRL1wmQ&s=10"
     }
   ]
 }
