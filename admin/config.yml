@@ -22,3 +22,29 @@ collections:
               - {label: "Gambar Thumbnail", name: "thumbnail", widget: "image"}
               - {label: "Deskripsi Singkat", name: "description", widget: "text"}
               - {label: "Isi Berita Lengkap", name: "body", widget: "markdown"}
+              - name: "fasilitas"
+    label: "Data Fasilitas (Lab)"
+    file: "data/fasilitas.json" # File ini yang akan menyimpan datanya
+    extension: "json"
+    format: "json"
+    fields:
+      - name: "items"
+        label: "Daftar Fasilitas"
+        widget: "list"
+        fields:
+          - {label: "Nama Fasilitas/Lab", name: "nama", widget: "string"}
+          - {label: "Foto Fasilitas", name: "gambar", widget: "image"}
+
+  - name: "dosen"
+    label: "Data Dosen"
+    file: "data/dosen.json" # File ini yang akan menyimpan datanya
+    extension: "json"
+    format: "json"
+    fields:
+      - name: "items"
+        label: "Daftar Dosen"
+        widget: "list"
+        fields:
+          - {label: "Nama Beserta Gelar", name: "nama", widget: "string"}
+          - {label: "Jabatan", name: "jabatan", widget: "string"}
+          - {label: "Foto Dosen", name: "foto", widget: "image"}
