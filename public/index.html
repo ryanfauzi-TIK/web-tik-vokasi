@@ -9,10 +9,8 @@
     <meta name="description" content="Program Studi D-IV Teknologi Industri Kimia Sekolah Vokasi Universitas Padjadjaran. Membangun lulusan kompeten berbasis Outcome-Based Education (OBE) dan siap industri.">
     <meta name="keywords" content="TIK Unpad, Teknologi Industri Kimia, Vokasi Unpad, D4 Kimia Unpad, SMUP Unpad, Kurikulum OBE">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vokasi.unpad.ac.id/">
     <meta property="og:title" content="D-IV Teknologi Industri Kimia | Universitas Padjadjaran">
     <meta property="og:description" content="Membangun kompetensi dalam operasi proses industri kimia, pengawasan, dan technopreneurship di Unpad.">
-    <meta property="og:image" content="logo-tik-kecil.png">
 
     <!-- Favicon -->
     <link class="rounded-full" rel="icon" type="image/png" href="logo-tik-kecil.png">
@@ -20,8 +18,8 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter & Playfair Display -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -31,44 +29,41 @@
     
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .font-serif-premium { font-family: 'Playfair Display', serif; }
         
         /* Hero Background Styling */
         .bg-hero {
-            background: linear-gradient(to bottom, rgba(10, 25, 47, 0.94), rgba(15, 32, 67, 0.98)), 
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.98)), 
                         url('https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070&auto=format&fit=crop') center/cover fixed;
         }
 
         /* Custom Premium Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #f8fafc; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
         /* Custom Check-list Premium */
         .check-list li {
             position: relative;
-            padding-left: 2rem;
-            margin-bottom: 0.85rem;
-            transition: all 0.2s ease;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
         }
         .check-list li::before {
             content: '✓';
             position: absolute;
             left: 0;
             top: 2px;
-            width: 18px;
-            height: 18px;
-            background: rgba(217, 119, 6, 0.08);
+            width: 16px;
+            height: 16px;
+            background: rgba(245, 158, 11, 0.1);
             color: #d97706;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
         }
-        .check-list li:hover { transform: translateX(4px); }
 
         /* Dropdown Desktop Hover Display Mechanism */
         @media (min-width: 1280px) {
@@ -81,14 +76,14 @@
 
         /* Hamburger Animation */
         .hamburger-line {
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.2s ease, opacity 0.2s ease;
         }
-        .menu-open .line-1 { transform: translateY(6px) rotate(45deg); }
+        .menu-open .line-1 { transform: translateY(5px) rotate(45deg); }
         .menu-open .line-2 { opacity: 0; }
-        .menu-open .line-3 { transform: translateY(-6px) rotate(-45deg); }
+        .menu-open .line-3 { transform: translateY(-5px) rotate(-45deg); }
 
         .animate-fade-in {
-            animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(4px); }
@@ -96,13 +91,13 @@
         }
     </style>
 </head>
-<body class="bg-[#f8fafc] text-slate-800 antialiased overflow-x-hidden tracking-normal">
+<body class="bg-[#f8fafc] text-slate-800 antialiased overflow-x-hidden">
 
     <!-- Reading Progress Bar -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-amber-500 z-[60] transition-all duration-100 w-0"></div>
 
     <!-- Navigasi Sticky Glassmorphism Premium Multi-level -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/40 shadow-sm transition-all duration-300">
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200/60 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 py-4 flex justify-between items-center">
             
             <!-- Branding Logo & Nama Prodi -->
@@ -116,52 +111,51 @@
             </a>
 
             <!-- Hamburger Button (Mobile) -->
-            <button id="menu-btn" class="xl:hidden flex flex-col justify-between w-6 h-3.5 text-slate-900 focus:outline-none" aria-label="Toggle Menu">
+            <button id="menu-btn" class="xl:hidden flex flex-col justify-between w-6 h-3 text-slate-900 focus:outline-none" aria-label="Toggle Menu">
                 <span class="w-full h-[2px] bg-slate-900 rounded-full hamburger-line line-1"></span>
                 <span class="w-full h-[2px] bg-slate-900/80 rounded-full hamburger-line line-2"></span>
                 <span class="w-full h-[2px] bg-slate-900 rounded-full hamburger-line line-3"></span>
             </button>
 
             <!-- Menu Item Utama & Sub-Navigasi Dropdown -->
-            <ul id="menu-items" class="absolute xl:relative top-full left-0 w-full xl:w-auto bg-white/95 xl:bg-transparent shadow-2xl xl:shadow-none p-6 xl:p-0 flex flex-col xl:flex-row items-start xl:items-center space-y-4 xl:space-y-0 space-x-0 xl:space-x-7 font-medium text-slate-600 text-[13px] border-t border-slate-100 xl:border-none transition-all duration-300 origin-top transform scale-y-0 opacity-0 pointer-events-none xl:scale-y-100 xl:opacity-100 xl:pointer-events-auto">
+            <ul id="menu-items" class="absolute xl:relative top-full left-0 w-full xl:w-auto bg-white xl:bg-transparent shadow-2xl xl:shadow-none p-6 xl:p-0 flex flex-col xl:flex-row items-start xl:items-center space-y-4 xl:space-y-0 space-x-0 xl:space-x-7 font-medium text-slate-600 text-[13px] border-t border-slate-100 xl:border-none transition-all duration-300 origin-top transform scale-y-0 opacity-0 pointer-events-none xl:scale-y-100 xl:opacity-100 xl:pointer-events-auto">
                 
                 <li class="w-full xl:w-auto">
-                    <a href="#beranda" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200">Beranda</a>
+                    <a href="#beranda" class="relative block py-1 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors">Beranda</a>
                 </li>
                 
                 <!-- Dropdown: Profil -->
                 <li class="w-full xl:w-auto relative dropdown-wrapper">
-                    <button onclick="toggleMobileDropdown('drop-profil')" class="w-full text-left flex justify-between items-center py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors focus:outline-none">
+                    <button onclick="toggleMobileDropdown('drop-profil')" class="w-full text-left flex justify-between items-center py-1 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors focus:outline-none">
                         <span>Profil Prodi</span>
-                        <svg class="w-3 h-3 ml-1 transform transition-transform xl:group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                        <svg class="w-3 h-3 ml-1 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
                     </button>
-                    <ul id="drop-profil" class="dropdown-menu xl:absolute xl:top-full xl:left-0 bg-white border border-slate-100 shadow-xl rounded-xl p-3 space-y-2 w-full xl:w-52 hidden xl:block opacity-0 xl:transform xl:-translate-y-2 transition-all duration-200 pointer-events-none z-50 mt-2 xl:mt-0">
+                    <ul id="drop-profil" class="dropdown-menu xl:absolute xl:top-full xl:left-0 bg-white border border-slate-200/60 shadow-xl rounded-xl p-3 space-y-1 w-full xl:w-52 hidden xl:block opacity-0 xl:transform xl:-translate-y-2 transition-all duration-200 pointer-events-none z-50 mt-2 xl:mt-0">
                         <li><a href="#profil" class="block px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 transition">📋 Ikhtisar & Visi</a></li>
-                        <li><a href="#sambutan" class="block px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 transition">🗣️ Sambutan Kaprodi</a></li>
                         <li><a href="#lulusan" class="block px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 transition">🎓 Profil Lulusan</a></li>
                     </ul>
                 </li>
 
-                <!-- Dropdown: Kurikulum & Akademik -->
+                <!-- Dropdown: Kurikulum -->
                 <li class="w-full xl:w-auto relative dropdown-wrapper">
-                    <button onclick="toggleMobileDropdown('drop-akademik')" class="w-full text-left flex justify-between items-center py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors focus:outline-none">
+                    <button onclick="toggleMobileDropdown('drop-akademik')" class="w-full text-left flex justify-between items-center py-1 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors focus:outline-none">
                         <span>Kurikulum & Peminatan</span>
                         <svg class="w-3 h-3 ml-1 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
                     </button>
-                    <ul id="drop-akademik" class="dropdown-menu xl:absolute xl:top-full xl:left-0 bg-white border border-slate-100 shadow-xl rounded-xl p-3 space-y-2 w-full xl:w-56 hidden xl:block opacity-0 xl:transform xl:-translate-y-2 transition-all duration-200 pointer-events-none z-50 mt-2 xl:mt-0">
+                    <ul id="drop-akademik" class="dropdown-menu xl:absolute xl:top-full xl:left-0 bg-white border border-slate-200/60 shadow-xl rounded-xl p-3 space-y-1 w-full xl:w-56 hidden xl:block opacity-0 xl:transform xl:-translate-y-2 transition-all duration-200 pointer-events-none z-50 mt-2 xl:mt-0">
                         <li><a href="#kurikulum-obe" class="block px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 transition">⚙️ Struktur Kurikulum OBE</a></li>
                         <li><a href="#peminatan" class="block px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 transition">🌾 Peminatan & TEFA</a></li>
                         <li><a href="#sertifikasi" class="block px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 transition">🏅 Sertifikasi BNSP</a></li>
                     </ul>
                 </li>
 
-                <!-- Dropdown: Kehidupan Kampus -->
+                <!-- Dropdown: Fasilitas & Direktori -->
                 <li class="w-full xl:w-auto relative dropdown-wrapper">
-                    <button onclick="toggleMobileDropdown('drop-kampus')" class="w-full text-left flex justify-between items-center py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors focus:outline-none">
+                    <button onclick="toggleMobileDropdown('drop-kampus')" class="w-full text-left flex justify-between items-center py-1 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors focus:outline-none">
                         <span>Fasilitas & Direktori</span>
                         <svg class="w-3 h-3 ml-1 fill-none stroke-current" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
                     </button>
-                    <ul id="drop-kampus" class="dropdown-menu xl:absolute xl:top-full xl:left-0 bg-white border border-slate-100 shadow-xl rounded-xl p-3 space-y-2 w-full xl:w-52 hidden xl:block opacity-0 xl:transform xl:-translate-y-2 transition-all duration-200 pointer-events-none z-50 mt-2 xl:mt-0">
+                    <ul id="drop-kampus" class="dropdown-menu xl:absolute xl:top-full xl:left-0 bg-white border border-slate-200/60 shadow-xl rounded-xl p-3 space-y-1 w-full xl:w-52 hidden xl:block opacity-0 xl:transform xl:-translate-y-2 transition-all duration-200 pointer-events-none z-50 mt-2 xl:mt-0">
                         <li><a href="#fasilitas" class="block px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 transition">🔬 Laboratorium Modern</a></li>
                         <li><a href="#dosen" class="block px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 transition">👨‍🏫 Dewan Dosen & Staf</a></li>
                         <li><a href="#mitra" class="block px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 transition">🏢 Mitra Industri</a></li>
@@ -169,17 +163,17 @@
                 </li>
 
                 <li class="w-full xl:w-auto">
-                    <a href="#berita" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200">Berita</a>
+                    <a href="#berita" class="relative block py-1 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors">Berita</a>
                 </li>
                 <li class="w-full xl:w-auto">
-                    <a href="#faq" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200">FAQ</a>
+                    <a href="#faq" class="relative block py-1 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors">FAQ</a>
                 </li>
                 <li class="w-full xl:w-auto">
-                    <a href="#kontak" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200">Hubungi Kami</a>
+                    <a href="#kontak" class="relative block py-1 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors">Kontak</a>
                 </li>
 
                 <li class="w-full xl:w-auto pt-2 xl:pt-0">
-                    <a href="https://smup.unpad.ac.id/" target="_blank" rel="noopener noreferrer" class="block text-center bg-[#0f172a] hover:bg-amber-500 hover:text-slate-950 text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg tracking-wide">
+                    <a href="https://smup.unpad.ac.id/" target="_blank" rel="noopener noreferrer" class="block text-center bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white font-semibold px-5 py-2.5 rounded-xl transition-all shadow-sm tracking-wide">
                         SMUP UNPAD
                     </a>
                 </li>
@@ -188,79 +182,52 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="beranda" class="bg-hero min-h-screen flex items-center justify-center pt-28 pb-16 relative">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(15,23,42,0.45))] pointer-events-none"></div>
-        <div class="text-center px-6 w-full max-w-5xl relative z-10" data-aos="fade-up" data-aos-duration="1200">
-            <h2 class="text-amber-400 font-bold tracking-[0.3em] uppercase mb-5 text-xs sm:text-sm">Sekolah Vokasi Universitas Padjadjaran</h2>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-light text-white mb-6 leading-[1.2] tracking-tight">
+    <section id="beranda" class="bg-hero min-h-screen flex items-center justify-center pt-24 pb-12 relative">
+        <div class="text-center px-6 w-full max-w-4xl relative z-10" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-amber-400 font-bold tracking-[0.25em] uppercase mb-4 text-xs sm:text-sm">Sekolah Vokasi Universitas Padjadjaran</h2>
+            <h1 class="text-3xl sm:text-5xl font-light text-white mb-6 leading-tight">
                 Sarjana Terapan (D-IV) <br>
-                <span class="font-extrabold text-white tracking-normal text-3xl sm:text-4xl md:text-5xl block mt-3 uppercase">Teknologi Industri Kimia</span>
+                <span class="font-extrabold text-white text-2xl sm:text-4xl block mt-2 uppercase tracking-wide">Teknologi Industri Kimia</span>
             </h1>
-            <p class="text-slate-300 max-w-2xl mx-auto mb-12 text-sm sm:text-base md:text-lg leading-relaxed font-light">
+            <p class="text-slate-300 max-w-xl mx-auto mb-10 text-xs sm:text-base leading-relaxed font-light">
                 Menyelenggarakan arsitektur pendidikan vokasi terapan berstandar global berbasis integrasi riset hilirisasi, sistem penjaminan mutu, dan akselerasi adaptif wirausaha industri.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#profil" class="w-full sm:w-auto text-center bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3.5 px-8 rounded-xl transition-all duration-300 shadow-xl hover:shadow-amber-500/20 transform hover:-translate-y-0.5">
+                <a href="#profil" class="w-full sm:w-auto text-center bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 px-8 rounded-xl transition shadow-xl transform hover:-translate-y-0.5 text-xs sm:text-sm">
                     Mulai Eksplorasi
                 </a>
-                <a href="#kurikulum-obe" class="w-full sm:w-auto text-center bg-white/10 border border-white/20 text-white backdrop-blur-md hover:bg-white hover:text-slate-950 font-semibold py-3.5 px-8 rounded-xl transition-all duration-300 shadow-lg transform hover:-translate-y-0.5">
+                <a href="#kurikulum-obe" class="w-full sm:w-auto text-center bg-white/10 border border-white/20 text-white backdrop-blur-md hover:bg-white hover:text-slate-950 font-semibold py-3 px-8 rounded-xl transition transform hover:-translate-y-0.5 text-xs sm:text-sm">
                     Lihat Peta Kurikulum OBE
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Sambutan Ketua Program Studi (NEW SECTION BASED ON DOCUMENT) -->
-    <section id="sambutan" class="py-20 md:py-24 bg-slate-50 scroll-mt-20">
-        <div class="max-w-5xl mx-auto px-6 sm:px-8">
-            <div class="bg-white border border-slate-200/60 p-8 sm:p-12 rounded-3xl shadow-sm relative overflow-hidden" data-aos="fade-up">
-                <div class="absolute top-0 right-0 p-8 text-slate-100 font-serif text-9xl pointer-events-none select-none">“</div>
-                <div class="relative z-10">
-                    <div class="flex items-center gap-2 mb-4">
-                        <span class="w-8 h-[2px] bg-amber-500"></span>
-                        <h3 class="text-amber-600 font-bold tracking-wider uppercase text-xs">Sambutan Resmi</h3>
-                    </div>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 tracking-tight">Sambutan Ketua Program Studi</h2>
-                    <p class="text-slate-700 italic font-serif-premium text-base sm:text-lg leading-relaxed mb-6">
-                        "Assalamu'alaikum warahmatullahi wabarakatuh. Puji dan syukur kita panjatkan ke hadirat Allah SWT atas segala rahmat-Nya sehingga Pedoman Kurikulum Program Studi Sarjana Terapan Teknologi Industri Kimia Sekolah Vokasi Universitas Padjadjaran dapat diimplementasikan secara komprehensif[cite: 2]. Dokumen akademik ini disusun taktis mengacu pada Standar Nasional Pendidikan Tinggi, KKNI, serta skema Outcome-Based Education (OBE) demi mencetak lulusan kompeten yang adaptif terhadap akselerasi teknologi industri kimia global[cite: 2]."
-                    </p>
-                    <div class="border-t border-slate-100 pt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-                        <div>
-                            <h4 class="font-bold text-slate-900 text-sm">Ketua Program Studi D-IV TIK</h4>
-                            <p class="text-xs text-slate-500">Sekolah Vokasi Universitas Padjadjaran[cite: 2]</p>
-                        </div>
-                        <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md uppercase tracking-wider">🔒 Di-approve Ka Prodi</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Profil Akademik & Kerangka Kurikulum -->
-    <section id="profil" class="py-20 md:py-28 bg-white scroll-mt-20">
+    <section id="profil" class="py-16 sm:py-24 bg-white scroll-mt-16">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="grid lg:grid-cols-12 gap-12 md:gap-16 items-start">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
                 
                 <!-- Sisi Kiri: Navigasi Kontrol Tab -->
-                <div class="lg:col-span-4 sticky top-28" data-aos="fade-right">
+                <div class="lg:col-span-4 lg:sticky top-24" data-aos="fade-right">
                     <div class="flex items-center gap-2 mb-3">
-                        <span class="w-8 h-[2px] bg-amber-500"></span>
+                        <span class="w-6 h-[2px] bg-amber-500"></span>
                         <h3 class="text-amber-600 font-bold tracking-wider uppercase text-xs">Kerangka Pedoman</h3>
                     </div>
-                    <h2 class="text-3xl font-extrabold text-slate-900 mb-8 leading-tight tracking-tight">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
                         Pilar Pendidikan Vokasi Terapan TIKIM
                     </h2>
                     
-                    <div class="space-y-2.5">
-                        <button onclick="switchProfileTab('ikhtisar')" id="p-tab-ikhtisar" class="profile-tab-btn w-full text-left px-5 py-4 rounded-xl border transition-all duration-300 flex items-center justify-between group bg-slate-900 border-slate-900 text-white shadow-sm">
+                    <div class="space-y-2">
+                        <button onclick="switchProfileTab('ikhtisar')" id="p-tab-ikhtisar" class="profile-tab-btn w-full text-left px-5 py-3.5 rounded-xl border transition flex items-center justify-between group bg-slate-900 border-slate-900 text-white shadow-sm">
                             <span class="text-xs font-bold uppercase tracking-wider">📌 Ikhtisar Program</span>
                             <span class="text-xs transform group-hover:translate-x-1 transition-transform">&rarr;</span>
                         </button>
-                        <button onclick="switchProfileTab('arsitektur')" id="p-tab-arsitektur" class="profile-tab-btn w-full text-left px-5 py-4 rounded-xl border border-slate-200/60 bg-white text-slate-600 hover:text-slate-900 hover:border-slate-300 transition-all duration-300 flex items-center justify-between group">
+                        <button onclick="switchProfileTab('arsitektur')" id="p-tab-arsitektur" class="profile-tab-btn w-full text-left px-5 py-3.5 rounded-xl border border-slate-200 bg-white text-slate-600 hover:text-slate-900 transition flex items-center justify-between group">
                             <span class="text-xs font-bold uppercase tracking-wider">🧱 Standar Nasional & OBE</span>
                             <span class="text-xs transform group-hover:translate-x-1 transition-transform">&rarr;</span>
                         </button>
-                        <button onclick="switchProfileTab('ekosistem')" id="p-tab-ekosistem" class="profile-tab-btn w-full text-left px-5 py-4 rounded-xl border border-slate-200/60 bg-white text-slate-600 hover:text-slate-900 hover:border-slate-300 transition-all duration-300 flex items-center justify-between group">
+                        <button onclick="switchProfileTab('ekosistem')" id="p-tab-ekosistem" class="profile-tab-btn w-full text-left px-5 py-3.5 rounded-xl border border-slate-200 bg-white text-slate-600 hover:text-slate-900 transition flex items-center justify-between group">
                             <span class="text-xs font-bold uppercase tracking-wider">💼 Ekosistem KKNI</span>
                             <span class="text-xs transform group-hover:translate-x-1 transition-transform">&rarr;</span>
                         </button>
@@ -268,28 +235,28 @@
                 </div>
                 
                 <!-- Sisi Kanan: Konten Panel -->
-                <div class="lg:col-span-8 bg-slate-50 border border-slate-200/40 p-8 sm:p-10 rounded-2xl min-h-[340px] flex flex-col justify-center relative overflow-hidden" data-aos="fade-left">
+                <div class="lg:col-span-8 bg-slate-50 border border-slate-200/60 p-6 sm:p-10 rounded-2xl min-h-[280px] flex flex-col justify-center" data-aos="fade-left">
                     
                     <!-- Panel 1: Ikhtisar -->
-                    <div id="p-panel-ikhtisar" class="profile-panel-content block animate-fade-in space-y-5">
-                        <h3 class="text-xl font-bold text-slate-900 tracking-tight">Dokumen Acuan Penyelenggaraan Pendidikan Vokasi</h3>
-                        <p class="text-slate-600 leading-relaxed text-justify text-sm sm:text-base font-light">
+                    <div id="p-panel-ikhtisar" class="profile-panel-content block animate-fade-in space-y-4">
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">Dokumen Acuan Penyelenggaraan Pendidikan Vokasi</h3>
+                        <p class="text-slate-600 leading-relaxed text-justify text-xs sm:text-sm font-light">
                             Pedoman kurikulum ini diposisikan sebagai dokumen akademik fundamental dan peta jalan taktis dalam seluruh lini operasional pendidikan di Program Studi Teknologi Industri Kimia Sekolah Vokasi Unpad[cite: 2]. Kurikulum secara komprehensif dirancang untuk mempersiapkan tenaga ahli profesional yang siap diterjunkan langsung ke dalam ekosistem manufaktur modern skala multi-nasional[cite: 1, 2].
                         </p>
                     </div>
 
                     <!-- Panel 2: Arsitektur Modular (OBE) -->
-                    <div id="p-panel-arsitektur" class="profile-panel-content hidden animate-fade-in space-y-5">
-                        <h3 class="text-xl font-bold text-slate-900 tracking-tight">Penerapan Pendekatan Outcome-Based Education (OBE)</h3>
-                        <p class="text-slate-600 leading-relaxed text-justify text-sm sm:text-base font-light">
+                    <div id="p-panel-arsitektur" class="profile-panel-content hidden animate-fade-in space-y-4">
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">Penerapan Pendekatan Outcome-Based Education (OBE)</h3>
+                        <p class="text-slate-600 leading-relaxed text-justify text-xs sm:text-sm font-light">
                             Penyusunan kurikulum modular kami berlandaskan penuh pada ketetapan **Standar Nasional Pendidikan Tinggi** dan pendekatan kontemporer **Outcome-Based Education (OBE)**[cite: 2]. Hal ini menjamin rancangan instruksional perkuliahan berpusat penuh pada pencapaian luaran kompetensi riil (Capaian Pembelajaran Lulusan/CPL) mahasiswa yang selaras dengan tantangan nyata industri[cite: 1, 2].
                         </p>
                     </div>
 
                     <!-- Panel 3: Ekosistem KKNI -->
-                    <div id="p-panel-ekosistem" class="profile-panel-content hidden animate-fade-in space-y-5">
-                        <h3 class="text-xl font-bold text-slate-900 tracking-tight">Penyelarasan Kompetensi Kualifikasi Nasional (KKNI Level 6)</h3>
-                        <p class="text-slate-600 leading-relaxed text-justify text-sm sm:text-base font-light">
+                    <div id="p-panel-ekosistem" class="profile-panel-content hidden animate-fade-in space-y-4">
+                        <h3 class="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">Penyelarasan Kompetensi Kualifikasi Nasional (KKNI Level 6)</h3>
+                        <p class="text-slate-600 leading-relaxed text-justify text-xs sm:text-sm font-light">
                             Seluruh materi pembelajaran terapan diharmonisasikan secara presisi dengan **Kerangka Kualifikasi Nasional Indonesia (KKNI)** untuk memastikan kualifikasi lulusan sarjana terapan kami diakui secara legal, formal, dan komparatif baik pada tingkat portofolio industri nasional maupun regional Asia Tenggara[cite: 1, 2].
                         </p>
                     </div>
@@ -299,53 +266,53 @@
         </div>
     </section>
 
-    <!-- INTERACTIVE CURRICULUM EXPLORER (BRAND NEW FEATURE BASED ON PEDOMAN) -->
-    <section id="kurikulum-obe" class="py-20 md:py-28 bg-[#f8fafc] border-t border-slate-200/40 scroll-mt-20">
+    <!-- INTERACTIVE CURRICULUM EXPLORER -->
+    <section id="kurikulum-obe" class="py-16 sm:py-24 bg-slate-50 border-t border-slate-200/60 scroll-mt-16">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
                     ⚙️ Struktur Kompetensi
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Interactive Curriculum Explorer</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base font-light">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3 tracking-tight">Interactive Curriculum Explorer</h2>
+                <p class="text-slate-500 max-w-xl mx-auto text-xs sm:text-sm font-light">
                     Visualisasi transparan struktur sebaran fokus mata kuliah di setiap tahapan semester berbasis rancangan *Outcome-Based Education*[cite: 2].
                 </p>
             </div>
 
             <!-- Kontroler Navigasi Tahapan Semester -->
-            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
-                <button onclick="switchSemesterTab('tahap1')" id="sem-tab-tahap1" class="semester-tab-btn px-4 py-3 rounded-xl font-bold text-xs sm:text-sm border transition-all duration-300 bg-slate-900 border-slate-900 text-white shadow-md">
-                    🌱 Semester 1 - 2: Fondasi & Sains Dasar
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <button onclick="switchSemesterTab('tahap1')" id="sem-tab-tahap1" class="semester-tab-btn px-4 py-2.5 rounded-xl font-bold text-xs border transition bg-slate-900 border-slate-900 text-white shadow-sm">
+                    🌱 Sem 1 - 2: Fondasi & Sains Dasar
                 </button>
-                <button onclick="switchSemesterTab('tahap2')" id="sem-tab-tahap2" class="semester-tab-btn px-4 py-3 rounded-xl font-bold text-xs sm:text-sm border transition-all duration-300 border-slate-200 bg-white text-slate-600 hover:text-slate-900">
-                    ⚗️ Semester 3 - 4: Rekayasa Proses Inti
+                <button onclick="switchSemesterTab('tahap2')" id="sem-tab-tahap2" class="semester-tab-btn px-4 py-2.5 rounded-xl font-bold text-xs border transition border-slate-200 bg-white text-slate-600 hover:text-slate-900">
+                    ⚗️ Sem 3 - 4: Rekayasa Proses Inti
                 </button>
-                <button onclick="switchSemesterTab('tahap3')" id="sem-tab-tahap3" class="semester-tab-btn px-4 py-3 rounded-xl font-bold text-xs sm:text-sm border transition-all duration-300 border-slate-200 bg-white text-slate-600 hover:text-slate-900">
-                    🏭 Semester 5 - 6: Spesialisasi & TEFA
+                <button onclick="switchSemesterTab('tahap3')" id="sem-tab-tahap3" class="semester-tab-btn px-4 py-2.5 rounded-xl font-bold text-xs border transition border-slate-200 bg-white text-slate-600 hover:text-slate-900">
+                    🏭 Sem 5 - 6: Spesialisasi & TEFA
                 </button>
-                <button onclick="switchSemesterTab('tahap4')" id="sem-tab-tahap4" class="semester-tab-btn px-4 py-3 rounded-xl font-bold text-xs sm:text-sm border transition-all duration-300 border-slate-200 bg-white text-slate-600 hover:text-slate-900">
-                    🚀 Semester 7 - 8: Magang Industri & TA
+                <button onclick="switchSemesterTab('tahap4')" id="sem-tab-tahap4" class="semester-tab-btn px-4 py-2.5 rounded-xl font-bold text-xs border transition border-slate-200 bg-white text-slate-600 hover:text-slate-900">
+                    🚀 Sem 7 - 8: Magang & TA
                 </button>
             </div>
 
             <!-- Konten Panel Struktur Semester Explorer -->
-            <div id="semester-panels" class="bg-white border border-slate-200/60 p-6 sm:p-10 rounded-2xl shadow-sm">
+            <div id="semester-panels" class="bg-white border border-slate-200/60 p-6 sm:p-8 rounded-2xl shadow-sm">
                 <!-- Tahap 1 -->
                 <div id="sem-panel-tahap1" class="semester-panel-content block animate-fade-in">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-100 pb-4 mb-6 gap-3">
                         <div>
-                            <h4 class="text-lg font-bold text-slate-900">Tahap Fondasi Vokasi & Sains Fundamental</h4>
-                            <p class="text-xs text-slate-500">Membangun pemahaman teoretis yang kuat dan prosedur keselamatan kerja laboratorium standar.</p>
+                            <h4 class="text-base font-bold text-slate-900">Tahap Fondasi Vokasi & Sains Fundamental</h4>
+                            <p class="text-xs text-slate-500 mt-0.5">Membangun pemahaman teoretis yang kuat dan prosedur keselamatan kerja laboratorium standar.</p>
                         </div>
-                        <span class="px-3 py-1 bg-amber-50 text-amber-700 font-semibold rounded-md text-xs">Total Beban Tahap: ~38 SKS</span>
+                        <span class="px-3 py-1 bg-amber-50 text-amber-700 font-semibold rounded-md text-xs whitespace-nowrap">Total Beban: ~38 SKS</span>
                     </div>
-                    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs font-medium text-slate-700">
+                    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs font-medium text-slate-700">
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">🧪 Kimia Dasar Terapan & Praktikum</div>
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">📐 Matematika Teknik Kimia</div>
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">🛡️ Keselamatan & Kesehatan Kerja (K3) Industri</div>
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">🧫 Mikrobiologi Industri Dasar</div>
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">📊 Fisika Terapan Industri</div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">📝 Bahasa Inggris Teknis & Komunikasi Perusahaan</div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">📝 Bahasa Inggris Teknis</div>
                     </div>
                 </div>
 
@@ -353,18 +320,18 @@
                 <div id="sem-panel-tahap2" class="semester-panel-content hidden animate-fade-in">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-100 pb-4 mb-6 gap-3">
                         <div>
-                            <h4 class="text-lg font-bold text-slate-900">Tahap Aliran Fluida & Rekayasa Operasi Inti</h4>
-                            <p class="text-xs text-slate-500">Fokus pada rekayasa instrumen, transfer massa panas, dan operasional komparatif skala unit proses.</p>
+                            <h4 class="text-base font-bold text-slate-900">Tahap Aliran Fluida & Rekayasa Operasi Inti</h4>
+                            <p class="text-xs text-slate-500 mt-0.5">Fokus pada rekayasa instrumen, transfer massa panas, dan operasional komparatif skala unit proses.</p>
                         </div>
-                        <span class="px-3 py-1 bg-amber-50 text-amber-700 font-semibold rounded-md text-xs">Total Beban Tahap: ~40 SKS</span>
+                        <span class="px-3 py-1 bg-amber-50 text-amber-700 font-semibold rounded-md text-xs whitespace-nowrap">Total Beban: ~40 SKS</span>
                     </div>
-                    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs font-medium text-slate-700">
+                    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs font-medium text-slate-700">
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">🔥 Operasi Teknik Kimia (OTK 1 & 2)</div>
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">🔄 Termodinamika Teknik Terapan</div>
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">🖥️ Simulasi & Komputasi Proses Industri</div>
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">📉 Kimia Analisis Instrumen (UV-Vis, AAS, GC)[cite: 1]</div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">🎛️ Sistem Instrumentasi & Kendali Proses Pabrik</div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">💧 Azas Teknik Kimia & Neraca Massa/Energi</div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">🎛️ Sistem Instrumentasi & Kendali Proses</div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">💧 Azas Teknik Kimia & Neraca Massa</div>
                     </div>
                 </div>
 
@@ -372,18 +339,18 @@
                 <div id="sem-panel-tahap3" class="semester-panel-content hidden animate-fade-in">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-100 pb-4 mb-6 gap-3">
                         <div>
-                            <h4 class="text-lg font-bold text-slate-900">Tahap Spesialisasi Kluster & Ekosistem TEFA</h4>
-                            <p class="text-xs text-slate-500">Mahasiswa masuk dalam penjurusan kluster keahlian spesifik terintegrasi Teaching Factory[cite: 1].</p>
+                            <h4 class="text-base font-bold text-slate-900">Tahap Spesialisasi Kluster & Ekosistem TEFA</h4>
+                            <p class="text-xs text-slate-500 mt-0.5">Mahasiswa masuk dalam penjurusan kluster keahlian spesifik terintegrasi Teaching Factory[cite: 1].</p>
                         </div>
-                        <span class="px-3 py-1 bg-amber-50 text-amber-700 font-semibold rounded-md text-xs">Total Beban Tahap: ~36 SKS</span>
+                        <span class="px-3 py-1 bg-amber-50 text-amber-700 font-semibold rounded-md text-xs whitespace-nowrap">Total Beban: ~36 SKS</span>
                     </div>
-                    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs font-medium text-slate-700">
+                    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs font-medium text-slate-700">
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">🏥 Formulasi Sediaan & Kit Diagnostik Medis[cite: 1]</div>
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">🌾 Analisis Gizi & Inovasi Pangan Fungsional[cite: 1]</div>
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">🌱 Pengolahan Air Limbah Lanjut & Dekarbonisasi[cite: 1]</div>
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">💡 Wirausaha Industri Hilir & Teknoekonomi[cite: 1]</div>
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">🔬 Metodologi Riset Eksperimental Terapan</div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">📦 Manajemen Sistem Penjaminan Mutu Laboratorium (QA/QC)</div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">📦 Sistem Penjaminan Mutu Laboratorium (QA/QC)</div>
                     </div>
                 </div>
 
@@ -391,12 +358,12 @@
                 <div id="sem-panel-tahap4" class="semester-panel-content hidden animate-fade-in">
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-100 pb-4 mb-6 gap-3">
                         <div>
-                            <h4 class="text-lg font-bold text-slate-900">Tahap Pemantapan Profesionalisme Industri</h4>
-                            <p class="text-xs text-slate-500">Realisasi kebijakan MBKM melalui magang intensif penuh di mitra korporasi strategis[cite: 1].</p>
+                            <h4 class="text-base font-bold text-slate-900">Tahap Pemantapan Profesionalisme Industri</h4>
+                            <p class="text-xs text-slate-500 mt-0.5">Realisasi kebijakan MBKM melalui magang intensif penuh di mitra korporasi strategis[cite: 1].</p>
                         </div>
-                        <span class="px-3 py-1 bg-amber-50 text-amber-700 font-semibold rounded-md text-xs">Total Beban Tahap: ~30 SKS</span>
+                        <span class="px-3 py-1 bg-amber-50 text-amber-700 font-semibold rounded-md text-xs whitespace-nowrap">Total Beban: ~30 SKS</span>
                     </div>
-                    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs font-medium text-slate-700">
+                    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs font-medium text-slate-700">
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">🏢 Kerja Praktik/Magang Industri 1 (Full Semester)[cite: 1]</div>
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">🏭 Kerja Praktik/Magang Industri 2 (Aplikasi Pabrik)[cite: 1]</div>
                         <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">📝 Seminar Hasil & Uji Portofolio Keahlian</div>
@@ -409,19 +376,19 @@
     </section>
 
     <!-- Peminatan Akademik (TEFA TIKIM) -->
-    <section id="peminatan" class="py-20 md:py-28 bg-white border-t border-slate-200/40 scroll-mt-20">
+    <section id="peminatan" class="py-16 sm:py-24 bg-white border-t border-slate-200/60 scroll-mt-16">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" data-aos="fade-down">
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
                     🌾 Kluster Spesialisasi
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" data-aos="fade-up">Tiga Peminatan, Satu Ekosistem Industri (TEFA TIKIM)</h2>
-                <p class="text-slate-500 max-w-3xl mx-auto text-sm sm:text-base mb-6 font-light" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3 tracking-tight">Tiga Peminatan, Satu Ekosistem Industri (TEFA)</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-xs sm:text-sm mb-6 font-light">
                     Mahasiswa diarahkan memilih spesialisasi strategis pada semester 5-6 yang terintegrasi penuh ke dalam ekosistem Teaching Factory (TEFA) korporat untuk menghasilkan produk inovatif[cite: 1].
                 </p>
-                <div data-aos="zoom-in" data-aos-delay="200" class="inline-block">
-                    <a href="Booklet Peminatan TIKIM.pdf" download="Booklet Peminatan TIKIM.pdf" class="inline-flex items-center gap-3 bg-white hover:bg-slate-900 text-slate-900 hover:text-white font-semibold py-2.5 px-5 rounded-xl transition-all duration-300 shadow-sm border border-slate-200 text-xs sm:text-sm group">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-500 transition-colors group-hover:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div class="inline-block">
+                    <a href="Booklet Peminatan TIKIM.pdf" download="Booklet Peminatan TIKIM.pdf" class="inline-flex items-center gap-2 bg-white hover:bg-slate-900 text-slate-900 hover:text-white font-semibold py-2 px-4 rounded-xl transition border border-slate-200 text-xs group">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                         </svg>
                         Unduh Booklet Peminatan Lengkap (PDF)
@@ -430,57 +397,57 @@
             </div>
 
             <!-- Kontroler Tab Peminatan -->
-            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12" data-aos="fade-up">
-                <button onclick="switchPeminatanTab('kesehatan')" id="pem-tab-kesehatan" class="peminatan-tab-btn px-5 py-3.5 rounded-xl font-bold text-xs sm:text-sm border transition-all duration-300 flex items-center gap-2 bg-slate-900 border-slate-900 text-white shadow-md">
-                    <span>➕</span> Industri Kimia Kesehatan
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button onclick="switchPeminatanTab('kesehatan')" id="pem-tab-kesehatan" class="peminatan-tab-btn px-4 py-3 rounded-xl font-bold text-xs border transition flex items-center gap-2 bg-slate-900 border-slate-900 text-white shadow-sm">
+                    <span>🏥</span> Industri Kimia Kesehatan
                 </button>
-                <button onclick="switchPeminatanTab('pangan')" id="pem-tab-pangan" class="peminatan-tab-btn px-5 py-3.5 rounded-xl font-bold text-xs sm:text-sm border transition-all duration-300 flex items-center gap-2 border-slate-200 bg-white text-slate-600 hover:text-slate-900">
+                <button onclick="switchPeminatanTab('pangan')" id="pem-tab-pangan" class="peminatan-tab-btn px-4 py-3 rounded-xl font-bold text-xs border transition flex items-center gap-2 border-slate-200 bg-white text-slate-600 hover:text-slate-900">
                     <span>🌾</span> Industri Kimia Pangan
                 </button>
-                <button onclick="switchPeminatanTab('gtwm')" id="pem-tab-gtwm" class="peminatan-tab-btn px-5 py-3.5 rounded-xl font-bold text-xs sm:text-sm border transition-all duration-300 flex items-center gap-2 border-slate-200 bg-white text-slate-600 hover:text-slate-900">
-                    <span>🌱</span> Green Technology & Waste Management
+                <button onclick="switchPeminatanTab('gtwm')" id="pem-tab-gtwm" class="peminatan-tab-btn px-4 py-3 rounded-xl font-bold text-xs border transition flex items-center gap-2 border-slate-200 bg-white text-slate-600 hover:text-slate-900">
+                    <span>🌱</span> Green Tech & Waste Management
                 </button>
             </div>
 
             <!-- Konten Panel Peminatan -->
-            <div id="peminatan-panels-container" class="space-y-6">
+            <div id="peminatan-panels-container">
                 
                 <!-- PANEL 1: INDUSTRI KIMIA KESEHATAN -->
                 <div id="pem-panel-kesehatan" class="peminatan-panel-content block animate-fade-in">
-                    <div class="grid lg:grid-cols-12 gap-8 items-start">
+                    <div class="grid lg:grid-cols-12 gap-6 items-start">
                         <div class="lg:col-span-4 bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
                             <span class="text-[10px] font-bold tracking-widest text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md">Kluster 01</span>
-                            <h3 class="text-xl font-bold text-slate-900 mt-3 mb-2">Presisi untuk Solusi Kesehatan</h3>
-                            <p class="text-xs sm:text-sm text-slate-500 font-light leading-relaxed mb-6">Mempersiapkan mahasiswa untuk memahami peran rekayasa proses kimia terapan dalam menghasilkan kit diagnostik, reagen laboratorium, and penanganan biomaterial[cite: 1].</p>
+                            <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2">Presisi untuk Solusi Kesehatan</h3>
+                            <p class="text-xs text-slate-500 font-light leading-relaxed mb-4">Mempersiapkan mahasiswa untuk memahami peran rekayasa proses kimia terapan dalam menghasilkan kit diagnostik, reagen laboratorium, dan penanganan biomaterial[cite: 1].</p>
                             
                             <div class="border-t border-slate-100 pt-4">
-                                <h4 class="text-[11px] font-bold text-slate-800 tracking-wider uppercase mb-3">🎯 Kriteria Karakteristik:</h4>
-                                <ul class="text-xs space-y-2.5 text-slate-600 font-medium check-list">
-                                    <li>Tertarik pada kolaborasi zat aktif, biologi seluler, and instrumentasi medis[cite: 1].</li>
+                                <h4 class="text-[11px] font-bold text-slate-800 tracking-wider uppercase mb-2">🎯 Kriteria Karakteristik:</h4>
+                                <ul class="text-xs text-slate-600 font-medium check-list">
+                                    <li>Tertarik pada kolaborasi zat aktif, biologi seluler, dan instrumentasi medis[cite: 1].</li>
                                     <li>Menyukai aktivitas riset higienis tinggi dan analisis klinis akurat[cite: 1].</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="lg:col-span-8 space-y-6">
+                        <div class="lg:col-span-8 space-y-4">
                             <h4 class="text-xs font-bold text-slate-400 tracking-widest uppercase">Eksplorasi Sub-Jalur Keahlian</h4>
-                            <div class="grid sm:grid-cols-3 gap-4">
-                                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                                    <h5 class="font-bold text-slate-900 text-sm mb-1.5">Diagnostik & Reagen</h5>
-                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed mb-3">Pengembangan biosensor cepat dan lateral flow assay berskala komersial[cite: 1].</p>
+                            <div class="grid sm:grid-cols-3 gap-3">
+                                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                                    <h5 class="font-bold text-slate-900 text-xs mb-1">Diagnostik & Reagen</h5>
+                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed">Pengembangan biosensor cepat dan lateral flow assay berskala komersial[cite: 1].</p>
                                 </div>
-                                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                                    <h5 class="font-bold text-slate-900 text-sm mb-1.5">Sediaan Non-Steril</h5>
-                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed mb-3">Formulasi antiseptik cair/gel skala pilot plant industri[cite: 1].</p>
+                                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                                    <h5 class="font-bold text-slate-900 text-xs mb-1">Sediaan Non-Steril</h5>
+                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed">Formulasi antiseptik cair/gel skala pilot plant industri[cite: 1].</p>
                                 </div>
-                                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                                    <h5 class="font-bold text-slate-900 text-sm mb-1.5">Bioproduksi Hayati</h5>
-                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed mb-3">Pemanfaatan bioproses seluler untuk isolasi protein murni[cite: 1].</p>
+                                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                                    <h5 class="font-bold text-slate-900 text-xs mb-1">Bioproduksi Hayati</h5>
+                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed">Pemanfaatan bioproses seluler untuk isolasi protein murni[cite: 1].</p>
                                 </div>
                             </div>
 
-                            <div class="bg-slate-900 text-white p-5 rounded-2xl shadow-inner border border-slate-800">
-                                <h4 class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-3">🛠️ Portofolio Integrasi Magang & Tugas Akhir (TA)</h4>
+                            <div class="bg-slate-900 text-white p-5 rounded-xl border border-slate-800">
+                                <h4 class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-2">🛠️ Portofolio Integrasi Magang & TA</h4>
                                 <p class="text-slate-300 font-light text-[11px] leading-relaxed">
                                     **Magang Terintegrasi:** Industri IVD Nasional, Pabrik Farmasi Mutu QA/QC, Unit TEFA Hand Sanitizer Internal[cite: 1]. <br>
                                     **Topik Tugas Akhir:** Stabilitas Formula Fixapad/NBF, Validasi Akurasi Reagen Buffer Medis[cite: 1].
@@ -492,60 +459,60 @@
 
                 <!-- PANEL 2: INDUSTRI KIMIA PANGAN -->
                 <div id="pem-panel-pangan" class="peminatan-panel-content hidden animate-fade-in">
-                    <div class="grid lg:grid-cols-12 gap-8 items-start">
+                    <div class="grid lg:grid-cols-12 gap-6 items-start">
                         <div class="lg:col-span-4 bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
                             <span class="text-[10px] font-bold tracking-widest text-amber-700 uppercase bg-amber-50 px-2.5 py-1 rounded-md">Kluster 02</span>
-                            <h3 class="text-xl font-bold text-slate-900 mt-3 mb-1">Inovasi Pangan Bermutu</h3>
+                            <h3 class="text-lg font-bold text-slate-900 mt-3 mb-1">Inovasi Pangan Bermutu</h3>
                             
                             <div class="my-3 bg-red-50 border border-red-200 p-3 rounded-xl">
-                                <p class="text-[11px] font-extrabold text-red-700 tracking-wide uppercase">⚠️ BUKAN TATABOGA / MEMASAK!</p>
+                                <p class="text-[10px] font-extrabold text-red-700 tracking-wide uppercase">⚠️ BUKAN MEMASAK / TATABOGA!</p>
                                 <p class="text-[11px] text-red-600 mt-0.5 font-medium leading-relaxed">Fokus murni rekayasa proses pabrikasi, formulasi zat bioaktif makro, audit kepatuhan halal, sistem HACCP, dan estimasi umur simpan kemasan aktif industri FMCG[cite: 1].</p>
                             </div>
                         </div>
 
-                        <div class="lg:col-span-8 space-y-6">
+                        <div class="lg:col-span-8 space-y-4">
                             <h4 class="text-xs font-bold text-slate-400 tracking-widest uppercase">Eksplorasi Sub-Jalur Keahlian</h4>
-                            <div class="grid sm:grid-cols-3 gap-4">
-                                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                                    <h5 class="font-bold text-slate-900 text-sm mb-1.5">Formulasi R&D</h5>
-                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed mb-3">Perancangan struktur gizi seimbang and uji organoleptik sensori produk baru[cite: 1].</p>
+                            <div class="grid sm:grid-cols-3 gap-3">
+                                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                                    <h5 class="font-bold text-slate-900 text-xs mb-1">Formulasi R&D</h5>
+                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed">Perancangan struktur gizi seimbang dan uji organoleptik sensori produk baru[cite: 1].</p>
                                 </div>
-                                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                                    <h5 class="font-bold text-slate-900 text-sm mb-1.5">Proses & Sanitasi</h5>
-                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed mb-3">Pengendalian alur GMP, audit higienitas total, dan penentuan limit umur simpan[cite: 1].</p>
+                                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                                    <h5 class="font-bold text-slate-900 text-xs mb-1">Proses & Sanitasi</h5>
+                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed">Pengendalian alur GMP, audit higienitas total, dan penentuan limit umur simpan[cite: 1].</p>
                                 </div>
-                                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                                    <h5 class="font-bold text-slate-900 text-sm mb-1.5">Pangan Fungsional</h5>
-                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed mb-3">Pengembangan produk nutrasetikal bernilai komersial tinggi (Yogurt Probiotik, Granola)[cite: 1].</p>
+                                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                                    <h5 class="font-bold text-slate-900 text-xs mb-1">Pangan Fungsional</h5>
+                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed">Pengembangan produk nutrasetikal bernilai komersial tinggi (Yogurt Probiotik, Granola)[cite: 1].</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- PANEL 3: GREEN TECHNOLOGY & WASTE MANAGEMENT -->
+                <!-- PANEL 3: GREEN TECH & WASTE MANAGEMENT -->
                 <div id="pem-panel-gtwm" class="peminatan-panel-content hidden animate-fade-in">
-                    <div class="grid lg:grid-cols-12 gap-8 items-start">
+                    <div class="grid lg:grid-cols-12 gap-6 items-start">
                         <div class="lg:col-span-4 bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
                             <span class="text-[10px] font-bold tracking-widest text-emerald-600 uppercase bg-emerald-50 px-2.5 py-1 rounded-md">Kluster 03</span>
-                            <h3 class="text-xl font-bold text-slate-900 mt-3 mb-2">Teknologi Hijau Masa Depan</h3>
-                            <p class="text-xs sm:text-sm text-slate-500 font-light leading-relaxed mb-6">Fokus strategis pada dekarbonisasi industri, audit jejak karbon pabrik, ekonomi sirkular, tata kelola limbah B3, serta sintesis material ramah lingkungan[cite: 1].</p>
+                            <h3 class="text-lg font-bold text-slate-900 mt-3 mb-2">Teknologi Hijau Masa Depan</h3>
+                            <p class="text-xs text-slate-500 font-light leading-relaxed mb-4">Fokus strategis pada dekarbonisasi industri, audit jejak karbon pabrik, ekonomi sirkular, tata kelola limbah B3, serta sintesis material ramah lingkungan[cite: 1].</p>
                         </div>
 
-                        <div class="lg:col-span-8 space-y-6">
+                        <div class="lg:col-span-8 space-y-4">
                             <h4 class="text-xs font-bold text-slate-400 tracking-widest uppercase">Eksplorasi Sub-Jalur Keahlian</h4>
-                            <div class="grid sm:grid-cols-3 gap-4">
-                                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                                    <h5 class="font-bold text-slate-900 text-sm mb-1.5">Waste to Value</h5>
-                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed mb-3">Daur ulang utilitas air dan urban mining pemurnian logam berharga e-waste[cite: 1].</p>
+                            <div class="grid sm:grid-cols-3 gap-3">
+                                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                                    <h5 class="font-bold text-slate-900 text-xs mb-1">Waste to Value</h5>
+                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed">Daur ulang utilitas air dan urban mining pemurnian logam berharga e-waste[cite: 1].</p>
                                 </div>
-                                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                                    <h5 class="font-bold text-slate-900 text-sm mb-1.5">Bioenergi Berkelanjutan</h5>
-                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed mb-3">Konversi biomassa residu menjadi biodiesel murni and Sustainable Aviation Fuel (SAF)[cite: 1].</p>
+                                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                                    <h5 class="font-bold text-slate-900 text-xs mb-1">Bioenergi</h5>
+                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed">Konversi biomassa residu menjadi biodiesel murni dan Sustainable Aviation Fuel (SAF)[cite: 1].</p>
                                 </div>
-                                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                                    <h5 class="font-bold text-slate-900 text-sm mb-1.5">Material Hijau</h5>
-                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed mb-3">Rekayasa biokomposit kemasan organik and pemurnian litium mineral kritis baterai[cite: 1].</p>
+                                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                                    <h5 class="font-bold text-slate-900 text-xs mb-1">Material Hijau</h5>
+                                    <p class="text-slate-500 text-[11px] font-light leading-relaxed">Rekayasa biokomposit kemasan organik dan pemurnian litium baterai[cite: 1].</p>
                                 </div>
                             </div>
                         </div>
@@ -557,39 +524,39 @@
     </section>
 
     <!-- Profil Kompetensi Lulusan -->
-    <section id="lulusan" class="py-20 md:py-28 bg-[#f8fafc] scroll-mt-20">
+    <section id="lulusan" class="py-16 sm:py-24 bg-[#f8fafc] scroll-mt-16">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" data-aos="fade-down">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
                     🎓 Capaian Karir
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" data-aos="fade-up">Profil Kompetensi Lulusan</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base font-light" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3 tracking-tight">Profil Kompetensi Lulusan</h2>
+                <p class="text-slate-500 max-w-xl mx-auto text-xs sm:text-sm font-light">
                     Mencetak praktisi unggulan berintegritas tinggi dengan kesiapan adaptasi instan di lanskap industri manufaktur global[cite: 1].
                 </p>
             </div>
 
-            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border-t-2 border-[#0a192f]" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-2xl mb-5 text-slate-400">01/</div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">Profesional Industri Kimia</h3>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed text-justify font-light">
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-t-2 border-slate-900" data-aos="fade-up">
+                    <div class="text-xl mb-4 font-bold text-slate-300">01/</div>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">Profesional Industri Kimia</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed text-justify font-light">
                         Mampu mengoperasikan, memantau, mendesain modifikasi parameter unit operasi proses, tata kelola K3, serta manajemen alur logistik pabrik kimia secara patuh hukum[cite: 1].
                     </p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border-t-2 border-amber-500" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-2xl mb-5 text-amber-500">02/</div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">Peneliti Terapan</h3>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed text-justify font-light">
-                        Terampil mengoperasikan instrumen analisis mutakhir untuk akselerasi hilirisasi produk bermanfaat tinggi di kluster polimer, agrokimia, kosmetik, pangan fungsional, and biomedis[cite: 1].
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-t-2 border-amber-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-xl mb-4 font-bold text-amber-500">02/</div>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">Peneliti Terapan</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed text-justify font-light">
+                        Terampil mengoperasikan instrumen analisis mutakhir untuk akselerasi hilirisasi produk bermanfaat tinggi di kluster polimer, agrokimia, kosmetik, pangan fungsional, dan biomedis[cite: 1].
                     </p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border-t-2 border-[#0a192f] sm:col-span-2 md:col-span-1" data-aos="fade-up" data-aos-delay="600">
-                    <div class="text-2xl mb-5 text-slate-400">03/</div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">Technopreneur</h3>
-                    <p class="text-slate-500 text-xs sm:text-sm leading-relaxed text-justify font-light">
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-t-2 border-slate-900 sm:col-span-2 md:col-span-1" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-xl mb-4 font-bold text-slate-300">03/</div>
+                    <h3 class="text-base font-bold text-slate-900 mb-2">Technopreneur</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed text-justify font-light">
                         Memiliki jiwa kepemimpinan bisnis mandiri, kecerdasan finansial, untuk melakukan hilirisasi inkubasi produk komersial baru berbasis keunggulan lokal berdaya saing global[cite: 1].
                     </p>
                 </div>
@@ -598,43 +565,41 @@
     </section>
 
     <!-- Sertifikasi Kompetensi BNSP -->
-    <section id="sertifikasi" class="py-20 md:py-28 bg-white border-t border-slate-200/40 scroll-mt-20">
+    <section id="sertifikasi" class="py-16 sm:py-24 bg-white border-t border-slate-200/60 scroll-mt-16">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
                 <div class="lg:col-span-5" data-aos="fade-right">
                     <div class="flex items-center gap-2 mb-3">
-                        <span class="w-8 h-[2px] bg-amber-500"></span>
+                        <span class="w-6 h-[2px] bg-amber-500"></span>
                         <h3 class="text-amber-600 font-bold tracking-wider uppercase text-xs">Portofolio Kualifikasi</h3>
                     </div>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6 tracking-tight">Sertifikasi Kompetensi Keahlian (BNSP)</h2>
-                    <p class="text-slate-600 mb-6 leading-relaxed text-sm sm:text-base font-light">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 tracking-tight">Sertifikasi Kompetensi Keahlian (BNSP)</h2>
+                    <p class="text-slate-600 mb-4 leading-relaxed text-xs sm:text-sm font-light">
                         Setiap mahasiswa dibekali skema kualifikasi sertifikat eksternal BNSP dan standar asosiasi industri demi menjamin pengakuan formal atas keahlian aplikatif sebelum kelulusan[cite: 1].
                     </p>
-                    <div class="p-6 bg-amber-50/40 rounded-xl border border-amber-200/40 shadow-sm">
-                        <p class="text-xs sm:text-sm font-medium text-amber-800 italic">
+                    <div class="p-4 bg-amber-50/60 rounded-xl border border-amber-200/40 shadow-sm">
+                        <p class="text-xs font-medium text-amber-800 italic">
                             "Menjamin akuntabilitas keahlian lulusan agar berdaya saing tinggi saat terserap pada pasar bursa kerja manufaktur regional[cite: 1]."
                         </p>
                     </div>
                 </div>
                 
                 <div class="lg:col-span-7" data-aos="fade-left">
-                    <div class="grid sm:grid-cols-2 gap-x-6">
-                        <ul class="check-list text-slate-700 text-xs sm:text-[13px] font-medium">
-                            <li>Analisis Spektrofotometri UV-Vis Instrumentatif[cite: 1]</li>
-                            <li>Analisis Komparatif Kromatografi Gas (GC)[cite: 1]</li>
+                    <div class="grid sm:grid-cols-2 gap-x-4">
+                        <ul class="check-list text-slate-700 text-xs font-medium">
+                            <li>Analisis Spektrofotometri UV-Vis[cite: 1]</li>
+                            <li>Analisis Kromatografi Gas (GC)[cite: 1]</li>
                             <li>Analisis Kuantitatif Volumetri Konvensional[cite: 1]</li>
                             <li>Teknik Pengambilan Contoh Uji Air Valid[cite: 1]</li>
-                            <li>Pelaksanaan Analisis Mikrobiologi Industri[cite: 1]</li>
-                            <li>Pemeriksaan Laboratorium Biologi Molekuler[cite: 1]</li>
-                            <li>Isolasi dan Pemurnian Protein Kompleks[cite: 1]</li>
+                            <li>Pelaksanaan Analisis Mikrobiologi[cite: 1]</li>
+                            <li>Pemeriksaan Laboratorium Biologi[cite: 1]</li>
                         </ul>
-                        <ul class="check-list text-slate-700 text-xs sm:text-[13px] font-medium">
-                            <li>Analisis Pendukung Penjaminan Manajemen Halal[cite: 1]</li>
+                        <ul class="check-list text-slate-700 text-xs font-medium">
+                            <li>Analisis Penjaminan Manajemen Halal[cite: 1]</li>
                             <li>Pelaksanaan Audit Keamanan Pangan (HACCP)[cite: 1]</li>
-                            <li>Rekayasa Pembuatan Pangan Fermentasi Komersial[cite: 1]</li>
-                            <li>Kewirausahaan Industri & Analisis Finansial[cite: 1]</li>
+                            <li>Pembuatan Pangan Fermentasi Komersial[cite: 1]</li>
+                            <li>Kewirausahaan Industri & Finansial[cite: 1]</li>
                             <li>Standardisasi Kompetensi Barista Kopi[cite: 1]</li>
-                            <li>Perencanaan Usaha Pascapanen Kakau Terpadu[cite: 1]</li>
                         </ul>
                     </div>
                 </div>
@@ -643,41 +608,41 @@
     </section>
 
     <!-- Fasilitas -->
-    <section id="fasilitas" class="py-20 md:py-28 bg-[#f8fafc] border-t border-slate-200/40 scroll-mt-20">
+    <section id="fasilitas" class="py-16 sm:py-24 bg-[#f8fafc] border-t border-slate-200/60 scroll-mt-16">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" data-aos="fade-down">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
                     🔬 Infrastruktur Modern
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" data-aos="fade-up">Fasilitas Laboratorium & TEFA</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base font-light" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3 tracking-tight">Fasilitas Laboratorium & TEFA</h2>
+                <p class="text-slate-500 max-w-xl mx-auto text-xs sm:text-sm font-light">
                     Menghadirkan lingkungan praktikum canggih dengan peralatan instruksional presisi berstandar industri[cite: 1].
                 </p>
             </div>
             <!-- Dynamic Injection Target -->
-            <div id="tempat-fasilitas" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="animate-pulse bg-slate-200 h-64 rounded-2xl"></div>
-                <div class="animate-pulse bg-slate-200 h-64 rounded-2xl"></div>
-                <div class="animate-pulse bg-slate-200 h-64 rounded-2xl"></div>
+            <div id="tempat-fasilitas" class="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+                <div class="animate-pulse bg-slate-200 h-48 rounded-2xl"></div>
+                <div class="animate-pulse bg-slate-200 h-48 rounded-2xl"></div>
+                <div class="animate-pulse bg-slate-200 h-48 rounded-2xl"></div>
             </div>
         </div>
     </section>
 
     <!-- Dosen -->
-    <section id="dosen" class="py-20 md:py-28 bg-white border-t border-slate-200/40 scroll-mt-20">
+    <section id="dosen" class="py-16 sm:py-24 bg-white border-t border-slate-200/60 scroll-mt-16">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" data-aos="fade-down">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
                     👨‍🏫 Staf Pengajar
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" data-aos="fade-up">Dewan Dosen & Tenaga Ahli</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base font-light" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3 tracking-tight">Dewan Dosen & Tenaga Ahli</h2>
+                <p class="text-slate-500 max-w-xl mx-auto text-xs sm:text-sm font-light">
                     Dipandu oleh akademisi berkualifikasi magister-doktoral serta praktisi berpengalaman sertifikasi keahlian profesional[cite: 1].
                 </p>
             </div>
             <!-- Dynamic Injection Target -->
-            <div id="tempat-dosen" class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                <div class="animate-pulse bg-white border border-slate-100 rounded-2xl p-4 space-y-4">
+            <div id="tempat-dosen" class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="animate-pulse bg-white border border-slate-100 rounded-2xl p-4 space-y-3">
                     <div class="bg-slate-200 aspect-[3/4] rounded-xl"></div>
                     <div class="h-4 bg-slate-200 rounded w-3/4 mx-auto"></div>
                 </div>
@@ -686,20 +651,20 @@
     </section>
 
     <!-- Aliansi Kemitraan -->
-    <section id="mitra" class="py-16 bg-[#f8fafc] border-t border-slate-200/40 scroll-mt-20">
+    <section id="mitra" class="py-12 bg-[#f8fafc] border-t border-slate-200/60 scroll-mt-16">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="text-center mb-10">
-                <h2 class="text-sm font-bold text-slate-400 tracking-widest uppercase" data-aos="zoom-in">Aliansi Mitra Industri Strategis</h2>
+            <div class="text-center mb-8">
+                <h2 class="text-xs font-bold text-slate-400 tracking-widest uppercase">Aliansi Mitra Industri Strategis</h2>
             </div>
             <!-- Dynamic Injection Target -->
-            <div id="tempat-mitra" class="flex flex-wrap justify-center gap-5" data-aos="fade-up" data-aos-delay="200">
-                <div class="animate-pulse bg-slate-200 w-40 h-20 rounded-xl"></div>
+            <div id="tempat-mitra" class="flex flex-wrap justify-center gap-4">
+                <div class="animate-pulse bg-slate-200 w-32 h-14 rounded-xl"></div>
             </div>
         </div>
     </section>
 
     <!-- Berita Aktual -->
-    <section id="berita" class="py-20 md:py-28 bg-white border-t border-slate-200/40 scroll-mt-20">
+    <section id="berita" class="py-16 sm:py-24 bg-white border-t border-slate-200/60 scroll-mt-16">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-8 gap-4">
                 <div>
@@ -707,55 +672,55 @@
                         <span class="w-6 h-[2px] bg-amber-500"></span>
                         <h3 class="text-amber-600 font-bold tracking-wider uppercase text-xs">Informasi Aktual</h3>
                     </div>
-                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight" data-aos="fade-up">Kabar & Rilis Terbaru</h2>
+                    <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">Kabar & Rilis Terbaru</h2>
                 </div>
                 
                 <!-- Kolom Pencarian Berita -->
-                <div class="w-full md:w-80" data-aos="fade-left">
+                <div class="w-full md:w-72">
                     <div class="relative">
-                        <input type="text" id="cari-berita" placeholder="Cari rilis berita..." class="w-full text-xs font-medium pl-10 pr-9 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all duration-300" onkeyup="cariInformasiBerita()">
-                        <div class="absolute left-3.5 top-3.5 text-slate-400">
+                        <input type="text" id="cari-berita" placeholder="Cari rilis berita..." class="w-full text-xs font-medium pl-9 pr-8 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition" onkeyup="cariInformasiBerita()">
+                        <div class="absolute left-3 top-3 text-slate-400">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                         </div>
-                        <button id="clear-search-btn" onclick="resetSearchBerita()" class="absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 text-lg hidden focus:outline-none">&times;</button>
+                        <button id="clear-search-btn" onclick="resetSearchBerita()" class="absolute right-3 top-2 text-slate-400 hover:text-slate-600 text-lg hidden focus:outline-none">&times;</button>
                     </div>
                 </div>
             </div>
             <!-- Dynamic Injection Target -->
-            <div id="tempat-berita" class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-                <div class="animate-pulse bg-white border border-slate-200 rounded-2xl p-5 h-64"></div>
+            <div id="tempat-berita" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="animate-pulse bg-white border border-slate-200 rounded-2xl p-5 h-56"></div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section Accordion Exclusive -->
-    <section id="faq" class="py-20 md:py-28 bg-slate-50 border-t border-slate-200/40 scroll-mt-20">
+    <!-- FAQ Section Accordion -->
+    <section id="faq" class="py-16 sm:py-24 bg-slate-50 border-t border-slate-200/60 scroll-mt-16">
         <div class="max-w-3xl mx-auto px-6 sm:px-8">
-            <div class="text-center mb-14">
-                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight" data-aos="fade-up">Tanya Jawab Alur Akademik (FAQ)</h2>
-                <p class="text-slate-500 mt-3 text-sm sm:text-base font-light">Jawaban responsif atas pertanyaan mendasar mengenai pedoman perkuliahan dan admisi baru[cite: 1, 2].</p>
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">Tanya Jawab Alur Akademik (FAQ)</h2>
+                <p class="text-slate-500 mt-2 text-xs sm:text-sm font-light">Jawaban responsif atas pertanyaan mendasar mengenai pedoman perkuliahan dan admisi baru[cite: 1, 2].</p>
             </div>
-            <div class="space-y-4" data-aos="fade-up">
-                <details class="group bg-white rounded-xl shadow-sm border border-slate-200/60 open:border-slate-900 transition-all duration-300">
-                    <summary class="flex justify-between items-center font-semibold cursor-pointer list-none p-6 text-slate-800 text-sm sm:text-base">
+            <div class="space-y-3">
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200/60 open:border-slate-900 transition duration-300">
+                    <summary class="flex justify-between items-center font-semibold cursor-pointer list-none p-5 text-slate-800 text-xs sm:text-sm">
                         <span>Bagaimana kedudukan dokumen Kurikulum TIK SV Unpad?</span>
                         <span class="transition-transform duration-300 group-open:rotate-180 text-amber-600">
-                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="20"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </span>
                     </summary>
-                    <div class="p-6 pt-0 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100 mt-3 font-light text-justify">
+                    <div class="p-5 pt-0 text-slate-600 text-xs leading-relaxed border-t border-slate-100 mt-2 font-light text-justify">
                         Dokumen pedoman kurikulum ini berfungsi penuh sebagai acuan formal tunggal dalam perencanaan instruksional, implementasi perkuliahan praktik, evaluasi CPL, serta proses penjaminan mutu mutu akademik berkala program studi[cite: 2].
                     </div>
                 </details>
 
-                <details class="group bg-white rounded-xl shadow-sm border border-slate-200/60 open:border-slate-900 transition-all duration-300">
-                    <summary class="flex justify-between items-center font-semibold cursor-pointer list-none p-6 text-slate-800 text-sm sm:text-base">
+                <details class="group bg-white rounded-xl shadow-sm border border-slate-200/60 open:border-slate-900 transition duration-300">
+                    <summary class="flex justify-between items-center font-semibold cursor-pointer list-none p-5 text-slate-800 text-xs sm:text-sm">
                         <span>Apakah kurikulum ini mengakomodasi porsi praktik lapangan dominan?</span>
                         <span class="transition-transform duration-300 group-open:rotate-180 text-amber-600">
-                            <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="20"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </span>
                     </summary>
-                    <div class="p-6 pt-0 text-slate-600 text-xs sm:text-sm leading-relaxed border-t border-slate-100 mt-3 font-light text-justify">
+                    <div class="p-5 pt-0 text-slate-600 text-xs leading-relaxed border-t border-slate-100 mt-2 font-light text-justify">
                         Ya. Sesuai karakteristik pendidikan vokasi nasional, bobot pengajaran menitikberatkan porsi aplikasi praktikum lapangan laboratorium dan ekosistem TEFA (~60-70%) guna menjamin transisi kompetensi instan saat magang industri[cite: 1].
                     </div>
                 </details>
@@ -763,119 +728,169 @@
         </div>
     </section>
 
-    <!-- Hubungan Masyarakat & Kontak Hubung -->
-    <section id="kontak" class="py-20 md:py-28 bg-white border-t border-slate-200/40 scroll-mt-20">
+    <!-- Kontak & Lokasi -->
+    <section id="kontak" class="py-16 sm:py-24 bg-white border-t border-slate-200/60 scroll-mt-16">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" data-aos="fade-down">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
                     📬 Hubungan Masyarakat
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Info Kontak & Denah Lokasi</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base font-light">Tim administrasi kesekretariatan siap melayani koordinasi operasional kemitraan formal and admisi mahasiswa baru[cite: 1].</p>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3 tracking-tight">Info Kontak & Denah Lokasi</h2>
+                <p class="text-slate-500 max-w-xl mx-auto text-xs sm:text-sm font-light">Tim administrasi kesekretariatan siap melayani koordinasi operasional kemitraan formal dan admisi mahasiswa baru[cite: 1].</p>
             </div>
 
-            <div class="grid lg:grid-cols-12 gap-10 items-stretch">
+            <div class="grid lg:grid-cols-12 gap-8 items-stretch">
                 <!-- Kiri: Info Detail & Form Interaktif -->
-                <div class="lg:col-span-5 bg-slate-50 p-8 rounded-2xl border border-slate-200/60 flex flex-col justify-between shadow-sm" data-aos="fade-right">
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-white shadow-sm border rounded-xl flex items-center justify-center shrink-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <div class="lg:col-span-5 bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200/60 flex flex-col justify-between shadow-sm" data-aos="fade-right">
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-3">
+                            <div class="w-9 h-9 bg-white shadow-sm border rounded-lg flex items-center justify-center shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                             </div>
                             <div>
-                                <h4 class="font-bold text-slate-900 text-sm">Alamat Sekretariat</h4>
-                                <p class="text-slate-600 leading-relaxed mt-1 text-xs sm:text-sm font-light">Jln. Ir. Soekarno km. 21 Jatinangor, Kab. Sumedang 45363 Jawa Barat[cite: 1]</p>
+                                <h4 class="font-bold text-slate-900 text-xs">Alamat Sekretariat</h4>
+                                <p class="text-slate-600 mt-0.5 text-xs font-light">Jln. Ir. Soekarno km. 21 Jatinangor, Kab. Sumedang 45363 Jawa Barat[cite: 1]</p>
                             </div>
                         </div>
 
-                        <a href="mailto:humas.sv@unpad.ac.id" class="flex items-start gap-4 group">
-                            <div class="w-10 h-10 bg-white shadow-sm border rounded-xl flex items-center justify-center group-hover:border-amber-500 transition-colors shrink-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <a href="mailto:humas.sv@unpad.ac.id" class="flex items-start gap-3 group">
+                            <div class="w-9 h-9 bg-white shadow-sm border rounded-lg flex items-center justify-center group-hover:border-amber-500 transition shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                             </div>
                             <div>
-                                <h4 class="font-bold text-slate-900 text-sm group-hover:text-amber-600 transition-colors">Korespondensi Email</h4>
-                                <p class="text-slate-600 mt-1 text-xs sm:text-sm font-light break-all">humas.sv@unpad.ac.id[cite: 1]</p>
+                                <h4 class="font-bold text-slate-900 text-xs group-hover:text-amber-600 transition">Korespondensi Email</h4>
+                                <p class="text-slate-600 mt-0.5 text-xs font-light break-all">humas.sv@unpad.ac.id[cite: 1]</p>
                             </div>
                         </a>
                     </div>
 
                     <!-- Form Hubung Instan via WhatsApp -->
-                    <div class="mt-10 pt-6 border-t border-slate-200">
-                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-800 mb-3">Kirim Pesan Instan Cepat</h4>
-                        <form id="form-kontak-cepat" onsubmit="submitFormKontak(event)" class="space-y-2.5">
+                    <div class="mt-8 pt-5 border-t border-slate-200">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">Kirim Pesan Instan</h4>
+                        <form id="form-kontak-cepat" onsubmit="submitFormKontak(event)" class="space-y-2">
                             <div class="grid grid-cols-2 gap-2">
-                                <input type="text" id="nama-cepat" placeholder="Nama Lengkap" required class="w-full text-xs font-medium px-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-amber-500 transition-all">
-                                <input type="email" id="email-cepat" placeholder="Email Aktif" required class="w-full text-xs font-medium px-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-amber-500 transition-all">
+                                <input type="text" id="nama-cepat" placeholder="Nama Lengkap" required class="w-full text-xs px-3 py-2 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-amber-500 transition">
+                                <input type="email" id="email-cepat" placeholder="Email Aktif" required class="w-full text-xs px-3 py-2 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-amber-500 transition">
                             </div>
-                            <textarea id="pesan-cepat" placeholder="Tulis hal akademik yang ingin ditanyakan..." rows="2" required class="w-full text-xs font-medium px-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-amber-500 transition-all resize-none"></textarea>
-                            <button type="submit" class="w-full bg-[#0f172a] hover:bg-amber-500 hover:text-slate-950 text-white font-semibold py-2.5 rounded-xl text-xs transition-all shadow-sm transform hover:-translate-y-0.5">
+                            <textarea id="pesan-cepat" placeholder="Tulis hal akademik yang ingin ditanyakan..." rows="2" required class="w-full text-xs px-3 py-2 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-amber-500 transition resize-none"></textarea>
+                            <button type="submit" class="w-full bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white font-semibold py-2 rounded-lg text-xs transition shadow-sm">
                                 Hubungkan ke WhatsApp Humas TIK
                             </button>
                         </form>
                     </div>
                 </div>
 
-                <!-- Kanan: Google Maps Integrasi -->
-                <div class="lg:col-span-7 bg-slate-50 p-4 rounded-2xl border border-slate-200/60 flex flex-col justify-between h-full" data-aos="fade-left">
-                    <div class="w-full h-72 sm:h-full min-h-[360px] rounded-xl overflow-hidden bg-slate-200 shadow-inner">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.655959580434!2d107.7753645!3d-6.9304926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68c500346f835b%3A0xda982140dcfefe2f!2sGedung%20Vokasi%20Unpad!5e0!3m2!1sid!2sid!4v1721055000000!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+                <!-- Kanan: Google Maps -->
+                <div class="lg:col-span-7 bg-slate-50 p-3 rounded-2xl border border-slate-200/60 min-h-[300px]" data-aos="fade-left">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.655959580434!2d107.7753645!3d-6.9304926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68c500346f835b%3A0xda982140dcfefe2f!2sGedung%20Vokasi%20Unpad!5e0!3m2!1sid!2sid!4v1721055000000!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-xl shadow-inner min-h-[300px]"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer Corporate Layout -->
-    <footer class="bg-[#0f172a] text-slate-400 pt-16 pb-8 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-6 sm:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-12">
+    <footer class="bg-slate-900 text-slate-400 pt-12 pb-6 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
             <div class="sm:col-span-2">
-                <h4 class="text-white font-extrabold text-xl mb-4 tracking-tight">TIK Vokasi Unpad</h4>
-                <p class="text-xs sm:text-sm text-slate-400 mb-6 leading-relaxed max-w-sm font-light">
-                    Program Studi D-IV Teknologi Industri Kimia Sekolah Vokasi Universitas Padjadjaran. Terakreditasi formal, berwawasan lingkungan global, and unggul dalam implementasi OBE[cite: 1, 2].
+                <h4 class="text-white font-extrabold text-base mb-3 tracking-tight">TIK Vokasi Unpad</h4>
+                <p class="text-xs text-slate-400 mb-4 leading-relaxed max-w-sm font-light">
+                    Program Studi D-IV Teknologi Industri Kimia Sekolah Vokasi Universitas Padjadjaran. Terakreditasi formal, berwawasan lingkungan global, dan unggul dalam implementasi OBE[cite: 1, 2].
                 </p>
             </div>
             <div>
-                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Tautan Resmi</h4>
-                <ul class="space-y-2.5 text-xs sm:text-sm font-light">
+                <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-3">Tautan Resmi</h4>
+                <ul class="space-y-2 text-xs font-light">
                     <li><a href="https://www.unpad.ac.id" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition">Universitas Padjadjaran</a></li>
                     <li><a href="https://vokasi.unpad.ac.id" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition">Sekolah Vokasi</a></li>
                     <li><a href="https://smup.unpad.ac.id" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition text-amber-500 font-semibold">Portal Admisi SMUP</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Bantuan Informasi</h4>
-                <ul class="space-y-2.5 text-xs sm:text-sm font-light">
+                <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-3">Sistem & Portal</h4>
+                <ul class="space-y-2 text-xs font-light">
+                    <li><button onclick="bukaModalAdmin()" class="hover:text-amber-400 transition flex items-center gap-1 text-slate-400 focus:outline-none">🔒 Admin CMS Dashboard</button></li>
                     <li><a href="#faq" class="hover:text-amber-400 transition">FAQ Alur Pedoman</a></li>
-                    <li><a href="#kontak" class="hover:text-amber-400 transition">Hubungi Sekretariat</a></li>
                 </ul>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-6 sm:px-8 border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 text-center md:text-left font-light">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-500 text-center sm:text-left font-light gap-2">
             <p>&copy; 2026 Program Studi D-IV Teknologi Industri Kimia Unpad. All rights reserved[cite: 1].</p>
         </div>
     </footer>
 
     <!-- Floating Utilities Widget Links -->
-    <a href="https://wa.me/6281120240803?text=Halo%20Humas%20TIK%20Vokasi%20Unpad..." target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-6 bg-emerald-500 text-white w-14 h-14 rounded-xl flex items-center justify-center shadow-2xl hover:bg-emerald-400 transition-all transform hover:-translate-y-1 z-50 text-2xl" title="Tanya Humas via WhatsApp[cite: 1]">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.98c-.202-.101-1.194-.588-1.378-.653-.185-.069-.32-.102-.455.101-.135.202-.523.653-.64.789-.117.135-.235.151-.437.05-1.823-.907-2.906-2.203-3.414-3.08-.135-.233-.01-.359.108-.476.105-.105.235-.274.354-.412.119-.138.159-.233.238-.396.079-.163.039-.307-.02-.412-.06-.105-.455-1.096-.624-1.503-.165-.398-.332-.344-.455-.35-.116-.005-.25-.006-.384-.006-.135 0-.355.05-.541.252-.186.202-.711.696-.711 1.7a3.442 3.442 0 0 0 .717 1.831c.074.1.135.197.234.332 1.348 1.833 3.03 2.531 4.542 2.996.335.103.655.152.923.112.298-.044.912-.372 1.04-.731.129-.359.129-.667.091-.731-.039-.065-.152-.104-.354-.205z"/></svg>
+    <a href="https://wa.me/6281120240803?text=Halo%20Humas%20TIK%20Vokasi%20Unpad..." target="_blank" rel="noopener noreferrer" class="fixed bottom-20 right-6 bg-emerald-500 text-white w-12 h-12 rounded-xl flex items-center justify-center shadow-2xl hover:bg-emerald-400 transition transform hover:-translate-y-1 z-50 text-xl" title="Tanya Humas via WhatsApp[cite: 1]">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.98c-.202-.101-1.194-.588-1.378-.653-.185-.069-.32-.102-.455.101-.135.202-.523.653-.64.789-.117.135-.235.151-.437.05-1.823-.907-2.906-2.203-3.414-3.08-.135-.233-.01-.359.108-.476.105-.105.235-.274.354-.412.119-.138.159-.233.238-.396.079-.163.039-.307-.02-.412-.06-.105-.455-1.096-.624-1.503-.165-.398-.332-.344-.455-.35-.116-.005-.25-.006-.384-.006-.135 0-.355.05-.541.252-.186.202-.711.696-.711 1.7a3.442 3.442 0 0 0 .717 1.831c.074.1.135.197.234.332 1.348 1.833 3.03 2.531 4.542 2.996.335.103.655.152.923.112.298-.044.912-.372 1.04-.731.129-.359.129-.667.091-.731-.039-.065-.152-.104-.354-.205z"/></svg>
     </a>
 
-    <button id="btn-back-to-top" onclick="keAtas()" class="fixed bottom-6 left-6 bg-[#0f172a] text-white w-12 h-12 rounded-xl flex items-center justify-center shadow-2xl opacity-0 translate-y-10 transition-all duration-300 hover:bg-amber-500 hover:text-slate-950 z-50 cursor-pointer pointer-events-none" title="Kembali ke Atas[cite: 1]">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"/></svg>
+    <button id="btn-back-to-top" onclick="keAtas()" class="fixed bottom-6 left-6 bg-slate-900 text-white w-10 h-10 rounded-xl flex items-center justify-center shadow-2xl opacity-0 translate-y-10 transition z-50 pointer-events-none" title="Kembali ke Atas[cite: 1]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"/></svg>
     </button>
 
     <!-- Modal Rilis Berita Detail -->
     <div id="modal-berita" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-[60] hidden flex justify-center items-center p-4">
-      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[85vh] overflow-y-auto relative border border-slate-100">
-        <button onclick="tutupModal()" class="absolute top-4 right-5 text-slate-400 hover:text-red-600 text-3xl font-light transition-colors">&times;</button>
-        <div id="isi-modal" class="p-6 sm:p-10"></div>
+      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[80vh] overflow-y-auto relative border border-slate-100">
+        <button onclick="tutupModal()" class="absolute top-4 right-5 text-slate-400 hover:text-red-600 text-2xl font-light transition-colors">&times;</button>
+        <div id="isi-modal" class="p-6 sm:p-8"></div>
       </div>
+    </div>
+
+    <!-- FITUR UTAMA DIKEMBALIKAN: Modal Admin CMS Dashboard Panel -->
+    <div id="modal-admin" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-[70] hidden flex justify-center items-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl h-[85vh] flex flex-col relative overflow-hidden border border-slate-200">
+            <!-- Header Panel -->
+            <div class="bg-slate-900 text-white p-4 flex justify-between items-center shrink-0">
+                <div class="flex items-center gap-2">
+                    <span class="text-xs bg-amber-500 text-slate-950 font-bold px-2 py-0.5 rounded uppercase tracking-wider">CMS Mode</span>
+                    <h3 class="font-bold text-sm">Dashboard Manajemen Akademik TIK</h3>
+                </div>
+                <button onclick="tutupModalAdmin()" class="text-slate-400 hover:text-white text-xl focus:outline-none">&times;</button>
+            </div>
+            
+            <!-- Dashboard Content Area -->
+            <div class="flex-1 overflow-y-auto p-6 bg-slate-50 grid md:grid-cols-12 gap-6">
+                <!-- Sisi Kiri: Data Metrics & Form Simulator -->
+                <div class="md:col-span-7 space-y-4">
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                        <h4 class="text-xs font-bold text-slate-900 uppercase mb-3 tracking-wider">📝 Input Rilis Berita Baru (Markdown Supported)</h4>
+                        <div class="space-y-3">
+                            <input type="text" id="cms-judul" placeholder="Judul Pengumuman/Berita Utama" class="w-full text-xs px-3 py-2 border rounded-lg focus:outline-none focus:border-slate-900">
+                            <input type="text" id="cms-desc" placeholder="Deskripsi Singkat / Ringkasan Kunci" class="w-full text-xs px-3 py-2 border rounded-lg focus:outline-none focus:border-slate-900">
+                            <textarea id="cms-body" placeholder="# Tulis Konten Berita Menggunakan Format Markdown Di Sini...&#10;&#10;* Poin Informasi A&#10;* Poin Informasi B" rows="5" class="w-full text-xs px-3 py-2 border rounded-lg focus:outline-none focus:border-slate-900 font-mono resize-none"></textarea>
+                            <button onclick="simulasiTambahBerita()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-2 rounded-lg text-xs transition">
+                                Publish Dynamic Content Ke Website
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sisi Kanan: Status Monitoring & Preview Realtime -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                        <h4 class="text-xs font-bold text-slate-900 uppercase mb-2 tracking-wider">📊 Performa Skema Kurikulum</h4>
+                        <div class="space-y-2 text-[11px]">
+                            <div class="flex justify-between border-b pb-1"><span>Pendekatan Operasional:</span><strong class="text-emerald-600">OBE & KKNI</strong></div>
+                            <div class="flex justify-between border-b pb-1"><span>Total Kluster Peminatan:</span><strong>3 Spesialisasi</strong></div>
+                            <div class="flex justify-between border-b pb-1"><span>Validasi Peta SKS:</span><strong class="text-blue-600">144 SKS Sinkron</strong></div>
+                            <div class="flex justify-between"><span>Status Sinkronisasi JSON:</span><strong class="text-emerald-600">Online/Active</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 text-white p-4 rounded-xl space-y-2">
+                        <h4 class="text-xs font-bold text-amber-400 uppercase tracking-wider">💡 Sistem Simulator CMS</h4>
+                        <p class="text-[11px] text-slate-300 leading-relaxed font-light">
+                            Panel ini mensimulasikan mesin pengelolaan konten lokal. Berita yang Anda input akan ditambahkan secara instan di urutan teratas daftar berita berkat arsitektur pengolahan state array JavaScript internal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- AOS Script Integration -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ once: true, offset: 40, duration: 700 });
+        AOS.init({ once: true, offset: 30, duration: 600 });
     </script>
 
     <!-- JavaScript Fungsional Tampilan Navigasi & Tab Kontrol -->
@@ -933,14 +948,14 @@
 
         function keAtas() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
-        // Interactive Profil Tab Switcher
+        // Profil Tab Switcher
         function switchProfileTab(targetId) {
             document.querySelectorAll('.profile-panel-content').forEach(p => p.classList.add('hidden'));
             document.getElementById(`p-panel-${targetId}`).classList.remove('hidden');
 
             document.querySelectorAll('.profile-tab-btn').forEach(btn => {
                 btn.classList.remove('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
-                btn.classList.add('border-slate-200/60', 'bg-white', 'text-slate-600');
+                btn.classList.add('border-slate-200', 'bg-white', 'text-slate-600');
             });
 
             const currentBtn = document.getElementById(`p-tab-${targetId}`);
@@ -949,20 +964,20 @@
             currentBtn.classList.add('border-slate-900');
         }
 
-        // NEW FEATURE: Interactive Curriculum Semester Switcher Engine
+        // Interactive Curriculum Semester Switcher Engine
         function switchSemesterTab(targetId) {
             document.querySelectorAll('.semester-panel-content').forEach(p => p.classList.add('hidden'));
             document.getElementById(`sem-panel-${targetId}`).classList.remove('hidden');
 
             document.querySelectorAll('.semester-tab-btn').forEach(btn => {
-                btn.classList.remove('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-md');
+                btn.classList.remove('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
                 btn.classList.add('border-slate-200', 'bg-white', 'text-slate-600');
             });
 
             const currentBtn = document.getElementById(`sem-tab-${targetId}`);
             currentBtn.classList.replace('bg-white', 'bg-slate-900');
             currentBtn.classList.replace('text-slate-600', 'text-white');
-            currentBtn.classList.add('border-slate-900', 'shadow-md');
+            currentBtn.classList.add('border-slate-900', 'shadow-sm');
         }
 
         // Peminatan Tab Switcher
@@ -971,14 +986,14 @@
             document.getElementById(`pem-panel-${targetId}`).classList.remove('hidden');
 
             document.querySelectorAll('.peminatan-tab-btn').forEach(btn => {
-                btn.classList.remove('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-md');
+                btn.classList.remove('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
                 btn.classList.add('border-slate-200', 'bg-white', 'text-slate-600');
             });
 
             const currentBtn = document.getElementById(`pem-tab-${targetId}`);
             currentBtn.classList.replace('bg-white', 'bg-slate-900');
             currentBtn.classList.replace('text-slate-600', 'text-white');
-            currentBtn.classList.add('border-slate-900', 'shadow-md');
+            currentBtn.classList.add('border-slate-900', 'shadow-sm');
         }
 
         // WhatsApp Custom Form Message Engine
@@ -993,7 +1008,7 @@
         }
     </script>
 
-    <!-- Fetch Data JSON & Deep Linking Controller Engine -->
+    <!-- Fetch Data JSON, CMS Engine & Deep Linking Controller -->
     <script>
       let semuaBerita = []; 
 
@@ -1009,9 +1024,12 @@
             const paramBerita = urlParams.get('berita');
             if (paramBerita !== null && !isNaN(paramBerita)) bukaModal(parseInt(paramBerita));
           } else {
-            document.getElementById('tempat-berita').innerHTML = '<p class="text-center text-slate-400 col-span-full font-light py-8">Belum ada publikasi berita.</p>';
+            document.getElementById('tempat-berita').innerHTML = '<p class="text-center text-slate-400 col-span-full font-light py-8 text-xs">Belum ada publikasi berita terbaru.</p>';
           }
-        }).catch(err => console.error(err));
+        }).catch(err => {
+            console.error(err);
+            document.getElementById('tempat-berita').innerHTML = '<p class="text-center text-slate-400 col-span-full font-light py-8 text-xs">Gagal memuat arsip rilis berita.</p>';
+        });
 
       function tampilkanDataBerita(itemsBerita) {
         const wadah = document.getElementById('tempat-berita');
@@ -1021,22 +1039,22 @@
             let b = itemsBerita[i];
             let tgl = new Date(b.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
             html += `
-              <article class="bg-white rounded-2xl shadow-sm border border-slate-200/60 overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+              <article class="bg-white rounded-2xl shadow-sm border border-slate-200/60 overflow-hidden hover:shadow-md transition flex flex-col justify-between group">
                 <div>
-                  <div class="overflow-hidden h-48 bg-slate-100"><img src="${b.thumbnail}" onerror="this.src='https://placehold.co/600x400?text=Berita+TIK';" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
-                  <div class="p-6">
-                    <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md uppercase">${tgl}</span>
-                    <h3 class="font-bold text-base text-slate-900 mt-4 mb-2 leading-snug group-hover:text-amber-600 transition-colors">${b.title}</h3>
-                    <p class="text-xs text-slate-500 font-light line-clamp-3 mb-4">${b.description}</p>
+                  <div class="overflow-hidden h-44 bg-slate-100"><img src="${b.thumbnail}" onerror="this.src='https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=600';" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+                  <div class="p-5">
+                    <span class="text-[9px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded uppercase">${tgl}</span>
+                    <h3 class="font-bold text-sm text-slate-900 mt-3 mb-1.5 leading-snug group-hover:text-amber-600 transition-colors">${b.title}</h3>
+                    <p class="text-xs text-slate-500 font-light line-clamp-2 mb-3">${b.description}</p>
                   </div>
                 </div>
-                <div class="px-6 pb-6"><button onclick="bukaModal(${b.originalIndex})" class="text-xs font-semibold text-slate-900 hover:text-amber-600 transition inline-flex items-center gap-1">Baca Selengkapnya &rarr;</button></div>
+                <div class="px-5 pb-5"><button onclick="bukaModal(${b.originalIndex})" class="text-xs font-semibold text-slate-900 hover:text-amber-600 transition inline-flex items-center gap-1">Baca Selengkapnya &rarr;</button></div>
               </article>
             `;
           }
           wadah.innerHTML = html;
         } else {
-          wadah.innerHTML = '<p class="text-center text-slate-400 col-span-full py-12">Rilis berita tidak ditemukan.</p>';
+          wadah.innerHTML = '<p class="text-center text-slate-400 col-span-full py-8 text-xs">Rilis berita tidak ditemukan.</p>';
         }
       }
 
@@ -1064,10 +1082,10 @@
           if(data.items && data.items.length > 0) {
             data.items.forEach(f => {
               html += `
-                <div class="group relative rounded-2xl overflow-hidden shadow-sm h-64 bg-slate-900">
-                    <img src="${f.gambar}" onerror="this.src='https://placehold.co/600x400?text=Fasilitas+TIK';" class="w-full h-full object-cover opacity-80 transition duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex items-end p-6">
-                        <h4 class="text-white font-bold text-base">${f.nama}</h4>
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm h-48 bg-slate-900">
+                    <img src="${f.gambar}" onerror="this.src='https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=600';" class="w-full h-full object-cover opacity-70 transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex items-end p-5">
+                        <h4 class="text-white font-bold text-sm tracking-wide">${f.nama}</h4>
                     </div>
                 </div>
               `;
@@ -1085,11 +1103,11 @@
           if(data.items && data.items.length > 0) {
             data.items.forEach(d => {
               html += `
-                <div class="bg-white border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition duration-300">
-                    <div class="bg-slate-100 aspect-[3/4] overflow-hidden"><img src="${d.foto}" onerror="this.src='https://placehold.co/300x400?text=Dosen+TIK';" class="w-full h-full object-cover"></div>
-                    <div class="p-5 text-center">
-                        <h4 class="font-bold text-sm text-slate-900 line-clamp-2">${d.nama}</h4>
-                        <p class="text-[10px] text-amber-700 font-semibold uppercase tracking-wider mt-2">${d.jabatan}</p>
+                <div class="bg-white border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+                    <div class="bg-slate-100 aspect-[3/4] overflow-hidden"><img src="${d.foto}" onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400';" class="w-full h-full object-cover"></div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-xs text-slate-900 line-clamp-2">${d.nama}</h4>
+                        <p class="text-[9px] text-amber-700 font-semibold uppercase tracking-wider mt-1.5">${d.jabatan}</p>
                     </div>
                 </div>
               `;
@@ -1107,8 +1125,8 @@
           if(data.items && data.items.length > 0) {
             data.items.forEach(m => {
               html += `
-                <div class="bg-white px-6 py-4 w-44 h-24 rounded-xl border border-slate-200/40 flex items-center justify-center group">
-                    <img src="${m.logo}" onerror="this.src='https://placehold.co/150x50?text=Mitra';" class="max-h-12 object-contain filter grayscale group-hover:grayscale-0 opacity-50 group-hover:opacity-100 transition duration-300">
+                <div class="bg-white px-4 py-3 w-36 h-16 rounded-xl border border-slate-200/40 flex items-center justify-center group">
+                    <img src="${m.logo}" onerror="this.src='https://via.placeholder.com/150x50?text=Corporate+Partner';" class="max-h-10 object-contain filter grayscale group-hover:grayscale-0 opacity-40 group-hover:opacity-100 transition duration-300">
                 </div>
               `;
             });
@@ -1126,10 +1144,10 @@
         window.history.pushState({ bId: idx }, '', `${window.location.origin}${window.location.pathname}?berita=${idx}`);
         
         document.getElementById('isi-modal').innerHTML = `
-          <span class="text-[11px] font-bold text-amber-700 uppercase tracking-widest block mb-2">${tgl}</span>
-          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-6">${b.title}</h2>
-          <div class="rounded-xl overflow-hidden max-h-80 mb-6 bg-slate-50"><img src="${b.thumbnail}" onerror="this.src='https://placehold.co/600x400?text=Berita';" class="w-full h-full object-cover"></div>
-          <div class="text-slate-600 leading-relaxed space-y-4 font-light text-xs sm:text-sm text-justify">${bodyRapi}</div>
+          <span class="text-[10px] font-bold text-amber-700 uppercase tracking-wider block mb-1.5">${tgl}</span>
+          <h2 class="text-lg sm:text-xl font-extrabold text-slate-900 mb-4 leading-tight">${b.title}</h2>
+          <div class="rounded-xl overflow-hidden max-h-64 mb-5 bg-slate-50"><img src="${b.thumbnail}" onerror="this.src='https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=600';" class="w-full h-full object-cover"></div>
+          <div class="text-slate-600 leading-relaxed space-y-3 font-light text-xs text-justify">${bodyRapi}</div>
         `;
         document.getElementById('modal-berita').classList.remove('hidden');
         document.body.classList.add('overflow-hidden');
@@ -1139,6 +1157,48 @@
         document.getElementById('modal-berita').classList.add('hidden');
         document.body.classList.remove('overflow-hidden');
         window.history.pushState({}, '', `${window.location.origin}${window.location.pathname}`);
+      }
+
+      // FITUR KONTROL CMS AKADEMIK DIKEMBALIKAN MUTLAK
+      function bukaModalAdmin() {
+          document.getElementById('modal-admin').classList.remove('hidden');
+          document.body.classList.add('overflow-hidden');
+      }
+      function tutupModalAdmin() {
+          document.getElementById('modal-admin').classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+      }
+
+      function simulasiTambahBerita() {
+          const judul = document.getElementById('cms-judul').value;
+          const desc = document.getElementById('cms-desc').value;
+          const body = document.getElementById('cms-body').value;
+
+          if(!judul || !desc || !body) {
+              alert('Mohon lengkapi seluruh field formulir rilis berita CMS.');
+              return;
+          }
+
+          const infoBaru = {
+              title: judul,
+              description: desc,
+              body: body,
+              date: new Date().toISOString().split('T')[0],
+              thumbnail: '',
+              originalIndex: semuaBerita.length
+          };
+
+          semuaBerita.push(infoBaru);
+          tampilkanDataBerita(semuaBerita);
+          tutupModalAdmin();
+
+          // Reset forms
+          document.getElementById('cms-judul').value = '';
+          document.getElementById('cms-desc').value = '';
+          document.getElementById('cms-body').value = '';
+          
+          alert('Berhasil! Konten berita berbasis Markdown Anda telah di-inject ke state antarmuka utama.');
+          document.getElementById('berita').scrollIntoView({ behavior: 'smooth' });
       }
     </script>
 </body>
