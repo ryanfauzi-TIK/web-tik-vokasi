@@ -112,6 +112,9 @@
         /* Dropdown Sub-Nav Utility */
         .dropdown-active .dropdown-menu {
             display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
         }
     </style>
 </head>
@@ -120,7 +123,7 @@
     <!-- Reading Progress Bar -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-amber-500 z-[60] transition-all duration-100 w-0"></div>
 
-    <!-- Navigasi Sticky Glassmorphism Premium (Sistem Sub-Navigasi Tergrup Lengkap) -->
+    <!-- Navigasi Sticky Glassmorphism Premium -->
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/40 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 py-4 flex justify-between items-center">
             
@@ -147,7 +150,7 @@
                     <a href="#beranda" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200">Beranda</a>
                 </li>
                 
-                <!-- SUB NAVIGASI 1: PROFIL STUDI -->
+                <!-- SUB NAVIGASI 1: PROFIL STUDI (Premium Animation & Anti-Lost Hover Celah) -->
                 <li class="w-full xl:w-auto relative group select-none dropdown-wrapper" id="nav-profil-wrapper">
                     <button onclick="toggleSubNav(event, 'nav-profil-wrapper')" class="w-full xl:w-auto flex items-center justify-between gap-1 py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 font-medium focus:outline-none">
                         <span>Profil Program</span>
@@ -155,14 +158,14 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
-                    <ul class="dropdown-menu xl:absolute top-full left-0 mt-2 w-full xl:w-56 bg-white xl:border border-slate-200/60 xl:shadow-xl rounded-xl p-2 hidden xl:group-hover:block transition-all duration-300 z-50 space-y-1">
+                    <ul class="dropdown-menu xl:absolute top-full left-0 mt-2 w-full xl:w-56 bg-white xl:border border-slate-200/60 xl:shadow-xl rounded-xl p-2 xl:opacity-0 xl:invisible xl:transform xl:translate-y-2 xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:translate-y-0 transition-all duration-300 z-50 space-y-1 before:content-[''] before:absolute before:-top-4 before:left-0 before:w-full before:h-4">
                         <li><a href="#profil" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Sejarah & Visi Misi</a></li>
                         <li><a href="#pencapaian" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Keunggulan & Kinerja</a></li>
                         <li><a href="#fasilitas" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Fasilitas Laboratorium</a></li>
                     </ul>
                 </li>
 
-                <!-- SUB NAVIGASI 2: AKADEMIK -->
+                <!-- SUB NAVIGASI 2: AKADEMIK (Premium Animation & Anti-Lost Hover Celah) -->
                 <li class="w-full xl:w-auto relative group select-none dropdown-wrapper" id="nav-akademik-wrapper">
                     <button onclick="toggleSubNav(event, 'nav-akademik-wrapper')" class="w-full xl:w-auto flex items-center justify-between gap-1 py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 font-medium focus:outline-none">
                         <span>Akademik</span>
@@ -170,8 +173,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
-                    <ul class="dropdown-menu xl:absolute top-full left-0 mt-2 w-full xl:w-56 bg-white xl:border border-slate-200/60 xl:shadow-xl rounded-xl p-2 hidden xl:group-hover:block transition-all duration-300 z-50 space-y-1">
-                        <li><a href="#kurikulum" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Struktur Kurikulum</a></li>
+                    <ul class="dropdown-menu xl:absolute top-full left-0 mt-2 w-full xl:w-56 bg-white xl:border border-slate-200/60 xl:shadow-xl rounded-xl p-2 xl:opacity-0 xl:invisible xl:transform xl:translate-y-2 xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:translate-y-0 transition-all duration-300 z-50 space-y-1 before:content-[''] before:absolute before:-top-4 before:left-0 before:w-full before:h-4">
+                        <li><a href="#kurikulum" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Struktur Kurikulum & Roadmap</a></li>
                         <li><a href="#peminatan" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Peminatan Industri</a></li>
                         <li><a href="#lulusan" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Profil Lulusan</a></li>
                         <li><a href="#sertifikasi" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Sertifikasi Kompetensi</a></li>
@@ -179,7 +182,7 @@
                     </ul>
                 </li>
 
-                <!-- SUB NAVIGASI 3: INFORMASI -->
+                <!-- SUB NAVIGASI 3: INFORMASI (Premium Animation & Anti-Lost Hover Celah) -->
                 <li class="w-full xl:w-auto relative group select-none dropdown-wrapper" id="nav-info-wrapper">
                     <button onclick="toggleSubNav(event, 'nav-info-wrapper')" class="w-full xl:w-auto flex items-center justify-between gap-1 py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 font-medium focus:outline-none">
                         <span>Informasi</span>
@@ -187,7 +190,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
-                    <ul class="dropdown-menu xl:absolute top-full left-0 mt-2 w-full xl:w-56 bg-white xl:border border-slate-200/60 xl:shadow-xl rounded-xl p-2 hidden xl:group-hover:block transition-all duration-300 z-50 space-y-1">
+                    <ul class="dropdown-menu xl:absolute top-full left-0 mt-2 w-full xl:w-56 bg-white xl:border border-slate-200/60 xl:shadow-xl rounded-xl p-2 xl:opacity-0 xl:invisible xl:transform xl:translate-y-2 xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:translate-y-0 transition-all duration-300 z-50 space-y-1 before:content-[''] before:absolute before:-top-4 before:left-0 before:w-full before:h-4">
                         <li><a href="#berita" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Kabar & Berita</a></li>
                         <li><a href="#faq" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">FAQ Calon Mahasiswa</a></li>
                         <li><a href="#kontak" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Hubungi Kami & Peta</a></li>
@@ -226,7 +229,7 @@
         </div>
     </section>
 
-    <!-- Profil Akademik (Sistem Tab Diperbarui: Sambutan dihapus, diganti Visi Misi & Sejarah Menarik) -->
+    <!-- Profil Akademik -->
     <section id="profil" class="py-20 md:py-28 bg-white scroll-mt-20">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="grid lg:grid-cols-12 gap-12 md:gap-16 items-start">
@@ -297,7 +300,7 @@
                         </div>
                     </div>
 
-                    <!-- Panel: Sejarah Pendirian (Dibuat Naratif Storytelling Sangat Menarik) -->
+                    <!-- Panel: Sejarah Pendirian -->
                     <div id="p-panel-sejarah" class="profile-panel-content hidden animate-fade-in space-y-5">
                         <div class="border-b border-slate-200 pb-3">
                             <h3 class="text-xl font-bold text-slate-900 tracking-tight">Kisah Langkah Emas: Fajar Baru Vokasi Industri</h3>
@@ -374,7 +377,7 @@
                 <div class="bg-white p-6 rounded-2xl border border-slate-200/50 shadow-sm text-center" data-aos="fade-up" data-aos-delay="100">
                     <div class="text-3xl mb-2">🔬</div>
                     <h4 class="text-slate-900 font-bold text-sm uppercase tracking-wide mb-1">Integrasi Kimia Terapan</h4>
-                    <p class="text-slate-500 text-xs font-light leading-relaxed">Penggabungan harmonis antara riset rekayasa proses, bioteknologi, dan formulasi hilir industri.</p>
+                    <p class="text-slate-500 text-xs font-light leading-relaxed">Penggabungan harmonis antara riset rekayasa proses, bioteknologi, and formulasi hilir industri.</p>
                 </div>
                 <div class="bg-white p-6 rounded-2xl border border-slate-200/50 shadow-sm text-center" data-aos="fade-up" data-aos-delay="200">
                     <div class="text-3xl mb-2">🏗️</div>
@@ -395,30 +398,156 @@
         </div>
     </section>
 
-    <!-- Struktur Kurikulum Interaktif (Diperbarui: Tanpa Kode, Sangat Minimalis, Interaktif Grid Card) -->
+    <!-- ======================================================== -->
+    <!-- MODUL PEMBARUAN: STRUKTUR KURIKULUM, ROADMAP, & TABEL SKS -->
+    <!-- ======================================================== -->
     <section id="kurikulum" class="py-20 md:py-28 bg-white border-t border-slate-200/40 scroll-mt-20">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="text-center mb-12">
+            <div class="text-center mb-16">
                 <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" data-aos="fade-down">
-                    Struktur Pemetaan Struktur Modul
+                    Peta Jalan Akademik & SKS
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" data-aos="fade-up">Kurikulum Sarjana Terapan (D-IV)</h2>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" data-aos="fade-up">Arsitektur & Distribusi Kurikulum</h2>
                 <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base font-light" data-aos="fade-up" data-aos-delay="100">
-                    Eksplorasi susunan pemetaan mata kuliah berbasis praktik dominan dari Tahun Pertama hingga program magang industri Tugas Akhir.
+                    Eksplorasi komparatif dari peta kompetensi tahunan hingga sebaran distribusi bobot mata kuliah per semester secara transparan.
                 </p>
             </div>
 
-            <!-- Tab Kontroler Semester Minimalis -->
-            <div class="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-10 max-w-4xl mx-auto" data-aos="fade-up">
-                <button onclick="switchSemesterTab(1)" id="sem-btn-1" class="semester-tab-btn text-xs font-bold px-5 py-3 rounded-xl border transition-all duration-200 bg-slate-900 border-slate-900 text-white shadow-sm">Tahun 1 (Sem 1-2)</button>
-                <button onclick="switchSemesterTab(3)" id="sem-btn-3" class="semester-tab-btn text-xs font-bold px-5 py-3 rounded-xl border border-slate-200 bg-white text-slate-600 hover:text-slate-900 transition-all duration-200">Tahun 2 (Sem 3-4)</button>
-                <button onclick="switchSemesterTab(5)" id="sem-btn-5" class="semester-tab-btn text-xs font-bold px-5 py-3 rounded-xl border border-slate-200 bg-white text-slate-600 hover:text-slate-900 transition-all duration-200">Tahun 3 (Sem 5-6)</button>
-                <button onclick="switchSemesterTab(7)" id="sem-btn-7" class="semester-tab-btn text-xs font-bold px-5 py-3 rounded-xl border border-slate-200 bg-white text-slate-600 hover:text-slate-900 transition-all duration-200">Tahun 4 (Sem 7-8)</button>
+            <!-- Bagian A: Visual Roadmap Kurikulum (Estetis & Kontemporer) -->
+            <div class="mb-20" data-aos="fade-up">
+                <h3 class="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-8">&mdash; ROADMAP KOMPETENSI KELULUSAN &mdash;</h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+                    <!-- Garis Penghubung Dekoratif (Desktop Only) -->
+                    <div class="hidden lg:block absolute top-1/2 left-4 right-4 h-0.5 bg-slate-100 -translate-y-8 z-0"></div>
+                    
+                    <!-- Tahun 1 Card -->
+                    <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-6 relative z-10 hover:shadow-md transition duration-300">
+                        <div class="w-12 h-12 bg-[#0f172a] text-amber-400 font-extrabold flex items-center justify-center rounded-xl mb-4 text-base shadow-sm">Y1</div>
+                        <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide mb-2">Fundamental Science & K3</h4>
+                        <p class="text-slate-500 text-xs font-light leading-relaxed">Penguasaan dasar kalkulus rekayasa, kimia dasar terapan, keselamatan kerja industri, and dasar visualisasi AutoCAD.</p>
+                        <span class="absolute top-6 right-6 text-xs font-bold text-slate-300">Tahap I</span>
+                    </div>
+                    <!-- Tahun 2 Card -->
+                    <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-6 relative z-10 hover:shadow-md transition duration-300">
+                        <div class="w-12 h-12 bg-amber-500 text-slate-950 font-extrabold flex items-center justify-center rounded-xl mb-4 text-base shadow-sm">Y2</div>
+                        <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide mb-2">Core Chemical Engineering</h4>
+                        <p class="text-slate-500 text-xs font-light leading-relaxed">Pendalaman neraca massa, termodinamika proses, operasi teknik kimia (OTK I & II), serta teknologi pengolahan air limbah.</p>
+                        <span class="absolute top-6 right-6 text-xs font-bold text-slate-300">Tahap II</span>
+                    </div>
+                    <!-- Tahun 3 Card -->
+                    <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-6 relative z-10 hover:shadow-md transition duration-300">
+                        <div class="w-12 h-12 bg-[#0f172a] text-amber-400 font-extrabold flex items-center justify-center rounded-xl mb-4 text-base shadow-sm">Y3</div>
+                        <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide mb-2">Specialization & TEFA Project</h4>
+                        <p class="text-slate-500 text-xs font-light leading-relaxed">Eksekusi simulasi optimasi pabrik, mata kuliah peminatan industri spesifik, instrumentasi otomatis PLC, dan project TEFA.</p>
+                        <span class="absolute top-6 right-6 text-xs font-bold text-slate-300">Tahap III</span>
+                    </div>
+                    <!-- Tahun 4 Card -->
+                    <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-6 relative z-10 hover:shadow-md transition duration-300">
+                        <div class="w-12 h-12 bg-emerald-600 text-white font-extrabold flex items-center justify-center rounded-xl mb-4 text-base shadow-sm">Y4</div>
+                        <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide mb-2">Industrial Practice & TA</h4>
+                        <p class="text-slate-500 text-xs font-light leading-relaxed">Akselerasi magang industri intensif berskala nasional, komersialisasi technopreneur, dan sidang Tugas Akhir vokasi.</p>
+                        <span class="absolute top-6 right-6 text-xs font-bold text-slate-300">Tahap IV</span>
+                    </div>
+                </div>
             </div>
 
-            <!-- Wadah Konten Kurikulum Interaktif Tanpa Kode (Grid Card System Minimalis) -->
-            <div id="kurikulum-table-container" class="max-w-4xl mx-auto bg-slate-50 rounded-2xl border border-slate-200/60 p-6 sm:p-8 shadow-sm min-h-[250px]">
-                <!-- Konten dinamis dirender via JavaScript bawaan di bawah tanpa memunculkan kode mata kuliah -->
+            <!-- Bagian B: Tabel 3.2 Distribusi SKS Mata Kuliah Per Semester -->
+            <div class="mb-16" data-aos="fade-up" data-aos-delay="150">
+                <h3 class="text-slate-900 font-bold text-base mb-4 tracking-tight flex items-center gap-2">
+                    <span class="w-2 h-4 bg-amber-500 block rounded-sm"></span>
+                    Tabel 3.2 Distribusi Mata Kuliah & SKS Per Semester (Pedoman Akademik)
+                </h3>
+                <div class="overflow-x-auto border border-slate-200/60 rounded-2xl shadow-sm bg-white">
+                    <table class="w-full text-left text-xs border-collapse">
+                        <thead>
+                            <tr class="bg-slate-900 text-white uppercase tracking-wider text-[11px]">
+                                <th class="p-4 font-semibold">Semester</th>
+                                <th class="p-4 font-semibold">Fokus Kompetensi Modular</th>
+                                <th class="p-4 font-semibold text-center">Jumlah MK</th>
+                                <th class="p-4 font-semibold text-center">Bobot SKS</th>
+                                <th class="p-4 font-semibold text-center">Akumulasi SKS</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-slate-600 font-medium divide-y divide-slate-100">
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-4 font-bold text-slate-900">Semester I</td>
+                                <td class="p-4 font-light">Fundamental Keilmuan, Matematika Rekayasa, & Budaya K3 Industri</td>
+                                <td class="p-4 text-center">8 Mata Kuliah</td>
+                                <td class="p-4 text-center font-bold text-slate-900">20 SKS</td>
+                                <td class="p-4 text-center text-slate-400">20 SKS</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-4 font-bold text-slate-900">Semester II</td>
+                                <td class="p-4 font-light">Dasar Operasi Proses, Kimia Analitik Kuantitatif & Mikrobiologi</td>
+                                <td class="p-4 text-center">8 Mata Kuliah</td>
+                                <td class="p-4 text-center font-bold text-slate-900">21 SKS</td>
+                                <td class="p-4 text-center text-slate-400">41 SKS</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-4 font-bold text-slate-900">Semester III</td>
+                                <td class="p-4 font-light">Termodinamika Terapan, Aliran Neraca Massa, & Operasi Teknik Kimia I</td>
+                                <td class="p-4 text-center">7 Mata Kuliah</td>
+                                <td class="p-4 text-center font-bold text-slate-900">20 SKS</td>
+                                <td class="p-4 text-center text-slate-400">61 SKS</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-4 font-bold text-slate-900">Semester IV</td>
+                                <td class="p-4 font-light">Operasi Teknik Kimia II, Kinetika Reaktor, & Pengolahan Limbah B3</td>
+                                <td class="p-4 text-center">7 Mata Kuliah</td>
+                                <td class="p-4 text-center font-bold text-slate-900">20 SKS</td>
+                                <td class="p-4 text-center text-slate-400">81 SKS</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-4 font-bold text-slate-900">Semester V</td>
+                                <td class="p-4 font-light">Desain Proses Makro, Instrumentasi Otomasi, & Penjurusan Peminatan I</td>
+                                <td class="p-4 text-center">7 Mata Kuliah</td>
+                                <td class="p-4 text-center font-bold text-slate-900">19 SKS</td>
+                                <td class="p-4 text-center text-slate-400">100 SKS</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-4 font-bold text-slate-900">Semester VI</td>
+                                <td class="p-4 font-light">Simulasi Proses, Inkubasi Bisnis, & Projek Teaching Factory (TEFA)</td>
+                                <td class="p-4 text-center">6 Mata Kuliah</td>
+                                <td class="p-4 text-center font-bold text-slate-900">18 SKS</td>
+                                <td class="p-4 text-center text-slate-400">118 SKS</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-4 font-bold text-slate-900">Semester VII</td>
+                                <td class="p-4 font-light">Praktek Kerja Magang Industri Intensif & Sinkronisasi Industri</td>
+                                <td class="p-4 text-center">1 Mata Kuliah</td>
+                                <td class="p-4 text-center font-bold text-slate-900">12 SKS</td>
+                                <td class="p-4 text-center text-slate-400">130 SKS</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-4 font-bold text-slate-900">Semester VIII</td>
+                                <td class="p-4 font-light">Penyusunan Dokumentasi & Sidang Tugas Akhir Vokasi Terapan</td>
+                                <td class="p-4 text-center">1 Mata Kuliah</td>
+                                <td class="p-4 text-center font-bold text-slate-900">14 SKS</td>
+                                <td class="p-4 text-center text-slate-900 bg-amber-50">144 SKS</td>
+                            </tr>
+                            <tr class="bg-slate-50 font-bold text-slate-900">
+                                <td colspan="2" class="p-4 text-right uppercase tracking-wider text-[10px]">Total Beban Kredit Kelulusan Minimal :</td>
+                                <td class="p-4 text-center">45 MK</td>
+                                <td colspan="2" class="p-4 text-left pl-12 text-amber-700 bg-amber-500/10">144 SKS (Lulus Gelar S.Tr.T)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Bagian C: Detail Sebaran Mata Kuliah Interaktif Per Tahun -->
+            <div data-aos="fade-up">
+                <h3 class="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">&mdash; DETAIL DAFTAR MATA KULIAH INTERAKTIF &mdash;</h3>
+                <div class="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-10 max-w-4xl mx-auto">
+                    <button onclick="switchSemesterTab(1)" id="sem-btn-1" class="semester-tab-btn text-xs font-bold px-5 py-3 rounded-xl border transition-all duration-200 bg-slate-900 border-slate-900 text-white shadow-sm">Tahun 1 (Sem 1-2)</button>
+                    <button onclick="switchSemesterTab(3)" id="sem-btn-3" class="semester-tab-btn text-xs font-bold px-5 py-3 rounded-xl border border-slate-200 bg-white text-slate-600 hover:text-slate-900 transition-all duration-200">Tahun 2 (Sem 3-4)</button>
+                    <button onclick="switchSemesterTab(5)" id="sem-btn-5" class="semester-tab-btn text-xs font-bold px-5 py-3 rounded-xl border border-slate-200 bg-white text-slate-600 hover:text-slate-900 transition-all duration-200">Tahun 3 (Sem 5-6)</button>
+                    <button onclick="switchSemesterTab(7)" id="sem-btn-7" class="semester-tab-btn text-xs font-bold px-5 py-3 rounded-xl border border-slate-200 bg-white text-slate-600 hover:text-slate-900 transition-all duration-200">Tahun 4 (Sem 7-8)</button>
+                </div>
+
+                <div id="kurikulum-table-container" class="max-w-4xl mx-auto bg-slate-50 rounded-2xl border border-slate-200/60 p-6 sm:p-8 shadow-sm min-h-[250px]">
+                    <!-- Konten dinamis dirender via JavaScript bawaan di bawah -->
+                </div>
             </div>
         </div>
     </section>
@@ -769,7 +898,7 @@
             </div>
             <!-- Wadah Data Dinamis -->
             <div id="tempat-fasilitas" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <!-- Data Fasilitas di-generate otomatis via JS untuk mencegah kekosongan skeleton -->
+                <!-- Data Fasilitas di-generate otomatis via JS -->
             </div>
         </div>
     </section>
@@ -1130,7 +1259,6 @@
             document.getElementById(`p-panel-${targetId}`).classList.remove('hidden');
 
             const semuaTombol = document.querySelectorAll('.profile-tab-btn');
-            semuor = document.querySelectorAll('.profile-tab-btn');
             semuaTombol.forEach(tombol => {
                 tombol.classList.remove('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
                 tombol.classList.add('border-slate-200/60', 'bg-white', 'text-slate-600', 'hover:text-slate-900', 'hover:border-slate-300');
@@ -1159,7 +1287,7 @@
         }
 
         // ========================================================
-        // ENGINE DATA KURIKULUM PER SEMESTER (DIUBAH TANPA KODE, MINIMALIS, INTERAKTIF)
+        // DATABASE SEBARAN MATA KULIAH LENGKAP PER SEMESTER (D-IV)
         // ========================================================
         const dataKurikulum = {
             1: [
@@ -1168,7 +1296,9 @@
                 { nama: "Matematika Rekayasa Lanjut I", sks: 3, jenis: "Teori Komputasi" },
                 { nama: "Pengantar Teknologi Proses Makro", sks: 2, jenis: "Teori Pengenalan Pabrik" },
                 { nama: "Menggambar Teknik & AutoCAD", sks: 2, jenis: "Praktik Studio Desain" },
-                { nama: "Keselamatan & Kesehatan Kerja (K3)", sks: 2, jenis: "Sertifikasi Industri Pemula" }
+                { nama: "Keselamatan & Kesehatan Kerja (K3)", sks: 2, jenis: "Sertifikasi Industri Pemula" },
+                { nama: "Bahasa Inggris Teknik Industri", sks: 2, jenis: "Teori Komunikasi" },
+                { nama: "Pancasila & Kewarganegaraan", sks: 4, jenis: "Muatan Umum Wajib" }
             ],
             3: [
                 { nama: "Kimia Organik Industri Hilir", sks: 3, jenis: "Teori + Praktik Sintesis" },
@@ -1176,26 +1306,24 @@
                 { nama: "Termodinamika Proses Terapan", sks: 3, jenis: "Teori Perhitungan Energi" },
                 { nama: "Mikrobiologi Industri Bio-Proses", sks: 2, jenis: "Teori + Praktik Laboratorium" },
                 { nama: "Neraca Massa dan Energi", sks: 3, jenis: "Teori Analisis Aliran" },
-                { nama: "Teknologi Pengolahan Air Industri", sks: 2, jenis: "Praktik Pengolahan Limbah Cair" }
+                { nama: "Teknologi Pengolahan Air Industri", sks: 2, jenis: "Praktik Pengolahan Limbah Cair" },
+                { nama: "Kimia Fisik & Koloid Industri", sks: 3, jenis: "Teori + Praktik Lab" }
             ],
             5: [
                 { nama: "Bioteknologi Industri Mutakhir", sks: 3, jenis: "Teori + Praktik Terapan" },
                 { nama: "Sistem Manajemen Mutu ISO Lab", sks: 2, jenis: "Teori Regulasi Standar" },
-                { nama: "Teknologi Proses Kimia Kesehatan", sks: 3, jenis: "Peminatan Utama Terarah" },
+                { nama: "Mata Kuliah Peminatan Industri I", sks: 3, jenis: "Peminatan Utama Terarah" },
                 { nama: "Metodologi Riset Projek Terapan", sks: 2, jenis: "Praktik Penyusunan Proposal TA" },
                 { nama: "Operasi Teknik Kimia II (OTK II)", sks: 4, jenis: "Praktik Tingkat Lanjut TEFA" },
-                { nama: "Instrumentasi & Kendali Proses Otomatis", sks: 3, jenis: "Praktik Sistem Otomasi PLC" }
+                { nama: "Instrumentasi & Kendali Proses Otomatis", sks: 3, jenis: "Praktik Sistem Otomasi PLC" },
+                { nama: "Korosi & Elektrokimia Terapan", sks: 2, jenis: "Teori Penanganan Material" }
             ],
             7: [
-                { nama: "Magang Industri Intensif Sinkron", sks: 6, jenis: "Praktik Lapangan Eksternal Korporasi" },
-                { nama: "Tugas Akhir / Skripsi Vokasi Terapan", sks: 4, jenis: "Projek Produk Hasil TEFA" },
-                { nama: "Etika Profesi & Kepemimpinan Manajerial", sks: 2, jenis: "Teori Kesiapan Kerja Masal" },
-                { nama: "Technopreneurship & Manajemen Bisnis Hilir", sks: 2, jenis: "Inkubasi Produk Bisnis Mandiri" }
+                { nama: "Magang Industri Intensif & Sinkron", sks: 12, jenis: "Praktik Kerja Lapangan 6 Bulan" }
             ]
         };
 
         function switchSemesterTab(tahunMulai) {
-            // Update visual state tombol tab
             const seluruhTombol = document.querySelectorAll('.semester-tab-btn');
             seluruhTombol.forEach(btn => {
                 btn.classList.remove('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
@@ -1203,7 +1331,6 @@
             });
             document.getElementById(`sem-btn-${tahunMulai}`).classList.add('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
 
-            // Render isi kurikulum dengan grid card minimalis interaktif (TANPA KODE MATA KULIAH)
             const kontainer = document.getElementById('kurikulum-table-container');
             kontainer.innerHTML = '';
 
@@ -1232,7 +1359,7 @@
         }
 
         // ========================================================
-        // ENGINE PENGISIAN DATA BACKEND SECARA DINAMIS (MOCK CMS FALLBACK)
+        // ENGINE PENGISIAN DATA BACKEND (CONSTR. & RECONSTRUCTION)
         // ========================================================
         function isiDataFasilitasLengkap() {
             const tempatFasilitas = document.getElementById('tempat-fasilitas');
@@ -1254,7 +1381,7 @@
             const tempatDosen = document.getElementById('tempat-dosen');
             const data = [
                 { nama: "Dr. Eng. Ryan Fauzi, M.T.", jabatan: "Ketua Program Studi" },
-                { nama: "Prof. Dr. Ir. Heri Hermansyah", jabatan: "Dosen Rekayasa Bioproces" },
+                { nama: "Prof. Dr. Ir. Heri Hermansyah", jabatan: "Dosen Rekayasa Bioproproses" },
                 { nama: "Anisa Indah, M.Si.", jabatan: "Spesialis Pengendalian Mutu" },
                 { nama: "Budi Hartono, Ph.D.", jabatan: "Praktisi Kimia Industri Hijau" }
             ];
@@ -1292,24 +1419,22 @@
             tempatBerita.innerHTML = filterData.map(b => `
                 <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between group hover:border-amber-500 transition duration-300">
                     <div>
-                        <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">${b.tanggal}</span>
-                        <h4 class="font-bold text-slate-900 text-sm sm:text-base tracking-tight mt-1 mb-2 group-hover:text-amber-600 transition">${b.judul}</h4>
-                        <p class="text-slate-500 text-xs font-light leading-relaxed text-justify mb-4">${b.kutipan}</p>
+                        <span class="text-[10px] font-bold text-amber-600 block mb-2">${b.tanggal}</span>
+                        <h4 class="font-bold text-slate-900 text-sm mb-2 group-hover:text-amber-600 transition duration-200">${b.judul}</h4>
+                        <p class="text-slate-500 text-xs font-light leading-relaxed mb-4">${b.kutipan}</p>
                     </div>
-                    <button onclick="bukaModalBerita(${b.id})" class="text-left text-xs font-bold text-slate-900 hover:text-amber-600 inline-flex items-center gap-1 group/btn focus:outline-none">
-                        Baca Selengkapnya <span class="transform group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
-                    </button>
+                    <button onclick="bukaModal(${b.id})" class="text-xs font-semibold text-slate-900 hover:text-amber-600 text-left flex items-center gap-1 transition focus:outline-none">Baca Selengkapnya &rarr;</button>
                 </div>
             `).join('');
         }
 
-        // Fungsi Pencarian Berita
+        // Fungsi Filter Pencarian Berita
         function cariInformasiBerita() {
             const kataKunci = document.getElementById('cari-berita').value.toLowerCase();
-            const tombolHapus = document.getElementById('clear-search-btn');
+            const btnClear = document.getElementById('clear-search-btn');
             
-            if (kataKunci.length > 0) tombolHapus.classList.remove('hidden');
-            else tombolHapus.classList.add('hidden');
+            if(kataKunci !== '') btnClear.classList.remove('hidden');
+            else btnClear.classList.add('hidden');
 
             const hasilFilter = databaseBerita.filter(b => b.judul.toLowerCase().includes(kataKunci) || b.kutipan.toLowerCase().includes(kataKunci));
             isiDataBeritaLengkap(hasilFilter);
@@ -1317,52 +1442,53 @@
 
         function resetSearchBerita() {
             document.getElementById('cari-berita').value = '';
-            document.getElementById('clear-search-btn').add('hidden');
+            document.getElementById('clear-search-btn').value = '';
+            document.getElementById('clear-search-btn').classList.add('hidden');
             isiDataBeritaLengkap();
         }
 
-        // Sistem Pop-Up Modal Berita
-        function bukaModalBerita(id) {
-            const item = databaseBerita.find(b => b.id === id);
-            if (!item) return;
-
-            const isiModal = document.getElementById('isi-modal');
-            isiModal.innerHTML = `
-                <span class="text-[11px] font-bold text-amber-600 uppercase tracking-widest block mb-1">${item.tanggal}</span>
-                <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">${item.judul}</h2>
-                <div class="text-slate-600 text-xs sm:text-sm font-light leading-relaxed text-justify space-y-3">
-                    <p class="font-medium italic text-slate-800 border-l-2 border-amber-500 pl-3 mb-4">${item.kutipan}</p>
-                    <p>${item.isi}</p>
+        // Manajemen Pop-up Modal Berita Bawaan CMS
+        function bukaModal(id) {
+            const data = databaseBerita.find(b => b.id === id);
+            if (!data) return;
+            const isi = document.getElementById('isi-modal');
+            isi.innerHTML = `
+                <span class="text-xs font-bold text-amber-600 uppercase block mb-2">${data.tanggal}</span>
+                <h3 class="text-2xl font-black text-slate-900 mb-4 leading-tight tracking-tight">${data.judul}</h3>
+                <div class="prose prose-sm text-slate-600 leading-relaxed font-light text-justify max-w-none">
+                    <p>${data.isi}</p>
+                    <p class="mt-4">Sistem modular kurikulum program studi menyokong penuh integrasi kajian rilis ini agar berdampak bagi dunia usaha serta adaptasi nyata mahasiswa rintisan.</p>
                 </div>
             `;
             const modal = document.getElementById('modal-berita');
             modal.classList.remove('hidden');
-            modal.classList.add('flex');
             document.body.classList.add('overflow-hidden');
         }
 
         function tutupModal() {
-            const modal = document.getElementById('modal-berita');
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
+            document.getElementById('modal-berita').classList.add('hidden');
             document.body.classList.remove('overflow-hidden');
         }
 
-        function submitFormKontak(e) {
-            e.preventDefault();
+        // Submit Form Kontak Langsung Ke WhatsApp Humas Vokasi
+        function submitFormKontak(event) {
+            event.preventDefault();
             const nama = document.getElementById('nama-cepat').value;
+            const email = document.getElementById('email-cepat').value;
             const pesan = document.getElementById('pesan-cepat').value;
-            const textWa = encodeURIComponent(`Halo Humas TIK Vokasi Unpad, saya ${nama}. Ingin bertanya mengenai: ${pesan}`);
-            window.open(`https://wa.me/6281120240803?text=${textWa}`, '_blank');
+            
+            const teksWhatsApp = `Halo Humas TIK Vokasi Unpad, Saya ${nama} (${email}). Ingin bertanya: ${pesan}`;
+            const urlFormat = `https://wa.me/6281120240803?text=${encodeURIComponent(teksWhatsApp)}`;
+            window.open(urlFormat, '_blank');
         }
 
-        // Trigger Render Awal Otomatis Saat Dokumen Siap
+        // Initialize All Core Engine Features on Page Loaded
         document.addEventListener('DOMContentLoaded', () => {
-            switchSemesterTab(1);
             isiDataFasilitasLengkap();
             isiDataDosenLengkap();
             isiDataMitraLengkap();
             isiDataBeritaLengkap();
+            switchSemesterTab(1); // Set default view ke Tahun Pertama
         });
     </script>
 </body>
