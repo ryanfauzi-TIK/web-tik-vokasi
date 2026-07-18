@@ -108,11 +108,6 @@
             from { opacity: 0; transform: translateY(4px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        /* Dropdown Sub-Nav Utility */
-        .dropdown-active .dropdown-menu {
-            display: block !important;
-        }
     </style>
 </head>
 <body class="bg-[#f8fafc] text-slate-800 antialiased overflow-x-hidden tracking-normal">
@@ -120,7 +115,7 @@
     <!-- Reading Progress Bar -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-amber-500 z-[60] transition-all duration-100 w-0"></div>
 
-    <!-- Navigasi Sticky Glassmorphism Premium (Sistem Sub-Navigasi Tergrup Lengkap) -->
+    <!-- Navigasi Sticky Glassmorphism Premium -->
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/40 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 py-4 flex justify-between items-center">
             
@@ -144,56 +139,29 @@
             <!-- Menu Desktop & Mobile Dropdown Container -->
             <ul id="menu-items" class="absolute xl:relative top-full left-0 w-full xl:w-auto bg-white/95 xl:bg-transparent shadow-2xl xl:shadow-none p-6 xl:p-0 flex flex-col xl:flex-row items-start xl:items-center space-y-4 xl:space-y-0 space-x-0 xl:space-x-7 font-medium text-slate-600 text-[13px] border-t border-slate-100 xl:border-none transition-all duration-300 origin-top transform scale-y-0 opacity-0 pointer-events-none xl:scale-y-100 xl:opacity-100 xl:pointer-events-auto">
                 <li class="w-full xl:w-auto">
-                    <a href="#beranda" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200">Beranda</a>
+                    <a href="#beranda" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Beranda</a>
                 </li>
-                
-                <!-- SUB NAVIGASI 1: PROFIL STUDI -->
-                <li class="w-full xl:w-auto relative group select-none dropdown-wrapper" id="nav-profil-wrapper">
-                    <button onclick="toggleSubNav(event, 'nav-profil-wrapper')" class="w-full xl:w-auto flex items-center justify-between gap-1 py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 font-medium focus:outline-none">
-                        <span>Profil Program</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 transition-transform duration-300 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <ul class="dropdown-menu xl:absolute top-full left-0 mt-2 w-full xl:w-56 bg-white xl:border border-slate-200/60 xl:shadow-xl rounded-xl p-2 hidden xl:group-hover:block transition-all duration-300 z-50 space-y-1">
-                        <li><a href="#profil" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Sejarah & Visi Misi</a></li>
-                        <li><a href="#pencapaian" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Keunggulan & Kinerja</a></li>
-                        <li><a href="#fasilitas" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Fasilitas Laboratorium</a></li>
-                    </ul>
+                <li class="w-full xl:w-auto">
+                    <a href="#profil" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Profil Akademik</a>
                 </li>
-
-                <!-- SUB NAVIGASI 2: AKADEMIK -->
-                <li class="w-full xl:w-auto relative group select-none dropdown-wrapper" id="nav-akademik-wrapper">
-                    <button onclick="toggleSubNav(event, 'nav-akademik-wrapper')" class="w-full xl:w-auto flex items-center justify-between gap-1 py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 font-medium focus:outline-none">
-                        <span>Akademik</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 transition-transform duration-300 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <ul class="dropdown-menu xl:absolute top-full left-0 mt-2 w-full xl:w-56 bg-white xl:border border-slate-200/60 xl:shadow-xl rounded-xl p-2 hidden xl:group-hover:block transition-all duration-300 z-50 space-y-1">
-                        <li><a href="#kurikulum" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Struktur Kurikulum</a></li>
-                        <li><a href="#peminatan" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Peminatan Industri</a></li>
-                        <li><a href="#lulusan" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Profil Lulusan</a></li>
-                        <li><a href="#sertifikasi" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Sertifikasi Kompetensi</a></li>
-                        <li><a href="#dosen" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Dewan Dosen</a></li>
-                    </ul>
+                <li class="w-full xl:w-auto">
+                    <a href="#peminatan" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Peminatan</a>
                 </li>
-
-                <!-- SUB NAVIGASI 3: INFORMASI -->
-                <li class="w-full xl:w-auto relative group select-none dropdown-wrapper" id="nav-info-wrapper">
-                    <button onclick="toggleSubNav(event, 'nav-info-wrapper')" class="w-full xl:w-auto flex items-center justify-between gap-1 py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 font-medium focus:outline-none">
-                        <span>Informasi</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 transition-transform duration-300 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <ul class="dropdown-menu xl:absolute top-full left-0 mt-2 w-full xl:w-56 bg-white xl:border border-slate-200/60 xl:shadow-xl rounded-xl p-2 hidden xl:group-hover:block transition-all duration-300 z-50 space-y-1">
-                        <li><a href="#berita" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Kabar & Berita</a></li>
-                        <li><a href="#faq" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">FAQ Calon Mahasiswa</a></li>
-                        <li><a href="#kontak" class="block px-4 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-amber-600 text-xs font-semibold transition">Hubungi Kami & Peta</a></li>
-                    </ul>
+                <li class="w-full xl:w-auto">
+                    <a href="#lulusan" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Lulusan</a>
                 </li>
-
+                <li class="w-full xl:w-auto">
+                    <a href="#fasilitas" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Fasilitas</a>
+                </li>
+                <li class="w-full xl:w-auto">
+                    <a href="#dosen" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Dosen</a>
+                </li>
+                <li class="w-full xl:w-auto">
+                    <a href="#berita" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Berita</a>
+                </li>
+                <li class="w-full xl:w-auto">
+                    <a href="#faq" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">FAQ</a>
+                </li>
                 <li class="w-full xl:w-auto pt-2 xl:pt-0">
                     <a href="https://smup.unpad.ac.id/" target="_blank" rel="noopener noreferrer" class="block text-center bg-[#0f172a] hover:bg-amber-500 hover:text-slate-950 text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg transform hover:-translate-y-0.5 tracking-wide">
                         SMUP UNPAD
@@ -226,7 +194,7 @@
         </div>
     </section>
 
-    <!-- Profil Akademik (Sistem Tab Diperbarui: Sambutan dihapus, diganti Visi Misi & Sejarah Menarik) -->
+    <!-- Profil Akademik -->
     <section id="profil" class="py-20 md:py-28 bg-white scroll-mt-20">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="grid lg:grid-cols-12 gap-12 md:gap-16 items-start">
@@ -243,15 +211,7 @@
                     
                     <!-- Tab Kontroler Navigasi Internal -->
                     <div class="space-y-2.5">
-                        <button onclick="switchProfileTab('visimisi')" id="p-tab-visimisi" class="profile-tab-btn w-full text-left px-5 py-4 rounded-xl border transition-all duration-300 flex items-center justify-between group bg-slate-900 border-slate-900 text-white shadow-sm">
-                            <span class="text-xs font-bold uppercase tracking-wider">Visi, Misi & Tujuan</span>
-                            <span class="text-xs transform group-hover:translate-x-1 transition-transform">&rarr;</span>
-                        </button>
-                        <button onclick="switchProfileTab('sejarah')" id="p-tab-sejarah" class="profile-tab-btn w-full text-left px-5 py-4 rounded-xl border border-slate-200/60 bg-white text-slate-600 hover:text-slate-900 hover:border-slate-300 transition-all duration-300 flex items-center justify-between group">
-                            <span class="text-xs font-bold uppercase tracking-wider">Langkah Rekam Sejarah</span>
-                            <span class="text-xs transform group-hover:translate-x-1 transition-transform">&rarr;</span>
-                        </button>
-                        <button onclick="switchProfileTab('ikhtisar')" id="p-tab-ikhtisar" class="profile-tab-btn w-full text-left px-5 py-4 rounded-xl border border-slate-200/60 bg-white text-slate-600 hover:text-slate-900 hover:border-slate-300 transition-all duration-300 flex items-center justify-between group">
+                        <button onclick="switchProfileTab('ikhtisar')" id="p-tab-ikhtisar" class="profile-tab-btn w-full text-left px-5 py-4 rounded-xl border transition-all duration-300 flex items-center justify-between group bg-slate-900 border-slate-900 text-white shadow-sm">
                             <span class="text-xs font-bold uppercase tracking-wider">Ikhtisar Program</span>
                             <span class="text-xs transform group-hover:translate-x-1 transition-transform">&rarr;</span>
                         </button>
@@ -267,66 +227,10 @@
                 </div>
                 
                 <!-- Sisi Kanan: Panel Isi Konten Kontemporer Interaktif -->
-                <div class="lg:col-span-8 bg-slate-50 border border-slate-200/40 p-8 sm:p-10 rounded-2xl min-h-[460px] flex flex-col justify-center relative overflow-hidden" data-aos="fade-left" data-aos-duration="1000">
+                <div class="lg:col-span-8 bg-slate-50 border border-slate-200/40 p-8 sm:p-10 rounded-2xl min-h-[340px] flex flex-col justify-center relative overflow-hidden" data-aos="fade-left" data-aos-duration="1000">
                     
-                    <!-- Panel Baru: Visi Misi & Tujuan -->
-                    <div id="p-panel-visimisi" class="profile-panel-content block animate-fade-in space-y-6">
-                        <div class="border-b border-slate-200 pb-4">
-                            <h3 class="text-xl font-bold text-slate-900">Visi, Misi & Tujuan Program Studi</h3>
-                            <p class="text-[11px] text-amber-600 font-semibold uppercase tracking-wider mt-1">D-IV Teknologi Industri Kimia Universitas Padjadjaran</p>
-                        </div>
-                        <div>
-                            <span class="inline-block text-[10px] bg-amber-500/10 text-amber-700 px-2.5 py-1 rounded-md font-bold uppercase tracking-wider mb-2">Visi Utama</span>
-                            <p class="text-slate-700 leading-relaxed text-sm font-light text-justify">
-                                Menjadi Program Studi Sarjana Terapan unggul bereputasi internasional dalam rekayasa proses industri kimia yang menghasilkan lulusan kompeten, adaptif, and berjiwa *technopreneur* yang berwawasan lingkungan pada tahun 2030.
-                            </p>
-                        </div>
-                        <div>
-                            <span class="inline-block text-[10px] bg-slate-900 text-white px-2.5 py-1 rounded-md font-bold uppercase tracking-wider mb-2">Misi Strategis</span>
-                            <ul class="text-slate-600 text-xs sm:text-sm space-y-2 font-light check-list">
-                                <li>Menyelenggarakan pendidikan vokasi rekayasa proses kimia dengan kurikulum terintegrasi industri secara global.</li>
-                                <li>Melaksanakan riset terapan inovatif demi hilirisasi produk berbasis potensi lokal berwawasan lingkungan.</li>
-                                <li>Mentransfer pengetahuan praktis tepat guna melalui pengabdian masyarakat responsif ekosistem korporat.</li>
-                            </ul>
-                        </div>
-                        <div class="pt-2">
-                            <span class="inline-block text-[10px] bg-slate-200 text-slate-800 px-2.5 py-1 rounded-md font-bold uppercase tracking-wider mb-2">Tujuan Pendidikan</span>
-                            <p class="text-slate-600 leading-relaxed text-xs sm:text-sm font-light text-justify">
-                                Mencetak Sarjana Terapan yang siap kerja instan, memperkuat ekosistem *Teaching Factory* (TEFA) komersial berskala industri pilot plant, serta membangun kemitraan bersinergi tinggi bersama aliansi dunia usaha nasional dan global.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Panel: Sejarah Pendirian (Dibuat Naratif Storytelling Sangat Menarik) -->
-                    <div id="p-panel-sejarah" class="profile-panel-content hidden animate-fade-in space-y-5">
-                        <div class="border-b border-slate-200 pb-3">
-                            <h3 class="text-xl font-bold text-slate-900 tracking-tight">Kisah Langkah Emas: Fajar Baru Vokasi Industri</h3>
-                            <p class="text-xs text-slate-400 font-light mt-0.5">Bagaimana visi revolusioner menjelma menjadi pusat akselerasi talenta kimia nasional.</p>
-                        </div>
-                        <p class="text-slate-700 font-light text-sm text-justify leading-relaxed">
-                            Bermula dari pergeseran radikal lanskap industri global yang menuntut keahlian taktis siap kerja, Universitas Padjadjaran menjawab tantangan zaman dengan melahirkan **Sarjana Terapan Teknologi Industri Kimia**. Bukan sekadar prodi baru, ini adalah jawaban atas kesenjangan kompetensi nyata di lapangan kerja.
-                        </p>
-                        <div class="relative border-l-2 border-amber-500 pl-5 space-y-6 mt-4">
-                            <div class="relative group">
-                                <span class="absolute -left-[26px] top-1 bg-amber-500 w-3 h-3 rounded-full ring-4 ring-amber-100 transition-transform group-hover:scale-125"></span>
-                                <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wide">2018 — Manifestasi Cetak Biru</h4>
-                                <p class="text-xs text-slate-500 font-light mt-1 text-justify">Para dewan pakar akademis dan praktisi korporat papan atas berkumpul merumuskan sistem pendidikan kurikulum modular. Pondasi keselarasan KKNI dirancang presisi demi menghapus jarak antara bangku kuliah dan ruang kendali pabrik.</p>
-                            </div>
-                            <div class="relative group">
-                                <span class="absolute -left-[26px] top-1 bg-slate-900 w-3 h-3 rounded-full ring-4 ring-slate-100 transition-transform group-hover:scale-125"></span>
-                                <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wide">2021 — Era Ekspansi Otentik</h4>
-                                <p class="text-xs text-slate-500 font-light mt-1 text-justify">Fakultas Vokasi Unpad meresmikan unit *Teaching Factory* (TEFA) terintegrasi. Mahasiswa tidak lagi sekadar membaca textbook, mereka mulai memimpin simulasi rekayasa proses, formulasi zat aktif, hingga manajemen mutu berskala *pilot plant* komersial secara riil.</p>
-                            </div>
-                            <div class="relative group">
-                                <span class="absolute -left-[26px] top-1 bg-emerald-500 w-3 h-3 rounded-full ring-4 ring-emerald-100 transition-transform group-hover:scale-125"></span>
-                                <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wide">2026 & Masa Depan — Episentrum Inovasi</h4>
-                                <p class="text-xs text-slate-500 font-light mt-1 text-justify">Kini berdiri kokoh sebagai inkubator *technopreneur* muda terkemuka di Indonesia. Aliansi magang diperluas melintasi batas negara, mencetak lulusan bersertifikasi BNSP yang mengisi posisi-posisi krusial di berbagai perusahaan multi-nasional.</p>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Panel 1: Ikhtisar -->
-                    <div id="p-panel-ikhtisar" class="profile-panel-content hidden animate-fade-in space-y-5">
+                    <div id="p-panel-ikhtisar" class="profile-panel-content block animate-fade-in space-y-5">
                         <h3 class="text-xl font-bold text-slate-900 tracking-tight">Membentuk Profesionalisme Unggul di Sektor Industri Kimia Global</h3>
                         <p class="text-slate-600 leading-relaxed text-justify text-sm sm:text-base font-light">
                             Program Studi D-IV Teknologi Industri Kimia merupakan pilar sarjana terapan yang dirancang presisi untuk menghasilkan talenta berkualifikasi tinggi dalam teknik kimia. Kurikulum kami diformulasikan secara taktis untuk membangun kompetensi esensial dalam operasional pabrik proses, sistem pengawasan mutu, manajemen industri modern, keberlanjutan lingkungan, serta kesiapan adaptif masa depan.
@@ -353,72 +257,6 @@
                     </div>
 
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pencapaian Program Studi -->
-    <section id="pencapaian" class="py-20 md:py-28 bg-[#f8fafc] border-t border-slate-200/40 scroll-mt-20">
-        <div class="max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" data-aos="fade-down">
-                    Rekam Jejak Kinerja
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" data-aos="fade-up">Keunggulan & Pencapaian Utama</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base font-light" data-aos="fade-up" data-aos-delay="100">
-                    Akselerasi mutu akademik melalui integrasi riset terapan, sertifikasi keahlian, dan implementasi Teaching Factory.
-                </p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/50 shadow-sm text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-3xl mb-2">🔬</div>
-                    <h4 class="text-slate-900 font-bold text-sm uppercase tracking-wide mb-1">Integrasi Kimia Terapan</h4>
-                    <p class="text-slate-500 text-xs font-light leading-relaxed">Penggabungan harmonis antara riset rekayasa proses, bioteknologi, dan formulasi hilir industri.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/50 shadow-sm text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-3xl mb-2">🏗️</div>
-                    <h4 class="text-slate-900 font-bold text-sm uppercase tracking-wide mb-1">Teaching Factory (TEFA)</h4>
-                    <p class="text-slate-500 text-xs font-light leading-relaxed">Fasilitas produksi mandiri berskala pilot plant untuk memproduksi barang komersial bermutu tinggi.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/50 shadow-sm text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-3xl mb-2">🎯</div>
-                    <h4 class="text-slate-900 font-bold text-sm uppercase tracking-wide mb-1">Kurikulum Berbasis OBE</h4>
-                    <p class="text-slate-500 text-xs font-light leading-relaxed">Sistem pendidikan terstruktur berorientasi murni pada luaran capaian kerja dan kompetensi lulusan.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200/50 shadow-sm text-center" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-3xl mb-2">💼</div>
-                    <h4 class="text-slate-900 font-bold text-sm uppercase tracking-wide mb-1">Sertifikasi BNSP</h4>
-                    <p class="text-slate-500 text-xs font-light leading-relaxed">Kualifikasi portofolio kompetensi eksternal yang diakui langsung oleh korporasi nasional.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Struktur Kurikulum Interaktif (Diperbarui: Tanpa Kode, Sangat Minimalis, Interaktif Grid Card) -->
-    <section id="kurikulum" class="py-20 md:py-28 bg-white border-t border-slate-200/40 scroll-mt-20">
-        <div class="max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" data-aos="fade-down">
-                    Struktur Pemetaan Struktur Modul
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" data-aos="fade-up">Kurikulum Sarjana Terapan (D-IV)</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base font-light" data-aos="fade-up" data-aos-delay="100">
-                    Eksplorasi susunan pemetaan mata kuliah berbasis praktik dominan dari Tahun Pertama hingga program magang industri Tugas Akhir.
-                </p>
-            </div>
-
-            <!-- Tab Kontroler Semester Minimalis -->
-            <div class="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-10 max-w-4xl mx-auto" data-aos="fade-up">
-                <button onclick="switchSemesterTab(1)" id="sem-btn-1" class="semester-tab-btn text-xs font-bold px-5 py-3 rounded-xl border transition-all duration-200 bg-slate-900 border-slate-900 text-white shadow-sm">Tahun 1 (Sem 1-2)</button>
-                <button onclick="switchSemesterTab(3)" id="sem-btn-3" class="semester-tab-btn text-xs font-bold px-5 py-3 rounded-xl border border-slate-200 bg-white text-slate-600 hover:text-slate-900 transition-all duration-200">Tahun 2 (Sem 3-4)</button>
-                <button onclick="switchSemesterTab(5)" id="sem-btn-5" class="semester-tab-btn text-xs font-bold px-5 py-3 rounded-xl border border-slate-200 bg-white text-slate-600 hover:text-slate-900 transition-all duration-200">Tahun 3 (Sem 5-6)</button>
-                <button onclick="switchSemesterTab(7)" id="sem-btn-7" class="semester-tab-btn text-xs font-bold px-5 py-3 rounded-xl border border-slate-200 bg-white text-slate-600 hover:text-slate-900 transition-all duration-200">Tahun 4 (Sem 7-8)</button>
-            </div>
-
-            <!-- Wadah Konten Kurikulum Interaktif Tanpa Kode (Grid Card System Minimalis) -->
-            <div id="kurikulum-table-container" class="max-w-4xl mx-auto bg-slate-50 rounded-2xl border border-slate-200/60 p-6 sm:p-8 shadow-sm min-h-[250px]">
-                <!-- Konten dinamis dirender via JavaScript bawaan di bawah tanpa memunculkan kode mata kuliah -->
             </div>
         </div>
     </section>
@@ -473,7 +311,7 @@
                                 <h4 class="text-[11px] font-bold text-slate-800 tracking-wider uppercase mb-3">🎯 Cocok untuk Kamu yang:</h4>
                                 <ul class="text-xs space-y-2.5 text-slate-600 font-medium check-list">
                                     <li>Tertarik pada kolaborasi ilmu kimia, biologi, and instrumentasi medis terapan.</li>
-                                    <li>Menyukai aktivitas riset laboratorium presisi tinggi, formulasi zat aktif, and analisis klinis.</li>
+                                    <li>Menyukai aktivitas riset laboratorium presisi tinggi, formulasi zat aktif, dan analisis klinis.</li>
                                     <li>Bertekad meluncurkan produk inovasi rintisan (technopreneurship) di sektor industri kesehatan global.</li>
                                 </ul>
                             </div>
@@ -533,6 +371,7 @@
                             <span class="text-[10px] font-bold tracking-widest text-amber-700 uppercase bg-amber-50 px-2.5 py-1 rounded-md">Peminatan 02</span>
                             <h3 class="text-xl font-bold text-slate-900 mt-3 mb-1">Inovasi Pangan Bermutu</h3>
                             
+                            <!-- Highlight Warning Banner -->
                             <div class="my-3 bg-red-50 border border-red-200 p-3 rounded-xl">
                                 <p class="text-[11px] font-extrabold text-red-700 tracking-wide uppercase flex items-center gap-1.5">
                                     ⚠️ PENTING: BUKAN TATABOGA!
@@ -769,7 +608,9 @@
             </div>
             <!-- Wadah Data Dinamis -->
             <div id="tempat-fasilitas" class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <!-- Data Fasilitas di-generate otomatis via JS untuk mencegah kekosongan skeleton -->
+                <div class="animate-pulse bg-slate-200 h-64 rounded-2xl"></div>
+                <div class="animate-pulse bg-slate-200 h-64 rounded-2xl"></div>
+                <div class="animate-pulse bg-slate-200 h-64 rounded-2xl"></div>
             </div>
         </div>
     </section>
@@ -788,7 +629,26 @@
             </div>
             <!-- Wadah Data Dinamis -->
             <div id="tempat-dosen" class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                <!-- Data Dosen di-render otomatis via JS -->
+                <div class="animate-pulse bg-white border border-slate-100 rounded-2xl p-4 space-y-4">
+                    <div class="bg-slate-200 aspect-[3/4] rounded-xl"></div>
+                    <div class="h-4 bg-slate-200 rounded w-3/4 mx-auto"></div>
+                    <div class="h-3 bg-slate-200 rounded w-1/2 mx-auto"></div>
+                </div>
+                <div class="animate-pulse bg-white border border-slate-100 rounded-2xl p-4 space-y-4">
+                    <div class="bg-slate-200 aspect-[3/4] rounded-xl"></div>
+                    <div class="h-4 bg-slate-200 rounded w-3/4 mx-auto"></div>
+                    <div class="h-3 bg-slate-200 rounded w-1/2 mx-auto"></div>
+                </div>
+                <div class="animate-pulse bg-white border border-slate-100 rounded-2xl p-4 space-y-4">
+                    <div class="bg-slate-200 aspect-[3/4] rounded-xl"></div>
+                    <div class="h-4 bg-slate-200 rounded w-3/4 mx-auto"></div>
+                    <div class="h-3 bg-slate-200 rounded w-1/2 mx-auto"></div>
+                </div>
+                <div class="animate-pulse bg-white border border-slate-100 rounded-2xl p-4 space-y-4">
+                    <div class="bg-slate-200 aspect-[3/4] rounded-xl"></div>
+                    <div class="h-4 bg-slate-200 rounded w-3/4 mx-auto"></div>
+                    <div class="h-3 bg-slate-200 rounded w-1/2 mx-auto"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -801,7 +661,9 @@
             </div>
             <!-- Wadah Data Dinamis -->
             <div id="tempat-mitra" class="flex flex-wrap justify-center gap-5" data-aos="fade-up" data-aos-delay="200">
-                <!-- Data Mitra di-render otomatis via JS -->
+                <div class="animate-pulse bg-slate-200 w-40 h-20 sm:w-44 sm:h-24 rounded-xl"></div>
+                <div class="animate-pulse bg-slate-200 w-40 h-20 sm:w-44 sm:h-24 rounded-xl"></div>
+                <div class="animate-pulse bg-slate-200 w-40 h-20 sm:w-44 sm:h-24 rounded-xl"></div>
             </div>
         </div>
     </section>
@@ -833,7 +695,12 @@
             </div>
             <!-- Wadah Data Dinamis -->
             <div id="tempat-berita" class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-                <!-- Data Berita di-render otomatis via JS -->
+                <div class="animate-pulse bg-white border border-slate-200 rounded-2xl p-5 space-y-4">
+                    <div class="bg-slate-200 h-48 rounded-xl"></div>
+                    <div class="h-4 bg-slate-200 rounded w-1/3"></div>
+                    <div class="h-5 bg-slate-200 rounded w-5/6"></div>
+                    <div class="h-3 bg-slate-200 rounded w-full"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -883,7 +750,7 @@
         </div>
     </section>
 
-    <!-- Kontak & Peta Lokasi -->
+    <!-- Kontak & Peta Lokasi (OPTIMIZED SECTION) -->
     <section id="kontak" class="py-20 md:py-28 bg-white border-t border-slate-200/40 scroll-mt-20">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="text-center mb-16">
@@ -897,7 +764,7 @@
             </div>
 
             <div class="grid lg:grid-cols-12 gap-10 items-stretch">
-                <!-- Sisi Kiri: Info Kontak Minimalis -->
+                <!-- Sisi Kiri: Info Kontak Minimalis Sesuai Gambar & Fitur Interaktif Tambahan -->
                 <div class="lg:col-span-5 bg-slate-50 p-8 sm:p-10 rounded-2xl border border-slate-200/60 flex flex-col justify-between shadow-sm" data-aos="fade-right">
                     <div>
                         <h3 class="text-xl font-bold text-slate-900 mb-8 tracking-tight">Info Kontak</h3>
@@ -920,7 +787,7 @@
                             <!-- Email Resmi -->
                             <a href="mailto:humas.sv@unpad.ac.id" class="flex items-start gap-4 group transition-all duration-200">
                                 <div class="w-10 h-10 bg-white shadow-sm border border-slate-200 rounded-xl flex items-center justify-center text-slate-700 group-hover:border-amber-500 group-hover:text-amber-600 transition-colors duration-300 shrink-0">
-                                    <svg xmlns="http://www.w3.org/2000/xl" class="h-5 w-5 text-slate-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
                                 </div>
@@ -929,7 +796,7 @@
                                     <p class="text-slate-600 mt-1 text-xs sm:text-sm font-light break-all group-hover:text-slate-950 transition-colors">humas.sv@unpad.ac.id</p>
                                 </div>
                             </a>
-                            <!-- Telepon -->
+                            <!-- Telepon / WhatsApp Link -->
                             <a href="tel:081120240803" class="flex items-start gap-4 group transition-all duration-200">
                                 <div class="w-10 h-10 bg-white shadow-sm border border-slate-200 rounded-xl flex items-center justify-center text-slate-700 group-hover:border-amber-500 group-hover:text-amber-600 transition-colors duration-300 shrink-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -941,10 +808,22 @@
                                     <p class="text-slate-600 mt-1 text-xs sm:text-sm font-light group-hover:text-slate-950 transition-colors">081120240803</p>
                                 </div>
                             </a>
+                            <!-- Official Line ID -->
+                            <a href="https://line.me/R/ti/p/%40623yewdt" target="_blank" rel="noopener noreferrer" class="flex items-start gap-4 group transition-all duration-200">
+                                <div class="w-10 h-10 bg-white shadow-sm border border-slate-200 rounded-xl flex items-center justify-center text-slate-700 group-hover:border-amber-500 group-hover:text-amber-600 transition-colors duration-300 shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm group-hover:text-amber-600 transition-colors duration-200">Official Line ID</h4>
+                                    <p class="text-slate-600 mt-1 text-xs sm:text-sm font-light group-hover:text-slate-950 transition-colors">@623yewdt</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Form Kirim Pesan Cepat Interaktif -->
+                    <!-- FITUR BARU: Form Kirim Pesan Cepat Interaktif -->
                     <div class="mt-10 pt-6 border-t border-slate-200/60">
                         <h4 class="text-xs font-bold uppercase tracking-wider text-slate-800 mb-3">Kirim Pesan Instan</h4>
                         <form id="form-kontak-cepat" onsubmit="submitFormKontak(event)" class="space-y-2.5">
@@ -991,6 +870,14 @@
                 <p class="text-xs sm:text-sm text-slate-400 mb-6 leading-relaxed max-w-sm font-light">
                     Program Studi D-IV Teknologi Industri Kimia Fakultas Vokasi Universitas Padjadjaran. Membentuk sarjana terapan yang andal, inovatif, kompeten, dan berdaya saing global.
                 </p>
+                <div class="flex gap-3">
+                    <a href="#" class="w-9 h-9 bg-slate-800/60 border border-slate-700/50 hover:bg-amber-500 hover:text-slate-950 rounded-lg flex items-center justify-center transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <a href="#" class="w-9 h-9 bg-slate-800/60 border border-slate-700/50 hover:bg-amber-500 hover:text-slate-950 rounded-lg flex items-center justify-center transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153 1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                    </a>
+                </div>
             </div>
             <div>
                 <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Tautan Lembaga</h4>
@@ -1014,7 +901,7 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Hub -->
+    <!-- WhatsApp Floating Hub (OPTIMIZED WITH DIRECT HUMAS NUMBER) -->
     <a href="https://wa.me/6281120240803?text=Halo%20Humas%20TIK%20Vokasi%20Unpad..." target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-6 bg-emerald-500 text-white w-14 h-14 rounded-xl flex items-center justify-center shadow-2xl hover:bg-emerald-400 transition-all transform hover:-translate-y-1 z-50 text-2xl group" title="Tanya Humas via WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
             <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.98c-.202-.101-1.194-.588-1.378-.653-.185-.069-.32-.102-.455.101-.135.202-.523.653-.64.789-.117.135-.235.151-.437.05-1.823-.907-2.906-2.203-3.414-3.08-.135-.233-.01-.359.108-.476.105-.105.235-.274.354-.412.119-.138.159-.233.238-.396.079-.163.039-.307-.02-.412-.06-.105-.455-1.096-.624-1.503-.165-.398-.332-.344-.455-.35-.116-.005-.25-.006-.384-.006-.135 0-.355.05-.541.252-.186.202-.711.696-.711 1.7a3.442 3.442 0 0 0 .717 1.831c.074.1.135.197.234.332 1.348 1.833 3.03 2.531 4.542 2.996.335.103.655.152.923.112.298-.044.912-.372 1.04-.731.129-.359.129-.667.091-.731-.039-.065-.152-.104-.354-.205z"/>
@@ -1038,7 +925,7 @@
         </span>
     </a>
 
-    <!-- Wadah Pop-up Modal Berita -->
+    <!-- Wadah Pop-up Modal -->
     <div id="modal-berita" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-[60] hidden flex justify-center items-center p-4">
       <div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[85vh] overflow-y-auto relative border border-slate-100">
         <button onclick="tutupModal()" class="absolute top-4 right-5 text-slate-400 hover:text-red-600 text-3xl font-light transition-colors">&times;</button>
@@ -1057,7 +944,7 @@
         });
     </script>
 
-    <!-- JavaScript Lengkap Penunjang Sistem Otomasi Halaman -->
+    <!-- JavaScript Fungsional Navbar Mobile & Scroll Toggle -->
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const menuItems = document.getElementById('menu-items');
@@ -1073,31 +960,12 @@
             }
         });
 
-        // Toggle Sub Navigasi Multi-Dropdown Responsif (Mobile & Desktop Fallback)
-        function toggleSubNav(event, wrapperId) {
-            if (window.innerWidth < 1280) {
-                event.preventDefault();
-                event.stopPropagation();
-                
-                const currentWrapper = document.getElementById(wrapperId);
-                const allWrappers = document.querySelectorAll('.dropdown-wrapper');
-                
-                allWrappers.forEach(wrap => {
-                    if (wrap.id !== wrapperId) wrap.classList.remove('dropdown-active');
-                });
-                
-                currentWrapper.classList.toggle('dropdown-active');
-            }
-        }
-
-        // Tutup semua menu mobile jika tautan diklik
         document.querySelectorAll('#menu-items a').forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth < 1280) {
                     menuBtn.classList.remove('menu-open');
                     menuItems.classList.remove('scale-y-100', 'opacity-100', 'pointer-events-auto');
                     menuItems.classList.add('scale-y-0', 'opacity-0', 'pointer-events-none');
-                    document.querySelectorAll('.dropdown-wrapper').forEach(w => w.classList.remove('dropdown-active'));
                 }
             });
         });
@@ -1130,7 +998,6 @@
             document.getElementById(`p-panel-${targetId}`).classList.remove('hidden');
 
             const semuaTombol = document.querySelectorAll('.profile-tab-btn');
-            semuor = document.querySelectorAll('.profile-tab-btn');
             semuaTombol.forEach(tombol => {
                 tombol.classList.remove('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
                 tombol.classList.add('border-slate-200/60', 'bg-white', 'text-slate-600', 'hover:text-slate-900', 'hover:border-slate-300');
@@ -1158,212 +1025,247 @@
             tombolAktif.classList.add('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-md');
         }
 
-        // ========================================================
-        // ENGINE DATA KURIKULUM PER SEMESTER (DIUBAH TANPA KODE, MINIMALIS, INTERAKTIF)
-        // ========================================================
-        const dataKurikulum = {
-            1: [
-                { nama: "Kimia Dasar Terapan", sks: 3, jenis: "Teori + Praktik wajib" },
-                { nama: "Fisika Proses Industri", sks: 2, jenis: "Teori Kompetensi Dasar" },
-                { nama: "Matematika Rekayasa Lanjut I", sks: 3, jenis: "Teori Komputasi" },
-                { nama: "Pengantar Teknologi Proses Makro", sks: 2, jenis: "Teori Pengenalan Pabrik" },
-                { nama: "Menggambar Teknik & AutoCAD", sks: 2, jenis: "Praktik Studio Desain" },
-                { nama: "Keselamatan & Kesehatan Kerja (K3)", sks: 2, jenis: "Sertifikasi Industri Pemula" }
-            ],
-            3: [
-                { nama: "Kimia Organik Industri Hilir", sks: 3, jenis: "Teori + Praktik Sintesis" },
-                { nama: "Operasi Teknik Kimia I (OTK I)", sks: 4, jenis: "Teori + Praktik Pilot Plant" },
-                { nama: "Termodinamika Proses Terapan", sks: 3, jenis: "Teori Perhitungan Energi" },
-                { nama: "Mikrobiologi Industri Bio-Proses", sks: 2, jenis: "Teori + Praktik Laboratorium" },
-                { nama: "Neraca Massa dan Energi", sks: 3, jenis: "Teori Analisis Aliran" },
-                { nama: "Teknologi Pengolahan Air Industri", sks: 2, jenis: "Praktik Pengolahan Limbah Cair" }
-            ],
-            5: [
-                { nama: "Bioteknologi Industri Mutakhir", sks: 3, jenis: "Teori + Praktik Terapan" },
-                { nama: "Sistem Manajemen Mutu ISO Lab", sks: 2, jenis: "Teori Regulasi Standar" },
-                { nama: "Teknologi Proses Kimia Kesehatan", sks: 3, jenis: "Peminatan Utama Terarah" },
-                { nama: "Metodologi Riset Projek Terapan", sks: 2, jenis: "Praktik Penyusunan Proposal TA" },
-                { nama: "Operasi Teknik Kimia II (OTK II)", sks: 4, jenis: "Praktik Tingkat Lanjut TEFA" },
-                { nama: "Instrumentasi & Kendali Proses Otomatis", sks: 3, jenis: "Praktik Sistem Otomasi PLC" }
-            ],
-            7: [
-                { nama: "Magang Industri Intensif Sinkron", sks: 6, jenis: "Praktik Lapangan Eksternal Korporasi" },
-                { nama: "Tugas Akhir / Skripsi Vokasi Terapan", sks: 4, jenis: "Projek Produk Hasil TEFA" },
-                { nama: "Etika Profesi & Kepemimpinan Manajerial", sks: 2, jenis: "Teori Kesiapan Kerja Masal" },
-                { nama: "Technopreneurship & Manajemen Bisnis Hilir", sks: 2, jenis: "Inkubasi Produk Bisnis Mandiri" }
-            ]
-        };
-
-        function switchSemesterTab(tahunMulai) {
-            // Update visual state tombol tab
-            const seluruhTombol = document.querySelectorAll('.semester-tab-btn');
-            seluruhTombol.forEach(btn => {
-                btn.classList.remove('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
-                btn.classList.add('border-slate-200', 'bg-white', 'text-slate-600', 'hover:text-slate-900');
+        // Exclusive Accordion Collapse for FAQ
+        document.querySelectorAll('#faq details').forEach((faqItem) => {
+            faqItem.addEventListener('click', () => {
+                if (!faqItem.open) {
+                    document.querySelectorAll('#faq details').forEach((otherItem) => {
+                        if (otherItem !== faqItem) {
+                            otherItem.removeAttribute('open');
+                        }
+                    });
+                }
             });
-            document.getElementById(`sem-btn-${tahunMulai}`).classList.add('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
-
-            // Render isi kurikulum dengan grid card minimalis interaktif (TANPA KODE MATA KULIAH)
-            const kontainer = document.getElementById('kurikulum-table-container');
-            kontainer.innerHTML = '';
-
-            const listKuliah = dataKurikulum[tahunMulai];
-            if (!listKuliah) return;
-
-            const gridContainer = document.createElement('div');
-            gridContainer.className = "grid gap-4 sm:grid-cols-2 animate-fade-in";
-
-            listKuliah.forEach(item => {
-                const card = document.createElement('div');
-                card.className = "bg-white p-5 rounded-xl border border-slate-200/70 shadow-sm flex justify-between items-center group hover:border-amber-500 transition duration-300";
-                card.innerHTML = `
-                    <div>
-                        <h4 class="font-bold text-slate-900 text-sm tracking-tight group-hover:text-amber-600 transition duration-200">${item.nama}</h4>
-                        <span class="inline-block text-[10px] text-slate-400 font-medium tracking-wide mt-1 bg-slate-100 px-2 py-0.5 rounded">${item.jenis}</span>
-                    </div>
-                    <div class="text-right shrink-0 ml-4">
-                        <span class="text-xs font-extrabold text-slate-900 bg-amber-500/10 text-amber-700 px-2.5 py-1.5 rounded-lg">${item.sks} SKS</span>
-                    </div>
-                `;
-                gridContainer.appendChild(card);
-            });
-
-            kontainer.appendChild(gridContainer);
-        }
-
-        // ========================================================
-        // ENGINE PENGISIAN DATA BACKEND SECARA DINAMIS (MOCK CMS FALLBACK)
-        // ========================================================
-        function isiDataFasilitasLengkap() {
-            const tempatFasilitas = document.getElementById('tempat-fasilitas');
-            const data = [
-                { nama: "Pilot Plant Teaching Factory (TEFA)", deskripsi: "Fasilitas rekayasa proses kimia terintegrasi berskala semi-industri untuk produksi riil harian." },
-                { nama: "Laboratorium Instrumentasi UV-Vis & AAS", deskripsi: "Laboratorium pengujian kuantitatif tingkat presisi tinggi berbasis komputasi modern." },
-                { nama: "Laboratorium Bioproses & Kultur Sel", deskripsi: "Fasilitas inkubasi mikroba and ekspresi protein rekombinan komersial berskala laboratorium." }
-            ];
-            tempatFasilitas.innerHTML = data.map(f => `
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
-                    <div class="text-2xl mb-3">🏢</div>
-                    <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide mb-1.5">${f.nama}</h4>
-                    <p class="text-slate-500 text-xs font-light leading-relaxed">${f.deskripsi}</p>
-                </div>
-            `).join('');
-        }
-
-        function isiDataDosenLengkap() {
-            const tempatDosen = document.getElementById('tempat-dosen');
-            const data = [
-                { nama: "Dr. Eng. Ryan Fauzi, M.T.", jabatan: "Ketua Program Studi" },
-                { nama: "Prof. Dr. Ir. Heri Hermansyah", jabatan: "Dosen Rekayasa Bioproces" },
-                { nama: "Anisa Indah, M.Si.", jabatan: "Spesialis Pengendalian Mutu" },
-                { nama: "Budi Hartono, Ph.D.", jabatan: "Praktisi Kimia Industri Hijau" }
-            ];
-            tempatDosen.innerHTML = data.map(d => `
-                <div class="bg-white border border-slate-200/70 rounded-2xl p-4 text-center hover:border-amber-500 transition duration-300">
-                    <div class="bg-slate-100 aspect-[3/4] rounded-xl flex items-center justify-center text-3xl font-bold text-slate-300 mb-4">🎓</div>
-                    <h4 class="font-bold text-slate-900 text-xs sm:text-sm tracking-tight">${d.nama}</h4>
-                    <p class="text-slate-400 text-[11px] font-medium mt-0.5">${d.jabatan}</p>
-                </div>
-            `).join('');
-        }
-
-        function isiDataMitraLengkap() {
-            const tempatMitra = document.getElementById('tempat-mitra');
-            const data = ["PT. Petrokimia Gresik", "PT. Bio Farma (Persero)", "PT. Unilever Indonesia", "Chandra Asri Petrochemical", "PT. Kalbe Farma Tbk"];
-            tempatMitra.innerHTML = data.map(m => `
-                <div class="bg-white border border-slate-200 px-6 py-4 rounded-xl flex items-center justify-center text-xs font-bold text-slate-500 tracking-wider shadow-sm hover:text-amber-600 transition">
-                    ${m}
-                </div>
-            `).join('');
-        }
-
-        const databaseBerita = [
-            { id: 1, judul: "Hilirisasi Riset TEFA TIKIM Sukses Luncurkan Produk Hand Sanitizer Alami", kutipan: "Melalui integrasi laboratorium canggih Sekolah Vokasi Unpad, mahasiswa berhasil mengomersialkan formula antiseptik baru.", tanggal: "12 Juli 2026", isi: "Bandung — Program Studi Sarjana Terapan Teknologi Industri Kimia Sekolah Vokasi Unpad sukses mencatatkan pencapaian gemilang melalui unit Teaching Factory (TEFA). Mahasiswa berkolaborasi aktif merancang lini produksi masal terstandardisasi." },
-            { id: 2, judul: "Kunjungan Industri Strategis Mahasiswa TIK Unpad ke Kawasan Petrokimia Cilegon", kutipan: "Melihat langsung pusat kendali DCS and operasional reaktor fraksinasi berskala internasional.", tanggal: "05 Juni 2026", isi: "Cilegon — Guna meningkatkan wawasan rekayasa proses di dunia kerja, sebanyak 40 mahasiswa melaksanakan kuliah lapangan intensif di fasilitas pemurnian olefin utama." },
-            { id: 3, judul: "Pengumuman Pembukaan Pendaftaran SMUP Vokasi Jalur Prestasi and Reguler 2026", kutipan: "Kesempatan emas bergabung bersama program studi sarjana terapan rumpun teknik kimia terbaik.", tanggal: "20 Mei 2026", isi: "Jatinangor — Universitas Padjadjaran resmi membuka gerbang registrasi seleksi masuk mandiri. Calon pendaftar diimbau menyiapkan berkas portofolio prestasi sains." }
-        ];
-
-        function isiDataBeritaLengkap(filterData = databaseBerita) {
-            const tempatBerita = document.getElementById('tempat-berita');
-            if (filterData.length === 0) {
-                tempatBerita.innerHTML = `<div class="col-span-full text-center text-xs font-semibold text-slate-400 py-12">Tidak ditemukan rilis berita yang cocok.</div>`;
-                return;
-            }
-            tempatBerita.innerHTML = filterData.map(b => `
-                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between group hover:border-amber-500 transition duration-300">
-                    <div>
-                        <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">${b.tanggal}</span>
-                        <h4 class="font-bold text-slate-900 text-sm sm:text-base tracking-tight mt-1 mb-2 group-hover:text-amber-600 transition">${b.judul}</h4>
-                        <p class="text-slate-500 text-xs font-light leading-relaxed text-justify mb-4">${b.kutipan}</p>
-                    </div>
-                    <button onclick="bukaModalBerita(${b.id})" class="text-left text-xs font-bold text-slate-900 hover:text-amber-600 inline-flex items-center gap-1 group/btn focus:outline-none">
-                        Baca Selengkapnya <span class="transform group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
-                    </button>
-                </div>
-            `).join('');
-        }
-
-        // Fungsi Pencarian Berita
-        function cariInformasiBerita() {
-            const kataKunci = document.getElementById('cari-berita').value.toLowerCase();
-            const tombolHapus = document.getElementById('clear-search-btn');
-            
-            if (kataKunci.length > 0) tombolHapus.classList.remove('hidden');
-            else tombolHapus.classList.add('hidden');
-
-            const hasilFilter = databaseBerita.filter(b => b.judul.toLowerCase().includes(kataKunci) || b.kutipan.toLowerCase().includes(kataKunci));
-            isiDataBeritaLengkap(hasilFilter);
-        }
-
-        function resetSearchBerita() {
-            document.getElementById('cari-berita').value = '';
-            document.getElementById('clear-search-btn').add('hidden');
-            isiDataBeritaLengkap();
-        }
-
-        // Sistem Pop-Up Modal Berita
-        function bukaModalBerita(id) {
-            const item = databaseBerita.find(b => b.id === id);
-            if (!item) return;
-
-            const isiModal = document.getElementById('isi-modal');
-            isiModal.innerHTML = `
-                <span class="text-[11px] font-bold text-amber-600 uppercase tracking-widest block mb-1">${item.tanggal}</span>
-                <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">${item.judul}</h2>
-                <div class="text-slate-600 text-xs sm:text-sm font-light leading-relaxed text-justify space-y-3">
-                    <p class="font-medium italic text-slate-800 border-l-2 border-amber-500 pl-3 mb-4">${item.kutipan}</p>
-                    <p>${item.isi}</p>
-                </div>
-            `;
-            const modal = document.getElementById('modal-berita');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.classList.add('overflow-hidden');
-        }
-
-        function tutupModal() {
-            const modal = document.getElementById('modal-berita');
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
-        }
-
-        function submitFormKontak(e) {
-            e.preventDefault();
-            const nama = document.getElementById('nama-cepat').value;
-            const pesan = document.getElementById('pesan-cepat').value;
-            const textWa = encodeURIComponent(`Halo Humas TIK Vokasi Unpad, saya ${nama}. Ingin bertanya mengenai: ${pesan}`);
-            window.open(`https://wa.me/6281120240803?text=${textWa}`, '_blank');
-        }
-
-        // Trigger Render Awal Otomatis Saat Dokumen Siap
-        document.addEventListener('DOMContentLoaded', () => {
-            switchSemesterTab(1);
-            isiDataFasilitasLengkap();
-            isiDataDosenLengkap();
-            isiDataMitraLengkap();
-            isiDataBeritaLengkap();
         });
+
+        // NEW ENGINE FUNCTION: Formulir Kontak Cepat Terintegrasi WhatsApp
+        function submitFormKontak(event) {
+            event.preventDefault();
+            const nama = document.getElementById('nama-cepat').value;
+            const email = document.getElementById('email-cepat').value;
+            const pesan = document.getElementById('pesan-cepat').value;
+            
+            const stringTemplate = `Halo Humas TIK Vokasi Unpad, saya *${nama}* (${email}) ingin bertanya mengenai akademik:\n\n"${pesan}"`;
+            const waUrl = `https://wa.me/6281120240803?text=${encodeURIComponent(stringTemplate)}`;
+            
+            window.open(waUrl, '_blank');
+        }
+    </script>
+
+    <!-- Script Fetch Data JSON & Deep-Linking Engine -->
+    <script>
+      let semuaBerita = []; 
+
+      // 1. Fetch Data Berita & Render Manajemen + Deep-Linking Parser
+      fetch('data/berita.json')
+        .then(response => response.json())
+        .then(data => {
+          if(data.items && data.items.length > 0) {
+            semuaBerita = data.items.map((item, index) => ({ ...item, originalIndex: index }));
+            tampilkanDataBerita(semuaBerita);
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const paramBerita = urlParams.get('berita');
+            if (paramBerita !== null && !isNaN(paramBerita)) {
+                bukaModal(parseInt(paramBerita));
+            }
+          } else {
+            document.getElementById('tempat-berita').innerHTML = '<p class="text-center text-slate-400 col-span-full font-light py-8">Belum ada publikasi berita saat ini.</p>';
+          }
+        }).catch(err => console.log(err));
+
+      function tampilkanDataBerita(itemsBerita) {
+        const wadahBerita = document.getElementById('tempat-berita');
+        let html = '';
+        
+        if(itemsBerita.length > 0) {
+          for (let i = itemsBerita.length - 1; i >= 0; i--) {
+            let berita = itemsBerita[i];
+            let tanggal = new Date(berita.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
+            html += `
+              <article class="bg-white rounded-2xl shadow-sm border border-slate-200/60 overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                  <div class="overflow-hidden h-48 bg-slate-100 relative">
+                    <img src="${berita.thumbnail}" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Berita+TIK';" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                  </div>
+                  <div class="p-6">
+                    <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md uppercase tracking-wider">${tanggal}</span>
+                    <h3 class="font-bold text-base text-slate-900 mt-4 mb-2 leading-snug group-hover:text-amber-600 transition-colors">${berita.title}</h3>
+                    <p class="text-xs text-slate-500 font-light line-clamp-3 mb-4">${berita.description}</p>
+                  </div>
+                </div>
+                <div class="px-6 pb-6 pt-0">
+                  <button onclick="bukaModal(${berita.originalIndex})" class="text-xs font-semibold text-slate-900 hover:text-amber-600 transition-colors focus:outline-none inline-flex items-center gap-1.5">Baca Selengkapnya <span class="transform group-hover:translate-x-1 transition-transform">&rarr;</span></button>
+                </div>
+              </article>
+            `;
+          }
+          wadahBerita.innerHTML = html;
+        } else {
+          wadahBerita.innerHTML = '<p class="text-center text-slate-400 col-span-full font-light py-12">Tidak menemukan rilis berita yang cocok dengan pencarian Anda.</p>';
+        }
+      }
+
+      function cariInformasiBerita() {
+        const inputCari = document.getElementById('cari-berita');
+        const clearBtn = document.getElementById('clear-search-btn');
+        const queryText = inputCari.value.toLowerCase();
+        
+        if (queryText.length > 0) {
+            clearBtn.classList.remove('hidden');
+        } else {
+            clearBtn.classList.add('hidden');
+        }
+
+        const hasilFilter = semuaBerita.filter(berita => 
+          berita.title.toLowerCase().includes(queryText) || 
+          berita.description.toLowerCase().includes(queryText)
+        );
+        tampilkanDataBerita(hasilFilter);
+      }
+
+      function resetSearchBerita() {
+        const inputCari = document.getElementById('cari-berita');
+        inputCari.value = '';
+        document.getElementById('clear-search-btn').classList.add('hidden');
+        tampilkanDataBerita(semuaBerita);
+        inputCari.focus();
+      }
+
+      // 2. Fetch Data Fasilitas
+      fetch('data/fasilitas.json')
+        .then(response => response.json())
+        .then(data => {
+          const wadahFasilitas = document.getElementById('tempat-fasilitas');
+          let html = '';
+          if(data.items && data.items.length > 0) {
+            data.items.forEach(fasilitas => {
+              html += `
+                <div class="group relative rounded-2xl overflow-hidden shadow-sm border border-slate-200/40 h-64 bg-slate-900">
+                    <img src="${fasilitas.gambar}" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Fasilitas+TIK';" alt="${fasilitas.nama}" class="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent flex items-end p-6">
+                        <h4 class="text-white font-bold text-base tracking-tight">${fasilitas.nama}</h4>
+                    </div>
+                </div>
+              `;
+            });
+            wadahFasilitas.innerHTML = html;
+          } else {
+            wadahFasilitas.innerHTML = '<p class="text-center text-slate-400 col-span-full font-light py-8">Data infrastruktur belum ditambahkan.</p>';
+          }
+        }).catch(err => console.log(err));
+
+      // 3. Fetch Data Dosen
+      fetch('data/dosen.json')
+        .then(response => response.json())
+        .then(data => {
+          const wadahDosen = document.getElementById('tempat-dosen');
+          let html = '';
+          if(data.items && data.items.length > 0) {
+            data.items.forEach(dosen => {
+              html += `
+                <div class="bg-white border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="bg-slate-100 overflow-hidden aspect-[3/4]">
+                        <img src="${dosen.foto}" onerror="this.onerror=null; this.src='https://placehold.co/300x400?text=Dosen+TIK';" alt="${dosen.nama}" class="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-102">
+                    </div>
+                    <div class="p-5 text-center border-t border-slate-100">
+                        <h4 class="font-bold text-sm text-slate-900 leading-snug line-clamp-2">${dosen.nama}</h4>
+                        <p class="text-[10px] text-amber-700 font-semibold uppercase tracking-wider mt-2">${dosen.jabatan}</p>
+                    </div>
+                </div>
+              `;
+            });
+            wadahDosen.innerHTML = html;
+          } else {
+            wadahDosen.innerHTML = '<p class="text-center text-slate-400 col-span-full font-light py-8">Staf dosen belum diperbarui.</p>';
+          }
+        }).catch(err => console.log(err));
+
+      // 4. Fetch Data Kemitraan
+      fetch('data/kemitraan.json')
+        .then(response => response.json())
+        .then(data => {
+          const wadahMitra = document.getElementById('tempat-mitra');
+          let html = '';
+          if(data.items && data.items.length > 0) {
+            data.items.forEach(mitra => {
+              html += `
+                <div class="bg-white px-6 py-4 w-40 h-20 sm:w-44 sm:h-24 rounded-xl shadow-sm border border-slate-200/40 flex items-center justify-center hover:border-slate-300 transition-all duration-300 group">
+                    <img src="${mitra.logo}" onerror="this.onerror=null; this.src='https://placehold.co/150x50?text=Mitra+Industri';" alt="${mitra.nama}" title="${mitra.nama}" class="max-h-10 sm:max-h-12 max-w-full object-contain filter grayscale group-hover:grayscale-0 opacity-50 group-hover:opacity-100 transition duration-300">
+                </div>
+              `;
+            });
+            wadahMitra.innerHTML = html;
+          } else {
+            wadahMitra.innerHTML = '<p class="text-center text-slate-400 font-light py-4">Data kemitraan industri belum tersedia.</p>';
+          }
+        }).catch(err => console.log(err));
+
+      // Modal Berita Controller
+      function bukaModal(index) {
+        const berita = semuaBerita.find(b => b.originalIndex === index);
+        if(!berita) return;
+
+        const tanggal = new Date(berita.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
+        const bodyRapi = marked.parse(berita.body); 
+        
+        const baseUrl = window.location.origin + window.location.pathname;
+        const urlBerita = `${baseUrl}?berita=${index}`;
+        
+        window.history.pushState({ beritaId: index }, '', urlBerita);
+        
+        const teksBerita = encodeURIComponent(`Baca rilis berita: "${berita.title}" - TIK Vokasi Unpad`);
+
+        document.getElementById('isi-modal').innerHTML = `
+          <span class="text-[11px] font-bold text-amber-700 uppercase tracking-widest block mb-2">${tanggal}</span>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-4 leading-tight tracking-tight">${berita.title}</h2>
+          
+          <div class="flex flex-wrap gap-2 items-center mb-6 pb-4 border-b border-slate-100">
+            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mr-2">Bagikan Rilis:</span>
+            <a href="https://api.whatsapp.com/send?text=${teksBerita}%20${encodeURIComponent(urlBerita)}" target="_blank" rel="noopener noreferrer" class="bg-emerald-500 hover:bg-emerald-600 text-white text-[10px] font-semibold px-2.5 py-1.5 rounded-lg shadow-sm transition">
+              WhatsApp
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlBerita)}" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white text-[10px] font-semibold px-2.5 py-1.5 rounded-lg shadow-sm transition">
+              Facebook
+            </a>
+            <a href="https://twitter.com/intent/tweet?text=${teksBerita}&url=${encodeURIComponent(urlBerita)}" target="_blank" rel="noopener noreferrer" class="bg-slate-900 hover:bg-slate-950 text-white text-[10px] font-semibold px-2.5 py-1.5 rounded-lg shadow-sm transition">
+              X
+            </a>
+            <button onclick="salinTautanBerita('${urlBerita}')" id="btn-salin-tautan" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-[10px] font-semibold px-2.5 py-1.5 rounded-lg shadow-sm transition">
+              Salin Link
+            </button>
+          </div>
+
+          <div class="rounded-xl overflow-hidden max-h-80 mb-6 bg-slate-50 border border-slate-100 shadow-sm">
+            <img src="${berita.thumbnail}" onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Berita+TIK';" class="w-full h-full object-cover">
+          </div>
+          <div class="text-slate-600 leading-relaxed space-y-4 font-light text-xs sm:text-sm text-justify">${bodyRapi}</div>
+        `;
+        document.getElementById('modal-berita').classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      }
+
+      function salinTautanBerita(url) {
+        navigator.clipboard.writeText(url).then(() => {
+          const btn = document.getElementById('btn-salin-tautan');
+          btn.innerText = '✓ Tersalin!';
+          btn.classList.replace('bg-slate-100', 'bg-green-50');
+          btn.classList.replace('text-slate-700', 'text-green-700');
+          setTimeout(() => {
+            btn.innerText = 'Salin Link';
+            btn.classList.replace('bg-green-50', 'bg-slate-100');
+            btn.classList.replace('text-green-700', 'text-slate-700');
+          }, 2000);
+        }).catch(err => console.error('Gagal menyalin:', err));
+      }
+
+      function tutupModal() {
+        document.getElementById('modal-berita').classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+        
+        const baseUrl = window.location.origin + window.location.pathname;
+        window.history.pushState({}, '', baseUrl);
+      }
     </script>
 </body>
 </html>
