@@ -229,7 +229,7 @@
         </div>
     </section>
 
-    <!-- Profil Academic -->
+    <!-- Profil Akademik -->
     <section id="profil" class="py-20 md:py-28 bg-white scroll-mt-20">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="grid lg:grid-cols-12 gap-12 md:gap-16 items-start">
@@ -409,35 +409,40 @@
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" data-aos="fade-up">Arsitektur & Distribusi Kurikulum</h2>
                 <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base font-light" data-aos="fade-up" data-aos-delay="100">
-                    Eksplorasi komparatif dari peta kompetensi tahunan hingga sebaran distribusi bobot mata kuliah per semester secara transparan. Klik baris tabel untuk memicu filter interaktif mata kuliah.
+                    Eksplorasi komparatif dari peta kompetensi tahunan hingga sebaran distribusi bobot mata kuliah per semester secara transparan.
                 </p>
             </div>
 
-            <!-- Bagian A: Visual Roadmap Kurikulum -->
+            <!-- Bagian A: Visual Roadmap Kurikulum (Estetis & Kontemporer) -->
             <div class="mb-20" data-aos="fade-up">
                 <h3 class="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-8">&mdash; ROADMAP KOMPETENSI KELULUSAN &mdash;</h3>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+                    <!-- Garis Penghubung Dekoratif (Desktop Only) -->
                     <div class="hidden lg:block absolute top-1/2 left-4 right-4 h-0.5 bg-slate-100 -translate-y-8 z-0"></div>
                     
-                    <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-6 relative z-10 hover:shadow-md transition duration-300 cursor-pointer" onclick="highlightSemesterRow(1)">
+                    <!-- Tahun 1 Card -->
+                    <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-6 relative z-10 hover:shadow-md transition duration-300">
                         <div class="w-12 h-12 bg-[#0f172a] text-amber-400 font-extrabold flex items-center justify-center rounded-xl mb-4 text-base shadow-sm">Y1</div>
                         <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide mb-2">Fundamental Science & K3</h4>
                         <p class="text-slate-500 text-xs font-light leading-relaxed">Penguasaan dasar kalkulus rekayasa, kimia dasar terapan, keselamatan kerja industri, and dasar visualisasi AutoCAD.</p>
                         <span class="absolute top-6 right-6 text-xs font-bold text-slate-300">Tahap I</span>
                     </div>
-                    <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-6 relative z-10 hover:shadow-md transition duration-300 cursor-pointer" onclick="highlightSemesterRow(3)">
+                    <!-- Tahun 2 Card -->
+                    <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-6 relative z-10 hover:shadow-md transition duration-300">
                         <div class="w-12 h-12 bg-amber-500 text-slate-950 font-extrabold flex items-center justify-center rounded-xl mb-4 text-base shadow-sm">Y2</div>
                         <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide mb-2">Core Chemical Engineering</h4>
                         <p class="text-slate-500 text-xs font-light leading-relaxed">Pendalaman neraca massa, termodinamika proses, operasi teknik kimia (OTK I & II), serta teknologi pengolahan air limbah.</p>
                         <span class="absolute top-6 right-6 text-xs font-bold text-slate-300">Tahap II</span>
                     </div>
-                    <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-6 relative z-10 hover:shadow-md transition duration-300 cursor-pointer" onclick="highlightSemesterRow(5)">
+                    <!-- Tahun 3 Card -->
+                    <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-6 relative z-10 hover:shadow-md transition duration-300">
                         <div class="w-12 h-12 bg-[#0f172a] text-amber-400 font-extrabold flex items-center justify-center rounded-xl mb-4 text-base shadow-sm">Y3</div>
                         <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide mb-2">Specialization & TEFA Project</h4>
                         <p class="text-slate-500 text-xs font-light leading-relaxed">Eksekusi simulasi optimasi pabrik, mata kuliah peminatan industri spesifik, instrumentasi otomatis PLC, dan project TEFA.</p>
                         <span class="absolute top-6 right-6 text-xs font-bold text-slate-300">Tahap III</span>
                     </div>
-                    <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-6 relative z-10 hover:shadow-md transition duration-300 cursor-pointer" onclick="highlightSemesterRow(7)">
+                    <!-- Tahun 4 Card -->
+                    <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-6 relative z-10 hover:shadow-md transition duration-300">
                         <div class="w-12 h-12 bg-emerald-600 text-white font-extrabold flex items-center justify-center rounded-xl mb-4 text-base shadow-sm">Y4</div>
                         <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide mb-2">Industrial Practice & TA</h4>
                         <p class="text-slate-500 text-xs font-light leading-relaxed">Akselerasi magang industri intensif berskala nasional, komersialisasi technopreneur, dan sidang Tugas Akhir vokasi.</p>
@@ -446,11 +451,11 @@
                 </div>
             </div>
 
-            <!-- Bagian B: Tabel 3.2 Distribusi SKS Mata Kuliah Per Semester (Interaktif) -->
+            <!-- Bagian B: Tabel 3.2 Distribusi SKS Mata Kuliah Per Semester -->
             <div class="mb-16" data-aos="fade-up" data-aos-delay="150">
                 <h3 class="text-slate-900 font-bold text-base mb-4 tracking-tight flex items-center gap-2">
                     <span class="w-2 h-4 bg-amber-500 block rounded-sm"></span>
-                    Tabel 3.2 Distribusi Mata Kuliah & SKS Per Semester (Klik Baris untuk Melihat Detail)
+                    Tabel 3.2 Distribusi Mata Kuliah & SKS Per Semester (Pedoman Akademik)
                 </h3>
                 <div class="overflow-x-auto border border-slate-200/60 rounded-2xl shadow-sm bg-white">
                     <table class="w-full text-left text-xs border-collapse">
@@ -463,74 +468,58 @@
                                 <th class="p-4 font-semibold text-center">Akumulasi SKS</th>
                             </tr>
                         </thead>
-                        <tbody class="text-slate-600 font-medium divide-y divide-slate-100 select-none">
-                            <tr id="row-sem-1" onclick="highlightSemesterRow(1)" class="cursor-pointer hover:bg-amber-500/5 transition-all duration-200">
-                                <td class="p-4 font-bold text-slate-900 flex items-center gap-1.5">
-                                    <span class="indicator-dot w-2 h-2 rounded-full bg-transparent"></span>Semester I
-                                </td>
+                        <tbody class="text-slate-600 font-medium divide-y divide-slate-100">
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-4 font-bold text-slate-900">Semester I</td>
                                 <td class="p-4 font-light">Fundamental Keilmuan, Matematika Rekayasa, & Budaya K3 Industri</td>
                                 <td class="p-4 text-center">8 Mata Kuliah</td>
                                 <td class="p-4 text-center font-bold text-slate-900">20 SKS</td>
                                 <td class="p-4 text-center text-slate-400">20 SKS</td>
                             </tr>
-                            <tr id="row-sem-2" onclick="highlightSemesterRow(2)" class="cursor-pointer hover:bg-amber-500/5 transition-all duration-200">
-                                <td class="p-4 font-bold text-slate-900 flex items-center gap-1.5">
-                                    <span class="indicator-dot w-2 h-2 rounded-full bg-transparent"></span>Semester II
-                                </td>
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-4 font-bold text-slate-900">Semester II</td>
                                 <td class="p-4 font-light">Dasar Operasi Proses, Kimia Analitik Kuantitatif & Mikrobiologi</td>
                                 <td class="p-4 text-center">8 Mata Kuliah</td>
                                 <td class="p-4 text-center font-bold text-slate-900">21 SKS</td>
                                 <td class="p-4 text-center text-slate-400">41 SKS</td>
                             </tr>
-                            <tr id="row-sem-3" onclick="highlightSemesterRow(3)" class="cursor-pointer hover:bg-amber-500/5 transition-all duration-200">
-                                <td class="p-4 font-bold text-slate-900 flex items-center gap-1.5">
-                                    <span class="indicator-dot w-2 h-2 rounded-full bg-transparent"></span>Semester III
-                                </td>
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-4 font-bold text-slate-900">Semester III</td>
                                 <td class="p-4 font-light">Termodinamika Terapan, Aliran Neraca Massa, & Operasi Teknik Kimia I</td>
                                 <td class="p-4 text-center">7 Mata Kuliah</td>
                                 <td class="p-4 text-center font-bold text-slate-900">20 SKS</td>
                                 <td class="p-4 text-center text-slate-400">61 SKS</td>
                             </tr>
-                            <tr id="row-sem-4" onclick="highlightSemesterRow(4)" class="cursor-pointer hover:bg-amber-500/5 transition-all duration-200">
-                                <td class="p-4 font-bold text-slate-900 flex items-center gap-1.5">
-                                    <span class="indicator-dot w-2 h-2 rounded-full bg-transparent"></span>Semester IV
-                                </td>
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-4 font-bold text-slate-900">Semester IV</td>
                                 <td class="p-4 font-light">Operasi Teknik Kimia II, Kinetika Reaktor, & Pengolahan Limbah B3</td>
                                 <td class="p-4 text-center">7 Mata Kuliah</td>
                                 <td class="p-4 text-center font-bold text-slate-900">20 SKS</td>
                                 <td class="p-4 text-center text-slate-400">81 SKS</td>
                             </tr>
-                            <tr id="row-sem-5" onclick="highlightSemesterRow(5)" class="cursor-pointer hover:bg-amber-500/5 transition-all duration-200">
-                                <td class="p-4 font-bold text-slate-900 flex items-center gap-1.5">
-                                    <span class="indicator-dot w-2 h-2 rounded-full bg-transparent"></span>Semester V
-                                </td>
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-4 font-bold text-slate-900">Semester V</td>
                                 <td class="p-4 font-light">Desain Proses Makro, Instrumentasi Otomasi, & Penjurusan Peminatan I</td>
                                 <td class="p-4 text-center">7 Mata Kuliah</td>
                                 <td class="p-4 text-center font-bold text-slate-900">19 SKS</td>
                                 <td class="p-4 text-center text-slate-400">100 SKS</td>
                             </tr>
-                            <tr id="row-sem-6" onclick="highlightSemesterRow(6)" class="cursor-pointer hover:bg-amber-500/5 transition-all duration-200">
-                                <td class="p-4 font-bold text-slate-900 flex items-center gap-1.5">
-                                    <span class="indicator-dot w-2 h-2 rounded-full bg-transparent"></span>Semester VI
-                                </td>
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-4 font-bold text-slate-900">Semester VI</td>
                                 <td class="p-4 font-light">Simulasi Proses, Inkubasi Bisnis, & Projek Teaching Factory (TEFA)</td>
                                 <td class="p-4 text-center">6 Mata Kuliah</td>
                                 <td class="p-4 text-center font-bold text-slate-900">18 SKS</td>
                                 <td class="p-4 text-center text-slate-400">118 SKS</td>
                             </tr>
-                            <tr id="row-sem-7" onclick="highlightSemesterRow(7)" class="cursor-pointer hover:bg-amber-500/5 transition-all duration-200">
-                                <td class="p-4 font-bold text-slate-900 flex items-center gap-1.5">
-                                    <span class="indicator-dot w-2 h-2 rounded-full bg-transparent"></span>Semester VII
-                                </td>
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-4 font-bold text-slate-900">Semester VII</td>
                                 <td class="p-4 font-light">Praktek Kerja Magang Industri Intensif & Sinkronisasi Industri</td>
                                 <td class="p-4 text-center">1 Mata Kuliah</td>
                                 <td class="p-4 text-center font-bold text-slate-900">12 SKS</td>
                                 <td class="p-4 text-center text-slate-400">130 SKS</td>
                             </tr>
-                            <tr id="row-sem-8" onclick="highlightSemesterRow(8)" class="cursor-pointer hover:bg-amber-500/5 transition-all duration-200">
-                                <td class="p-4 font-bold text-slate-900 flex items-center gap-1.5">
-                                    <span class="indicator-dot w-2 h-2 rounded-full bg-transparent"></span>Semester VIII
-                                </td>
+                            <tr class="hover:bg-slate-50/80 transition">
+                                <td class="p-4 font-bold text-slate-900">Semester VIII</td>
                                 <td class="p-4 font-light">Penyusunan Dokumentasi & Sidang Tugas Akhir Vokasi Terapan</td>
                                 <td class="p-4 text-center">1 Mata Kuliah</td>
                                 <td class="p-4 text-center font-bold text-slate-900">14 SKS</td>
@@ -547,7 +536,7 @@
             </div>
 
             <!-- Bagian C: Detail Sebaran Mata Kuliah Interaktif Per Tahun -->
-            <div id="daftar-interaktif-container" class="scroll-mt-24">
+            <div data-aos="fade-up">
                 <h3 class="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">&mdash; DETAIL DAFTAR MATA KULIAH INTERAKTIF &mdash;</h3>
                 <div class="flex flex-wrap justify-center gap-1.5 sm:gap-2 mb-10 max-w-4xl mx-auto">
                     <button onclick="switchSemesterTab(1)" id="sem-btn-1" class="semester-tab-btn text-xs font-bold px-5 py-3 rounded-xl border transition-all duration-200 bg-slate-900 border-slate-900 text-white shadow-sm">Tahun 1 (Sem 1-2)</button>
@@ -603,6 +592,7 @@
                 <!-- PANEL 1: INDUSTRI KIMIA KESEHATAN -->
                 <div id="pem-panel-kesehatan" class="peminatan-panel-content block animate-fade-in">
                     <div class="grid lg:grid-cols-12 gap-8 items-start">
+                        <!-- Left Info Card -->
                         <div class="lg:col-span-4 bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
                             <span class="text-[10px] font-bold tracking-widest text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded-md">Peminatan 01</span>
                             <h3 class="text-xl font-bold text-slate-900 mt-3 mb-2">Presisi untuk Solusi Kesehatan</h3>
@@ -618,8 +608,10 @@
                             </div>
                         </div>
 
+                        <!-- Right Detail Rows -->
                         <div class="lg:col-span-8 space-y-6">
                             <h4 class="text-xs font-bold text-slate-400 tracking-widest uppercase">Eksplorasi 3 Sub-Jalur Utama Keahlian</h4>
+                            
                             <div class="grid sm:grid-cols-3 gap-4">
                                 <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-blue-200 transition-colors">
                                     <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-xs font-bold text-blue-600 mb-3">1</div>
@@ -644,11 +636,12 @@
                                 </div>
                             </div>
 
+                            <!-- Integration Roadmap Mapping -->
                             <div class="bg-slate-900 text-white p-5 rounded-2xl shadow-inner border border-slate-800">
                                 <h4 class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-3">🛠️ Rekam Jejak Portofolio Terapan (Alur Kerja Magang & TA)</h4>
                                 <div class="grid sm:grid-cols-2 gap-4 text-xs">
                                     <div class="bg-white/5 p-3 rounded-lg border border-white/10">
-                                        <span class="font-bold text-amber-200 block mb-1">🏢 Peluang & Lokasi Magang Terintegrated:</span>
+                                        <span class="font-bold text-amber-200 block mb-1">🏢 Peluang & Lokasi Magang Terintegrasi:</span>
                                         <p class="text-slate-300 font-light text-[11px]">Fasilitas Production IVD/Alat Kesehatan Nasional, Lembaga Riset Terapan Korporat, Manajemen Sistem Penjaminan QC/QA Farmasi Medis, serta optimalisasi unit produksi Teaching Factory (TEFA) internal kampus.</p>
                                     </div>
                                     <div class="bg-white/5 p-3 rounded-lg border border-white/10">
@@ -664,6 +657,7 @@
                 <!-- PANEL 2: INDUSTRI KIMIA PANGAN -->
                 <div id="pem-panel-pangan" class="peminatan-panel-content hidden animate-fade-in">
                     <div class="grid lg:grid-cols-12 gap-8 items-start">
+                        <!-- Left Info Card -->
                         <div class="lg:col-span-4 bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
                             <span class="text-[10px] font-bold tracking-widest text-amber-700 uppercase bg-amber-50 px-2.5 py-1 rounded-md">Peminatan 02</span>
                             <h3 class="text-xl font-bold text-slate-900 mt-3 mb-1">Inovasi Pangan Bermutu</h3>
@@ -681,14 +675,16 @@
                                 <h4 class="text-[11px] font-bold text-slate-800 tracking-wider uppercase mb-3">🎯 Cocok untuk Kamu yang:</h4>
                                 <ul class="text-xs space-y-2.5 text-slate-600 font-medium check-list">
                                     <li>Suka bekerja di laboratorium instrumen pengujian zat nutrisi dan analisis sensori organoleptik.</li>
-                                    <li>Peduli pada pemnuhan standar mutu internasional, keamanan rantai pasok pangan, serta regulasi halal.</li>
+                                    <li>Peduli pada pemenuhan standar mutu internasional, keamanan rantai pasok pangan, serta regulasi halal.</li>
                                     <li>Ingin berkarir di korporasi manufaktur FMCG multinasional atau mendirikan rintisan industri pangan fungsional.</li>
                                 </ul>
                             </div>
                         </div>
 
+                        <!-- Right Detail Rows -->
                         <div class="lg:col-span-8 space-y-6">
                             <h4 class="text-xs font-bold text-slate-400 tracking-widest uppercase">Eksplorasi 3 Sub-Jalur Utama Keahlian</h4>
+                            
                             <div class="grid sm:grid-cols-3 gap-4">
                                 <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-amber-200 transition-colors">
                                     <div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center text-xs font-bold text-amber-700 mb-3">1</div>
@@ -713,11 +709,12 @@
                                 </div>
                             </div>
 
+                            <!-- Integration Roadmap Mapping -->
                             <div class="bg-slate-900 text-white p-5 rounded-2xl shadow-inner border border-slate-800">
                                 <h4 class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-3">🛠️ Rekam Jejak Portofolio Terapan (Alur Kerja Magang & TA)</h4>
                                 <div class="grid sm:grid-cols-2 gap-4 text-xs">
                                     <div class="bg-white/5 p-3 rounded-lg border border-white/10">
-                                        <span class="font-bold text-amber-200 block mb-1">🏢 Peluang & Lokasi Magang Terintegrated:</span>
+                                        <span class="font-bold text-amber-200 block mb-1">🏢 Peluang & Lokasi Magang Terintegrasi:</span>
                                         <p class="text-slate-300 font-light text-[11px]">Korporasi Manufaktur Makanan & Minuman Nasional/Global, Pilot Plant Pengujian Mutu Pangan, Divisi R&D Brand FMCG Sehat, serta akselerasi inkubator bisnis TEFA hilirisasi produk kampus.</p>
                                     </div>
                                     <div class="bg-white/5 p-3 rounded-lg border border-white/10">
@@ -733,6 +730,7 @@
                 <!-- PANEL 3: GREEN TECHNOLOGY AND WASTE MANAGEMENT -->
                 <div id="pem-panel-gtwm" class="peminatan-panel-content hidden animate-fade-in">
                     <div class="grid lg:grid-cols-12 gap-8 items-start">
+                        <!-- Left Info Card -->
                         <div class="lg:col-span-4 bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
                             <span class="text-[10px] font-bold tracking-widest text-emerald-600 uppercase bg-emerald-50 px-2.5 py-1 rounded-md">Peminatan 03</span>
                             <h3 class="text-xl font-bold text-slate-900 mt-3 mb-2">Teknologi Hijau Masa Depan</h3>
@@ -748,8 +746,10 @@
                             </div>
                         </div>
 
+                        <!-- Right Detail Rows -->
                         <div class="lg:col-span-8 space-y-6">
                             <h4 class="text-xs font-bold text-slate-400 tracking-widest uppercase">Eksplorasi 3 Sub-Jalur Utama Keahlian</h4>
+                            
                             <div class="grid sm:grid-cols-3 gap-4">
                                 <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-emerald-200 transition-colors">
                                     <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-xs font-bold text-emerald-600 mb-3">1</div>
@@ -774,11 +774,12 @@
                                 </div>
                             </div>
 
+                            <!-- Integration Roadmap Mapping -->
                             <div class="bg-slate-900 text-white p-5 rounded-2xl shadow-inner border border-slate-800">
                                 <h4 class="text-xs font-bold text-amber-400 tracking-wider uppercase mb-3">🛠️ Rekam Jejak Portofolio Terapan (Alur Kerja Magang & TA)</h4>
                                 <div class="grid sm:grid-cols-2 gap-4 text-xs">
                                     <div class="bg-white/5 p-3 rounded-lg border border-white/10">
-                                        <span class="font-bold text-amber-200 block mb-1">🏢 Peluang & Lokasi Magang Terintegrated:</span>
+                                        <span class="font-bold text-amber-200 block mb-1">🏢 Peluang & Lokasi Magang Terintegrasi:</span>
                                         <p class="text-slate-300 font-light text-[11px]">Instalasi Pengolahan Air Limbah Industri, Korporasi Biofuel Terintegrasi, Divisi Audit Dampak Emisi Pabrik, Unit Pengolahan Mineral Hidrometalurgi, serta Ecopreneurship Manajemen Sampah.</p>
                                     </div>
                                     <div class="bg-white/5 p-3 rounded-lg border border-white/10">
@@ -928,7 +929,7 @@
                 <h2 class="text-sm font-bold text-slate-400 tracking-widest uppercase" data-aos="zoom-in">Aliansi Mitra Industri Strategis</h2>
             </div>
             <!-- Wadah Data Dinamis -->
-            <div id="tempat-mitra" class="flex flex-wrap justify-center gap-5 sm:gap-8 items-center" data-aos="fade-up" data-aos-delay="200">
+            <div id="tempat-mitra" class="flex flex-wrap justify-center gap-5" data-aos="fade-up" data-aos-delay="200">
                 <!-- Data Mitra di-render otomatis via JS -->
             </div>
         </div>
@@ -1285,317 +1286,210 @@
             tombolAktif.classList.add('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-md');
         }
 
-        // ==========================================
-        // DATABASE INTERNAL DATA STRUKTUR KURIKULUM
-        // ==========================================
-        const curriculumData = {
+        // ========================================================
+        // DATABASE SEBARAN MATA KULIAH LENGKAP PER SEMESTER (D-IV)
+        // ========================================================
+        const dataKurikulum = {
             1: [
-                { code: "UNI101", name: "Pendidikan Agama", sks: 2, type: "Teori Vokasi" },
-                { code: "UNI102", name: "Pancasila & Kewarganegaraan", sks: 2, type: "Teori Vokasi" },
-                { code: "UNI103", name: "Bahasa Indonesia", sks: 2, type: "Teori Terapan" },
-                { code: "TIK101", name: "Matematika Rekayasa I", sks: 3, type: "Teori & Respons" },
-                { code: "TIK102", name: "Kimia Dasar Terapan", sks: 3, type: "Teori & Praktikum" },
-                { code: "TIK103", name: "Fisika Industri", sks: 3, type: "Teori Terapan" },
-                { code: "TIK104", name: "Keselamatan & Kesehatan Kerja (K3) Industri", sks: 3, type: "Sertifikasi Kompetensi" },
-                { code: "TIK105", name: "Gambar Teknik & AutoCAD", sks: 2, type: "Praktikum Studio" }
-            ],
-            2: [
-                { code: "UNI104", name: "Bahasa Inggris Komunikasi Industri", sks: 2, type: "Praktik Lab" },
-                { code: "TIK201", name: "Matematika Rekayasa II", sks: 3, type: "Teori & Respons" },
-                { code: "TIK202", name: "Kimia Analitik Kuantitatif", sks: 3, type: "Teori & Praktikum" },
-                { code: "TIK203", name: "Mikrobiologi Industri", sks: 3, type: "Teori & Praktikum" },
-                { code: "TIK204", name: "Pengantar Teknologi Industri Kimia", sks: 2, type: "Teori Vokasi" },
-                { code: "TIK205", name: "Azas Teknik Kimia I (Neraca Massa)", sks: 3, type: "Teori Terapan" },
-                { code: "TIK206", name: "Praktikum Kimia Terapan", sks: 3, type: "Full Praktikum Lab" },
-                { code: "VOK101", name: "Kewirausahaan Dasar", sks: 2, type: "Inkubasi Bisnis" }
+                { nama: "Kimia Dasar Terapan", sks: 3, jenis: "Teori + Praktik wajib" },
+                { nama: "Fisika Proses Industri", sks: 2, jenis: "Teori Kompetensi Dasar" },
+                { nama: "Matematika Rekayasa Lanjut I", sks: 3, jenis: "Teori Komputasi" },
+                { nama: "Pengantar Teknologi Proses Makro", sks: 2, jenis: "Teori Pengenalan Pabrik" },
+                { nama: "Menggambar Teknik & AutoCAD", sks: 2, jenis: "Praktik Studio Desain" },
+                { nama: "Keselamatan & Kesehatan Kerja (K3)", sks: 2, jenis: "Sertifikasi Industri Pemula" },
+                { nama: "Bahasa Inggris Teknik Industri", sks: 2, jenis: "Teori Komunikasi" },
+                { nama: "Pancasila & Kewarganegaraan", sks: 4, jenis: "Muatan Umum Wajib" }
             ],
             3: [
-                { code: "TIK301", name: "Termodinamika Terapan", sks: 3, type: "Teori Terapan" },
-                { code: "TIK302", name: "Azas Teknik Kimia II (Energi)", sks: 3, type: "Teori & Respons" },
-                { code: "TIK303", name: "Operasi Teknik Kimia I (Fluida & Partikel)", sks: 3, type: "Teori & Praktikum" },
-                { code: "TIK304", name: "Kimia Organik Industri", sks: 3, type: "Teori Terapan" },
-                { code: "TIK305", name: "Instrumentasi Kimia Analisis Modern", sks: 3, type: "Praktik Instrumen" },
-                { code: "TIK306", name: "Praktikum OTK I", sks: 3, type: "Full Praktikum Lab" },
-                { code: "TIK307", name: "Statistika Industri", sks: 2, type: "Teori Komputasi" }
-            ],
-            4: [
-                { code: "TIK401", name: "Operasi Teknik Kimia II (Pemisahan Massal)", sks: 3, type: "Teori & Praktikum" },
-                { code: "TIK402", name: "Kinetika Reaktor & Katalis", sks: 3, type: "Teori Terapan" },
-                { code: "TIK403", name: "Pengolahan Limbah Cair & B3", sks: 3, type: "Teori & Praktikum" },
-                { code: "TIK404", name: "Pengendalian Proses Industri", sks: 3, type: "Teori Instrumen" },
-                { code: "TIK405", name: "Utilitas Pabrik Kimia", sks: 3, type: "Teori Vokasi" },
-                { code: "TIK406", name: "Praktikum OTK II", sks: 3, type: "Full Praktikum Lab" },
-                { code: "TIK407", name: "Manajemen Industri Vokasi", sks: 2, type: "Teori Manajerial" }
+                { nama: "Kimia Organik Industri Hilir", sks: 3, jenis: "Teori + Praktik Sintesis" },
+                { nama: "Operasi Teknik Kimia I (OTK I)", sks: 4, jenis: "Teori + Praktik Pilot Plant" },
+                { nama: "Termodinamika Proses Terapan", sks: 3, jenis: "Teori Perhitungan Energi" },
+                { nama: "Mikrobiologi Industri Bio-Proses", sks: 2, jenis: "Teori + Praktik Laboratorium" },
+                { nama: "Neraca Massa dan Energi", sks: 3, jenis: "Teori Analisis Aliran" },
+                { nama: "Teknologi Pengolahan Air Industri", sks: 2, jenis: "Praktik Pengolahan Limbah Cair" },
+                { nama: "Kimia Fisik & Koloid Industri", sks: 3, jenis: "Teori + Praktik Lab" }
             ],
             5: [
-                { code: "TIK501", name: "Desain Proses & Peralatan Kimia", sks: 3, type: "Studio Desain" },
-                { code: "TIK502", name: "Komputasi Proses Kimia", sks: 3, type: "Praktik Komputasi" },
-                { code: "TIK503", name: "Instrumentasi & Otomasi PLC", sks: 3, type: "Praktik Lab PLC" },
-                { code: "TIK504", name: "Metodologi Penelitian Terapan", sks: 2, type: "Teori Riset" },
-                { code: "TIKP51", name: "Mata Kuliah Peminatan Industri I", sks: 3, type: "Penjurusan Kompetensi" },
-                { code: "TIK505", name: "Praktikum Otomasi & Kendali Proses", sks: 3, type: "Full Praktikum Lab" },
-                { code: "VOK301", name: "Komunikasi Profesional & Etika", sks: 2, type: "Teori Vokasi" }
-            ],
-            6: [
-                { code: "TIK601", name: "Simulasi & Pemodelan Proses Industri", sks: 3, type: "Praktik Software" },
-                { code: "TIK602", name: "Proyek Teaching Factory (TEFA)", sks: 4, type: "Pilot Plant Production" },
-                { code: "TIK603", name: "Inkubasi Bisnis & Technopreneurship", sks: 3, type: "Project Komersial" },
-                { code: "TIKP62", name: "Mata Kuliah Peminatan Industri II", sks: 3, type: "Penjurusan Kompetensi" },
-                { code: "TIK604", name: "Seminar Proposal Tugas Akhir", sks: 2, type: "Evaluasi Riset" },
-                { code: "TIK605", name: "Keamanan Proses Pabrik & Audit Energi", sks: 3, type: "Teori Audit" }
+                { nama: "Bioteknologi Industri Mutakhir", sks: 3, jenis: "Teori + Praktik Terapan" },
+                { nama: "Sistem Manajemen Mutu ISO Lab", sks: 2, jenis: "Teori Regulasi Standar" },
+                { nama: "Mata Kuliah Peminatan Industri I", sks: 3, jenis: "Peminatan Utama Terarah" },
+                { nama: "Metodologi Riset Projek Terapan", sks: 2, jenis: "Praktik Penyusunan Proposal TA" },
+                { nama: "Operasi Teknik Kimia II (OTK II)", sks: 4, jenis: "Praktik Tingkat Lanjut TEFA" },
+                { nama: "Instrumentasi & Kendali Proses Otomatis", sks: 3, jenis: "Praktik Sistem Otomasi PLC" },
+                { nama: "Korosi & Elektrokimia Terapan", sks: 2, jenis: "Teori Penanganan Material" }
             ],
             7: [
-                { code: "TIK701", name: "Praktek Kerja Magang Industri Intensif", sks: 12, type: "1 Semester di Pabrik Mitra" }
-            ],
-            8: [
-                { code: "TIK801", name: "Penyusunan Dokumentasi & Sidang Tugas Akhir", sks: 14, type: "Karya Terapan Vokasi" }
+                { nama: "Magang Industri Intensif & Sinkron", sks: 12, jenis: "Praktik Kerja Lapangan 6 Bulan" }
             ]
         };
 
-        // Engine Filter & Tabulasi Mata Kuliah Interaktif
-        function switchSemesterTab(startSem, focusSem = null) {
-            const buttons = document.querySelectorAll('.semester-tab-btn');
-            buttons.forEach(btn => {
+        function switchSemesterTab(tahunMulai) {
+            const seluruhTombol = document.querySelectorAll('.semester-tab-btn');
+            seluruhTombol.forEach(btn => {
                 btn.classList.remove('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
                 btn.classList.add('border-slate-200', 'bg-white', 'text-slate-600', 'hover:text-slate-900');
             });
+            document.getElementById(`sem-btn-${tahunMulai}`).classList.add('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
 
-            document.getElementById(`sem-btn-${startSem}`).classList.add('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
-            document.getElementById(`sem-btn-${startSem}`).classList.remove('border-slate-200', 'bg-white', 'text-slate-600', 'hover:text-slate-900');
+            const kontainer = document.getElementById('kurikulum-table-container');
+            kontainer.innerHTML = '';
 
-            let html = '';
-            const sems = [startSem, startSem + 1];
-            sems.forEach(sem => {
-                if (sem > 8) return;
-                const isFocused = (focusSem === sem);
-                html += `
-                    <div class="mb-8 ${isFocused ? 'ring-2 ring-amber-500 p-4 rounded-2xl bg-amber-500/5 transition-all duration-300' : ''}" id="view-section-sem-${sem}">
-                        <h4 class="font-bold text-sm mb-4 uppercase tracking-wider ${isFocused ? 'text-amber-600 font-extrabold' : 'text-slate-700'} border-b border-slate-200 pb-1 flex justify-between items-center">
-                            <span>Mata Kuliah Semester ${sem}</span>
-                            ${isFocused ? '<span class="text-[10px] bg-amber-500 text-slate-950 font-bold uppercase px-2 py-0.5 rounded-full tracking-normal">Fokus Ditampilkan</span>' : ''}
-                        </h4>
-                        <div class="grid sm:grid-cols-2 gap-3.5">
-                `;
-                curriculumData[sem].forEach(course => {
-                    html += `
-                        <div class="bg-white p-4 rounded-xl border border-slate-200/70 shadow-sm flex justify-between items-center hover:border-amber-400 hover:shadow-sm transition-all duration-300 group">
-                            <div class="pr-3">
-                                <span class="text-[10px] text-slate-400 font-mono block tracking-wider">${course.code}</span>
-                                <h5 class="font-bold text-slate-800 text-xs sm:text-sm mt-0.5 group-hover:text-amber-600 transition-colors">${course.name}</h5>
-                                <span class="inline-block text-[9px] font-bold uppercase tracking-wider mt-1.5 px-2 py-0.5 bg-slate-100 rounded text-slate-500">${course.type}</span>
-                            </div>
-                            <div class="text-right shrink-0">
-                                <span class="text-xs font-black text-slate-900 bg-amber-500/10 text-amber-800 px-2.5 py-1.5 rounded-lg whitespace-nowrap border border-amber-500/20">${course.sks} SKS</span>
-                            </div>
-                        </div>
-                    `;
-                });
-                html += `</div></div>`;
-            });
-            document.getElementById('kurikulum-table-container').innerHTML = html;
+            const listKuliah = dataKurikulum[tahunMulai];
+            if (!listKuliah) return;
 
-            if (focusSem) {
-                const element = document.getElementById(`view-section-sem-${focusSem}`);
-                if (element) {
-                    setTimeout(() => {
-                        element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                    }, 100);
-                }
-            }
-        }
+            const gridContainer = document.createElement('div');
+            gridContainer.className = "grid gap-4 sm:grid-cols-2 animate-fade-in";
 
-        // Fungsi Penyatuan Sistem: Klik Baris Tabel Kurikulum
-        function highlightSemesterRow(semNum) {
-            document.querySelectorAll('tbody tr').forEach(tr => {
-                tr.classList.remove('bg-amber-500/10');
-                const dot = tr.querySelector('.indicator-dot');
-                if (dot) dot.className = "indicator-dot w-2 h-2 rounded-full bg-transparent";
-            });
-
-            const rowTerpilih = document.getElementById(`row-sem-${semNum}`);
-            if (rowTerpilih) {
-                rowTerpilih.classList.add('bg-amber-500/10');
-                const dot = rowTerpilih.querySelector('.indicator-dot');
-                if (dot) dot.className = "indicator-dot w-2 h-2 rounded-full bg-amber-500 animate-pulse";
-            }
-
-            let startSemTab = 1;
-            if (semNum === 3 || semNum === 4) startSemTab = 3;
-            if (semNum === 5 || semNum === 6) startSemTab = 5;
-            if (semNum === 7 || semNum === 8) startSemTab = 7;
-
-            switchSemesterTab(startSemTab, semNum);
-            
-            const targetSection = document.getElementById('daftar-interaktif-container');
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-
-        // ==========================================
-        // DATABASE LAINNYA (FASILITAS, DOSEN, MITRA, BERITA)
-        // ==========================================
-        const facilitiesData = [
-            { title: "Lab Operasi Teknik Kimia", emoji: "🏗️", desc: "Simulasi unit distilasi, filtrasi, absorpsi, dan evaporator penukar panas skala pilot plant." },
-            { title: "Teaching Factory (TEFA)", emoji: "🏭", desc: "Lini produksi komersial manufaktur kimia untuk melatih jiwa technopreneurship nyata." },
-            { title: "Lab Instrumentasi & Analisis", emoji: "🔬", desc: "Fasilitas kalibrasi, pengujian GC (Gas Chromatography), Spektrofotometri UV-Vis, dan AAS." },
-            { title: "Lab Mikrobiologi Industri", emoji: "🧫", desc: "Inkubasi rekayasa fermentasi bioreaktor, sterilisasi media hayati, dan pengujian zat aktif." },
-            { title: "Ruang Komputasi & AutoCAD", emoji: "💻", desc: "Studio pemodelan visualisasi pabrik menggunakan AutoCAD 3D serta software simulator proses." },
-            { title: "Lab K3 & Pengolahan Limbah", emoji: "🌱", desc: "Fasilitas analisis baku mutu limbah cair B3, deteksi bahaya, and pengujian safety proteksi kebakaran." }
-        ];
-
-        const lecturersData = [
-            { name: "Dr. Eng. Ryan Fauzi, M.T.", title: "Ketua Program Studi", expert: "Rekayasa Proses & Otomasi Pabrik" },
-            { name: "Prof. Dr. Ahmad Subagja", title: "Guru Besar Kimia Terapan", expert: "Teknologi Polimer & Material Hijau" },
-            { name: "Siti Rahma, M.Si., Ph.D.", title: "Dosen Senior / Peneliti", expert: "Bioteknologi Industri & Pangan" },
-            { name: "Budi Hermawan, M.T.", title: "Praktisi Industri / Dosen", expert: "Sistem Manajemen K3 & Amdal" }
-        ];
-
-        const partnersData = [
-            "PT Pertamina (Persero)", "PT Pupuk Kujang", "PT Bio Farma", "PT Unilever Indonesia", "PT Indofood CBP", "Badan Sertifikasi Nasional (BSN)"
-        ];
-
-        const newsData = [
-            { id: 1, title: "Grand Launching Teaching Factory (TEFA) Produk Kimia Vokasi Unpad", category: "Akademik", date: "15 Juli 2026", desc: "Fakultas Vokasi Unpad meresmikan fasilitas Teaching Factory mutakhir untuk akselerasi hilirisasi produk inovasi buatan mahasiswa Sarjana Terapan.", content: "Fasilitas baru ini dirancang menyerupai ekosistem industri manufaktur kimia komersial untuk memastikan lulusan siap kerja langsung tanpa hambatan transisi dari dunia kampus ke dunia korporasi global." },
-            { id: 2, title: "Kunjungan Industri Strategis Mahasiswa TIKIM ke Pabrik Petrokimia Nasional", category: "Kegiatan", date: "02 Juni 2026", desc: "Mahasiswa angkatan 2024 melaksanakan peninjauan lapangan intensif guna mempelajari arsitektur instrumen kendali otomatis berbasis DCS.", content: "Dalam kunjungan ini, para mahasiswa dipandu langsung oleh chief engineer untuk melihat ruang kontrol pusat, tangki kriogenik, dan sistem utilitas pabrik raksasa penyuplai polimer nasional." },
-            { id: 3, title: "Pembukaan Pendaftaran Mahasiswa Baru Jalur SMUP Mandiri Vokasi Unpad 2026", category: "Admisi", date: "18 Mei 2026", desc: "Gerbang kesempatan emas bagi lulusan SMA/SMK sederajat untuk bergabung bersama ekosistem vokasi rekayasa proses kimia terbaik.", content: "Portal pendaftaran online resmi dibuka dengan berbagai skema seleksi, termasuk jalur portofolio prestasi bakat minat khusus dan nilai ujian tertulis UTBK/SMUP." }
-        ];
-
-        // RENDER FUNGSI ELEMEN DINAMIS PADA DOM LOADED
-        document.addEventListener("DOMContentLoaded", () => {
-            // Render Default Kurikulum
-            switchSemesterTab(1);
-
-            // Render Fasilitas
-            let facHtml = '';
-            facilitiesData.forEach(f => {
-                facHtml += `
-                    <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/50 shadow-sm hover:shadow-md transition-all duration-300" data-aos="fade-up">
-                        <div class="text-3xl mb-4">${f.emoji}</div>
-                        <h3 class="text-base font-bold text-slate-900 mb-2">${f.title}</h3>
-                        <p class="text-slate-500 text-xs sm:text-sm font-light leading-relaxed text-justify">${f.desc}</p>
+            listKuliah.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-white p-5 rounded-xl border border-slate-200/70 shadow-sm flex justify-between items-center group hover:border-amber-500 transition duration-300";
+                card.innerHTML = `
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-sm tracking-tight group-hover:text-amber-600 transition duration-200">${item.nama}</h4>
+                        <span class="inline-block text-[10px] text-slate-400 font-medium tracking-wide mt-1 bg-slate-100 px-2 py-0.5 rounded">${item.jenis}</span>
+                    </div>
+                    <div class="text-right shrink-0 ml-4">
+                        <span class="text-xs font-extrabold text-slate-900 bg-amber-500/10 text-amber-700 px-2.5 py-1.5 rounded-lg">${item.sks} SKS</span>
                     </div>
                 `;
+                gridContainer.appendChild(card);
             });
-            document.getElementById('tempat-fasilitas').innerHTML = facHtml;
 
-            // Render Dewan Dosen
-            let docHtml = '';
-            lecturersData.forEach(d => {
-                docHtml += `
-                    <div class="bg-slate-50 border border-slate-200/60 p-6 rounded-2xl text-center shadow-sm hover:scale-[1.02] transition-transform duration-300" data-aos="fade-up">
-                        <div class="w-16 h-16 bg-slate-200 rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-slate-500 text-xl border-2 border-amber-500/20">👨‍🏫</div>
-                        <h4 class="font-bold text-slate-900 text-sm leading-snug">${d.name}</h4>
-                        <p class="text-[11px] text-amber-700 font-bold uppercase mt-1 tracking-wider">${d.title}</p>
-                        <p class="text-slate-400 text-xs font-light mt-2 border-t border-slate-200 pt-2">${d.expert}</p>
-                    </div>
-                `;
-            });
-            document.getElementById('tempat-dosen').innerHTML = docHtml;
-
-            // Render Mitra Industri
-            let mitHtml = '';
-            partnersData.forEach(m => {
-                mitHtml += `
-                    <div class="bg-white px-6 py-4 rounded-xl border border-slate-200/60 shadow-sm text-center font-bold text-xs uppercase tracking-wide text-slate-600 select-none min-w-[150px]">
-                        ${m}
-                    </div>
-                `;
-            });
-            document.getElementById('tempat-mitra').innerHTML = mitHtml;
-
-            // Render Berita Awal
-            tampilkanSemuaBerita(newsData);
-        });
-
-        // Manajemen Modul Berita & Search Engine
-        function tampilkanSemuaBerita(data) {
-            let newsHtml = '';
-            if (data.length === 0) {
-                newsHtml = `<div class="col-span-full text-center text-slate-400 text-sm font-light py-10">Tidak ditemukan rilis berita yang cocok.</div>`;
-            } else {
-                data.forEach(n => {
-                    newsHtml += `
-                        <div class="bg-white border border-slate-200/60 rounded-2xl shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition-all duration-300" data-aos="fade-up">
-                            <div class="p-6">
-                                <div class="flex justify-between items-center mb-4">
-                                    <span class="text-[10px] bg-slate-900 text-white font-bold uppercase px-2 py-0.5 rounded-md tracking-wider">${n.category}</span>
-                                    <span class="text-[11px] text-slate-400 font-medium">${n.date}</span>
-                                </div>
-                                <h3 class="text-base font-bold text-slate-900 mb-2 leading-snug hover:text-amber-600 transition-colors cursor-pointer" onclick="bukaModalBerita(${n.id})">${n.title}</h3>
-                                <p class="text-slate-500 text-xs font-light leading-relaxed text-justify mb-4">${n.desc}</p>
-                            </div>
-                            <div class="p-6 pt-0">
-                                <button onclick="bukaModalBerita(${n.id})" class="text-xs font-bold text-amber-600 hover:text-amber-700 flex items-center gap-1 transition-all">
-                                    Baca Selengkapnya &rarr;
-                                </button>
-                            </div>
-                        </div>
-                    `;
-                });
-            }
-            document.getElementById('tempat-berita').innerHTML = newsHtml;
+            kontainer.appendChild(gridContainer);
         }
 
+        // ========================================================
+        // ENGINE PENGISIAN DATA BACKEND (CONSTR. & RECONSTRUCTION)
+        // ========================================================
+        function isiDataFasilitasLengkap() {
+            const tempatFasilitas = document.getElementById('tempat-fasilitas');
+            const data = [
+                { nama: "Pilot Plant Teaching Factory (TEFA)", deskripsi: "Fasilitas rekayasa proses kimia terintegrasi berskala semi-industri untuk produksi riil harian." },
+                { nama: "Laboratorium Instrumentasi UV-Vis & AAS", deskripsi: "Laboratorium pengujian kuantitatif tingkat presisi tinggi berbasis komputasi modern." },
+                { nama: "Laboratorium Bioproses & Kultur Sel", deskripsi: "Fasilitas inkubasi mikroba and ekspresi protein rekombinan komersial berskala laboratorium." }
+            ];
+            tempatFasilitas.innerHTML = data.map(f => `
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="text-2xl mb-3">🏢</div>
+                    <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide mb-1.5">${f.nama}</h4>
+                    <p class="text-slate-500 text-xs font-light leading-relaxed">${f.deskripsi}</p>
+                </div>
+            `).join('');
+        }
+
+        function isiDataDosenLengkap() {
+            const tempatDosen = document.getElementById('tempat-dosen');
+            const data = [
+                { nama: "Dr. Eng. Ryan Fauzi, M.T.", jabatan: "Ketua Program Studi" },
+                { nama: "Prof. Dr. Ir. Heri Hermansyah", jabatan: "Dosen Rekayasa Bioproproses" },
+                { nama: "Anisa Indah, M.Si.", jabatan: "Spesialis Pengendalian Mutu" },
+                { nama: "Budi Hartono, Ph.D.", jabatan: "Praktisi Kimia Industri Hijau" }
+            ];
+            tempatDosen.innerHTML = data.map(d => `
+                <div class="bg-white border border-slate-200/70 rounded-2xl p-4 text-center hover:border-amber-500 transition duration-300">
+                    <div class="bg-slate-100 aspect-[3/4] rounded-xl flex items-center justify-center text-3xl font-bold text-slate-300 mb-4">🎓</div>
+                    <h4 class="font-bold text-slate-900 text-xs sm:text-sm tracking-tight">${d.nama}</h4>
+                    <p class="text-slate-400 text-[11px] font-medium mt-0.5">${d.jabatan}</p>
+                </div>
+            `).join('');
+        }
+
+        function isiDataMitraLengkap() {
+            const tempatMitra = document.getElementById('tempat-mitra');
+            const data = ["PT. Petrokimia Gresik", "PT. Bio Farma (Persero)", "PT. Unilever Indonesia", "Chandra Asri Petrochemical", "PT. Kalbe Farma Tbk"];
+            tempatMitra.innerHTML = data.map(m => `
+                <div class="bg-white border border-slate-200 px-6 py-4 rounded-xl flex items-center justify-center text-xs font-bold text-slate-500 tracking-wider shadow-sm hover:text-amber-600 transition">
+                    ${m}
+                </div>
+            `).join('');
+        }
+
+        const databaseBerita = [
+            { id: 1, judul: "Hilirisasi Riset TEFA TIKIM Sukses Luncurkan Produk Hand Sanitizer Alami", kutipan: "Melalui integrasi laboratorium canggih Sekolah Vokasi Unpad, mahasiswa berhasil mengomersialkan formula antiseptik baru.", tanggal: "12 Juli 2026", isi: "Bandung — Program Studi Sarjana Terapan Teknologi Industri Kimia Sekolah Vokasi Unpad sukses mencatatkan pencapaian gemilang melalui unit Teaching Factory (TEFA). Mahasiswa berkolaborasi aktif merancang lini produksi masal terstandardisasi." },
+            { id: 2, judul: "Kunjungan Industri Strategis Mahasiswa TIK Unpad ke Kawasan Petrokimia Cilegon", kutipan: "Melihat langsung pusat kendali DCS and operasional reaktor fraksinasi berskala internasional.", tanggal: "05 Juni 2026", isi: "Cilegon — Guna meningkatkan wawasan rekayasa proses di dunia kerja, sebanyak 40 mahasiswa melaksanakan kuliah lapangan intensif di fasilitas pemurnian olefin utama." },
+            { id: 3, judul: "Pengumuman Pembukaan Pendaftaran SMUP Vokasi Jalur Prestasi and Reguler 2026", kutipan: "Kesempatan emas bergabung bersama program studi sarjana terapan rumpun teknik kimia terbaik.", tanggal: "20 Mei 2026", isi: "Jatinangor — Universitas Padjadjaran resmi membuka gerbang registrasi seleksi masuk mandiri. Calon pendaftar diimbau menyiapkan berkas portofolio prestasi sains." }
+        ];
+
+        function isiDataBeritaLengkap(filterData = databaseBerita) {
+            const tempatBerita = document.getElementById('tempat-berita');
+            if (filterData.length === 0) {
+                tempatBerita.innerHTML = `<div class="col-span-full text-center text-xs font-semibold text-slate-400 py-12">Tidak ditemukan rilis berita yang cocok.</div>`;
+                return;
+            }
+            tempatBerita.innerHTML = filterData.map(b => `
+                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between group hover:border-amber-500 transition duration-300">
+                    <div>
+                        <span class="text-[10px] font-bold text-amber-600 block mb-2">${b.tanggal}</span>
+                        <h4 class="font-bold text-slate-900 text-sm mb-2 group-hover:text-amber-600 transition duration-200">${b.judul}</h4>
+                        <p class="text-slate-500 text-xs font-light leading-relaxed mb-4">${b.kutipan}</p>
+                    </div>
+                    <button onclick="bukaModal(${b.id})" class="text-xs font-semibold text-slate-900 hover:text-amber-600 text-left flex items-center gap-1 transition focus:outline-none">Baca Selengkapnya &rarr;</button>
+                </div>
+            `).join('');
+        }
+
+        // Fungsi Filter Pencarian Berita
         function cariInformasiBerita() {
-            const keyword = document.getElementById('cari-berita').value.toLowerCase();
-            const clearBtn = document.getElementById('clear-search-btn');
+            const kataKunci = document.getElementById('cari-berita').value.toLowerCase();
+            const btnClear = document.getElementById('clear-search-btn');
             
-            if (keyword.length > 0) clearBtn.classList.remove('hidden');
-            else clearBtn.classList.add('hidden');
+            if(kataKunci !== '') btnClear.classList.remove('hidden');
+            else btnClear.classList.add('hidden');
 
-            const filtered = newsData.filter(n => n.title.toLowerCase().includes(keyword) || n.desc.toLowerCase().includes(keyword));
-            tampilkanSemuaBerita(filtered);
+            const hasilFilter = databaseBerita.filter(b => b.judul.toLowerCase().includes(kataKunci) || b.kutipan.toLowerCase().includes(kataKunci));
+            isiDataBeritaLengkap(hasilFilter);
         }
 
         function resetSearchBerita() {
             document.getElementById('cari-berita').value = '';
-            document.getElementById('clear-search-btn').add('hidden');
-            tampilkanSemuaBerita(newsData);
+            document.getElementById('clear-search-btn').value = '';
+            document.getElementById('clear-search-btn').classList.add('hidden');
+            isiDataBeritaLengkap();
         }
 
-        // Modal Box Engine
-        function bukaModalBerita(id) {
-            const item = newsData.find(n => n.id === id);
-            if (!item) return;
-
-            const modalHtml = `
-                <div class="mb-4">
-                    <span class="text-xs bg-amber-500/10 text-amber-800 font-bold uppercase px-2.5 py-1 rounded-md tracking-wider">${item.category}</span>
-                    <span class="text-xs text-slate-400 font-medium ml-3">${item.date}</span>
-                </div>
-                <h2 class="text-xl sm:text-2xl font-black text-slate-900 mb-4 leading-snug">${item.title}</h2>
-                <div class="prose max-w-none text-slate-600 text-xs sm:text-sm leading-relaxed text-justify font-light space-y-4 border-t border-slate-100 pt-4">
-                    <p class="font-medium text-slate-800 bg-slate-50 p-4 rounded-xl border-l-4 border-amber-500 italic mb-4">${item.desc}</p>
-                    <p>${item.content}</p>
+        // Manajemen Pop-up Modal Berita Bawaan CMS
+        function bukaModal(id) {
+            const data = databaseBerita.find(b => b.id === id);
+            if (!data) return;
+            const isi = document.getElementById('isi-modal');
+            isi.innerHTML = `
+                <span class="text-xs font-bold text-amber-600 uppercase block mb-2">${data.tanggal}</span>
+                <h3 class="text-2xl font-black text-slate-900 mb-4 leading-tight tracking-tight">${data.judul}</h3>
+                <div class="prose prose-sm text-slate-600 leading-relaxed font-light text-justify max-w-none">
+                    <p>${data.isi}</p>
+                    <p class="mt-4">Sistem modular kurikulum program studi menyokong penuh integrasi kajian rilis ini agar berdampak bagi dunia usaha serta adaptasi nyata mahasiswa rintisan.</p>
                 </div>
             `;
-            document.getElementById('isi-modal').innerHTML = modalHtml;
             const modal = document.getElementById('modal-berita');
             modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('overflow-hidden');
         }
 
         function tutupModal() {
             document.getElementById('modal-berita').classList.add('hidden');
-            document.body.style.overflow = 'auto';
+            document.body.classList.remove('overflow-hidden');
         }
 
-        window.addEventListener('click', (e) => {
-            const modal = document.getElementById('modal-berita');
-            if (e.target === modal) tutupModal();
-        });
-
-        // Submit Form Kontak ke API WhatsApp Humas
-        function submitFormKontak(e) {
-            e.preventDefault();
+        // Submit Form Kontak Langsung Ke WhatsApp Humas Vokasi
+        function submitFormKontak(event) {
+            event.preventDefault();
             const nama = document.getElementById('nama-cepat').value;
             const email = document.getElementById('email-cepat').value;
             const pesan = document.getElementById('pesan-cepat').value;
-
-            const text = `Halo Humas TIK Vokasi Unpad, saya *${nama}* (${email}). Ingin bertanya: %0A%0A${pesan}`;
-            window.open(`https://wa.me/6281120240803?text=${text}`, '_blank');
+            
+            const teksWhatsApp = `Halo Humas TIK Vokasi Unpad, Saya ${nama} (${email}). Ingin bertanya: ${pesan}`;
+            const urlFormat = `https://wa.me/6281120240803?text=${encodeURIComponent(teksWhatsApp)}`;
+            window.open(urlFormat, '_blank');
         }
+
+        // Initialize All Core Engine Features on Page Loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            isiDataFasilitasLengkap();
+            isiDataDosenLengkap();
+            isiDataMitraLengkap();
+            isiDataBeritaLengkap();
+            switchSemesterTab(1); // Set default view ke Tahun Pertama
+        });
     </script>
 </body>
 </html>
