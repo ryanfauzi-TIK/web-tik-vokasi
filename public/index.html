@@ -909,6 +909,141 @@
 
     <!-- JAVASCRIPT DINAMIS -->
     <script>
+        let globalDataGaleri = [];
+let filterGaleriAktif = 'semua';
+
+// 1. Memanggil Data JSON dari CMS
+async function renderGaleri() {
+    try {
+        const response = await fetch('data/galeri.json');
+        if (!response.ok) throw new Error('File galeri.json tidak ditemukan');
+        const data = await response.json();
+        globalDataGaleri = data.items || [];
+    } catch(e) {
+        console.log('Error memuat data galeri:', e);
+    }
+    tampilkanGaleri(globalDataGaleri);
+}
+
+// 2. Menampilkan Kartu Proyek ke HTML
+function tampilkanGaleri(items) {
+    const container = document.getElementById('tempat-galeri');
+    if (!container) return;
+
+    let itemsFiltered = items;
+    if (filterGaleriAktif !== 'semua') {
+        itemsFiltered = items.filter(item => {
+            const kat = (item.kategori || '').toLowerCase();
+            const pem = (item.peminatan || '').toLowerCase();
+            const target = filterGaleriAktif.toLowerCase();
+            return kat.includes(target) || pem.includes(target);
+        });
+    }
+
+    if (itemsFiltered.length === 0) {
+        container.innerHTML = `
+            <div class="col-span-full text-center py-12 bg-white rounded-2xl border border-dashed border-slate-300">
+                <p class="text-slate-400 text-sm font-medium">Belum ada proyek atau riset pada kategori ini.</p>
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = itemsFiltered.map((item, index) => {
+        const badgeColor = item.kategori === 'Proyek TEFA' ? 'bg-amber-500 text-slate-950' : 'bg-blue-600 text-white';
+        return `
+            <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group transform hover:-translate-y-1.5" data-aos="fade-up" data-aos-delay="${(index % 3) * 100}">
+                <div class="relative h-52 overflow-hidden bg-slate-100">
+                    <img src="${item.gambar}" alt="${item.judul}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
+                    <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                        <span class="text-[10px] font-black tracking-wider uppercase px-2.5 py-1 rounded-md shadow-md ${badgeColor}">${item.kategori}</span>
+                        <span class="text-[10px] font-semibold bg-slate-900/80 backdrop-blur-md text-slate-200 px-2 py-1 rounded-md">${item.peminatan}</span>
+                    </div>
+                    <div class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md text-slate-800 text-[10px] font-bold px-2.5 py-1 rounded-full shadow">
+                        ${item.tahun || '2025'}
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="text-[11px] font-semibold text-amber-700 mb-1 flex items-center gap-1">
+                            <svg class="w-3.5 h-3.5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h6a1 1 0 100-2H7zm0 4a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+                            <span>${item.status || 'Aktif'}</span>
+                        </div>
+                        <h3 class="font-extrabold text-slate-900 text-base leading-snug mb-2 group-hover:text-amber-600 transition-colors line-clamp-2">${item.judul}</h3>
+                        <p class="text-slate-500 text-xs leading-relaxed font-light mb-4 line-clamp-3">${item.ringkasan}</p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between mt-auto">
+                        <span class="text-[11px] text-slate-400 font-medium truncate max-w-[170px]" title="${item.tim}">👤 ${item.tim || 'Tim Riset TIK'}</span>
+                        <button onclick="bukaModalGaleri('${item.id || index}')" class="text-xs font-bold text-slate-900 hover:text-amber-600 flex items-center gap-1 transition-colors">
+                            Detail <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+// 3. Fungsi Filter Kategori
+function filterGaleri(kategori, btn) {
+    filterGaleriAktif = kategori;
+    document.querySelectorAll('.galeri-filter-btn').forEach(b => {
+        b.classList.remove('bg-slate-900', 'text-white', 'border-slate-900', 'shadow-md');
+        b.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+    });
+    btn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+    btn.classList.add('bg-slate-900', 'text-white', 'border-slate-900', 'shadow-md');
+    tampilkanGaleri(globalDataGaleri);
+}
+
+// 4. Modal Detail Pop-up
+function bukaModalGaleri(id) {
+    const item = globalDataGaleri.find(g => g.id == id || globalDataGaleri.indexOf(g) == id);
+    if (!item) return;
+
+    const modal = document.getElementById('modal-berita');
+    const isiModal = document.getElementById('isi-modal');
+    
+    isiModal.innerHTML = `
+        <div class="space-y-6">
+            <div class="relative rounded-2xl overflow-hidden h-64 sm:h-80 bg-slate-100">
+                <img src="${item.gambar}" alt="${item.judul}" class="w-full h-full object-cover">
+                <div class="absolute top-4 left-4 flex gap-2">
+                    <span class="bg-amber-500 text-slate-950 text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider">${item.kategori}</span>
+                    <span class="bg-slate-900/90 text-white text-xs font-semibold px-3 py-1 rounded-md">${item.peminatan}</span>
+                </div>
+            </div>
+            <div>
+                <div class="flex items-center justify-between text-xs text-slate-500 mb-2">
+                    <span class="font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md">Status: ${item.status || 'Aktif'}</span>
+                    <span>Tahun Implementasi: ${item.tahun || '2025'}</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight mb-4">${item.judul}</h2>
+                <div class="p-4 bg-slate-50 rounded-xl border border-slate-200/60 mb-6 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center font-bold text-lg">🧪</div>
+                    <div>
+                        <p class="text-[11px] uppercase tracking-wider text-slate-400 font-bold">Peneliti / Tim Pengembang:</p>
+                        <p class="text-xs sm:text-sm font-semibold text-slate-800">${item.tim}</p>
+                    </div>
+                </div>
+                <div class="prose prose-slate max-w-none text-slate-600 text-sm leading-relaxed space-y-4">
+                    <p class="font-medium text-slate-800 text-base">${item.ringkasan}</p>
+                    <p>${item.deskripsi_lengkap || item.ringkasan}</p>
+                </div>
+            </div>
+            <div class="pt-6 border-t border-slate-100 flex justify-end">
+                <button onclick="tutupModal()" class="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs px-6 py-2.5 rounded-xl transition-all">Tutup Detail</button>
+            </div>
+        </div>
+    `;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+// Jalankan saat dokumen dimuat
+document.addEventListener('DOMContentLoaded', () => {
+    renderGaleri();
+});
         // 1. FUNGSI NAVBAR MOBILE
         const menuBtn = document.getElementById('menu-btn');
         const menuItems = document.getElementById('menu-items');
