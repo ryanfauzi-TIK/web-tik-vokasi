@@ -1109,22 +1109,60 @@
         }
 
         function bukaModalBerita(id) {
-            const berita = globalDataBerita.find(b => b.id === id);
-            if(!berita) return;
-            
-            const tanggalFormat = berita.date ? new Date(berita.date).toLocaleDateString('id-ID', {day: '2-digit', month: 'long', year: 'numeric'}) : '';
-            const htmlContent = berita.body ? marked.parse(berita.body) : '';
-            
-            document.getElementById('isi-modal').innerHTML = `
-                <span class="text-xs font-bold tracking-widest text-amber-600 uppercase mb-2 block">${tanggalFormat}</span>
-                <h2 class="text-2xl font-extrabold text-slate-900 mb-6">${berita.title}</h2>
-                ${berita.thumbnail ? `<img src="${berita.thumbnail}" class="w-full rounded-xl mb-6 object-cover max-h-96" alt="${berita.title}">` : ''}
-                <div class="text-slate-600 font-light leading-relaxed text-sm sm:text-base prose max-w-none">${htmlContent}</div>
-            `;
-            
-            document.getElementById('modal-berita').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
+    const berita = globalDataBerita.find(b => b.id === id);
+    if(!berita) return;
+    
+    const tanggalFormat = berita.date ? new Date(berita.date).toLocaleDateString('id-ID', {day: '2-digit', month: 'long', year: 'numeric'}) : '';
+    const htmlContent = berita.body ? marked.parse(berita.body) : '';
+    
+    // Konfigurasi Link Share Media Sosial
+    const currentUrl = encodeURIComponent(window.location.href);
+    const shareText = encodeURIComponent(`Baca berita terbaru: ${berita.title}`);
+    
+    const waLink = `https://api.whatsapp.com/send?text=${shareText}%20${currentUrl}`;
+    const fbLink = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+    const twLink = `https://twitter.com/intent/tweet?text=${shareText}&url=${currentUrl}`;
+    
+    document.getElementById('isi-modal').innerHTML = `
+        <span class="text-xs font-bold tracking-widest text-amber-600 uppercase mb-2 block">${tanggalFormat}</span>
+        <h2 class="text-2xl font-extrabold text-slate-900 mb-6">${berita.title}</h2>
+        ${berita.thumbnail ? `<img src="${berita.thumbnail}" class="w-full rounded-xl mb-6 object-cover max-h-96" alt="${berita.title}">` : ''}
+        <div class="text-slate-600 font-light leading-relaxed text-sm sm:text-base prose max-w-none mb-8">${htmlContent}</div>
+        
+        <!-- Bagian Tombol Share Sosial Media -->
+        <div class="border-t border-slate-200 pt-6 mt-6">
+            <h4 class="text-xs font-bold text-slate-800 mb-4 uppercase tracking-widest">Bagikan Berita Ini:</h4>
+            <div class="flex flex-wrap gap-3">
+                <!-- WhatsApp -->
+                <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="bg-[#25D366] hover:bg-[#1ebd5b] text-white px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all shadow-sm transform hover:-translate-y-0.5">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.097.824z"/></svg>
+                    WhatsApp
+                </a>
+                
+                <!-- Facebook -->
+                <a href="${fbLink}" target="_blank" rel="noopener noreferrer" class="bg-[#1877F2] hover:bg-[#166fe5] text-white px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all shadow-sm transform hover:-translate-y-0.5">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    Facebook
+                </a>
+
+                <!-- Twitter / X -->
+                <a href="${twLink}" target="_blank" rel="noopener noreferrer" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all shadow-sm transform hover:-translate-y-0.5">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                    X / Twitter
+                </a>
+
+                <!-- Copy Link -->
+                <button onclick="salinTautanBerita(this)" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all shadow-sm transform hover:-translate-y-0.5" id="btn-copy">
+                    <svg class="w-4 h-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                    <span>Salin Link</span>
+                </button>
+            </div>
+        </div>
+    `;
+    
+    document.getElementById('modal-berita').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
 
         function tutupModal() {
             document.getElementById('modal-berita').classList.add('hidden');
