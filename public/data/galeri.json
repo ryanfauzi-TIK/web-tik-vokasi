@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "judul": "JUDUL PROyek / riset",
+      "kategori": "Proyek TEFA",
+      "peminatan": "Kesehatan",
+      "gambar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_gn86U9-FsVF0zCKW2bTDVm12QOHy4NqFExBKzZSOBQ&s=10",
+      "tim_peneliti": "Tim Peneliti bisa ditulis diinis",
+      "status": "Dalam Pengujian",
+      "deskripsi": "Ini deskripsi singkatnyaa",
+      "tahun": "2025"
+    }
+  ]
+}
