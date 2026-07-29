@@ -1163,6 +1163,32 @@
     document.getElementById('modal-berita').classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 }
+function salinTautanBerita(btnElement) {
+    // Menyalin link URL halaman saat ini ke clipboard
+    navigator.clipboard.writeText(window.location.href).then(() => {
+        // Mengubah tampilan tombol sementara untuk memberikan feedback
+        const spanText = btnElement.querySelector('span');
+        const originalText = spanText.innerText;
+        const iconSvg = btnElement.querySelector('svg');
+        const originalSvg = iconSvg.outerHTML;
+
+        // Ubah menjadi status "Tersalin!"
+        spanText.innerText = "Tersalin!";
+        spanText.classList.add("text-emerald-600");
+        btnElement.classList.add("border-emerald-200", "bg-emerald-50");
+        
+        iconSvg.outerHTML = `<svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>`;
+        
+        // Kembalikan ke tampilan awal setelah 2 detik
+        setTimeout(() => {
+            btnElement.innerHTML = originalSvg + `<span>${originalText}</span>`;
+            btnElement.classList.remove("border-emerald-200", "bg-emerald-50");
+            btnElement.querySelector('span').classList.remove("text-emerald-600");
+        }, 2000);
+    }).catch(err => {
+        console.error('Gagal menyalin teks: ', err);
+    });
+}
 
         function tutupModal() {
             document.getElementById('modal-berita').classList.add('hidden');
