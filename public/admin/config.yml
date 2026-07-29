@@ -68,16 +68,3 @@ collections:
             fields:
               - { label: "Nama Perusahaan/Mitra", name: "nama", widget: "string" }
               - { label: "Logo Perusahaan", name: "logo", widget: "image" }
-  - name: "galeri"
-    label: "Galeri Proyek & Riset"
-    file: "data/galeri.json"
-    fields:
-      - label: "Daftar Item Galeri"
-        name: "items"
-        widget: "list"
-        fields:
-          - { label: "Judul Proyek / Riset", name: "judul", widget: "string" }
-          - { label: "Kategori", name: "kategori", widget: "select", options: ["Proyek TEFA", "Riset Terapan", "Produk Inovasi", "Kerjasama Industri"] }
-          - { label: "Gambar Karya", name: "gambar", widget: "image" }
-          - { label: "Deskripsi Ringkas", name: "deskripsi", widget: "text" }
-          - { label: "Tahun", name: "tahun", widget: "string", required: false }
