@@ -68,3 +68,23 @@ collections:
             fields:
               - { label: "Nama Perusahaan/Mitra", name: "nama", widget: "string" }
               - { label: "Logo Perusahaan", name: "logo", widget: "image" }
+
+  - name: "galeri"
+    label: "Galeri Inovasi & Riset"
+    files:
+      - file: "public/data/galeri.json"
+        label: "Daftar Inovasi & Riset"
+        name: "daftar-galeri"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Judul Proyek / Riset", name: "judul", widget: "string" }
+              - { label: "Kategori", name: "kategori", widget: "select", options: ["Proyek TEFA", "Riset Terapan"] }
+              - { label: "Peminatan", name: "peminatan", widget: "select", options: ["Kesehatan", "Pangan", "Green Tech"] }
+              - { label: "Foto / Gambar Karya", name: "gambar", widget: "image" }
+              - { label: "Tim Peneliti / Pengembang", name: "tim_peneliti", widget: "string" }
+              - { label: "Status Riset / Produk", name: "status", widget: "select", options: ["Prototip", "Dalam Pengujian", "Siap Komersialisasi", "Tersertifikasi / Terdaftar"] }
+              - { label: "Deskripsi Spesifikasi Lengkap", name: "deskripsi", widget: "markdown" }
+              - { label: "Tahun", name: "tahun", widget: "string", required: false }
