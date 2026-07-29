@@ -907,7 +907,7 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
-        // 5. DATA DINAMIS DARI DECAP CMS (Telah diperbarui untuk merender tampilan card Fasilitas Modern)
+        // 5. DATA DINAMIS DARI DECAP CMS (Telah diperbarui untuk merender tampilan card Fasilitas Modern Interaktif Besar)
         let globalDataBerita = [];
 
         async function renderFasilitas() {
@@ -919,14 +919,25 @@
                 
                 const container = document.getElementById('tempat-fasilitas');
                 container.innerHTML = items.map((item, i) => `
-                    <div class="group relative bg-white border border-slate-100 p-8 rounded-3xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_-4px_rgba(15,23,42,0.1)] hover:-translate-y-1 transition-all duration-500 overflow-hidden" data-aos="fade-up" data-aos-delay="${i*100}">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-amber-100/50 to-transparent rounded-bl-full -mr-8 -mt-8 transition-transform duration-700 group-hover:scale-110 opacity-0 group-hover:opacity-100"></div>
-                        <div class="relative z-10 flex flex-col h-full">
-                            <div class="h-16 w-16 mb-6 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-3xl group-hover:bg-amber-50/50 group-hover:border-amber-200/50 transition-all duration-500 shadow-sm">
-                                ${item.gambar ? `<img src="${item.gambar}" alt="${item.nama}" class="h-10 w-10 object-contain drop-shadow-sm group-hover:scale-110 transition-transform duration-500">` : '<span class="group-hover:scale-110 transition-transform duration-500">🏭</span>'}
+                    <div class="group relative bg-slate-900 rounded-3xl shadow-lg hover:shadow-2xl overflow-hidden h-72 sm:h-80 cursor-pointer transition-all duration-500 transform hover:-translate-y-2 border border-slate-200/10" data-aos="fade-up" data-aos-delay="${i*100}">
+                        ${item.gambar ? 
+                            `<img src="${item.gambar}" alt="${item.nama}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">` 
+                            : 
+                            `<div class="absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-7xl group-hover:scale-110 transition-transform duration-700">🏭</div>`
+                        }
+                        
+                        <!-- Overlay Gradien -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
+                        
+                        <!-- Konten Teks -->
+                        <div class="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex flex-col justify-end h-full z-10 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <div class="w-10 h-1 bg-amber-500 rounded-full mb-4 group-hover:w-20 transition-all duration-500"></div>
+                            <h3 class="text-xl sm:text-2xl font-extrabold text-white leading-snug drop-shadow-md">${item.nama}</h3>
+                            <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-75">
+                                <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-amber-400">
+                                    Eksplorasi Fasilitas <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                                </span>
                             </div>
-                            <h3 class="text-lg font-extrabold text-slate-800 mb-3 group-hover:text-amber-600 transition-colors duration-300 leading-snug">${item.nama}</h3>
-                            <div class="w-8 h-1 bg-slate-200 rounded-full mt-auto group-hover:bg-amber-500 group-hover:w-16 transition-all duration-500"></div>
                         </div>
                     </div>
                 `).join('');
