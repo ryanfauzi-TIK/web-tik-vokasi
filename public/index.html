@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D-IV Teknologi Industri Kimia | Universitas Padjadjaran</title>
     
-    <!-- ========================================== -->
-    <!-- OPTIMASI 1: SEO & META TAGS                -->
-    <!-- ========================================== -->
+    <!-- SEO & META TAGS -->
     <meta name="description" content="Program Studi D-IV Teknologi Industri Kimia Fakultas Vokasi Universitas Padjadjaran. Membangun lulusan kompeten, inovatif, dan siap industri.">
     <meta name="keywords" content="TIK Unpad, Teknologi Industri Kimia, Vokasi Unpad, D4 Kimia Unpad, SMUP Unpad">
     <meta property="og:type" content="website">
@@ -22,41 +20,29 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter & Playfair Display untuk Kombinasi Font Premium -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Library untuk merapikan teks Markdown dari CMS -->
+    <!-- Library Markdown Parser -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <style>
         body { font-family: 'Inter', sans-serif; }
         .font-serif-premium { font-family: 'Playfair Display', serif; }
         
-        /* Hero Background dengan Gradien Studio Kedalaman Tinggi */
         .bg-hero {
             background: linear-gradient(to bottom, rgba(10, 25, 47, 0.92), rgba(15, 32, 67, 0.98)), 
                         url('https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070&auto=format&fit=crop') center/cover fixed;
         }
 
-        /* Custom Premium Scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f8fafc;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f8fafc; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
-        /* Check-list Premium dengan Desain SVG Pseudo */
         .check-list li {
             position: relative;
             padding-left: 2rem;
@@ -79,31 +65,19 @@
             font-weight: 800;
             font-size: 0.7rem;
         }
-        .check-list li:hover {
-            transform: translateX(4px);
-        }
+        .check-list li:hover { transform: translateX(4px); }
 
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
 
-        /* Animasi Transisi Halus Hamburger ke Tanda Silang (X) */
         .hamburger-line {
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .menu-open .line-1 {
-            transform: translateY(6px) rotate(45deg);
-        }
-        .menu-open .line-2 {
-            opacity: 0;
-        }
-        .menu-open .line-3 {
-            transform: translateY(-6px) rotate(-45deg);
-        }
+        .menu-open .line-1 { transform: translateY(6px) rotate(45deg); }
+        .menu-open .line-2 { opacity: 0; }
+        .menu-open .line-3 { transform: translateY(-6px) rotate(-45deg); }
 
-        /* Minimalist Fade-in Animation utility */
-        .animate-fade-in {
-            animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
+        .animate-fade-in { animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(4px); }
             to { opacity: 1; transform: translateY(0); }
@@ -115,11 +89,10 @@
     <!-- Reading Progress Bar -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-amber-500 z-[60] transition-all duration-100 w-0"></div>
 
-    <!-- Navigasi Sticky Glassmorphism Premium -->
+    <!-- Navigasi Sticky Glassmorphism -->
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/40 shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 sm:px-8 py-4 flex justify-between items-center">
             
-            <!-- Branding Typografi Premium -->
             <a href="#beranda" class="flex flex-col select-none group">
                 <span class="text-base font-black tracking-wider text-[#0f172a] uppercase transition-colors duration-300 group-hover:text-amber-600 leading-tight">
                     TIK Vokasi
@@ -129,22 +102,19 @@
                 </span>
             </a>
 
-            <!-- Hamburger Button (Mobile) -->
             <button id="menu-btn" class="xl:hidden flex flex-col justify-between w-6 h-3.5 text-slate-900 focus:outline-none" aria-label="Toggle Menu">
                 <span class="w-full h-[2px] bg-slate-900 rounded-full hamburger-line line-1"></span>
                 <span class="w-full h-[2px] bg-slate-900/80 rounded-full hamburger-line line-2"></span>
                 <span class="w-full h-[2px] bg-slate-900 rounded-full hamburger-line line-3"></span>
             </button>
 
-            <!-- Menu Desktop & Mobile Dropdown Container -->
             <ul id="menu-items" class="absolute xl:relative top-full left-0 w-full xl:w-auto bg-white/95 xl:bg-transparent shadow-2xl xl:shadow-none p-6 xl:p-0 flex flex-col xl:flex-row items-start xl:items-center space-y-4 xl:space-y-0 space-x-0 xl:space-x-7 font-medium text-slate-600 text-[13px] border-t border-slate-100 xl:border-none transition-all duration-300 origin-top transform scale-y-0 opacity-0 pointer-events-none xl:scale-y-100 xl:opacity-100 xl:pointer-events-auto">
                 <li class="w-full xl:w-auto">
-                    <a href="#beranda" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Beranda</a>
+                    <a href="#beranda" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200">Beranda</a>
                 </li>
                 
-                <!-- DROPDOWN SUB-NAVIGASI UNTUK PROFIL -->
                 <li class="w-full xl:w-auto relative group">
-                    <a href="#profil" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300 flex items-center justify-between xl:justify-start">
+                    <a href="#profil" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 flex items-center justify-between xl:justify-start">
                         Profil Prodi
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
                     </a>
@@ -154,25 +124,27 @@
                         <li><a href="#profil" onclick="switchProfileTab('tujuan')" class="block py-2 xl:px-4 xl:py-3 text-[13px] text-slate-700 hover:bg-slate-50 hover:text-amber-600 transition-colors">Tujuan Prodi</a></li>
                     </ul>
                 </li>
-                <!-- END DROPDOWN -->
 
                 <li class="w-full xl:w-auto">
-                    <a href="#peminatan" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Peminatan</a>
+                    <a href="#peminatan" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200">Peminatan</a>
                 </li>
                 <li class="w-full xl:w-auto">
-                    <a href="#lulusan" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Lulusan</a>
+                    <a href="#inovasi" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 font-semibold text-amber-600">Inovasi & Riset</a>
                 </li>
                 <li class="w-full xl:w-auto">
-                    <a href="#fasilitas" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Fasilitas</a>
+                    <a href="#lulusan" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200">Lulusan</a>
                 </li>
                 <li class="w-full xl:w-auto">
-                    <a href="#dosen" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Dosen</a>
+                    <a href="#fasilitas" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200">Fasilitas</a>
                 </li>
                 <li class="w-full xl:w-auto">
-                    <a href="#berita" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Berita</a>
+                    <a href="#dosen" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200">Dosen</a>
                 </li>
                 <li class="w-full xl:w-auto">
-                    <a href="#faq" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">FAQ</a>
+                    <a href="#berita" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200">Berita</a>
+                </li>
+                <li class="w-full xl:w-auto">
+                    <a href="#faq" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200">FAQ</a>
                 </li>
                 <li class="w-full xl:w-auto pt-2 xl:pt-0">
                     <a href="https://smup.unpad.ac.id/" target="_blank" rel="noopener noreferrer" class="block text-center bg-[#0f172a] hover:bg-amber-500 hover:text-slate-950 text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-300 shadow-sm hover:shadow-lg transform hover:-translate-y-0.5 tracking-wide">
@@ -211,7 +183,6 @@
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="grid lg:grid-cols-12 gap-12 md:gap-16 items-start">
                 
-                <!-- Sisi Kiri: Navigasi Tab Profil Minimalis Dinamis -->
                 <div class="lg:col-span-4 sticky top-28" data-aos="fade-right" data-aos-duration="1000">
                     <div class="flex items-center gap-2 mb-3">
                         <span class="w-8 h-[2px] bg-amber-500"></span>
@@ -221,7 +192,6 @@
                         Visi, Misi, dan Tujuan Program Studi
                     </h2>
                     
-                    <!-- Tab Kontroler Navigasi Internal -->
                     <div class="space-y-2.5">
                         <button onclick="switchProfileTab('visi')" id="p-tab-visi" class="profile-tab-btn w-full text-left px-5 py-4 rounded-xl border transition-all duration-300 flex items-center justify-between group bg-slate-900 border-slate-900 text-white shadow-sm">
                             <span class="text-xs font-bold uppercase tracking-wider">Visi</span>
@@ -238,10 +208,8 @@
                     </div>
                 </div>
                 
-                <!-- Sisi Kanan: Panel Isi Konten Kontemporer Interaktif -->
                 <div class="lg:col-span-8 bg-slate-50 border border-slate-200/40 p-8 sm:p-10 rounded-2xl min-h-[340px] flex flex-col justify-center relative overflow-hidden" data-aos="fade-left" data-aos-duration="1000">
                     
-                    <!-- Panel 1: Visi -->
                     <div id="p-panel-visi" class="profile-panel-content block animate-fade-in space-y-5">
                         <h3 class="text-xl font-bold text-slate-900 tracking-tight">Visi Program Studi</h3>
                         <div class="p-6 bg-white border border-amber-200 shadow-sm rounded-xl">
@@ -251,7 +219,6 @@
                         </div>
                     </div>
 
-                    <!-- Panel 2: Misi -->
                     <div id="p-panel-misi" class="profile-panel-content hidden animate-fade-in space-y-5">
                         <h3 class="text-xl font-bold text-slate-900 tracking-tight">Misi Program Studi</h3>
                         <ul class="text-slate-600 leading-relaxed text-justify text-sm sm:text-base font-light check-list">
@@ -263,7 +230,6 @@
                         </ul>
                     </div>
 
-                    <!-- Panel 3: Tujuan -->
                     <div id="p-panel-tujuan" class="profile-panel-content hidden animate-fade-in space-y-5">
                         <h3 class="text-xl font-bold text-slate-900 tracking-tight">Tujuan Program Studi</h3>
                         <ul class="text-slate-600 leading-relaxed text-justify text-sm sm:text-base font-light check-list">
@@ -303,7 +269,6 @@
                 </div>
             </div>
 
-            <!-- Interactive Tab Navigation Controls -->
             <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12" data-aos="fade-up">
                 <button onclick="switchPeminatanTab('kesehatan')" id="pem-tab-kesehatan" class="peminatan-tab-btn px-5 py-3.5 rounded-xl font-bold text-xs sm:text-sm border transition-all duration-300 flex items-center gap-2 bg-slate-900 border-slate-900 text-white shadow-md">
                     <span>➕</span> Industri Kimia Kesehatan
@@ -316,9 +281,8 @@
                 </button>
             </div>
 
-            <!-- Dynamic Content Display Panels -->
             <div id="peminatan-panels-container" class="space-y-6">
-                <!-- PANEL 1: INDUSTRI KIMIA KESEHATAN -->
+                <!-- PANEL 1: KESEHATAN -->
                 <div id="pem-panel-kesehatan" class="peminatan-panel-content block animate-fade-in">
                     <div class="grid lg:grid-cols-12 gap-8 items-start">
                         <div class="lg:col-span-4 bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
@@ -376,7 +340,7 @@
                     </div>
                 </div>
 
-                <!-- PANEL 2: INDUSTRI KIMIA PANGAN -->
+                <!-- PANEL 2: PANGAN -->
                 <div id="pem-panel-pangan" class="peminatan-panel-content hidden animate-fade-in">
                     <div class="grid lg:grid-cols-12 gap-8 items-start">
                         <div class="lg:col-span-4 bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
@@ -438,7 +402,7 @@
                     </div>
                 </div>
 
-                <!-- PANEL 3: GREEN TECHNOLOGY AND WASTE MANAGEMENT -->
+                <!-- PANEL 3: GREEN TECH -->
                 <div id="pem-panel-gtwm" class="peminatan-panel-content hidden animate-fade-in">
                     <div class="grid lg:grid-cols-12 gap-8 items-start">
                         <div class="lg:col-span-4 bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
@@ -499,8 +463,47 @@
         </div>
     </section>
 
+    <!-- GALERI INOVASI & RISET -->
+    <section id="inovasi" class="py-20 md:py-28 bg-white border-t border-slate-200/40 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" data-aos="fade-down">
+                    Showcase Karya TIK
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" data-aos="fade-up">Galeri Inovasi & Riset Terapan</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base font-light" data-aos="fade-up" data-aos-delay="100">
+                    Eksplorasi hasil penelitian terapan, prototip produk unggulan, dan proyek Teaching Factory (TEFA) civitas akademika D-IV TIK Unpad.
+                </p>
+            </div>
+
+            <!-- Kontrol Filter Interaktif -->
+            <div class="mb-10 space-y-4" data-aos="fade-up" data-aos-delay="150">
+                <!-- Filter Kategori -->
+                <div class="flex flex-wrap items-center justify-center gap-2">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mr-2 w-full sm:w-auto text-center">Kategori:</span>
+                    <button onclick="setKatFilter('Semua')" id="btn-kat-all" class="galeri-kat-btn px-4 py-2 rounded-xl text-xs font-bold border transition-all duration-300 bg-slate-900 border-slate-900 text-white shadow-sm">Semua Kategori</button>
+                    <button onclick="setKatFilter('Proyek TEFA')" id="btn-kat-tefa" class="galeri-kat-btn px-4 py-2 rounded-xl text-xs font-bold border border-slate-200/80 bg-white text-slate-600 hover:border-slate-300 transition-all duration-300">Proyek TEFA</button>
+                    <button onclick="setKatFilter('Riset Terapan')" id="btn-kat-riset" class="galeri-kat-btn px-4 py-2 rounded-xl text-xs font-bold border border-slate-200/80 bg-white text-slate-600 hover:border-slate-300 transition-all duration-300">Riset Terapan</button>
+                </div>
+                <!-- Filter Peminatan -->
+                <div class="flex flex-wrap items-center justify-center gap-2">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mr-2 w-full sm:w-auto text-center">Peminatan:</span>
+                    <button onclick="setPemFilter('Semua')" id="btn-pem-all" class="galeri-pem-btn px-4 py-2 rounded-xl text-xs font-bold border transition-all duration-300 bg-amber-500 border-amber-500 text-slate-950 shadow-sm">Semua Peminatan</button>
+                    <button onclick="setPemFilter('Kesehatan')" id="btn-pem-kesehatan" class="galeri-pem-btn px-4 py-2 rounded-xl text-xs font-bold border border-slate-200/80 bg-white text-slate-600 hover:border-slate-300 transition-all duration-300">➕ Kesehatan</button>
+                    <button onclick="setPemFilter('Pangan')" id="btn-pem-pangan" class="galeri-pem-btn px-4 py-2 rounded-xl text-xs font-bold border border-slate-200/80 bg-white text-slate-600 hover:border-slate-300 transition-all duration-300">🌾 Pangan</button>
+                    <button onclick="setPemFilter('Green Tech')" id="btn-pem-greentech" class="galeri-pem-btn px-4 py-2 rounded-xl text-xs font-bold border border-slate-200/80 bg-white text-slate-600 hover:border-slate-300 transition-all duration-300">🌱 Green Tech</button>
+                </div>
+            </div>
+
+            <!-- Wadah Render Kartu Galeri -->
+            <div id="tempat-galeri" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Data Galeri akan dirender secara dinamis oleh JavaScript -->
+            </div>
+        </div>
+    </section>
+
     <!-- Profil Lulusan -->
-    <section id="lulusan" class="py-20 md:py-28 bg-[#f8fafc] scroll-mt-20">
+    <section id="lulusan" class="py-20 md:py-28 bg-[#f8fafc] border-t border-slate-200/40 scroll-mt-20">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="text-center mb-16">
                 <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" data-aos="fade-down">Prospektus Karir</div>
@@ -569,9 +572,8 @@
         </div>
     </section>
 
-    <!-- Fasilitas (DIPERBARUI) -->
+    <!-- Fasilitas -->
     <section id="fasilitas" class="py-20 md:py-32 relative bg-white border-t border-slate-200/40 scroll-mt-20 overflow-hidden">
-        <!-- Decorative Background Elements Modern -->
         <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-50/60 via-slate-50/30 to-transparent pointer-events-none"></div>
         <div class="absolute -left-20 top-40 w-96 h-96 bg-slate-100/50 rounded-full blur-3xl pointer-events-none"></div>
         
@@ -584,9 +586,7 @@
                 <h2 class="text-3xl sm:text-5xl font-black text-slate-900 mb-6 tracking-tight" data-aos="fade-up">Fasilitas Laboratorium & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">TEFA</span></h2>
                 <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base font-medium leading-relaxed" data-aos="fade-up" data-aos-delay="100">Menghadirkan ekosistem pembelajaran dan praktikum canggih dengan peralatan mutakhir berstandar industri manufaktur global.</p>
             </div>
-            <!-- Data Fasilitas akan dirender oleh JavaScript di sini -->
             <div id="tempat-fasilitas" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Skeleton loader akan hilang otomatis digantikan data aslinya -->
             </div>
         </div>
     </section>
@@ -599,9 +599,7 @@
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" data-aos="fade-up">Dewan Dosen & Tenaga Ahli</h2>
                 <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base font-light" data-aos="fade-up" data-aos-delay="100">Dipandu oleh akademisi bersertifikasi profesi dan praktisi industri kawakan berkomitmen tinggi.</p>
             </div>
-            <!-- Data Dosen akan dirender oleh JavaScript di sini -->
             <div id="tempat-dosen" class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-                 <!-- Skeleton loader akan hilang otomatis digantikan data aslinya -->
             </div>
         </div>
     </section>
@@ -613,7 +611,6 @@
                 <h2 class="text-sm font-bold text-slate-400 tracking-widest uppercase" data-aos="zoom-in">Aliansi Mitra Industri Strategis</h2>
             </div>
             <div id="tempat-mitra" class="flex flex-wrap justify-center gap-5" data-aos="fade-up" data-aos-delay="200">
-                 <!-- Skeleton loader akan hilang otomatis digantikan data aslinya -->
             </div>
         </div>
     </section>
@@ -630,7 +627,6 @@
                     <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight" data-aos="fade-up">Kabar & Rilis Terbaru</h2>
                 </div>
                 
-                <!-- Kolom Pencarian -->
                 <div class="w-full md:w-80" data-aos="fade-left">
                     <div class="relative">
                         <input type="text" id="cari-berita" placeholder="Cari rilis berita..." class="w-full text-xs font-medium pl-10 pr-9 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500 transition-all duration-300" onkeyup="cariInformasiBerita()">
@@ -643,9 +639,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Data Berita akan dirender oleh JavaScript di sini -->
             <div id="tempat-berita" class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-                 <!-- Skeleton loader akan hilang otomatis digantikan data aslinya -->
             </div>
         </div>
     </section>
@@ -683,7 +677,7 @@
         </div>
     </section>
 
-    <!-- Kontak & Peta Lokasi (TELAH DIPERBAIKI) -->
+    <!-- Kontak & Peta Lokasi -->
     <section id="kontak" class="py-20 md:py-28 bg-white border-t border-slate-200/40 scroll-mt-20">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="text-center mb-16">
@@ -693,7 +687,6 @@
             </div>
 
             <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
-                <!-- Sisi Kiri: Info Kontak -->
                 <div class="lg:col-span-5 flex flex-col justify-between" data-aos="fade-right">
                     <div>
                         <h3 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
@@ -702,7 +695,6 @@
                         </h3>
 
                         <div class="space-y-5">
-                            <!-- 1. Alamat -->
                             <div class="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-lg border border-transparent hover:border-slate-100 transition-all duration-300 bg-slate-50/50">
                                 <div class="flex-shrink-0 w-12 h-12 bg-amber-100/50 text-amber-600 rounded-xl flex items-center justify-center shadow-inner group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -716,7 +708,6 @@
                                 </div>
                             </div>
 
-                            <!-- 2. Email -->
                             <div class="group flex items-center gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-lg border border-transparent hover:border-slate-100 transition-all duration-300 bg-slate-50/50">
                                 <div class="flex-shrink-0 w-12 h-12 bg-blue-100/50 text-blue-600 rounded-xl flex items-center justify-center shadow-inner group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -729,7 +720,6 @@
                                 </div>
                             </div>
 
-                            <!-- 3. Telepon / WhatsApp -->
                             <div class="group flex items-center gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-lg border border-transparent hover:border-slate-100 transition-all duration-300 bg-slate-50/50">
                                 <div class="flex-shrink-0 w-12 h-12 bg-emerald-100/50 text-emerald-600 rounded-xl flex items-center justify-center shadow-inner group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -742,7 +732,6 @@
                                 </div>
                             </div>
 
-                            <!-- 4. Line -->
                             <div class="group flex items-center gap-4 p-4 rounded-2xl hover:bg-white hover:shadow-lg border border-transparent hover:border-slate-100 transition-all duration-300 bg-slate-50/50">
                                 <div class="flex-shrink-0 w-12 h-12 bg-[#00B900]/10 text-[#00B900] rounded-xl flex items-center justify-center shadow-inner group-hover:bg-[#00B900] group-hover:text-white transition-colors duration-300">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -757,16 +746,13 @@
                         </div>
                     </div>
 
-                    <!-- Form Kontak / Pesan Instan -->
                     <div class="mt-10 p-6 bg-[#0f172a] rounded-3xl shadow-xl relative overflow-hidden group">
-                        <!-- Efek cahaya di sudut form -->
                         <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl -mr-10 -mt-10 transition-transform group-hover:scale-150 duration-700"></div>
                         
                         <h4 class="text-sm font-bold text-white mb-4 flex items-center gap-2">
                             <span>💬</span> Kirim Pesan Cepat
                         </h4>
                         
-                        <!-- ID form ini dipertahankan karena berhubungan dengan function di script paling bawah -->
                         <form id="form-kontak-cepat" onsubmit="submitFormKontak(event)" class="space-y-3 relative z-10">
                             <div class="grid grid-cols-2 gap-3">
                                 <input type="text" id="nama-cepat" placeholder="Nama Lengkap" required class="w-full text-xs font-medium px-4 py-3 bg-slate-800/80 border border-slate-700 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 transition-all placeholder-slate-400">
@@ -780,14 +766,12 @@
                     </div>
                 </div>
 
-                <!-- Sisi Kanan: Maps -->
                 <div class="lg:col-span-7" data-aos="fade-left">
                     <div class="h-full bg-slate-50 p-3 sm:p-5 rounded-3xl border border-slate-200/60 shadow-md flex flex-col justify-between group">
                         
                         <div class="w-full h-[400px] lg:h-[520px] rounded-2xl overflow-hidden bg-slate-200 relative shadow-inner">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.655959580434!2d107.7753645!3d-6.9304926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68c500346f835b%3A0xda982140dcfefe2f!2sGedung%20Vokasi%20Unpad!5e0!3m2!1sid!2sid!4v1721055000000!5m2!1sid!2sid" class="w-full h-full border-0 grayscale-[15%] group-hover:grayscale-0 transition-all duration-700" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             
-                            <!-- Label Melayang di atas Maps -->
                             <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl shadow-lg border border-white flex items-center gap-2 pointer-events-none">
                                 <span class="flex h-3 w-3 relative">
                                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
@@ -813,11 +797,10 @@
         </div>
     </section>
 
-    <!-- Footer Modern (DIPERBARUI) -->
+    <!-- Footer Modern -->
     <footer class="bg-[#0f172a] text-slate-400 pt-16 pb-8 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <!-- Brand/About -->
                 <div class="md:col-span-2">
                     <a href="#beranda" class="flex flex-col select-none mb-6">
                         <span class="text-xl font-black tracking-wider text-white uppercase leading-tight">
@@ -831,32 +814,30 @@
                         Program Studi D-IV Teknologi Industri Kimia Fakultas Vokasi. Membangun lulusan kompeten, inovatif, dan siap industri.
                     </p>
                     <div class="flex gap-4 mt-6">
-                        <!-- Social Icons -->
                         <a href="#facebook" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-amber-500 hover:text-white transition-all duration-300">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg>
                         </a>
                         <a href="#twitter" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-amber-500 hover:text-white transition-all duration-300">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
                         </a>
                         <a href="#instagram" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-amber-500 hover:text-white transition-all duration-300">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path></svg>
                         </a>
                     </div>
                 </div>
                 
-                <!-- Quick Links -->
                 <div>
                     <h4 class="text-white font-bold mb-5 tracking-wider uppercase text-sm">Tautan Cepat</h4>
                     <ul class="space-y-3 font-light text-sm">
                         <li><a href="#profil" class="hover:text-amber-500 transition-colors">Profil Prodi</a></li>
                         <li><a href="#peminatan" class="hover:text-amber-500 transition-colors">Peminatan Akademik</a></li>
+                        <li><a href="#inovasi" class="hover:text-amber-500 transition-colors">Galeri Inovasi & Riset</a></li>
                         <li><a href="#fasilitas" class="hover:text-amber-500 transition-colors">Fasilitas Kampus</a></li>
                         <li><a href="#dosen" class="hover:text-amber-500 transition-colors">Staf Pengajar</a></li>
                         <li><a href="#berita" class="hover:text-amber-500 transition-colors">Berita & Informasi</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact -->
                 <div>
                     <h4 class="text-white font-bold mb-5 tracking-wider uppercase text-sm">Hubungi Kami</h4>
                     <ul class="space-y-3 font-light text-sm">
@@ -896,7 +877,15 @@
       </div>
     </div>
 
-    <!-- AOS Animation Script -->
+    <!-- Wadah Pop-up Modal Detail Inovasi & Riset -->
+    <div id="modal-galeri" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-[60] hidden flex justify-center items-center p-4">
+      <div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[85vh] overflow-y-auto relative border border-slate-100">
+        <button onclick="tutupModalGaleri()" class="absolute top-4 right-5 text-slate-400 hover:text-red-600 text-3xl font-light transition-colors">&times;</button>
+        <div id="isi-modal-galeri" class="p-6 sm:p-10"></div>
+      </div>
+    </div>
+
+    <!-- AOS Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ 
@@ -907,9 +896,9 @@
         });
     </script>
 
-    <!-- JAVASCRIPT DINAMIS -->
+    <!-- JAVASCRIPT UTAMA -->
     <script>
-        // 1. FUNGSI NAVBAR MOBILE
+        // 1. NAVBAR MOBILE
         const menuBtn = document.getElementById('menu-btn');
         const menuItems = document.getElementById('menu-items');
 
@@ -924,7 +913,7 @@
             }
         });
 
-        // 2. FUNGSI TAB PROFIL
+        // 2. TAB PROFIL
         function switchProfileTab(tabId) {
             document.querySelectorAll('.profile-panel-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.profile-tab-btn').forEach(el => {
@@ -938,7 +927,7 @@
             activeBtn.classList.add('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
         }
 
-        // 3. FUNGSI TAB PEMINATAN
+        // 3. TAB PEMINATAN
         function switchPeminatanTab(tabId) {
             document.querySelectorAll('.peminatan-panel-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.peminatan-tab-btn').forEach(el => {
@@ -952,7 +941,7 @@
             activeBtn.classList.add('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-md');
         }
 
-        // 4. SCROLL PROGRESS & TOMBOL KEMBALI KE ATAS
+        // 4. SCROLL PROGRESS & BACK TO TOP
         window.onscroll = function() {
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -973,8 +962,11 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
-        // 5. DATA DINAMIS DARI DECAP CMS (Telah diperbarui untuk merender tampilan card Fasilitas Modern Interaktif Besar)
+        // 5. RENDER DATA DINAMIS
         let globalDataBerita = [];
+        let globalDataGaleri = [];
+        let currentKat = 'Semua';
+        let currentPem = 'Semua';
 
         async function renderFasilitas() {
             try {
@@ -991,11 +983,7 @@
                             : 
                             `<div class="absolute inset-0 w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-7xl group-hover:scale-110 transition-transform duration-700">🏭</div>`
                         }
-                        
-                        <!-- Overlay Gradien -->
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500"></div>
-                        
-                        <!-- Konten Teks -->
                         <div class="absolute inset-x-0 bottom-0 p-6 sm:p-8 flex flex-col justify-end h-full z-10 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                             <div class="w-10 h-1 bg-amber-500 rounded-full mb-4 group-hover:w-20 transition-all duration-500"></div>
                             <h3 class="text-xl sm:text-2xl font-extrabold text-white leading-snug drop-shadow-md">${item.nama}</h3>
@@ -1048,6 +1036,7 @@
             }
         }
 
+        // --- MANAJEMEN BERITA ---
         async function loadDataBerita() {
             try {
                 const response = await fetch('data/berita.json');
@@ -1060,7 +1049,7 @@
                 renderTampilanBerita(globalDataBerita);
             } catch (error) {
                 console.error("Gagal memuat Berita:", error);
-                document.getElementById('tempat-berita').innerHTML = `<div class="col-span-full text-center text-slate-500 py-10 font-medium">Gagal memuat data berita.</div>`;
+                document.getElementById('tempat-berita').innerHTML = `<div class="col-span-full text-center text-slate-500 py-10 font-medium">Belum ada rilis berita.</div>`;
             }
         }
 
@@ -1081,11 +1070,10 @@
                     <div class="flex-grow">
                         <span class="text-[10px] font-bold tracking-widest text-amber-600 uppercase mb-2 block">${tanggalFormat}</span>
                         <h3 class="font-bold text-slate-900 text-base mb-2 group-hover:text-amber-600 transition-colors">${item.title}</h3>
-                        <p class="text-slate-500 text-xs leading-relaxed mb-4 font-light">${item.description}</p>
+                        <p class="text-slate-500 text-xs line-clamp-3 mb-4 font-light">${item.description || ''}</p>
                     </div>
-                    <button onclick="bukaModalBerita(${item.id})" class="text-xs font-semibold text-slate-800 hover:text-amber-600 flex items-center gap-1 transition-colors mt-auto w-max">
-                        Baca Selengkapnya
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                    <button onclick="bukaModalBerita(${item.id})" class="text-xs font-bold text-slate-900 hover:text-amber-600 transition-colors flex items-center gap-1 mt-auto">
+                        Baca Selengkapnya &rarr;
                     </button>
                 </div>
                 `;
@@ -1093,15 +1081,14 @@
         }
 
         function cariInformasiBerita() {
-            const query = document.getElementById('cari-berita').value.toLowerCase();
-            const btnClear = document.getElementById('clear-search-btn');
-            
-            if(query.length > 0) btnClear.classList.remove('hidden');
-            else btnClear.classList.add('hidden');
-            
+            const val = document.getElementById('cari-berita').value.toLowerCase().trim();
+            const clearBtn = document.getElementById('clear-search-btn');
+            if(val.length > 0) clearBtn.classList.remove('hidden');
+            else clearBtn.classList.add('hidden');
+
             const filtered = globalDataBerita.filter(item => 
-                (item.title && item.title.toLowerCase().includes(query)) || 
-                (item.description && item.description.toLowerCase().includes(query))
+                (item.title && item.title.toLowerCase().includes(val)) || 
+                (item.description && item.description.toLowerCase().includes(val))
             );
             renderTampilanBerita(filtered);
         }
@@ -1113,109 +1100,210 @@
         }
 
         function bukaModalBerita(id) {
-    const berita = globalDataBerita.find(b => b.id === id);
-    if(!berita) return;
-    
-    const tanggalFormat = berita.date ? new Date(berita.date).toLocaleDateString('id-ID', {day: '2-digit', month: 'long', year: 'numeric'}) : '';
-    const htmlContent = berita.body ? marked.parse(berita.body) : '';
-    
-    // Konfigurasi Link Share Media Sosial
-    const currentUrl = encodeURIComponent(window.location.href);
-    const shareText = encodeURIComponent(`Baca berita terbaru: ${berita.title}`);
-    
-    const waLink = `https://api.whatsapp.com/send?text=${shareText}%20${currentUrl}`;
-    const fbLink = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
-    const twLink = `https://twitter.com/intent/tweet?text=${shareText}&url=${currentUrl}`;
-    
-    document.getElementById('isi-modal').innerHTML = `
-        <span class="text-xs font-bold tracking-widest text-amber-600 uppercase mb-2 block">${tanggalFormat}</span>
-        <h2 class="text-2xl font-extrabold text-slate-900 mb-6">${berita.title}</h2>
-        ${berita.thumbnail ? `<img src="${berita.thumbnail}" class="w-full rounded-xl mb-6 object-cover max-h-96" alt="${berita.title}">` : ''}
-        <div class="text-slate-600 font-light leading-relaxed text-sm sm:text-base prose max-w-none mb-8">${htmlContent}</div>
-        
-        <!-- Bagian Tombol Share Sosial Media -->
-        <div class="border-t border-slate-200 pt-6 mt-6">
-            <h4 class="text-xs font-bold text-slate-800 mb-4 uppercase tracking-widest">Bagikan Berita Ini:</h4>
-            <div class="flex flex-wrap gap-3">
-                <!-- WhatsApp -->
-                <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="bg-[#25D366] hover:bg-[#1ebd5b] text-white px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all shadow-sm transform hover:-translate-y-0.5">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.097.824z"/></svg>
-                    WhatsApp
-                </a>
-                
-                <!-- Facebook -->
-                <a href="${fbLink}" target="_blank" rel="noopener noreferrer" class="bg-[#1877F2] hover:bg-[#166fe5] text-white px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all shadow-sm transform hover:-translate-y-0.5">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    Facebook
-                </a>
+            const item = globalDataBerita.find(b => b.id === id);
+            if(!item) return;
 
-                <!-- Twitter / X -->
-                <a href="${twLink}" target="_blank" rel="noopener noreferrer" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all shadow-sm transform hover:-translate-y-0.5">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
-                    X / Twitter
-                </a>
+            const modal = document.getElementById('modal-berita');
+            const isi = document.getElementById('isi-modal');
 
-                <!-- Copy Link -->
-                <button onclick="salinTautanBerita(this)" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all shadow-sm transform hover:-translate-y-0.5" id="btn-copy">
-                    <svg class="w-4 h-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
-                    <span>Salin Link</span>
-                </button>
-            </div>
-        </div>
-    `;
-    
-    document.getElementById('modal-berita').classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-}
-function salinTautanBerita(btnElement) {
-    // Menyalin link URL halaman saat ini ke clipboard
-    navigator.clipboard.writeText(window.location.href).then(() => {
-        // Mengubah tampilan tombol sementara untuk memberikan feedback
-        const spanText = btnElement.querySelector('span');
-        const originalText = spanText.innerText;
-        const iconSvg = btnElement.querySelector('svg');
-        const originalSvg = iconSvg.outerHTML;
+            const parsedBody = window.marked ? marked.parse(item.body || item.description || '') : (item.body || item.description);
+            const tanggalFormat = item.date ? new Date(item.date).toLocaleDateString('id-ID', {weekday: 'long', day: '2-digit', month: 'long', year: 'numeric'}) : '';
 
-        // Ubah menjadi status "Tersalin!"
-        spanText.innerText = "Tersalin!";
-        spanText.classList.add("text-emerald-600");
-        btnElement.classList.add("border-emerald-200", "bg-emerald-50");
-        
-        iconSvg.outerHTML = `<svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>`;
-        
-        // Kembalikan ke tampilan awal setelah 2 detik
-        setTimeout(() => {
-            btnElement.innerHTML = originalSvg + `<span>${originalText}</span>`;
-            btnElement.classList.remove("border-emerald-200", "bg-emerald-50");
-            btnElement.querySelector('span').classList.remove("text-emerald-600");
-        }, 2000);
-    }).catch(err => {
-        console.error('Gagal menyalin teks: ', err);
-    });
-}
+            isi.innerHTML = `
+                ${item.thumbnail ? `<img src="${item.thumbnail}" alt="${item.title}" class="w-full h-64 object-cover rounded-xl mb-6 shadow-md">` : ''}
+                <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-2">${tanggalFormat}</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 leading-tight">${item.title}</h2>
+                <div class="prose max-w-none text-slate-600 text-sm sm:text-base leading-relaxed font-light space-y-4">
+                    ${parsedBody}
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
 
         function tutupModal() {
-            document.getElementById('modal-berita').classList.add('hidden');
+            const modal = document.getElementById('modal-berita');
+            modal.classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
 
-        // 6. FUNGSI SUBMIT FORM KONTAK WHATSAPP (DIPERTAHANKAN)
+        // --- MANAJEMEN GALERI INOVASI & RISET ---
+        async function loadDataGaleri() {
+            try {
+                const response = await fetch('data/galeri.json');
+                if (!response.ok) throw new Error('Data galeri tidak ditemukan');
+                const data = await response.json();
+                
+                const rawItems = Array.isArray(data) ? data : (data.items || []);
+                globalDataGaleri = rawItems.map((item, index) => ({...item, id: index}));
+                
+                filterAndRenderGaleri();
+            } catch (error) {
+                console.error("Gagal memuat Galeri:", error);
+                document.getElementById('tempat-galeri').innerHTML = `<div class="col-span-full text-center text-slate-500 py-10 font-medium">Belum ada karya inovasi & riset yang dipublikasikan.</div>`;
+            }
+        }
+
+        function setKatFilter(kat) {
+            currentKat = kat;
+            
+            document.querySelectorAll('.galeri-kat-btn').forEach(btn => {
+                btn.classList.remove('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
+                btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200/80');
+            });
+            
+            if (kat === 'Semua') {
+                document.getElementById('btn-kat-all').classList.add('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
+            } else if (kat === 'Proyek TEFA') {
+                document.getElementById('btn-kat-tefa').classList.add('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
+            } else if (kat === 'Riset Terapan') {
+                document.getElementById('btn-kat-riset').classList.add('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
+            }
+            
+            filterAndRenderGaleri();
+        }
+
+        function setPemFilter(pem) {
+            currentPem = pem;
+            
+            document.querySelectorAll('.galeri-pem-btn').forEach(btn => {
+                btn.classList.remove('bg-amber-500', 'border-amber-500', 'text-slate-950', 'shadow-sm');
+                btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200/80');
+            });
+            
+            if (pem === 'Semua') {
+                document.getElementById('btn-pem-all').classList.add('bg-amber-500', 'border-amber-500', 'text-slate-950', 'shadow-sm');
+            } else if (pem === 'Kesehatan') {
+                document.getElementById('btn-pem-kesehatan').classList.add('bg-amber-500', 'border-amber-500', 'text-slate-950', 'shadow-sm');
+            } else if (pem === 'Pangan') {
+                document.getElementById('btn-pem-pangan').classList.add('bg-amber-500', 'border-amber-500', 'text-slate-950', 'shadow-sm');
+            } else if (pem === 'Green Tech') {
+                document.getElementById('btn-pem-greentech').classList.add('bg-amber-500', 'border-amber-500', 'text-slate-950', 'shadow-sm');
+            }
+            
+            filterAndRenderGaleri();
+        }
+
+        function filterAndRenderGaleri() {
+            let filtered = globalDataGaleri.filter(item => {
+                const matchKat = (currentKat === 'Semua') || 
+                                 (item.category && item.category.toLowerCase().includes(currentKat.toLowerCase())) ||
+                                 (item.kategori && item.kategori.toLowerCase().includes(currentKat.toLowerCase()));
+                
+                const matchPem = (currentPem === 'Semua') || 
+                                 (item.peminatan && item.peminatan.toLowerCase().includes(currentPem.toLowerCase()));
+                
+                return matchKat && matchPem;
+            });
+            
+            renderTampilanGaleri(filtered);
+        }
+
+        function renderTampilanGaleri(dataArray) {
+            const container = document.getElementById('tempat-galeri');
+            if (!container) return;
+            
+            if (dataArray.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-center text-slate-500 py-10 font-medium">Tidak ada inovasi / riset yang sesuai dengan filter pilihan.</div>`;
+                return;
+            }
+            
+            container.innerHTML = dataArray.map((item, i) => {
+                const kat = item.category || item.kategori || 'Inovasi';
+                const pem = item.peminatan || 'TIK';
+                
+                let pemBadgeClass = 'bg-amber-50 text-amber-700 border-amber-200';
+                if (pem.toLowerCase().includes('kesehatan')) pemBadgeClass = 'bg-blue-50 text-blue-700 border-blue-200';
+                else if (pem.toLowerCase().includes('green')) pemBadgeClass = 'bg-emerald-50 text-emerald-700 border-emerald-200';
+
+                return `
+                <div class="bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group" data-aos="fade-up" data-aos-delay="${(i % 3) * 100}">
+                    <div class="bg-slate-100 h-52 relative overflow-hidden flex items-center justify-center">
+                        ${item.thumbnail || item.gambar ? 
+                            `<img src="${item.thumbnail || item.gambar}" alt="${item.title || item.judul}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">` 
+                            : `<span class="text-6xl">🔬</span>`
+                        }
+                        <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-md bg-slate-900/80 text-white backdrop-blur-md">${kat}</span>
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-md border ${pemBadgeClass} backdrop-blur-md">${pem}</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="font-bold text-slate-900 text-lg mb-2 group-hover:text-amber-600 transition-colors leading-snug">${item.title || item.judul}</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm line-clamp-3 mb-6 font-light leading-relaxed flex-grow">${item.description || item.deskripsi || ''}</p>
+                        <button onclick="bukaModalGaleri(${item.id})" class="inline-flex items-center justify-between w-full pt-4 border-t border-slate-100 text-xs font-bold text-slate-900 hover:text-amber-600 transition-colors group/btn">
+                            <span>Detail Inovasi & Riset</span>
+                            <span class="transform group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
+                        </button>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        function bukaModalGaleri(id) {
+            const item = globalDataGaleri.find(g => g.id === id);
+            if (!item) return;
+
+            const modal = document.getElementById('modal-galeri');
+            const isi = document.getElementById('isi-modal-galeri');
+
+            const parsedBody = window.marked ? marked.parse(item.body || item.deskripsi || item.description || '') : (item.body || item.deskripsi || item.description);
+            const kat = item.category || item.kategori || 'Inovasi';
+            const pem = item.peminatan || 'TIK';
+
+            isi.innerHTML = `
+                ${item.thumbnail || item.gambar ? `<img src="${item.thumbnail || item.gambar}" alt="${item.title || item.judul}" class="w-full h-64 sm:h-80 object-cover rounded-xl mb-6 shadow-md">` : ''}
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="text-xs font-bold px-3 py-1 rounded-md bg-slate-900 text-white">${kat}</span>
+                    <span class="text-xs font-bold px-3 py-1 rounded-md bg-amber-500 text-slate-950">${pem}</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 leading-tight">${item.title || item.judul}</h2>
+                ${item.author ? `<p class="text-xs font-semibold text-slate-400 mb-6">Inovator / Tim Riset: <span class="text-slate-700">${item.author}</span></p>` : ''}
+                <div class="prose prose-slate max-w-none text-slate-600 text-sm sm:text-base leading-relaxed font-light space-y-4">
+                    ${parsedBody}
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function tutupModalGaleri() {
+            const modal = document.getElementById('modal-galeri');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // --- FORM KONTAK CEPAT ---
         function submitFormKontak(e) {
             e.preventDefault();
             const nama = document.getElementById('nama-cepat').value;
+            const email = document.getElementById('email-cepat').value;
             const pesan = document.getElementById('pesan-cepat').value;
-            const linkWa = `https://wa.me/6281120240803?text=${encodeURIComponent('Halo, saya ' + nama + '. ' + pesan)}`;
-            window.open(linkWa, '_blank');
+            
+            const waText = `Halo Humas TIK Unpad, saya ${nama} (${email}).%0A%0A${pesan}`;
+            window.open(`https://wa.me/6281120240803?text=${waText}`, '_blank');
         }
 
+        // Close modal saat klik backdrop luar modal
+        window.addEventListener('click', function(e) {
+            const modalBerita = document.getElementById('modal-berita');
+            const modalGaleri = document.getElementById('modal-galeri');
+            if (e.target === modalBerita) tutupModal();
+            if (e.target === modalGaleri) tutupModalGaleri();
+        });
+
+        // INISIALISASI AWAL SAAT HALAMAN SELESAI DIMUAT
         document.addEventListener('DOMContentLoaded', () => {
             renderFasilitas();
             renderDosen();
             renderMitra();
-            loadDataBerita(); 
+            loadDataBerita();
+            loadDataGaleri();
         });
     </script>
-    
     <!-- Tombol Melayang Login CMS -->
     <a href="admin/" class="fixed bottom-6 right-6 md:bottom-8 md:right-8 bg-slate-900 text-white p-4 rounded-full shadow-2xl hover:bg-amber-600 hover:scale-110 transition-all duration-300 z-50 flex items-center justify-center group" title="Login ke Admin CMS">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
