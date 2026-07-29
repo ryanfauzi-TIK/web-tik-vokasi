@@ -68,3 +68,23 @@ collections:
             fields:
               - { label: "Nama Perusahaan/Mitra", name: "nama", widget: "string" }
               - { label: "Logo Perusahaan", name: "logo", widget: "image" }
+collections:
+  - name: "galeri_tefa"
+    label: "Galeri Proyek TEFA & Hasil Riset"
+    file: "data/galeri.json"
+    description: "Kelola daftar proyek Teaching Factory (TEFA) dan hasil riset terapan TIK Unpad"
+    fields:
+      - label: "Daftar Item Galeri"
+        name: "items"
+        widget: "list"
+        fields:
+          - { label: "ID Unik", name: "id", widget: "string" }
+          - { label: "Judul Proyek / Riset", name: "judul", widget: "string" }
+          - { label: "Kategori Utama", name: "kategori", widget: "select", options: ["Proyek TEFA", "Riset Terapan"] }
+          - { label: "Peminatan Rumpun", name: "peminatan", widget: "select", options: ["Industri Kimia Kesehatan", "Industri Kimia Pangan", "Green Technology"] }
+          - { label: "Foto / Gambar Sampul", name: "gambar", widget: "image" }
+          - { label: "Tahun Implementasi", name: "tahun", widget: "string", default: "2025/2026" }
+          - { label: "Tim Pengembang / Peneliti", name: "tim", widget: "string" }
+          - { label: "Status Produk / Riset", name: "status", widget: "string", default: "Tersertifikasi / Terkomersialisasi" }
+          - { label: "Ringkasan Singkat", name: "ringkasan", widget: "text" }
+          - { label: "Deskripsi Detail & Spesifikasi", name: "deskripsi_lengkap", widget: "markdown" }
