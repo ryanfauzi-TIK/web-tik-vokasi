@@ -166,6 +166,9 @@
                     <a href="#fasilitas" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Fasilitas</a>
                 </li>
                 <li class="w-full xl:w-auto">
+                    <a href="#galeri" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Galeri</a>
+                </li>
+                <li class="w-full xl:w-auto">
                     <a href="#dosen" class="relative block py-2 xl:py-0 text-slate-700 hover:text-amber-600 transition-colors duration-200 xl:after:absolute xl:after:-bottom-2 xl:after:left-0 xl:after:h-[2px] xl:after:w-0 xl:hover:after:w-full xl:after:bg-amber-500 xl:after:transition-all xl:after:duration-300">Dosen</a>
                 </li>
                 <li class="w-full xl:w-auto">
@@ -591,6 +594,25 @@
         </div>
     </section>
 
+    <!-- SECTION BARU: Galeri Proyek TEFA & Hasil Riset (Bisa diedit via CMS data/galeri.json) -->
+    <section id="galeri" class="py-20 md:py-28 bg-[#f8fafc] border-t border-slate-200/40 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 mb-3 bg-amber-500/10 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" data-aos="fade-down">
+                    Showcase Inovasi
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight" data-aos="fade-up">Galeri Proyek TEFA & Hasil Riset</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base font-light" data-aos="fade-up" data-aos-delay="100">
+                    Karya nyata, produk unggulan Teaching Factory (TEFA), dan hasil penelitian terapan dari civitas akademika TIK Vokasi Unpad.
+                </p>
+            </div>
+            <!-- Data Galeri akan dirender secara dinamis oleh JavaScript di sini -->
+            <div id="tempat-galeri" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skeleton Loader / Konten Dinamis -->
+            </div>
+        </div>
+    </section>
+
     <!-- Dosen -->
     <section id="dosen" class="py-20 md:py-28 bg-white border-t border-slate-200/40 scroll-mt-20">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
@@ -851,6 +873,7 @@
                         <li><a href="#profil" class="hover:text-amber-500 transition-colors">Profil Prodi</a></li>
                         <li><a href="#peminatan" class="hover:text-amber-500 transition-colors">Peminatan Akademik</a></li>
                         <li><a href="#fasilitas" class="hover:text-amber-500 transition-colors">Fasilitas Kampus</a></li>
+                        <li><a href="#galeri" class="hover:text-amber-500 transition-colors">Galeri Proyek & Riset</a></li>
                         <li><a href="#dosen" class="hover:text-amber-500 transition-colors">Staf Pengajar</a></li>
                         <li><a href="#berita" class="hover:text-amber-500 transition-colors">Berita & Informasi</a></li>
                     </ul>
@@ -973,7 +996,7 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
-        // 5. DATA DINAMIS DARI DECAP CMS (Telah diperbarui untuk merender tampilan card Fasilitas Modern Interaktif Besar)
+        // 5. DATA DINAMIS DARI DECAP CMS
         let globalDataBerita = [];
 
         async function renderFasilitas() {
@@ -1004,6 +1027,45 @@
                 `).join('');
             } catch (error) {
                 console.error("Gagal memuat Fasilitas:", error);
+            }
+        }
+
+        // FUNGSI UNTUK MERENDER GALERI PROYEK TEFA & HASIL RISET DARI CMS (data/galeri.json)
+        async function renderGaleri() {
+            try {
+                const response = await fetch('data/galeri.json');
+                if (!response.ok) throw new Error('Data galeri tidak ditemukan');
+                const data = await response.json();
+                const items = data.items || [];
+
+                const container = document.getElementById('tempat-galeri');
+                if(items.length === 0) {
+                    container.innerHTML = `<div class="col-span-full text-center text-slate-500 py-10 font-medium">Belum ada data galeri.</div>`;
+                    return;
+                }
+
+                container.innerHTML = items.map((item, i) => `
+                    <div class="bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group" data-aos="fade-up" data-aos-delay="${i*100}">
+                        <div class="relative h-56 bg-slate-100 overflow-hidden">
+                            ${item.gambar 
+                                ? `<img src="${item.gambar}" alt="${item.judul}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">` 
+                                : `<div class="w-full h-full flex items-center justify-center text-4xl bg-slate-200">🔬</div>`
+                            }
+                            ${item.kategori ? `<span class="absolute top-4 left-4 bg-amber-500 text-slate-950 text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">${item.kategori}</span>` : ''}
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="font-bold text-slate-900 text-base sm:text-lg mb-2 group-hover:text-amber-600 transition-colors">${item.judul || ''}</h3>
+                            <p class="text-slate-500 text-xs sm:text-sm font-light leading-relaxed flex-grow">${item.deskripsi || ''}</p>
+                            ${item.tahun ? `<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-medium"><span>Tahun: ${item.tahun}</span></div>` : ''}
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error("Gagal memuat Galeri:", error);
+                const container = document.getElementById('tempat-galeri');
+                if(container) {
+                    container.innerHTML = `<div class="col-span-full text-center text-slate-500 py-10 font-medium">Belum ada data galeri. Buat file data/galeri.json di admin CMS.</div>`;
+                }
             }
         }
 
@@ -1113,114 +1175,66 @@
         }
 
         function bukaModalBerita(id) {
-    const berita = globalDataBerita.find(b => b.id === id);
-    if(!berita) return;
-    
-    const tanggalFormat = berita.date ? new Date(berita.date).toLocaleDateString('id-ID', {day: '2-digit', month: 'long', year: 'numeric'}) : '';
-    const htmlContent = berita.body ? marked.parse(berita.body) : '';
-    
-    // Konfigurasi Link Share Media Sosial
-    const currentUrl = encodeURIComponent(window.location.href);
-    const shareText = encodeURIComponent(`Baca berita terbaru: ${berita.title}`);
-    
-    const waLink = `https://api.whatsapp.com/send?text=${shareText}%20${currentUrl}`;
-    const fbLink = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
-    const twLink = `https://twitter.com/intent/tweet?text=${shareText}&url=${currentUrl}`;
-    
-    document.getElementById('isi-modal').innerHTML = `
-        <span class="text-xs font-bold tracking-widest text-amber-600 uppercase mb-2 block">${tanggalFormat}</span>
-        <h2 class="text-2xl font-extrabold text-slate-900 mb-6">${berita.title}</h2>
-        ${berita.thumbnail ? `<img src="${berita.thumbnail}" class="w-full rounded-xl mb-6 object-cover max-h-96" alt="${berita.title}">` : ''}
-        <div class="text-slate-600 font-light leading-relaxed text-sm sm:text-base prose max-w-none mb-8">${htmlContent}</div>
-        
-        <!-- Bagian Tombol Share Sosial Media -->
-        <div class="border-t border-slate-200 pt-6 mt-6">
-            <h4 class="text-xs font-bold text-slate-800 mb-4 uppercase tracking-widest">Bagikan Berita Ini:</h4>
-            <div class="flex flex-wrap gap-3">
-                <!-- WhatsApp -->
-                <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="bg-[#25D366] hover:bg-[#1ebd5b] text-white px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all shadow-sm transform hover:-translate-y-0.5">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.418-.097.824z"/></svg>
-                    WhatsApp
-                </a>
+            const berita = globalDataBerita.find(b => b.id === id);
+            if(!berita) return;
+            
+            const tanggalFormat = berita.date ? new Date(berita.date).toLocaleDateString('id-ID', {day: '2-digit', month: 'long', year: 'numeric'}) : '';
+            const htmlContent = berita.body ? marked.parse(berita.body) : '';
+            
+            // Konfigurasi Link Share Media Sosial
+            const currentUrl = encodeURIComponent(window.location.href);
+            const shareText = encodeURIComponent(`Baca berita terbaru: ${berita.title}`);
+            
+            const waLink = `https://api.whatsapp.com/send?text=${shareText}%20${currentUrl}`;
+            const fbLink = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+            const twLink = `https://twitter.com/intent/tweet?text=${shareText}&url=${currentUrl}`;
+            
+            document.getElementById('isi-modal').innerHTML = `
+                <span class="text-xs font-bold tracking-widest text-amber-600 uppercase mb-2 block">${tanggalFormat}</span>
+                <h2 class="text-2xl font-extrabold text-slate-900 mb-6">${berita.title}</h2>
+                ${berita.thumbnail ? `<img src="${berita.thumbnail}" class="w-full rounded-xl mb-6 object-cover max-h-96" alt="${berita.title}">` : ''}
+                <div class="text-slate-600 font-light leading-relaxed text-sm sm:text-base prose max-w-none mb-8">${htmlContent}</div>
                 
-                <!-- Facebook -->
-                <a href="${fbLink}" target="_blank" rel="noopener noreferrer" class="bg-[#1877F2] hover:bg-[#166fe5] text-white px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all shadow-sm transform hover:-translate-y-0.5">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    Facebook
-                </a>
-
-                <!-- Twitter / X -->
-                <a href="${twLink}" target="_blank" rel="noopener noreferrer" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all shadow-sm transform hover:-translate-y-0.5">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
-                    X / Twitter
-                </a>
-
-                <!-- Copy Link -->
-                <button onclick="salinTautanBerita(this)" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all shadow-sm transform hover:-translate-y-0.5" id="btn-copy">
-                    <svg class="w-4 h-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
-                    <span>Salin Link</span>
-                </button>
-            </div>
-        </div>
-    `;
-    
-    document.getElementById('modal-berita').classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-}
-function salinTautanBerita(btnElement) {
-    // Menyalin link URL halaman saat ini ke clipboard
-    navigator.clipboard.writeText(window.location.href).then(() => {
-        // Mengubah tampilan tombol sementara untuk memberikan feedback
-        const spanText = btnElement.querySelector('span');
-        const originalText = spanText.innerText;
-        const iconSvg = btnElement.querySelector('svg');
-        const originalSvg = iconSvg.outerHTML;
-
-        // Ubah menjadi status "Tersalin!"
-        spanText.innerText = "Tersalin!";
-        spanText.classList.add("text-emerald-600");
-        btnElement.classList.add("border-emerald-200", "bg-emerald-50");
-        
-        iconSvg.outerHTML = `<svg class="w-4 h-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>`;
-        
-        // Kembalikan ke tampilan awal setelah 2 detik
-        setTimeout(() => {
-            btnElement.innerHTML = originalSvg + `<span>${originalText}</span>`;
-            btnElement.classList.remove("border-emerald-200", "bg-emerald-50");
-            btnElement.querySelector('span').classList.remove("text-emerald-600");
-        }, 2000);
-    }).catch(err => {
-        console.error('Gagal menyalin teks: ', err);
-    });
-}
+                <!-- Bagian Tombol Share Sosial Media -->
+                <div class="border-t border-slate-200 pt-6 mt-6">
+                    <h4 class="text-xs font-bold text-slate-800 mb-4 uppercase tracking-widest">Bagikan Berita Ini:</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-4 py-2 rounded-xl transition-colors inline-flex items-center gap-2">
+                            WhatsApp
+                        </a>
+                        <a href="${fbLink}" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-4 py-2 rounded-xl transition-colors inline-flex items-center gap-2">
+                            Facebook
+                        </a>
+                        <a href="${twLink}" target="_blank" rel="noopener noreferrer" class="bg-sky-500 hover:bg-sky-600 text-white text-xs font-semibold px-4 py-2 rounded-xl transition-colors inline-flex items-center gap-2">
+                            Twitter / X
+                        </a>
+                    </div>
+                </div>
+            `;
+            document.getElementById('modal-berita').classList.remove('hidden');
+        }
 
         function tutupModal() {
             document.getElementById('modal-berita').classList.add('hidden');
-            document.body.style.overflow = 'auto';
         }
 
-        // 6. FUNGSI SUBMIT FORM KONTAK WHATSAPP (DIPERTAHANKAN)
         function submitFormKontak(e) {
             e.preventDefault();
             const nama = document.getElementById('nama-cepat').value;
+            const email = document.getElementById('email-cepat').value;
             const pesan = document.getElementById('pesan-cepat').value;
-            const linkWa = `https://wa.me/6281120240803?text=${encodeURIComponent('Halo, saya ' + nama + '. ' + pesan)}`;
-            window.open(linkWa, '_blank');
+            const text = `Halo Humas TIK Unpad, saya ${nama} (${email}).%0A%0APesan: ${pesan}`;
+            window.open(`https://wa.me/6281120240803?text=${text}`, '_blank');
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
+        // Memuat seluruh data saat DOM selesai di-load
+        window.addEventListener('DOMContentLoaded', () => {
             renderFasilitas();
+            renderGaleri();
             renderDosen();
             renderMitra();
-            loadDataBerita(); 
+            loadDataBerita();
         });
     </script>
-    
-    <!-- Tombol Melayang Login CMS -->
-    <a href="admin/" class="fixed bottom-6 right-6 md:bottom-8 md:right-8 bg-slate-900 text-white p-4 rounded-full shadow-2xl hover:bg-amber-600 hover:scale-110 transition-all duration-300 z-50 flex items-center justify-center group" title="Login ke Admin CMS">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-    </a>
 </body>
 </html>
