@@ -237,7 +237,7 @@
                             <li>Menghasilkan lulusan yang mampu mendukung kegiatan penelitian terapan, pengembangan produk, validasi metode, pengujian, dan scale-up teknologi pada berbagai sektor industri.</li>
                             <li>Menghasilkan lulusan yang memiliki kemampuan berpikir kritis, pemecahan masalah, komunikasi, kolaborasi, dan kepemimpinan yang diperlukan dalam lingkungan kerja profesional</li>
                             <li>Menghasilkan lulusan yang mampu menerapkan prinsip keselamatan dan kesehatan kerja (K3), sistem mutu, regulasi, serta keberlanjutan dalam setiap aktivitas profesional.</li>
-                            <li>Menghasilkan lulusan yang memiliki kemampuan berwirausaha dan melakukan hilirisasi teknologi menjadi produk atau jasa yang bernilai tambah bagi masyarakat dan industri</li>
+                            <li>Menghasilkan lulusan yang mampu memiliki kemampuan berwirausaha dan melakukan hilirisasi teknologi menjadi produk atau jasa yang bernilai tambah bagi masyarakat dan industri</li>
                             <li>Mengembangkan ekosistem pembelajaran berbasis Teaching Factory dan kemitraan industri yang mendukung peningkatan kompetensi lulusan dan relevansi kurikulum.</li>
                             <li>Menghasilkan inovasi dan karya terapan yang memberikan kontribusi terhadap pengembangan industri kesehatan, pangan, bioindustri, serta teknologi ramah lingkungan.</li>
                         </ul>
@@ -869,6 +869,14 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7" /></svg>
     </button>
 
+    <!-- Tombol Melayang CMS Admin (Posisi Kanan Bawah) -->
+    <a href="/admin/" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-4 py-3 rounded-2xl shadow-2xl z-50 flex items-center gap-2 text-xs transition-all duration-300 transform hover:scale-105 border border-amber-300" title="Kelola Konten CMS">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        </svg>
+        <span>CMS Admin</span>
+    </a>
+
     <!-- Wadah Pop-up Modal Berita -->
     <div id="modal-berita" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-[60] hidden flex justify-center items-center p-4">
       <div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[85vh] overflow-y-auto relative border border-slate-100">
@@ -970,8 +978,9 @@
 
         async function renderFasilitas() {
             try {
-                const response = await fetch('data/fasilitas.json');
-                if (!response.ok) throw new Error('Data tidak ditemukan');
+                let response = await fetch('data/fasilitas.json');
+                if (!response.ok) response = await fetch('public/data/fasilitas.json');
+                if (!response.ok) throw new Error('Data fasilitas tidak ditemukan');
                 const data = await response.json();
                 const items = data.items || [];
                 
@@ -997,8 +1006,9 @@
 
         async function renderDosen() {
             try {
-                const response = await fetch('data/dosen.json');
-                if (!response.ok) throw new Error('Data tidak ditemukan');
+                let response = await fetch('data/dosen.json');
+                if (!response.ok) response = await fetch('public/data/dosen.json');
+                if (!response.ok) throw new Error('Data dosen tidak ditemukan');
                 const data = await response.json();
                 const items = data.items || [];
 
@@ -1017,8 +1027,9 @@
 
         async function renderMitra() {
             try {
-                const response = await fetch('data/kemitraan.json');
-                if (!response.ok) throw new Error('Data tidak ditemukan');
+                let response = await fetch('data/kemitraan.json');
+                if (!response.ok) response = await fetch('public/data/kemitraan.json');
+                if (!response.ok) throw new Error('Data kemitraan tidak ditemukan');
                 const data = await response.json();
                 const items = data.items || [];
 
@@ -1039,296 +1050,261 @@
         // --- MANAJEMEN BERITA ---
         async function loadDataBerita() {
             try {
-                const response = await fetch('data/berita.json');
-                if (!response.ok) throw new Error('Data tidak ditemukan');
+                let response = await fetch('data/berita.json');
+                if (!response.ok) response = await fetch('public/data/berita.json');
+                if (!response.ok) throw new Error('Data berita tidak ditemukan');
                 const data = await response.json();
                 
                 globalDataBerita = (data.items || []).map((item, index) => ({...item, id: index}));
                 globalDataBerita.sort((a, b) => new Date(b.date) - new Date(a.date));
-                
-                renderTampilanBerita(globalDataBerita);
+                renderBerita(globalDataBerita);
             } catch (error) {
                 console.error("Gagal memuat Berita:", error);
-                document.getElementById('tempat-berita').innerHTML = `<div class="col-span-full text-center text-slate-500 py-10 font-medium">Belum ada rilis berita.</div>`;
+                document.getElementById('tempat-berita').innerHTML = `<p class="col-span-full text-center text-slate-400 py-8 text-sm">Belum ada berita yang diterbitkan.</p>`;
             }
         }
 
-        function renderTampilanBerita(dataArray) {
+        function renderBerita(items) {
             const container = document.getElementById('tempat-berita');
-            if(dataArray.length === 0) {
-                container.innerHTML = `<div class="col-span-full text-center text-slate-500 py-10 font-medium">Berita tidak ditemukan.</div>`;
+            if (!items || items.length === 0) {
+                container.innerHTML = `<p class="col-span-full text-center text-slate-400 py-8 text-sm">Tidak ada berita yang sesuai pencarian.</p>`;
                 return;
             }
-            container.innerHTML = dataArray.map((item, i) => {
-                const tanggalFormat = item.date ? new Date(item.date).toLocaleDateString('id-ID', {day: '2-digit', month: 'short', year: 'numeric'}) : '-';
-                
-                return `
-                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full group" data-aos="fade-up" data-aos-delay="${i*100}">
-                    <div class="bg-slate-100 h-48 rounded-xl mb-4 overflow-hidden flex items-center justify-center text-5xl relative">
-                        ${item.thumbnail ? `<img src="${item.thumbnail}" alt="${item.title}" class="w-full h-full object-cover">` : '📰'}
+            container.innerHTML = items.map((item) => `
+                <div class="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-aos="fade-up">
+                    <div class="relative h-48 overflow-hidden bg-slate-100">
+                        <img src="${item.thumbnail || 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop'}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-slate-700 shadow-sm">
+                            ${item.date ? new Date(item.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'short', day: 'numeric' }) : ''}
+                        </div>
                     </div>
-                    <div class="flex-grow">
-                        <span class="text-[10px] font-bold tracking-widest text-amber-600 uppercase mb-2 block">${tanggalFormat}</span>
-                        <h3 class="font-bold text-slate-900 text-base mb-2 group-hover:text-amber-600 transition-colors">${item.title}</h3>
-                        <p class="text-slate-500 text-xs line-clamp-3 mb-4 font-light">${item.description || ''}</p>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-2 group-hover:text-amber-600 transition-colors">${item.title}</h3>
+                        <p class="text-slate-500 text-xs font-light line-clamp-3 mb-6 flex-grow">${item.description || ''}</p>
+                        <button onclick="bukaModalBerita(${item.id})" class="text-xs font-bold text-amber-600 hover:text-amber-700 flex items-center gap-1.5 transition-colors self-start">
+                            Baca Selengkapnya
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </button>
                     </div>
-                    <button onclick="bukaModalBerita(${item.id})" class="text-xs font-bold text-slate-900 hover:text-amber-600 transition-colors flex items-center gap-1 mt-auto">
-                        Baca Selengkapnya &rarr;
-                    </button>
                 </div>
-                `;
-            }).join('');
+            `).join('');
         }
 
         function cariInformasiBerita() {
-            const val = document.getElementById('cari-berita').value.toLowerCase().trim();
+            const input = document.getElementById('cari-berita').value.toLowerCase();
             const clearBtn = document.getElementById('clear-search-btn');
-            if(val.length > 0) clearBtn.classList.remove('hidden');
-            else clearBtn.classList.add('hidden');
-
+            if (input.trim() !== '') {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
             const filtered = globalDataBerita.filter(item => 
-                (item.title && item.title.toLowerCase().includes(val)) || 
-                (item.description && item.description.toLowerCase().includes(val))
+                (item.title && item.title.toLowerCase().includes(input)) || 
+                (item.description && item.description.toLowerCase().includes(input))
             );
-            renderTampilanBerita(filtered);
+            renderBerita(filtered);
         }
 
         function resetSearchBerita() {
             document.getElementById('cari-berita').value = '';
             document.getElementById('clear-search-btn').classList.add('hidden');
-            renderTampilanBerita(globalDataBerita);
+            renderBerita(globalDataBerita);
         }
 
         function bukaModalBerita(id) {
             const item = globalDataBerita.find(b => b.id === id);
-            if(!item) return;
-
-            const modal = document.getElementById('modal-berita');
-            const isi = document.getElementById('isi-modal');
-
-            const parsedBody = window.marked ? marked.parse(item.body || item.description || '') : (item.body || item.description);
-            const tanggalFormat = item.date ? new Date(item.date).toLocaleDateString('id-ID', {weekday: 'long', day: '2-digit', month: 'long', year: 'numeric'}) : '';
-
-            isi.innerHTML = `
-                ${item.thumbnail ? `<img src="${item.thumbnail}" alt="${item.title}" class="w-full h-64 object-cover rounded-xl mb-6 shadow-md">` : ''}
-                <span class="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-2">${tanggalFormat}</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 leading-tight">${item.title}</h2>
-                <div class="prose max-w-none text-slate-600 text-sm sm:text-base leading-relaxed font-light space-y-4">
-                    ${parsedBody}
+            if (!item) return;
+            const content = document.getElementById('isi-modal');
+            content.innerHTML = `
+                <div class="mb-6">
+                    <span class="text-xs font-semibold text-amber-600 bg-amber-50 px-3 py-1 rounded-full inline-block mb-3">
+                        ${item.date ? new Date(item.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) : ''}
+                    </span>
+                    <h2 class="text-2xl font-extrabold text-slate-900 leading-tight mb-4">${item.title}</h2>
+                    ${item.thumbnail ? `<img src="${item.thumbnail}" alt="${item.title}" class="w-full h-64 sm:h-80 object-cover rounded-xl mb-6 shadow-sm">` : ''}
+                </div>
+                <div class="prose prose-slate max-w-none text-slate-600 text-sm leading-relaxed font-light space-y-4">
+                    ${window.marked ? marked.parse(item.body || item.description || '') : (item.body || item.description || '')}
                 </div>
             `;
-
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
+            document.getElementById('modal-berita').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
         }
 
         function tutupModal() {
-            const modal = document.getElementById('modal-berita');
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
+            document.getElementById('modal-berita').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
         }
 
-        // --- MANAJEMEN GALERI INOVASI ---
+        // --- MANAJEMEN GALERI INOVASI & RISET ---
         async function loadDataGaleri() {
             try {
-                const response = await fetch('data/inovasi.json');
-                if (!response.ok) throw new Error('Data tidak ditemukan');
+                let response = await fetch('data/galeri.json');
+                if (!response.ok) response = await fetch('public/data/galeri.json');
+                if (!response.ok) throw new Error('Data galeri tidak ditemukan');
                 const data = await response.json();
                 
                 globalDataGaleri = (data.items || []).map((item, index) => ({...item, id: index}));
-                renderGaleri();
+                filterDanRenderGaleri();
             } catch (error) {
-                console.error("Gagal memuat Galeri Inovasi:", error);
-                document.getElementById('tempat-galeri').innerHTML = `<div class="col-span-full text-center text-slate-500 py-10 font-medium">Belum ada data galeri inovasi.</div>`;
+                console.error("Gagal memuat Galeri Inovasi & Riset:", error);
+                document.getElementById('tempat-galeri').innerHTML = `<p class="col-span-full text-center text-slate-400 py-12 text-sm">Belum ada data inovasi & riset yang diterbitkan.</p>`;
             }
         }
 
-        function setKatFilter(kat) {
-            currentKat = kat;
+        function filterDanRenderGaleri() {
+            let filtered = globalDataGaleri;
+
+            if (currentKat !== 'Semua') {
+                filtered = filtered.filter(item => item.kategori === currentKat);
+            }
+            if (currentPem !== 'Semua') {
+                filtered = filtered.filter(item => item.peminatan === currentPem);
+            }
+
+            renderGaleri(filtered);
+        }
+
+        function setKatFilter(kategori) {
+            currentKat = kategori;
+            
             document.querySelectorAll('.galeri-kat-btn').forEach(btn => {
                 btn.classList.remove('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
                 btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200/80');
             });
-            
-            let activeBtnId = 'btn-kat-all';
-            if(kat === 'Proyek TEFA') activeBtnId = 'btn-kat-tefa';
-            else if(kat === 'Riset Terapan') activeBtnId = 'btn-kat-riset';
-            
-            const activeBtn = document.getElementById(activeBtnId);
-            if(activeBtn) {
+
+            const activeBtnMap = {
+                'Semua': 'btn-kat-all',
+                'Proyek TEFA': 'btn-kat-tefa',
+                'Riset Terapan': 'btn-kat-riset'
+            };
+
+            const btnId = activeBtnMap[kategori];
+            if (btnId && document.getElementById(btnId)) {
+                const activeBtn = document.getElementById(btnId);
                 activeBtn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200/80');
                 activeBtn.classList.add('bg-slate-900', 'border-slate-900', 'text-white', 'shadow-sm');
             }
-            
-            renderGaleri();
+
+            filterDanRenderGaleri();
         }
 
-        function setPemFilter(pem) {
-            currentPem = pem;
+        function setPemFilter(peminatan) {
+            currentPem = peminatan;
+
             document.querySelectorAll('.galeri-pem-btn').forEach(btn => {
                 btn.classList.remove('bg-amber-500', 'border-amber-500', 'text-slate-950', 'shadow-sm');
                 btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200/80');
             });
 
-            let activeBtnId = 'btn-pem-all';
-            if(pem === 'Kesehatan') activeBtnId = 'btn-pem-kesehatan';
-            else if(pem === 'Pangan') activeBtnId = 'btn-pem-pangan';
-            else if(pem === 'Green Tech') activeBtnId = 'btn-pem-greentech';
+            const activeBtnMap = {
+                'Semua': 'btn-pem-all',
+                'Kesehatan': 'btn-pem-kesehatan',
+                'Pangan': 'btn-pem-pangan',
+                'Green Tech': 'btn-pem-greentech'
+            };
 
-            const activeBtn = document.getElementById(activeBtnId);
-            if(activeBtn) {
+            const btnId = activeBtnMap[peminatan];
+            if (btnId && document.getElementById(btnId)) {
+                const activeBtn = document.getElementById(btnId);
                 activeBtn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200/80');
                 activeBtn.classList.add('bg-amber-500', 'border-amber-500', 'text-slate-950', 'shadow-sm');
             }
 
-            renderGaleri();
+            filterDanRenderGaleri();
         }
 
-        function renderGaleri() {
+        function renderGaleri(items) {
             const container = document.getElementById('tempat-galeri');
-            let filtered = globalDataGaleri.filter(item => {
-                const matchKat = (currentKat === 'Semua') || (item.kategori && item.kategori.toLowerCase() === currentKat.toLowerCase());
-                const matchPem = (currentPem === 'Semua') || (item.peminatan && item.peminatan.toLowerCase().includes(currentPem.toLowerCase()));
-                return matchKat && matchPem;
-            });
-
-            if(filtered.length === 0) {
-                container.innerHTML = `<div class="col-span-full text-center text-slate-500 py-10 font-medium">Tidak ada inovasi yang sesuai dengan filter.</div>`;
+            if (!items || items.length === 0) {
+                container.innerHTML = `<p class="col-span-full text-center text-slate-400 py-12 text-sm font-light">Tidak ada karya inovasi/riset yang sesuai dengan filter ini.</p>`;
                 return;
             }
 
-            container.innerHTML = filtered.map((item, i) => `
-                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group" data-aos="fade-up" data-aos-delay="${i*100}">
-                    <div class="bg-slate-100 h-48 rounded-xl mb-4 overflow-hidden flex items-center justify-center relative">
-                        ${(item.gambar || item.thumbnail) ? 
-                            `<img src="${item.gambar || item.thumbnail}" alt="${item.title || item.judul}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">` 
-                            : `<span class="text-5xl">💡</span>`
+            container.innerHTML = items.map((item) => `
+                <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group cursor-pointer" onclick="bukaModalGaleri(${item.id})" data-aos="fade-up">
+                    <div class="relative h-52 overflow-hidden bg-slate-100">
+                        ${item.gambar ? 
+                            `<img src="${item.gambar}" alt="${item.judul}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">` 
+                            : 
+                            `<div class="w-full h-full bg-slate-900 flex items-center justify-center text-4xl">🧪</div>`
                         }
-                        <div class="absolute top-3 left-3 flex flex-wrap gap-1">
-                            <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">${item.kategori || 'Inovasi'}</span>
+                        <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                            <span class="bg-slate-900/80 backdrop-blur text-white px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">
+                                ${item.kategori || 'Inovasi'}
+                            </span>
+                            ${item.peminatan ? `<span class="bg-amber-500/90 backdrop-blur text-slate-950 px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">${item.peminatan}</span>` : ''}
                         </div>
+                        ${item.status ? `
+                            <div class="absolute bottom-3 right-3 bg-emerald-500/90 backdrop-blur text-white px-2.5 py-1 rounded-md text-[10px] font-bold">
+                                ${item.status}
+                            </div>
+                        ` : ''}
                     </div>
-                    <div class="flex-grow">
+                    <div class="p-6 flex flex-col flex-grow">
                         <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
-                            <span class="font-semibold text-amber-600">${item.peminatan || ''}</span>
-                            <span>${item.tahun || item.year || ''}</span>
+                            <span>${item.tim_peneliti ? '👥 ' + item.tim_peneliti : ''}</span>
+                            ${item.tahun ? `<span class="font-semibold">${item.tahun}</span>` : ''}
                         </div>
-                        <h3 class="font-bold text-slate-900 text-base mb-2 group-hover:text-amber-600 transition-colors">${item.title || item.judul}</h3>
-                        <p class="text-slate-500 text-xs line-clamp-3 mb-4 font-light">${item.description || item.deskripsi || ''}</p>
+                        <h3 class="font-bold text-slate-900 text-base mb-2 group-hover:text-amber-600 transition-colors line-clamp-2">${item.judul}</h3>
+                        <p class="text-slate-500 text-xs font-light line-clamp-3 mb-4 flex-grow">${item.deskripsi || ''}</p>
+                        <div class="text-xs font-bold text-amber-600 group-hover:text-amber-700 flex items-center gap-1.5 transition-colors mt-auto">
+                            Lihat Detail Spesifikasi
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </div>
                     </div>
-                    <button onclick="bukaModalGaleri(${item.id})" class="text-xs font-bold text-slate-900 hover:text-amber-600 transition-colors flex items-center gap-1 mt-auto pt-3 border-t border-slate-100">
-                        Lihat Detail Inovasi &rarr;
-                    </button>
                 </div>
             `).join('');
         }
 
-        // PERBAIKAN POP-UP MODAL DETAIL GALERI INOVASI
         function bukaModalGaleri(id) {
             const item = globalDataGaleri.find(g => g.id === id);
-            if(!item) return;
-
-            const modal = document.getElementById('modal-galeri');
-            const isi = document.getElementById('isi-modal-galeri');
-
-            const parsedBody = window.marked ? marked.parse(item.body || item.deskripsi || item.description || '') : (item.body || item.deskripsi || item.description || '');
-            
-            // Ekstraksi Detail Tim, Tahun, Kategori & Peminatan
-            const timPengembang = item.tim || item.pengembang || item.author || item.tim_pengembang || 'Tim TIK Unpad';
-            const tahunInovasi = item.tahun || item.year || '-';
-            const kategoriInovasi = item.kategori || 'Inovasi & Riset';
-            const peminatanInovasi = item.peminatan || '-';
-
-            isi.innerHTML = `
-                ${(item.gambar || item.thumbnail) ? `<img src="${item.gambar || item.thumbnail}" alt="${item.title || item.judul}" class="w-full h-64 sm:h-72 object-cover rounded-xl mb-6 shadow-md">` : ''}
-                
-                <div class="flex flex-wrap gap-2 mb-3">
-                    <span class="bg-amber-500/10 text-amber-700 font-bold text-xs px-3 py-1 rounded-full border border-amber-500/20">${kategoriInovasi}</span>
-                    <span class="bg-slate-100 text-slate-700 font-bold text-xs px-3 py-1 rounded-full border border-slate-200">${peminatanInovasi}</span>
+            if (!item) return;
+            const content = document.getElementById('isi-modal-galeri');
+            content.innerHTML = `
+                <div class="mb-6">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="bg-slate-900 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider">${item.kategori || 'Inovasi'}</span>
+                        ${item.peminatan ? `<span class="bg-amber-500 text-slate-950 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider">${item.peminatan}</span>` : ''}
+                        ${item.status ? `<span class="bg-emerald-100 text-emerald-800 border border-emerald-300 px-3 py-1 rounded-lg text-xs font-bold">${item.status}</span>` : ''}
+                    </div>
+                    <h2 class="text-2xl font-extrabold text-slate-900 leading-tight mb-2">${item.judul}</h2>
+                    <div class="flex flex-wrap items-center gap-4 text-xs text-slate-500 mb-4 pb-4 border-b border-slate-100">
+                        ${item.tim_peneliti ? `<div><strong class="text-slate-700">Tim Peneliti/Pengembang:</strong> ${item.tim_peneliti}</div>` : ''}
+                        ${item.tahun ? `<div><strong class="text-slate-700">Tahun:</strong> ${item.tahun}</div>` : ''}
+                    </div>
+                    ${item.gambar ? `<img src="${item.gambar}" alt="${item.judul}" class="w-full h-64 sm:h-80 object-cover rounded-2xl mb-6 shadow-sm border border-slate-100">` : ''}
                 </div>
-
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-6 leading-tight">${item.title || item.judul}</h2>
-
-                <!-- Kartu Informasi Detail (Tim Pengembang, Tahun, Kategori, Peminatan) -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-50 border border-slate-200/80 rounded-2xl p-5 mb-6 text-xs sm:text-sm">
-                    <div class="flex items-start gap-3">
-                        <div class="p-2.5 bg-amber-100 text-amber-700 rounded-xl shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <span class="text-slate-400 font-medium block text-[11px] uppercase tracking-wider">Tim Pengembang</span>
-                            <span class="font-bold text-slate-800">${timPengembang}</span>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-3">
-                        <div class="p-2.5 bg-blue-100 text-blue-700 rounded-xl shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <span class="text-slate-400 font-medium block text-[11px] uppercase tracking-wider">Tahun Pelaksanaan</span>
-                            <span class="font-bold text-slate-800">${tahunInovasi}</span>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-3">
-                        <div class="p-2.5 bg-emerald-100 text-emerald-700 rounded-xl shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                            </svg>
-                        </div>
-                        <div>
-                            <span class="text-slate-400 font-medium block text-[11px] uppercase tracking-wider">Kategori Program</span>
-                            <span class="font-bold text-slate-800">${kategoriInovasi}</span>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-3">
-                        <div class="p-2.5 bg-purple-100 text-purple-700 rounded-xl shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 11h.01M7 15h.01M13 7h.01M13 11h.01M13 15h.01M19 7h.01M19 11h.01M19 15h.01" />
-                            </svg>
-                        </div>
-                        <div>
-                            <span class="text-slate-400 font-medium block text-[11px] uppercase tracking-wider">Rumpun Peminatan</span>
-                            <span class="font-bold text-slate-800">${peminatanInovasi}</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="border-t border-slate-100 pt-5">
-                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Deskripsi & Spesifikasi Produk</h3>
-                    <div class="prose max-w-none text-slate-600 text-sm sm:text-base leading-relaxed font-light space-y-4">
-                        ${parsedBody}
-                    </div>
+                <div class="prose prose-slate max-w-none text-slate-600 text-sm leading-relaxed font-light space-y-4">
+                    <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-2">Deskripsi & Spesifikasi Lengkap:</h4>
+                    ${window.marked ? marked.parse(item.deskripsi || '') : (item.deskripsi || '')}
                 </div>
             `;
-
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
+            document.getElementById('modal-galeri').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
         }
 
         function tutupModalGaleri() {
-            const modal = document.getElementById('modal-galeri');
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
+            document.getElementById('modal-galeri').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
         }
 
-        function submitFormKontak(e) {
-            e.preventDefault();
+        // --- KONTAK CEPAT WA ---
+        function submitFormKontak(event) {
+            event.preventDefault();
             const nama = document.getElementById('nama-cepat').value;
             const email = document.getElementById('email-cepat').value;
             const pesan = document.getElementById('pesan-cepat').value;
             
-            const teksWA = `Halo Humas TIK Unpad, saya ${nama} (${email}).%0A%0APesan:%0A${pesan}`;
-            window.open(`https://wa.me/6281120240803?text=${teksWA}`, '_blank');
+            const teks = `Halo Humas TIK Unpad, saya ${nama} (${email}).%0A%0APesan: ${pesan}`;
+            window.open(`https://wa.me/6281120240803?text=${teks}`, '_blank');
         }
 
-        // INISIALISASI SAAT HALAMAN SELESAI DIMUAT
+        // --- INISIALISASI HALAMAN ---
         document.addEventListener('DOMContentLoaded', () => {
             renderFasilitas();
             renderDosen();
@@ -1337,6 +1313,7 @@
             loadDataGaleri();
         });
     </script>
+    
     <!-- Tombol Melayang Login CMS -->
     <a href="admin/" class="fixed bottom-6 right-6 md:bottom-8 md:right-8 bg-slate-900 text-white p-4 rounded-full shadow-2xl hover:bg-amber-600 hover:scale-110 transition-all duration-300 z-50 flex items-center justify-center group" title="Login ke Admin CMS">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
