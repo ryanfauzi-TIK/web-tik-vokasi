@@ -151,6 +151,63 @@
                         SMUP UNPAD
                     </a>
                 </li>
+                <!-- ========================================== -->
+<!-- NAV ITEM: LAYANAN CEPAT (CTA HIGHLIGHT)    -->
+<!-- ========================================== -->
+<li class="nav-item-cta">
+  <a href="https://linktr.ee/Tikim.vokasi" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">
+    <!-- Ikon Kilat/Petir (SVG) -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+    </svg>
+    <span>Layanan Cepat</span>
+  </a>
+</li>
+
+<style>
+  /* Menghilangkan bullet point default dari list */
+  li.nav-item-cta {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 10px; /* Jarak dari menu sebelum nya */
+  }
+
+  /* Desain Utama Tombol CTA Navigasi */
+  .nav-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #0d6efd, #0a58ca); /* Warna gradient profesional */
+    color: #ffffff !important;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 50px;
+    text-decoration: none !important;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Efek Saat Kursor Diarahkan (Hover) */
+  .nav-cta-btn:hover {
+    background: linear-gradient(135deg, #0a58ca, #084298);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(13, 110, 253, 0.4);
+    color: #ffffff !important;
+  }
+
+  /* Efek Animasi Ikon */
+  .nav-cta-btn svg {
+    transition: transform 0.3s ease;
+  }
+
+  .nav-cta-btn:hover svg {
+    transform: scale(1.2) rotate(-10deg);
+  }
+</style>
+<!-- ========================================== -->
             </ul>
         </div>
     </nav>
@@ -1307,57 +1364,5 @@
             loadDataGaleri();
         });
     </script>
-<!-- ========================================== -->
-<!-- TOMBOL MELAYANG: LAYANAN CEPAT             -->
-<!-- ========================================== -->
-<a href="https://linktr.ee/Tikim.vokasi" target="_blank" rel="noopener noreferrer" class="floating-layanan-cepat" title="Layanan Cepat">
-  <!-- Ikon Pesan/Layanan (SVG) -->
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-  </svg>
-  <span>Layanan Cepat</span>
-</a>
-
-<style>
-  .floating-layanan-cepat {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #007bff; /* Warna tombol (bisa diganti) */
-    color: #ffffff !important;
-    padding: 12px 20px;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none !important;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    z-index: 99999; /* Memastikan tombol selalu melayang paling depan */
-    transition: all 0.3s ease;
-  }
-
-  .floating-layanan-cepat:hover {
-    background-color: #0056b3;
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-  }
-
-  /* Tampilan di HP: Menyembunyikan teks agar hanya ikon melayang bulat */
-  @media (max-width: 600px) {
-    .floating-layanan-cepat span {
-      display: none;
-    }
-    .floating-layanan-cepat {
-      padding: 14px;
-      border-radius: 50%;
-      bottom: 20px;
-      right: 20px;
-    }
-  }
-</style>
-<!-- ========================================== -->
 </body>
 </html>
